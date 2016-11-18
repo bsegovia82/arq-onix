@@ -1,0 +1,7 @@
+com\onix\modulo\librerias\dominio\DominioUtils.class
+com\onix\modulo\librerias\dominio\entidades\base\EntidadBase.class
+com\onix\modulo\App.class
+com\onix\modulo\librerias\dominio\entidades\generales\GenTiposQuery.class
+com\onix\modulo\librerias\dominio\entidades\generales\GenQuery.class
+com\onix\modulo\librerias\dominio\entidades\IEntidadPersistible.class
+com\onix\modulo\librerias\dominio\entidades\base\EntidadBaseAuditable.class
