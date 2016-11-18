@@ -33,7 +33,7 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>com.onix.producto</groupId>
+			<groupId>com.sebra.onix.libreria</groupId>
 			<artifactId>onix-modulo-librerias-servicio</artifactId>
 			<version>7.0</version>
 			<scope>provided</scope>

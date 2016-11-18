@@ -30,12 +30,12 @@
 	</build>
 	<dependencies>
 		<dependency>
-			<groupId>com.onix.producto</groupId>
+			<groupId>com.sebra.onix.libreria</groupId>
 			<artifactId>onix-modulo-librerias-dominio</artifactId>
 			<version>7.0</version>
 		</dependency>
 		<dependency>
-			<groupId>com.onix.producto</groupId>
+			<groupId>com.sebra.onix.libreria</groupId>
 			<artifactId>onix-modulo-librerias-generales</artifactId>
 			<version>7.0</version>
 		</dependency>
