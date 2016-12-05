@@ -11,7 +11,6 @@ com\onix\modulo\librerias\vista\interfaces\IServicioAutorizacion.class
 com\onix\modulo\librerias\vista\anotaciones\ITestServicioMenuOpcionesHorizontal.class
 com\onix\modulo\librerias\vista\anotaciones\ITestUsuarioSession.class
 com\onix\modulo\librerias\vista\interfaces\IUsuarioSession.class
-com\onix\modulo\App.class
 com\onix\modulo\librerias\vista\exceptions\ErrorValidacionVisual.class
 com\onix\modulo\librerias\vista\exceptions\ErrorAccionesPreTransaccion.class
 com\onix\modulo\librerias\vista\interfaces\IServiciosMenu.class

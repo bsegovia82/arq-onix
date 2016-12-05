@@ -1,4 +1,3 @@
-com\onix\modulo\App.class
 com\onix\modulo\librerias\generales\UtilCryptography.class
 com\onix\modulo\librerias\generales\excepciones\ExcepcionLogin.class
 com\onix\modulo\librerias\generales\excepciones\ExcepcionFalloTecnico.class
