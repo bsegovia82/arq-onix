@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kb-project>
+ <depends-on-projects>
+  <project name="onix-modulo-librerias-generales"/>
+  <project name="onix-modulo-librerias-dominio"/>
+ </depends-on-projects>
+ <used-by-projects>
+  <project name="onix-modulo-librerias-vista"/>
+ </used-by-projects>
+ <paths>
+  <path value="D:/repositorio/org/infinispan/infinispan-core/5.1.1.FINAL/infinispan-core-5.1.1.FINAL.jar"/>
+  <path value="D:/repositorio/org/jboss/jandex/1.0.3.Final/jandex-1.0.3.Final.jar"/>
+  <path value="D:/repositorio/org/jboss/jbossts/jbossjts/4.16.2.Final/jbossjts-4.16.2.Final.jar"/>
+  <path value="D:/repositorio/org/jboss/as/jboss-as-protocol/7.1.0.Final/jboss-as-protocol-7.1.0.Final.jar"/>
+  <path value="D:/repositorio/org/jboss/as/jboss-as-process-controller/7.1.0.Final/jboss-as-process-controller-7.1.0.Final.jar"/>
+  <path value="D:/repositorio/org/jboss/sasl/jboss-sasl/1.0.0.Final/jboss-sasl-1.0.0.Final.jar"/>
+  <path value="D:/repositorio/org/jboss/spec/javax/annotation/jboss-annotations-api_1.1_spec/1.0.0.Final/jboss-annotations-api_1.1_spec-1.0.0.Final.jar"/>
+  <path value="D:/repositorio/org/jboss/com/sun/httpserver/httpserver/1.0.0.Final/httpserver-1.0.0.Final.jar"/>
+  <path value="D:/repositorio/org/jboss/as/jboss-as-network/7.1.0.Final/jboss-as-network-7.1.0.Final.jar"/>
+  <path value="D:/repositorio/junit/junit/4.8.1/junit-4.8.1.jar"/>
+  <path value="D:/repositorio/org/jboss/jboss-common-core/2.2.17.GA/jboss-common-core-2.2.17.GA.jar"/>
+  <path value="D:/repositorio/org/jboss/security/jboss-negotiation-extras/2.2.0.SP1/jboss-negotiation-extras-2.2.0.SP1.jar"/>
+  <path value="D:/repositorio/org/jboss/as/jboss-as-remoting/7.1.0.Final/jboss-as-remoting-7.1.0.Final.jar"/>
+  <path value="D:/repositorio/org/jboss/msc/jboss-msc/1.0.2.GA/jboss-msc-1.0.2.GA.jar"/>
+  <path value="D:/repositorio/org/jboss/logging/jboss-logging/3.1.0.GA/jboss-logging-3.1.0.GA.jar"/>
+  <path value="D:/repositorio/org/jboss/spec/javax/transaction/jboss-transaction-api_1.1_spec/1.0.0.Final/jboss-transaction-api_1.1_spec-1.0.0.Final.jar"/>
+  <path value="D:/repositorio/org/jboss/jboss-dmr/1.1.1.Final/jboss-dmr-1.1.1.Final.jar"/>
+  <path value="D:/repositorio/org/hibernate/hibernate-validator/4.2.0.Final/hibernate-validator-4.2.0.Final.jar"/>
+  <path value="D:/repositorio/org/infinispan/infinispan-cachestore-jdbc/5.1.1.FINAL/infinispan-cachestore-jdbc-5.1.1.FINAL.jar"/>
+  <path value="D:/repositorio/org/jboss/spec/javax/interceptor/jboss-interceptors-api_1.1_spec/1.0.0.Final/jboss-interceptors-api_1.1_spec-1.0.0.Final.jar"/>
+  <path value="D:/repositorio/org/jboss/spec/javax/faces/jboss-jsf-api_2.1_spec/2.1.19.1.Final-redhat-1/jboss-jsf-api_2.1_spec-2.1.19.1.Final-redhat-1.jar"/>
+  <path value="D:/repositorio/org/jboss/interceptor/jboss-interceptor-spi/2.0.0.Final/jboss-interceptor-spi-2.0.0.Final.jar"/>
+  <path value="D:/repositorio/org/jboss/logmanager/jboss-logmanager/1.2.2.GA/jboss-logmanager-1.2.2.GA.jar"/>
+  <path value="D:/repositorio/org/jboss/logmanager/jboss-logmanager-log4j/1.0.0.GA/jboss-logmanager-log4j-1.0.0.GA.jar"/>
+  <path value="D:/repositorio/org/rhq/helpers/rhq-pluginAnnotations/3.0.4/rhq-pluginAnnotations-3.0.4.jar"/>
+  <path value="D:/repositorio/org/jboss/as/jboss-as-controller/7.1.0.Final/jboss-as-controller-7.1.0.Final.jar"/>
+  <path value="D:/repositorio/org/jboss/as/jboss-as-transactions/7.1.0.Final/jboss-as-transactions-7.1.0.Final.jar"/>
+  <path value="D:/repositorio/org/picketbox/picketbox/4.0.6.final/picketbox-4.0.6.final.jar"/>
+  <path value="D:/repositorio/org/jboss/remoting3/jboss-remoting/3.2.2.GA/jboss-remoting-3.2.2.GA.jar"/>
+  <path value="D:/repositorio/org/jboss/as/jboss-as-embedded/7.1.0.Final/jboss-as-embedded-7.1.0.Final.jar"/>
+  <path value="D:/repositorio/org/jboss/metadata/jboss-metadata-common/7.0.0.Final/jboss-metadata-common-7.0.0.Final.jar"/>
+  <path value="D:/repositorio/org/infinispan/infinispan-client-hotrod/5.1.1.FINAL/infinispan-client-hotrod-5.1.1.FINAL.jar"/>
+  <path value="D:/repositorio/org/slf4j/slf4j-api/1.6.1/slf4j-api-1.6.1.jar"/>
+  <path value="D:/repositorio/org/jboss/jboss-ejb-client/1.0.0.Final/jboss-ejb-client-1.0.0.Final.jar"/>
+  <path value="D:/repositorio/org/jboss/as/jboss-as-threads/7.1.0.Final/jboss-as-threads-7.1.0.Final.jar"/>
+  <path value="D:/repositorio/org/jboss/xnio/xnio-api/3.0.3.GA/xnio-api-3.0.3.GA.jar"/>
+  <path value="D:/repositorio/org/jacorb/jacorb/2.3.1.jbossorg-1/jacorb-2.3.1.jbossorg-1.jar"/>
+  <path value="D:/repositorio/org/jboss/spec/javax/resource/jboss-connector-api_1.6_spec/1.0.0.Final/jboss-connector-api_1.6_spec-1.0.0.Final.jar"/>
+  <path value="D:/repositorio/org/jboss/metadata/jboss-metadata-ear/7.0.0.Final/jboss-metadata-ear-7.0.0.Final.jar"/>
+  <path value="D:/repositorio/org/jboss/as/jboss-as-domain-management/7.1.0.Final/jboss-as-domain-management-7.1.0.Final.jar"/>
+  <path value="D:/repositorio/org/jboss/as/jboss-as-ee/7.1.0.Final/jboss-as-ee-7.1.0.Final.jar"/>
+  <path value="D:/repositorio/org/jboss/as/jboss-as-clustering-infinispan/7.1.0.Final/jboss-as-clustering-infinispan-7.1.0.Final.jar"/>
+  <path value="D:/repositorio/org/jboss/jboss-remote-naming/1.0.1.Final/jboss-remote-naming-1.0.1.Final.jar"/>
+  <path value="D:/repositorio/org/infinispan/infinispan-cachestore-remote/5.1.1.FINAL/infinispan-cachestore-remote-5.1.1.FINAL.jar"/>
+  <path value="D:/repositorio/org/jboss/as/jboss-as-server/7.1.0.Final/jboss-as-server-7.1.0.Final.jar"/>
+  <path value="D:/repositorio/org/jboss/threads/jboss-threads/2.0.0.GA/jboss-threads-2.0.0.GA.jar"/>
+  <path value="D:/repositorio/org/jboss/as/jboss-as-naming/7.1.0.Final/jboss-as-naming-7.1.0.Final.jar"/>
+  <path value="D:/repositorio/org/picketbox/picketbox-infinispan/4.0.6.final/picketbox-infinispan-4.0.6.final.jar"/>
+  <path value="D:/repositorio/org/jboss/marshalling/jboss-marshalling/1.3.9.GA/jboss-marshalling-1.3.9.GA.jar"/>
+  <path value="D:/repositorio/org/jboss/jbossts/jbossjts-integration/4.16.2.Final/jbossjts-integration-4.16.2.Final.jar"/>
+  <path value="D:/repositorio/org/jboss/security/jboss-negotiation-spnego/2.2.0.SP1/jboss-negotiation-spnego-2.2.0.SP1.jar"/>
+  <path value="D:/repositorio/org/jboss/as/jboss-as-security/7.1.0.Final/jboss-as-security-7.1.0.Final.jar"/>
+  <path value="D:/repositorio/org/jboss/jboss-transaction-spi/7.0.0.Final/jboss-transaction-spi-7.0.0.Final.jar"/>
+  <path value="D:/repositorio/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.0.Final/hibernate-jpa-2.1-api-1.0.0.Final.jar"/>
+  <path value="D:/repositorio/org/jboss/invocation/jboss-invocation/1.1.1.Final/jboss-invocation-1.1.1.Final.jar"/>
+  <path value="D:/repositorio/org/picketbox/picketbox-commons/1.0.0.final/picketbox-commons-1.0.0.final.jar"/>
+  <path value="D:/repositorio/org/jboss/as/jboss-as-platform-mbean/7.1.0.Final/jboss-as-platform-mbean-7.1.0.Final.jar"/>
+  <path value="D:/repositorio/org/jboss/as/jboss-as-clustering-common/7.1.0.Final/jboss-as-clustering-common-7.1.0.Final.jar"/>
+  <path value="D:/repositorio/net/jcip/jcip-annotations/1.0/jcip-annotations-1.0.jar"/>
+  <path value="D:/repositorio/org/jboss/spec/javax/security/jacc/jboss-jacc-api_1.4_spec/1.0.1.Final/jboss-jacc-api_1.4_spec-1.0.1.Final.jar"/>
+  <path value="D:/repositorio/org/jboss/spec/javax/servlet/jboss-servlet-api_3.0_spec/1.0.0.Final/jboss-servlet-api_3.0_spec-1.0.0.Final.jar"/>
+  <path value="D:/repositorio/org/jboss/spec/javax/ejb/jboss-ejb-api_3.2_spec/1.0.0.Final/jboss-ejb-api_3.2_spec-1.0.0.Final.jar"/>
+  <path value="D:/repositorio/org/jboss/as/jboss-as-controller-client/7.1.0.Final/jboss-as-controller-client-7.1.0.Final.jar"/>
+  <path value="D:/repositorio/org/jboss/as/jboss-as-deployment-repository/7.1.0.Final/jboss-as-deployment-repository-7.1.0.Final.jar"/>
+  <path value="C:/Program Files/Java/jdk1.8.0_60/lib/tools.jar"/>
+  <path value="D:/repositorio/org/jboss/staxmapper/1.1.0.Final/staxmapper-1.1.0.Final.jar"/>
+  <path value="D:/repositorio/org/jboss/as/jboss-as-domain-http-interface/7.1.0.Final/jboss-as-domain-http-interface-7.1.0.Final.jar"/>
+  <path value="D:/repositorio/org/jboss/as/jboss-as-build-config/7.1.0.Final/jboss-as-build-config-7.1.0.Final.jar"/>
+  <path value="D:/repositorio/org/jboss/xnio/xnio-nio/3.0.3.GA/xnio-nio-3.0.3.GA.jar"/>
+  <path value="D:/repositorio/org/jboss/modules/jboss-modules/1.1.1.GA/jboss-modules-1.1.1.GA.jar"/>
+  <path value="D:/repositorio/org/jboss/stdio/jboss-stdio/1.0.1.GA/jboss-stdio-1.0.1.GA.jar"/>
+  <path value="D:/repositorio/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar"/>
+  <path value="D:/repositorio/org/jboss/jboss-vfs/3.1.0.Final/jboss-vfs-3.1.0.Final.jar"/>
+  <path value="D:/repositorio/org/jboss/as/jboss-as-clustering-jgroups/7.1.0.Final/jboss-as-clustering-jgroups-7.1.0.Final.jar"/>
+  <path value="D:/repositorio/org/jgroups/jgroups/3.0.4.Final/jgroups-3.0.4.Final.jar"/>
+ </paths>
+ <validation>
+  <el>
+   <linked-el length="35" name="%0" offset="573" path="%1"/>
+   <linked-el length="35" name="%2" offset="573" path="%1"/>
+   <linked-el length="35" name="%3" offset="573" path="%1"/>
+  </el>
+ </validation>
+ <aliases>
+  <alias path="project.build.directory" value="%0"/>
+  <alias path="project" value="%2"/>
+  <alias path="project.build" value="%3"/>
+  <alias path="/onix-modulo-librerias-servicio/pom.xml" value="%1"/>
+ </aliases>
+ <includes/>
+ <uris/>
+</kb-project>

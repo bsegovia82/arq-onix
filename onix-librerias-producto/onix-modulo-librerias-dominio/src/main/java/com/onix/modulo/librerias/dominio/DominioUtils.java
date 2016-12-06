@@ -5,7 +5,7 @@ package com.onix.modulo.librerias.dominio;
  * @author Byron Segovia
  * @version 1.0
  * 
- * <p>Clase que encapsula mÈtodos necesarios y b·sicos para el dominio en cualquier base 
+ * <p>Clase que encapsula m√©todos necesarios y b√°sicos para el dominio en cualquier base 
  * 
  * */
 
