@@ -22,11 +22,20 @@ public class FiltroNoCache implements Filter {
         HttpServletResponse res = (HttpServletResponse) response;
 
         if (!req.getRequestURI().startsWith(req.getContextPath() + ResourceHandler.RESOURCE_IDENTIFIER)) { // Skip JSF resources (CSS/JS/Images/etc)
-            res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
+        	System.out.println("***************************************************");
+    		System.out.println("LIMPIEZA DE CACHE");
+    		System.out.println("***************************************************");
+        	res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
             res.setHeader("Pragma", "no-cache"); // HTTP 1.0.
             res.setDateHeader("Expires", 0); // Proxies.
         }
-        System.out.println("Limpieza cache");
+        else
+        {
+        	System.out.println("***************************************************");
+    		System.out.println("NO SE REALIZA LA LIMPIEZA POR QUE ES UN RECURSO DE JSF");
+    		System.out.println("***************************************************");
+        }
+       
         chain.doFilter(request, response);
     }
 

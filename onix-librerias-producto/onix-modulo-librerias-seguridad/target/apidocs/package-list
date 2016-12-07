@@ -1,0 +1,4 @@
+com.onix.modulo.librerias.seguridad.loginmodule
+com.onix.modulo.librerias.seguridad.loginmodule.servicios
+com.onix.modulo.librerias.seguridad.loginmodule.servicios.jdbc
+com.onix.modulo.librerias.seguridad.loginmodule.servicios.ldap

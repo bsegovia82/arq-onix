@@ -13,6 +13,9 @@ import javax.servlet.ServletResponse;
 public class FiltroEnconding implements Filter {
 
 	public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws IOException, ServletException {
+		System.out.println("***************************************************");
+		System.out.println("CODIFICACION DE CARACTERES");
+		System.out.println("***************************************************");
 		req.setCharacterEncoding("UTF-8");
 		resp.setCharacterEncoding("UTF-8");
 		chain.doFilter(req, resp);

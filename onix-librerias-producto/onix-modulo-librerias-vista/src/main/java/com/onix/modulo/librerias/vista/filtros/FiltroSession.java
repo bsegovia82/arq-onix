@@ -21,10 +21,8 @@ import com.onix.modulo.librerias.vista.anotaciones.ITestServicioAutorizacion;
 import com.onix.modulo.librerias.vista.interfaces.IGuardiaUsuarioSession;
 import com.onix.modulo.librerias.vista.interfaces.IServicioAutorizacion;
 
-@WebFilter(dispatcherTypes = { DispatcherType.ERROR, 
-DispatcherType.REQUEST, DispatcherType.FORWARD,
-		DispatcherType.INCLUDE }, 
-		urlPatterns = { "/privadas/*" })
+@WebFilter(dispatcherTypes = { DispatcherType.ERROR, DispatcherType.REQUEST, DispatcherType.FORWARD,
+		DispatcherType.INCLUDE }, urlPatterns = { "/privadas/*" })
 public class FiltroSession implements Filter {
 
 	@Inject
@@ -41,15 +39,10 @@ public class FiltroSession implements Filter {
 	public void destroy() {
 	}
 
-	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException,
-			ServletException {
-
+	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
+			throws IOException, ServletException {
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpServletResponse res = (HttpServletResponse) response;
-		res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate, max-age=0, post-check=0, pre-check=0");
-		res.setDateHeader("Expires", 0);
-		res.setHeader("Pragma", "No-cache");
-
 		String dato = null;
 		if (req.getSession(false) != null) {
 
@@ -71,17 +64,15 @@ public class FiltroSession implements Filter {
 
 		Principal usuarioPrincipal = req.getUserPrincipal();
 		System.out.println("Filtro principal " + usuarioPrincipal);
-		if (usuarioPrincipal == null) 
-		{
+		if (usuarioPrincipal == null) {
 			System.out.println("Nadie autenticado");
 			res.sendRedirect(req.getContextPath() + IGuardiaUsuarioSession.PAGINA_LOGIN_RED);
 		} else {
 
-			if (session == null
-					|| !guardiaUsuarioSession.usuarioEnSession()
+			if (session == null || !guardiaUsuarioSession.usuarioEnSession()
 					|| (req.getMethod().toUpperCase().equals("GET")
-							&& req.getRequestURI().endsWith(IGuardiaUsuarioSession.PAGINA_PRINCIPAL) && (dato == null && !guardiaUsuarioSession
-							.validarSemilla(dato)))
+							&& req.getRequestURI().endsWith(IGuardiaUsuarioSession.PAGINA_PRINCIPAL)
+							&& (dato == null && !guardiaUsuarioSession.validarSemilla(dato)))
 
 			) {
 				System.out.println("***************************************************");
@@ -91,12 +82,15 @@ public class FiltroSession implements Filter {
 			} else {
 				System.out.println(req.getUserPrincipal());
 				String usuario = serviciosMantenimientoSeguridad.obtenerUsuarioAutenticado();
-				System.out.println("usuario en la sesion " + usuario);
 				if (usuario == null) {
+					System.out.println("***************************************************");
+					System.out.println("NO HAY USUARIO OJO");
+					System.out.println("***************************************************");
 					chain.doFilter(request, response);
 				} else {
-					
-					System.out.println(req.getRequestURI());
+					System.out.println("***************************************************");
+					System.out.println("PAGINA REQUEST " + req.getRequestURI());
+					System.out.println("***************************************************");
 					if (!req.getRequestURI().equals(req.getContextPath() + IGuardiaUsuarioSession.PAGINA_PRINCIPAL)) {
 
 						if (!(validaUsuarioOpcion(req.getRequestURI(), usuario, req.getContextPath()))) {
@@ -117,32 +111,20 @@ public class FiltroSession implements Filter {
 		}
 	}
 
-	// public void goInicio() throws Exception {
-	// FacesContext ctx = FacesContext.getCurrentInstance();
-	// ExternalContext extContext = ctx.getExternalContext();
-	// String url =
-	// extContext.encodeActionURL(ctx.getApplication().getViewHandler()
-	// .getActionURL(ctx, IGuardiaUsuarioSession.PAGINA_PRINCIPAL_RED));
-	// extContext.redirect(url);
-	// }
-
 	public boolean validaUsuarioOpcion(String url, String usuario, String contextPath) {
-
+		System.out.println("***************************************************");
+		System.out.println("VALIDACION DE AUTORIZACION DE OPCION");
+		System.out.println("USUARIO : " + usuario);
+		System.out.println("URL : " + url);
+		System.out.println("CONTEXTPATH : " + contextPath);
+		System.out.println("***************************************************");
 		return serviciosMantenimientoSeguridad.validarOpcionUsuario(url, usuario, contextPath);
-
-		// List<PriOpcione> listaOpciones =
-		// serviciosMantenimientoSeguridad.obtenerOpcionesPorUsuario(usuario);
-		// for (PriOpcione cfOpciones : listaOpciones) {
-		// if ((contextPath + cfOpciones.getAccion()).equals(url)) {
-		// return true;
-		// }
-		// }
-		//
-		// return false;
 	}
 
 	public void init(FilterConfig fConfig) throws ServletException {
-		System.out.println("Inicio de filtro");
+		System.out.println("***************************************************");
+		System.out.println("INICIO DE FILTRO CONTROL DE SESSION");
+		System.out.println("***************************************************");
 	}
 
 }

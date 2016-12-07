@@ -1,0 +1,4 @@
+com\onix\modulo\librerias\eao\GenericEAO.class
+com\onix\modulo\librerias\exceptions\ErrorValidacionGeneral.class
+com\onix\modulo\librerias\servicio\ServicioMantenimientoEntidad.class
+com\onix\modulo\librerias\exceptions\ErrorServicioNegocio.class

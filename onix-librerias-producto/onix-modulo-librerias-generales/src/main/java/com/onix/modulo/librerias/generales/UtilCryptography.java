@@ -117,7 +117,7 @@ public class UtilCryptography {
 		}*/
 		
 		
-		System.out.println(desencriptar("hzvcOSzB2/6wWLYSvdvMDA=="));
+		System.out.println(desencriptar("69097e5eb8990ec4ba95d525ae76a6a4"));
 
 		//MN1415194393126
 		

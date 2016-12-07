@@ -42,7 +42,7 @@ public class UtilEncriptarDataSource {
 	
 	public static void main(String[] args) throws Throwable
 	{
-		System.out.println(decode("69097e5eb8990ec4ba95d525ae76a6a4"));
+		System.out.println(decode("-2dd70546b2d4394b207a6df87216de44"));
 	}
 	
 }
