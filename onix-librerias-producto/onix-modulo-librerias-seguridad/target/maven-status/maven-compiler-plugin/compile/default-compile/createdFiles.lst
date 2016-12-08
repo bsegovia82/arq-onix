@@ -1,4 +1,4 @@
-com\onix\modulo\librerias\seguridad\loginmodule\servicios\jdbc\ServicioLoginModuleJDBC.class
-com\onix\modulo\librerias\seguridad\loginmodule\servicios\ldap\ServiciosLoginModuleLdap.class
 com\onix\modulo\librerias\seguridad\loginmodule\servicios\IServiciosLoginModule.class
+com\onix\modulo\librerias\seguridad\loginmodule\servicios\jdbc\ServicioLoginModuleJDBC.class
 com\onix\modulo\librerias\seguridad\loginmodule\LoginModuleWildFly.class
+com\onix\modulo\librerias\seguridad\loginmodule\servicios\ldap\ServiciosLoginModuleLdap.class
