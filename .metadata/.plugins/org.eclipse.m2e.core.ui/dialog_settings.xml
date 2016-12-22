@@ -8,8 +8,10 @@
 		<list key="ciManagementSystem">
 		</list>
 		<list key="issueManagementSystem">
+			<item value="GitHub Issues"/>
 		</list>
 		<list key="issueManagementUrl">
+			<item value="https://github.com/bsegovia82/arq-onix/issues"/>
 		</list>
 	</section>
 </section>

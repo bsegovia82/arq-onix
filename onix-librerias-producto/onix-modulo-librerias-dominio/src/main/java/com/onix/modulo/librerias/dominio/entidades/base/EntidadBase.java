@@ -23,6 +23,12 @@ public abstract class EntidadBase<Id extends Serializable> implements IEntidadPe
 
 	protected String estado;
 
+	@Override
+	public void setId(Id pId) {
+		id = pId;
+		
+	}
+	
 	@Column(name = "ESTADO", length = 1)
 	public String getEstado() {
 		return estado;
@@ -38,7 +44,4 @@ public abstract class EntidadBase<Id extends Serializable> implements IEntidadPe
 		hash += (getId() != null ? getId().hashCode() : 0);
 		return hash;
 	}
-
-	
-
 }
