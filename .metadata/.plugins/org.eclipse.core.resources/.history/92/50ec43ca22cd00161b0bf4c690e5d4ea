@@ -1,0 +1,6 @@
+package com.onix.modulo.librerias.vista.beans;
+
+public enum NombresEtiquetas {
+	TITULO_PAGINA, TABLAVACIA, DESCRIPCIONPAGINA, AYUDAPAGINA, TAB, CABECERA_TABLA, CABECERA_DIALOGO, CABECERA_PANEL_DIALOGO
+
+}

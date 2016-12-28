@@ -1,0 +1,8 @@
+package com.onix.modulo.librerias.vista.beans;
+
+public enum NombresEtiquetas 
+{
+
+	
+	
+}

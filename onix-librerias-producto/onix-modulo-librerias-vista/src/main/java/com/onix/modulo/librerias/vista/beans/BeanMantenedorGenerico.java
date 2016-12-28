@@ -38,6 +38,8 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 
 	protected ENTIDAD entidadSelecionable;
 
+	protected HashMap<String, String> listaEtiquetasPantalla;
+
 	private List<ENTIDAD> listaEntidades;
 
 	private Class<ENTIDAD> clase;
@@ -49,6 +51,7 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 	public static final String PRESENTAR_DIALOGO = "show";
 
 	public static final String OCULTAR_DIALOGO = "hide";
+
 	/**
 	 * 
 	 */
@@ -80,14 +83,14 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 		try {
 			listaEntidades = getServicioMantenedor().listaObjetos(clase, true);
 			nombreAtributoCambioEstado = "ENTIDAD_CAMBIAR";
+			listaEtiquetasPantalla = new HashMap<>();
 			metodoPostConstruct();
+			cargarListaEtiquetas();
 		} catch (Throwable e) {
 			listaEntidades = new ArrayList<ENTIDAD>();
 			e.printStackTrace();
 		}
 	}
-
-	protected abstract void metodoPostConstruct();
 
 	protected FacesContext getContext() {
 		return JsfUtil.getContextoJSF();
@@ -126,12 +129,10 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 		return JsfUtil.isAutenticado();
 	}
 
-	public String usuarioAutenticado ()
-	{
+	public String usuarioAutenticado() {
 		return JsfUtil.getUsuarioAutenticado().getName();
 	}
-	
-	
+
 	private Object getExpresion(String expression) {
 		FacesContext ctx = getContext();
 		ExpressionFactory factory = ctx.getApplication().getExpressionFactory();
@@ -200,8 +201,7 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 		this.entidadSelecionable = entidadSelecionable;
 	}
 
-	public void guardarOActualizar(boolean presentarMensaje)
-	{
+	public void guardarOActualizar(boolean presentarMensaje) {
 		try {
 			validacionesIngreso();
 			try {
@@ -213,77 +213,53 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 			accionesPreTransaccionServicio();
 			getServicioMantenedor().guardarActualizar(entidadRegistrar);
 			metodoPostTransaccion();
-			if (presentarMensaje)
-			{
+			if (presentarMensaje) {
 				addMensaje(JsfUtil.MENSAJE_INFO_OPERACION);
 			}
 		} catch (ErrorValidacionVisual e1) {
 			e1.printStackTrace();
 			if (presentarMensaje)
-			addError(e1.getMensajeUsuario());
+				addError(e1.getMensajeUsuario());
 			System.out.println("Error validaciones visuales, no borrar nada");
 		} catch (ErrorNoAutenticacion e1) {
 			e1.printStackTrace();
 			if (presentarMensaje)
-			addError(e1.getMensajeUsuario());
+				addError(e1.getMensajeUsuario());
 			System.out.println("Error usuario no autenticado, hay que hacer algo");
 		} catch (ErrorAccionesPreTransaccion e1) {
 			e1.printStackTrace();
 			if (presentarMensaje)
-			addError(e1.getMensajeUsuario());
+				addError(e1.getMensajeUsuario());
 			System.out.println("Error acciones pre transaccion");
 
 		} catch (ErrorServicioNegocio e1) {
 			e1.printStackTrace();
 			metodoPostErrorTransaccion();
 			if (presentarMensaje)
-			addError(e1.getMessage());
+				addError(e1.getMessage());
 		} catch (ErrorValidacionGeneral e2) {
 			e2.printStackTrace();
 			metodoPostErrorTransaccion();
 			if (presentarMensaje)
-			addError(e2.getMessage());
+				addError(e2.getMessage());
 		} catch (Throwable e) {
 			e.printStackTrace();
 			metodoPostErrorTransaccion();
 			if (presentarMensaje)
-			addError(JsfUtil.MENSAJE_ERROR_OPERACION);
+				addError(JsfUtil.MENSAJE_ERROR_OPERACION);
 		}
 
 	}
-	
-	public void guardarOActualizar() 
-	{
+
+	public void guardarOActualizar() {
 		guardarOActualizar(true);
 	}
-
-	public abstract void accionesPreTransaccionServicio() throws ErrorAccionesPreTransaccion;
-
-	protected abstract void metodoPostErrorTransaccion();
 
 	protected void metodoPostTransaccion() {
 		// ordenada por fecha de registro
 		listaEntidades = getServicioMantenedor().listaObjetos(clase, true);
 
 	}
-
-	protected abstract void validacionesIngreso() throws ErrorValidacionVisual;
-
-	public abstract String getTituloPagina();
-
-	public abstract String getMensajeTablaVacia();
-
-	public abstract String getDescripcionPagina();
-
-	public abstract String getAyudaPagina();
-
-	public abstract String getTab();
-
-	public abstract String getCabeceraTabla();
-
-	public abstract String getCabeceraDialogo();
-
-	public abstract String getCabeceraPanelDialogo();
 
 	public String getEstadoActivo() {
 		return GenericEAO.ESTADO_ACTIVO;
@@ -293,26 +269,18 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 		return GenericEAO.ESTADO_INACTIVO;
 	}
 
-	protected abstract SERVICIO getServicioMantenedor();
-
-	public void actualizarEntidad(ActionEvent evento){
+	public void actualizarEntidad(ActionEvent evento) {
 		entidadRegistrar = (ENTIDAD) evento.getComponent().getAttributes().get(nombreAtributoCambioEstado);
 		postSeleccionRegistro(entidadRegistrar);
 		actualizarComponenteVisual("dialogoMantenimiento");
 		presentarDialogo("dialogoMantenimiento");
 	}
-	
-	
-	
+
 	public void actualizarEntidadFormulario(ActionEvent evento) {
 		entidadRegistrar = (ENTIDAD) evento.getComponent().getAttributes().get(nombreAtributoCambioEstado);
 		postSeleccionRegistro(entidadRegistrar);
-		//actualizarComponenteVisual("dialogoMantenimiento");
-		//presentarDialogo("dialogoMantenimiento");
 
 	}
-
-	protected abstract void postSeleccionRegistro(ENTIDAD entidadRegistrar2);
 
 	public void cambiarEstado(ActionEvent evento) {
 		entidadSelecionable = (ENTIDAD) evento.getComponent().getAttributes().get(nombreAtributoCambioEstado);
@@ -336,10 +304,9 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 		metodoPostTransaccion();
 	}
 
-	public String getNombreAtributoCambioEstado() 
-	{
+	public String getNombreAtributoCambioEstado() {
 		return nombreAtributoCambioEstado;
-	}   
+	}
 
 	private void ejecutarComponenteVisual(String funcionEjecutar) {
 		RequestContext rc = RequestContext.getCurrentInstance();
@@ -367,6 +334,64 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 		rc.update(prepararComandoActualizarComponente(idComponente));
 	}
 
+	// ********************************
+	// Desde aqui se consultan las etieutas
+	// ********************************
+	public String getTituloPagina()
+	{
+		String lTitulo =  listaEtiquetasPantalla.get(NombresEtiquetas.TITULOPAGINA);
+		return lTitulo==null?"":lTitulo;
+	}
+	public String getMensajeTablaVacia()
+	{
+		String lTablaVacia =  listaEtiquetasPantalla.get(NombresEtiquetas.TABLAVACIA);
+		return lTablaVacia==null?"":lTablaVacia;
+	}
+	public String getDescripcionPagina()
+	{
+		String lDescripcionPagina =  listaEtiquetasPantalla.get(NombresEtiquetas.DESCRIPCIONPAGINA);
+		return lDescripcionPagina==null?"":lDescripcionPagina;
+	}
+	public String getAyudaPagina()
+	{
+		String lAyudaPagina =  listaEtiquetasPantalla.get(NombresEtiquetas.AYUDAPAGINA);
+		return lAyudaPagina==null?"":lAyudaPagina;
+	}
+	public String getTab()
+	{
+		String lTab =  listaEtiquetasPantalla.get(NombresEtiquetas.TAB);
+		return lTab==null?"":lTab;
+	}
+	public String getCabeceraTabla(){
+		String lCabeceraTabla =  listaEtiquetasPantalla.get(NombresEtiquetas.CABECERATABLA);
+		return lCabeceraTabla==null?"":lCabeceraTabla;
+	}
+	public String getCabeceraDialogo(){
+		String lCabeceraDialogo =  listaEtiquetasPantalla.get(NombresEtiquetas.CABECERADIALOGO);
+		return lCabeceraDialogo==null?"":lCabeceraDialogo;
+	}
 	
+	public String getCabeceraPanelDialogo()
+	{
+		String lCabeceraPanelDialogo =  listaEtiquetasPantalla.get(NombresEtiquetas.CABECERAPANELDIALOGO);
+		return lCabeceraPanelDialogo==null?"":lCabeceraPanelDialogo;
+	}
 	
+	//***********************************************
+	//Metodos abtractos para la inicializacion
+	//***********************************************
+	protected abstract void cargarListaEtiquetas();
+	protected abstract void metodoPostConstruct();
+	
+	//**********************************
+	//Metodos para las transacciones
+	//**********************************
+	protected abstract void validacionesIngreso() throws ErrorValidacionVisual;
+	protected abstract void accionesPreTransaccionServicio() throws ErrorAccionesPreTransaccion;
+	protected abstract void metodoPostErrorTransaccion();
+	protected abstract SERVICIO getServicioMantenedor();
+	protected abstract void postSeleccionRegistro(ENTIDAD pEntidadSeleccionada);
+
+
+
 }
