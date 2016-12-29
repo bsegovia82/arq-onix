@@ -1,6 +1,7 @@
 com.onix.modulo.librerias.vista
 com.onix.modulo.librerias.vista.anotaciones
 com.onix.modulo.librerias.vista.beans
+com.onix.modulo.librerias.vista.beans.oyentes
 com.onix.modulo.librerias.vista.exceptions
 com.onix.modulo.librerias.vista.filtros
 com.onix.modulo.librerias.vista.interfaces

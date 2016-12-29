@@ -2,6 +2,7 @@ com\onix\modulo\librerias\vista\interfaces\IGuardiaUsuarioSession.class
 com\onix\modulo\librerias\vista\interfaces\IServiciosAutenticacion.class
 com\onix\modulo\librerias\vista\beans\NombresEtiquetas.class
 com\onix\modulo\librerias\vista\filtros\FiltroNoCache.class
+com\onix\modulo\librerias\vista\beans\oyentes\PostSeleccionEntidadListener.class
 com\onix\modulo\librerias\vista\filtros\FiltroSession.class
 com\onix\modulo\librerias\vista\beans\ManagedBeanGenerico.class
 com\onix\modulo\librerias\vista\anotaciones\ITestCierreSession.class
@@ -12,13 +13,16 @@ com\onix\modulo\librerias\vista\interfaces\IParseMenu.class
 com\onix\modulo\librerias\vista\interfaces\IServicioAutorizacion.class
 com\onix\modulo\librerias\vista\anotaciones\ITestServicioMenuOpcionesHorizontal.class
 com\onix\modulo\librerias\vista\anotaciones\ITestUsuarioSession.class
+com\onix\modulo\librerias\vista\beans\oyentes\PostErrorTransaccionListener.class
 com\onix\modulo\librerias\vista\interfaces\IUsuarioSession.class
 com\onix\modulo\librerias\vista\exceptions\ErrorValidacionVisual.class
 com\onix\modulo\librerias\vista\exceptions\ErrorAccionesPreTransaccion.class
 com\onix\modulo\librerias\vista\interfaces\IServiciosMenu.class
 com\onix\modulo\librerias\vista\anotaciones\ITestGuardiaSession.class
+com\onix\modulo\librerias\vista\beans\oyentes\PreTransaccionListener.class
 com\onix\modulo\librerias\vista\interfaces\IBeanCentral.class
 com\onix\modulo\librerias\vista\anotaciones\ITestBeanCentral.class
+com\onix\modulo\librerias\vista\beans\oyentes\ValidadorIngresoDatosListener.class
 com\onix\modulo\librerias\vista\anotaciones\ITestServicioMenuOpcionesVertical.class
 com\onix\modulo\librerias\vista\JsfUtil.class
 com\onix\modulo\librerias\vista\anotaciones\ITestServicioAutorizacion.class

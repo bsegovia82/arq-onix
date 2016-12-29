@@ -1,0 +1,11 @@
+package com.onix.modulo.librerias.vista.beans.oyentes;
+
+import com.onix.modulo.librerias.dominio.entidades.base.EntidadBaseAuditable;
+
+@FunctionalInterface
+public interface PostSeleccionEntidadListener<ENTIDAD extends EntidadBaseAuditable<Id>>
+{
+
+	public void postSeleccionRegistro(Object pEntidadSeleccionada);
+	
+}

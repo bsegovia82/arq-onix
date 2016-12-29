@@ -26,6 +26,10 @@ import com.onix.modulo.librerias.exceptions.ErrorServicioNegocio;
 import com.onix.modulo.librerias.exceptions.ErrorValidacionGeneral;
 import com.onix.modulo.librerias.servicio.ServicioMantenimientoEntidad;
 import com.onix.modulo.librerias.vista.JsfUtil;
+import com.onix.modulo.librerias.vista.beans.oyentes.PostSeleccionEntidadListener;
+import com.onix.modulo.librerias.vista.beans.oyentes.PostErrorTransaccionListener;
+import com.onix.modulo.librerias.vista.beans.oyentes.PreTransaccionListener;
+import com.onix.modulo.librerias.vista.beans.oyentes.ValidadorIngresoDatosListener;
 import com.onix.modulo.librerias.vista.exceptions.ErrorAccionesPreTransaccion;
 import com.onix.modulo.librerias.vista.exceptions.ErrorNoAutenticacion;
 import com.onix.modulo.librerias.vista.exceptions.ErrorValidacionVisual;
@@ -39,6 +43,11 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 	protected ENTIDAD entidadSelecionable;
 
 	protected HashMap<String, String> listaEtiquetasPantalla;
+
+	private PostSeleccionEntidadListener<ENTIDAD, Id> lPostSeleccionEntidad;
+	private PostErrorTransaccionListener lPostErrorTransaccion;
+	private PreTransaccionListener lPreTransaccionLister;
+	private ValidadorIngresoDatosListener lValidadorIngreso;
 
 	private List<ENTIDAD> listaEntidades;
 
@@ -57,6 +66,11 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 	 */
 	private static final long serialVersionUID = 1L;
 
+	protected BeanMantenedorGenerico(ENTIDAD entidad, Class<ENTIDAD> entidadClase) {
+		entidadRegistrar = entidad;
+		clase = entidadClase;
+	}
+	
 	public ENTIDAD getEntidadRegistrar() {
 		return entidadRegistrar;
 	}
@@ -73,10 +87,7 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 		this.listaEntidades = listaEntidades;
 	}
 
-	protected BeanMantenedorGenerico(ENTIDAD entidad, Class<ENTIDAD> entidadClase) {
-		entidadRegistrar = entidad;
-		clase = entidadClase;
-	}
+	
 
 	@PostConstruct
 	protected void init() {
@@ -175,10 +186,9 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 		System.out.println("Error Handler");
 		e2.printStackTrace();
 		String errorNameAjax = e2.getMessage();
-		String errorMsgAjax = e2.toString();
-		for (StackTraceElement err : e2.getStackTrace()) {
+		String errorMsgAjax = "" + e2;
+		for (StackTraceElement err : e2.getStackTrace())
 			errorMsgAjax = errorMsgAjax + "\n" + err.toString();
-		}
 		String[] resultado = new String[3];
 		resultado[0] = errorNameAjax;
 		resultado[1] = errorMsgAjax;
@@ -213,9 +223,8 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 			accionesPreTransaccionServicio();
 			getServicioMantenedor().guardarActualizar(entidadRegistrar);
 			metodoPostTransaccion();
-			if (presentarMensaje) {
+			if (presentarMensaje)
 				addMensaje(JsfUtil.MENSAJE_INFO_OPERACION);
-			}
 		} catch (ErrorValidacionVisual e1) {
 			e1.printStackTrace();
 			if (presentarMensaje)
@@ -256,7 +265,6 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 	}
 
 	protected void metodoPostTransaccion() {
-		// ordenada por fecha de registro
 		listaEntidades = getServicioMantenedor().listaObjetos(clase, true);
 
 	}
@@ -269,25 +277,28 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 		return GenericEAO.ESTADO_INACTIVO;
 	}
 
+	@SuppressWarnings("unchecked")
 	public void actualizarEntidad(ActionEvent evento) {
 		entidadRegistrar = (ENTIDAD) evento.getComponent().getAttributes().get(nombreAtributoCambioEstado);
 		postSeleccionRegistro(entidadRegistrar);
 		actualizarComponenteVisual("dialogoMantenimiento");
 		presentarDialogo("dialogoMantenimiento");
 	}
-
+	
+	@SuppressWarnings("unchecked")
 	public void actualizarEntidadFormulario(ActionEvent evento) {
 		entidadRegistrar = (ENTIDAD) evento.getComponent().getAttributes().get(nombreAtributoCambioEstado);
 		postSeleccionRegistro(entidadRegistrar);
 
 	}
 
+	@SuppressWarnings("unchecked")
 	public void cambiarEstado(ActionEvent evento) {
 		entidadSelecionable = (ENTIDAD) evento.getComponent().getAttributes().get(nombreAtributoCambioEstado);
 		try {
-			entidadSelecionable.setEstado(entidadSelecionable.getEstado().equals(GenericEAO.ESTADO_ACTIVO)
-					? GenericEAO.ESTADO_INACTIVO : GenericEAO.ESTADO_ACTIVO);
-		} catch (NullPointerException e) {
+			entidadSelecionable.setEstado(!entidadSelecionable.getEstado().equals(GenericEAO.ESTADO_ACTIVO) ? GenericEAO.ESTADO_ACTIVO
+					: GenericEAO.ESTADO_INACTIVO);
+		} catch (Exception e) {
 			entidadSelecionable.setEstado(GenericEAO.ESTADO_ACTIVO);
 			addMensajeAdvertencia("No se encontró un estado registrado, se procede a activar el registro");
 		}
@@ -309,8 +320,7 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 	}
 
 	private void ejecutarComponenteVisual(String funcionEjecutar) {
-		RequestContext rc = RequestContext.getCurrentInstance();
-		rc.execute(funcionEjecutar);
+		RequestContext.getCurrentInstance().execute(funcionEjecutar);
 	}
 
 	private String prepararComandoDialogo(String nombreDialogo, String accion) {
@@ -325,73 +335,127 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 		ejecutarComponenteVisual(prepararComandoDialogo(nombreDialogo, OCULTAR_DIALOGO));
 	}
 
+	@SuppressWarnings("el-syntax")
 	private String prepararComandoActualizarComponente(String idComponente) {
-		return ":#{p:component('" + idComponente + "')}";
+		StringBuilder stringBuilder = new StringBuilder();
+		stringBuilder.append(":#{p:component('");
+		stringBuilder.append(idComponente);
+		stringBuilder.append("')}");
+		return stringBuilder.toString();
 	}
 
 	public void actualizarComponenteVisual(String idComponente) {
-		RequestContext rc = RequestContext.getCurrentInstance();
-		rc.update(prepararComandoActualizarComponente(idComponente));
+		RequestContext.getCurrentInstance().update(prepararComandoActualizarComponente(idComponente));
 	}
 
 	// ********************************
 	// Desde aqui se consultan las etieutas
 	// ********************************
-	public String getTituloPagina()
-	{
-		String lTitulo =  listaEtiquetasPantalla.get(NombresEtiquetas.TITULOPAGINA);
-		return lTitulo==null?"":lTitulo;
+	public String getTituloPagina() {
+		String lTitulo = listaEtiquetasPantalla.get(NombresEtiquetas.TITULOPAGINA);
+		return lTitulo == null ? "" : lTitulo;
 	}
-	public String getMensajeTablaVacia()
-	{
-		String lTablaVacia =  listaEtiquetasPantalla.get(NombresEtiquetas.TABLAVACIA);
-		return lTablaVacia==null?"":lTablaVacia;
+
+	public String getMensajeTablaVacia() {
+		String lTablaVacia = listaEtiquetasPantalla.get(NombresEtiquetas.TABLAVACIA);
+		return lTablaVacia == null ? "" : lTablaVacia;
 	}
-	public String getDescripcionPagina()
-	{
-		String lDescripcionPagina =  listaEtiquetasPantalla.get(NombresEtiquetas.DESCRIPCIONPAGINA);
-		return lDescripcionPagina==null?"":lDescripcionPagina;
+
+	public String getDescripcionPagina() {
+		String lDescripcionPagina = listaEtiquetasPantalla.get(NombresEtiquetas.DESCRIPCIONPAGINA);
+		return lDescripcionPagina == null ? "" : lDescripcionPagina;
 	}
-	public String getAyudaPagina()
-	{
-		String lAyudaPagina =  listaEtiquetasPantalla.get(NombresEtiquetas.AYUDAPAGINA);
-		return lAyudaPagina==null?"":lAyudaPagina;
+
+	public String getAyudaPagina() {
+		String lAyudaPagina = listaEtiquetasPantalla.get(NombresEtiquetas.AYUDAPAGINA);
+		return lAyudaPagina == null ? "" : lAyudaPagina;
 	}
-	public String getTab()
-	{
-		String lTab =  listaEtiquetasPantalla.get(NombresEtiquetas.TAB);
-		return lTab==null?"":lTab;
+
+	public String getTab() {
+		String lTab = listaEtiquetasPantalla.get(NombresEtiquetas.TAB);
+		return lTab == null ? "" : lTab;
 	}
-	public String getCabeceraTabla(){
-		String lCabeceraTabla =  listaEtiquetasPantalla.get(NombresEtiquetas.CABECERATABLA);
-		return lCabeceraTabla==null?"":lCabeceraTabla;
+
+	public String getCabeceraTabla() {
+		String lCabeceraTabla = listaEtiquetasPantalla.get(NombresEtiquetas.CABECERATABLA);
+		return lCabeceraTabla == null ? "" : lCabeceraTabla;
 	}
-	public String getCabeceraDialogo(){
-		String lCabeceraDialogo =  listaEtiquetasPantalla.get(NombresEtiquetas.CABECERADIALOGO);
-		return lCabeceraDialogo==null?"":lCabeceraDialogo;
+
+	public String getCabeceraDialogo() {
+		String lCabeceraDialogo = listaEtiquetasPantalla.get(NombresEtiquetas.CABECERADIALOGO);
+		return lCabeceraDialogo == null ? "" : lCabeceraDialogo;
 	}
-	
-	public String getCabeceraPanelDialogo()
-	{
-		String lCabeceraPanelDialogo =  listaEtiquetasPantalla.get(NombresEtiquetas.CABECERAPANELDIALOGO);
-		return lCabeceraPanelDialogo==null?"":lCabeceraPanelDialogo;
+
+	public String getCabeceraPanelDialogo() {
+		String lCabeceraPanelDialogo = listaEtiquetasPantalla.get(NombresEtiquetas.CABECERAPANELDIALOGO);
+		return lCabeceraPanelDialogo == null ? "" : lCabeceraPanelDialogo;
 	}
-	
-	//***********************************************
-	//Metodos abtractos para la inicializacion
-	//***********************************************
+
+	// ***********************************************
+	// Metodos abtractos para la inicializacion
+	// ***********************************************
 	protected abstract void cargarListaEtiquetas();
+
 	protected abstract void metodoPostConstruct();
-	
-	//**********************************
-	//Metodos para las transacciones
-	//**********************************
-	protected abstract void validacionesIngreso() throws ErrorValidacionVisual;
-	protected abstract void accionesPreTransaccionServicio() throws ErrorAccionesPreTransaccion;
-	protected abstract void metodoPostErrorTransaccion();
+
+	// **********************************
+	// Metodos para las transacciones
+	// **********************************
+	// Validacion de ingreso se debe
 	protected abstract SERVICIO getServicioMantenedor();
-	protected abstract void postSeleccionRegistro(ENTIDAD pEntidadSeleccionada);
 
+	protected void validacionesIngreso() throws ErrorValidacionVisual {
+		if (lValidadorIngreso != null)
+			lValidadorIngreso.validarDatosIngreso();
+		else
+			System.out.println("NO EXISTE LISTENER REGISTRADO PARA LA VALIDACION DE INGRESO "
+					+ this.getClass().getCanonicalName());
+	}
+	
+	public void addValidacionListener(ValidadorIngresoDatosListener pValidadorListener)
+	{
+		lValidadorIngreso = pValidadorListener;
+	}
+	
+	
 
+	protected void accionesPreTransaccionServicio() throws ErrorAccionesPreTransaccion {
+		if (lPreTransaccionLister != null)
+			lPreTransaccionLister.accionPreTransaccion();
+		else
+			System.out.println(
+					"NO EXISTE LISTENER REGISTRADO PARA LA PRE TRANSACCION " + this.getClass().getCanonicalName());
+	}
+	
+	public void addPreTransaccionServicioListener(PreTransaccionListener pPreTransaccionListener)
+	{
+		lPreTransaccionLister = pPreTransaccionListener;
+	}
+
+	protected void metodoPostErrorTransaccion() {
+		if (lPostErrorTransaccion != null)
+			lPostErrorTransaccion.accionPostTransaccion();
+		else
+			System.out.println("NO EXISTE LISTENER REGISTRADO PARA LA POST ERROR TRANSACCION "
+					+ this.getClass().getCanonicalName());
+	}
+
+	public void addPostErrorTransaccionListener(PostErrorTransaccionListener pPostErrorTransaccionListener)
+	{
+		lPostErrorTransaccion = pPostErrorTransaccionListener;
+	}
+
+	protected void postSeleccionRegistro(ENTIDAD pEntidadSeleccionada) {
+		if (lPostSeleccionEntidad != null)
+			lPostSeleccionEntidad.postSeleccionRegistro(pEntidadSeleccionada);
+		else
+			System.out.println("NO EXISTE LISTENER REGISTRADO PARA LA POST SELECCION REGISTRO "
+					+ this.getClass().getCanonicalName());
+	}
+	
+	public void addPostSeleccionRegistroListener(PostSeleccionEntidadListener<ENTIDAD, Id> pPostSeleccionEntidadListener)
+	{
+		lPostSeleccionEntidad = pPostSeleccionEntidadListener;
+	}
 
 }

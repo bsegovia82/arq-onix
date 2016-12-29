@@ -1,1 +1,14 @@
 1482945450861	Rename local variable 'entidadRegistrar2'
+1483011267129	Rename type 'PostTransaccion'
+1483011336939	Copy compilation unit
+1483011339204	Copy compilation unit
+1483011341292	Copy compilation unit
+1483011383358	Rename type 'ValidadorIngresoDatosListener2'
+1483011399460	Rename type 'ValidadorIngresoDatosListener3'
+1483011418114	Rename type 'ValidadorIngresoDatosListener4'
+1483011426450	Rename type 'PostSeleccionListener'
+1483011435922	Rename type 'PostSeleccionEntifadListener'
+1483024237630	Rename type 'PostTransaccionListener'
+1483026616799	Rename local variable 'rc'
+1483026626452	Rename local variable 'lRequestContest'
+1483026715368	Rename local variable 'rc'
