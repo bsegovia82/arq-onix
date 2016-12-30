@@ -406,6 +406,11 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 			System.out.println("NO EXISTE LISTENER REGISTRADO PARA EL METODO POST CONSTRUCT "
 					+ this.getClass().getCanonicalName());
 	}
+	
+	protected void addPostConstructuListener(PostConstructListener pPostConstruct)
+	{
+		lPostConstruct = pPostConstruct;
+	}
 
 	// **********************************
 	// Metodos para las transacciones
@@ -421,7 +426,7 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 					+ this.getClass().getCanonicalName());
 	}
 	
-	public void addValidacionListener(ValidadorIngresoDatosListener pValidadorListener)
+	protected void addValidacionListener(ValidadorIngresoDatosListener pValidadorListener)
 	{
 		lValidadorIngreso = pValidadorListener;
 	}
@@ -436,7 +441,7 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 					"NO EXISTE LISTENER REGISTRADO PARA LA PRE TRANSACCION " + this.getClass().getCanonicalName());
 	}
 	
-	public void addPreTransaccionServicioListener(PreTransaccionListener pPreTransaccionListener)
+	protected void addPreTransaccionServicioListener(PreTransaccionListener pPreTransaccionListener)
 	{
 		lPreTransaccionLister = pPreTransaccionListener;
 	}
@@ -449,7 +454,7 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 					+ this.getClass().getCanonicalName());
 	}
 
-	public void addPostErrorTransaccionListener(PostErrorTransaccionListener pPostErrorTransaccionListener)
+	protected void addPostErrorTransaccionListener(PostErrorTransaccionListener pPostErrorTransaccionListener)
 	{
 		lPostErrorTransaccion = pPostErrorTransaccionListener;
 	}
@@ -462,7 +467,7 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 					+ this.getClass().getCanonicalName());
 	}
 	
-	public void addPostSeleccionRegistroListener(PostSeleccionEntidadListener<ENTIDAD, Id> pPostSeleccionEntidadListener)
+	protected void addPostSeleccionRegistroListener(PostSeleccionEntidadListener<ENTIDAD, Id> pPostSeleccionEntidadListener)
 	{
 		lPostSeleccionEntidad = pPostSeleccionEntidadListener;
 	}
