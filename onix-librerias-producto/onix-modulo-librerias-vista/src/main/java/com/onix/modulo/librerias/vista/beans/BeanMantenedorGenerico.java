@@ -27,6 +27,7 @@ import com.onix.modulo.librerias.exceptions.ErrorValidacionGeneral;
 import com.onix.modulo.librerias.servicio.ServicioMantenimientoEntidad;
 import com.onix.modulo.librerias.vista.JsfUtil;
 import com.onix.modulo.librerias.vista.beans.oyentes.PostSeleccionEntidadListener;
+import com.onix.modulo.librerias.vista.beans.oyentes.PostConstructListener;
 import com.onix.modulo.librerias.vista.beans.oyentes.PostErrorTransaccionListener;
 import com.onix.modulo.librerias.vista.beans.oyentes.PreTransaccionListener;
 import com.onix.modulo.librerias.vista.beans.oyentes.ValidadorIngresoDatosListener;
@@ -48,7 +49,8 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 	private PostErrorTransaccionListener lPostErrorTransaccion;
 	private PreTransaccionListener lPreTransaccionLister;
 	private ValidadorIngresoDatosListener lValidadorIngreso;
-
+	private PostConstructListener lPostConstruct;
+	
 	private List<ENTIDAD> listaEntidades;
 
 	private Class<ENTIDAD> clase;
@@ -396,7 +398,14 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 	// ***********************************************
 	protected abstract void cargarListaEtiquetas();
 
-	protected abstract void metodoPostConstruct();
+	protected void metodoPostConstruct()
+	{
+		if (lPostConstruct != null)
+			lPostConstruct.metodoPostConstruct();
+		else
+			System.out.println("NO EXISTE LISTENER REGISTRADO PARA EL METODO POST CONSTRUCT "
+					+ this.getClass().getCanonicalName());
+	}
 
 	// **********************************
 	// Metodos para las transacciones
