@@ -1,0 +1,7 @@
+package com.onix.modulo.librerias.vista.beans.oyentes;
+
+public interface PostTransaccionListener {
+
+	public void metodoPostTransaccion();
+	
+}

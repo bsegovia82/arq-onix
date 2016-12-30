@@ -9,6 +9,7 @@ com\onix\modulo\librerias\vista\anotaciones\ITestCierreSession.class
 com\onix\modulo\librerias\vista\anotaciones\ITestParseMenu.class
 com\onix\modulo\librerias\vista\beans\BeanMantenedorGenerico.class
 com\onix\modulo\librerias\vista\beans\oyentes\PostConstructListener.class
+com\onix\modulo\librerias\vista\beans\oyentes\PostTransaccionListener.class
 com\onix\modulo\librerias\vista\JsfUtil$2.class
 com\onix\modulo\librerias\vista\interfaces\IParseMenu.class
 com\onix\modulo\librerias\vista\interfaces\IServicioAutorizacion.class

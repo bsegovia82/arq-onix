@@ -2,6 +2,7 @@ D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-vista\src\main
 D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-vista\src\main\java\com\onix\modulo\librerias\vista\filtros\FiltroSession.java
 D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-vista\src\main\java\com\onix\modulo\librerias\vista\anotaciones\ITestCierreSession.java
 D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-vista\src\main\java\com\onix\modulo\librerias\vista\anotaciones\ITestServicioAutorizacion.java
+D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-vista\src\main\java\com\onix\modulo\librerias\vista\beans\oyentes\PostTransaccionListener.java
 D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-vista\src\main\java\com\onix\modulo\librerias\vista\beans\ManagedBeanGenerico.java
 D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-vista\src\main\java\com\onix\modulo\librerias\vista\interfaces\IGuardiaUsuarioSession.java
 D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-vista\src\main\java\com\onix\modulo\librerias\vista\filtros\FiltroNoCache.java

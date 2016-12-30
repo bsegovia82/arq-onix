@@ -27,6 +27,7 @@ import com.onix.modulo.librerias.exceptions.ErrorValidacionGeneral;
 import com.onix.modulo.librerias.servicio.ServicioMantenimientoEntidad;
 import com.onix.modulo.librerias.vista.JsfUtil;
 import com.onix.modulo.librerias.vista.beans.oyentes.PostSeleccionEntidadListener;
+import com.onix.modulo.librerias.vista.beans.oyentes.PostTransaccionListener;
 import com.onix.modulo.librerias.vista.beans.oyentes.PostConstructListener;
 import com.onix.modulo.librerias.vista.beans.oyentes.PostErrorTransaccionListener;
 import com.onix.modulo.librerias.vista.beans.oyentes.PreTransaccionListener;
@@ -50,6 +51,7 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 	private PreTransaccionListener lPreTransaccionLister;
 	private ValidadorIngresoDatosListener lValidadorIngreso;
 	private PostConstructListener lPostConstruct;
+	private PostTransaccionListener lPostTransaccion;
 	
 	private List<ENTIDAD> listaEntidades;
 
@@ -268,7 +270,12 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 
 	protected void metodoPostTransaccion() {
 		listaEntidades = getServicioMantenedor().listaObjetos(clase, true);
-
+		
+		if (lPostTransaccion != null)
+			lPostTransaccion.metodoPostTransaccion();
+		else
+			System.out.println("NO EXISTE LISTENER REGISTRADO PARA LA POST TRANSACCION "
+					+ this.getClass().getCanonicalName());
 	}
 
 	public String getEstadoActivo() {
@@ -470,6 +477,11 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 	protected void addPostSeleccionRegistroListener(PostSeleccionEntidadListener<ENTIDAD, Id> pPostSeleccionEntidadListener)
 	{
 		lPostSeleccionEntidad = pPostSeleccionEntidadListener;
+	}
+	
+	protected void addPostTransaccion(PostTransaccionListener pPostTransaccionListener)
+	{
+		lPostTransaccion = pPostTransaccionListener;
 	}
 
 }
