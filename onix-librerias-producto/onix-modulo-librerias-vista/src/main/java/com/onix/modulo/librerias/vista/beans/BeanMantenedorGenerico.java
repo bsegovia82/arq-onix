@@ -52,7 +52,7 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 	private ValidadorIngresoDatosListener lValidadorIngreso;
 	private PostConstructListener lPostConstruct;
 	private PostTransaccionListener lPostTransaccion;
-	
+
 	private List<ENTIDAD> listaEntidades;
 
 	private Class<ENTIDAD> clase;
@@ -74,7 +74,7 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 		entidadRegistrar = entidad;
 		clase = entidadClase;
 	}
-	
+
 	public ENTIDAD getEntidadRegistrar() {
 		return entidadRegistrar;
 	}
@@ -90,8 +90,6 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 	public void setListaEntidades(List<ENTIDAD> listaEntidades) {
 		this.listaEntidades = listaEntidades;
 	}
-
-	
 
 	@PostConstruct
 	protected void init() {
@@ -215,14 +213,19 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 		this.entidadSelecionable = entidadSelecionable;
 	}
 
-	public void guardarOActualizar(boolean presentarMensaje) {
+	public void guardarOActualizar(boolean presentarMensaje, boolean pValidarAutenticado) {
 		try {
 			validacionesIngreso();
-			try {
-				this.entidadRegistrar.setAuditoria(JsfUtil.getUsuarioAutenticado().getName());
-			} catch (Throwable e1) {
-				e1.printStackTrace();
-				throw new ErrorNoAutenticacion("No realizar esta operación, si ningun usuario está autenticado");
+			if (pValidarAutenticado) {
+				try {
+					this.entidadRegistrar.setAuditoria(JsfUtil.getUsuarioAutenticado().getName());
+				} catch (Throwable e1) {
+					e1.printStackTrace();
+					throw new ErrorNoAutenticacion(
+							"No es posible realizar esta operación si ningún usuario está autenticado");
+				}
+			} else {
+				this.entidadRegistrar.setAuditoria("USR_WEB");
 			}
 			accionesPreTransaccionServicio();
 			getServicioMantenedor().guardarActualizar(entidadRegistrar);
@@ -265,17 +268,21 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 	}
 
 	public void guardarOActualizar() {
-		guardarOActualizar(true);
+		guardarOActualizar(true, true);
+	}
+
+	public void registroSinAutenticacion() {
+		guardarOActualizar(true, false);
 	}
 
 	protected void metodoPostTransaccion() {
 		listaEntidades = getServicioMantenedor().listaObjetos(clase, true);
-		
+
 		if (lPostTransaccion != null)
 			lPostTransaccion.metodoPostTransaccion();
 		else
-			System.out.println("NO EXISTE LISTENER REGISTRADO PARA LA POST TRANSACCION "
-					+ this.getClass().getCanonicalName());
+			System.out.println(
+					"NO EXISTE LISTENER REGISTRADO PARA LA POST TRANSACCION " + this.getClass().getCanonicalName());
 	}
 
 	public String getEstadoActivo() {
@@ -293,7 +300,7 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 		actualizarComponenteVisual("dialogoMantenimiento");
 		presentarDialogo("dialogoMantenimiento");
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public void actualizarEntidadFormulario(ActionEvent evento) {
 		entidadRegistrar = (ENTIDAD) evento.getComponent().getAttributes().get(nombreAtributoCambioEstado);
@@ -305,8 +312,8 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 	public void cambiarEstado(ActionEvent evento) {
 		entidadSelecionable = (ENTIDAD) evento.getComponent().getAttributes().get(nombreAtributoCambioEstado);
 		try {
-			entidadSelecionable.setEstado(!entidadSelecionable.getEstado().equals(GenericEAO.ESTADO_ACTIVO) ? GenericEAO.ESTADO_ACTIVO
-					: GenericEAO.ESTADO_INACTIVO);
+			entidadSelecionable.setEstado(!entidadSelecionable.getEstado().equals(GenericEAO.ESTADO_ACTIVO)
+					? GenericEAO.ESTADO_ACTIVO : GenericEAO.ESTADO_INACTIVO);
 		} catch (Exception e) {
 			entidadSelecionable.setEstado(GenericEAO.ESTADO_ACTIVO);
 			addMensajeAdvertencia("No se encontró un estado registrado, se procede a activar el registro");
@@ -405,17 +412,15 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 	// ***********************************************
 	protected abstract void cargarListaEtiquetas();
 
-	protected void metodoPostConstruct()
-	{
+	protected void metodoPostConstruct() {
 		if (lPostConstruct != null)
 			lPostConstruct.metodoPostConstruct();
 		else
 			System.out.println("NO EXISTE LISTENER REGISTRADO PARA EL METODO POST CONSTRUCT "
 					+ this.getClass().getCanonicalName());
 	}
-	
-	protected void addPostConstructuListener(PostConstructListener pPostConstruct)
-	{
+
+	protected void addPostConstructuListener(PostConstructListener pPostConstruct) {
 		lPostConstruct = pPostConstruct;
 	}
 
@@ -432,13 +437,10 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 			System.out.println("NO EXISTE LISTENER REGISTRADO PARA LA VALIDACION DE INGRESO "
 					+ this.getClass().getCanonicalName());
 	}
-	
-	protected void addValidacionListener(ValidadorIngresoDatosListener pValidadorListener)
-	{
+
+	protected void addValidacionListener(ValidadorIngresoDatosListener pValidadorListener) {
 		lValidadorIngreso = pValidadorListener;
 	}
-	
-	
 
 	protected void accionesPreTransaccionServicio() throws ErrorAccionesPreTransaccion {
 		if (lPreTransaccionLister != null)
@@ -447,9 +449,8 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 			System.out.println(
 					"NO EXISTE LISTENER REGISTRADO PARA LA PRE TRANSACCION " + this.getClass().getCanonicalName());
 	}
-	
-	protected void addPreTransaccionServicioListener(PreTransaccionListener pPreTransaccionListener)
-	{
+
+	protected void addPreTransaccionServicioListener(PreTransaccionListener pPreTransaccionListener) {
 		lPreTransaccionLister = pPreTransaccionListener;
 	}
 
@@ -461,8 +462,7 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 					+ this.getClass().getCanonicalName());
 	}
 
-	protected void addPostErrorTransaccionListener(PostErrorTransaccionListener pPostErrorTransaccionListener)
-	{
+	protected void addPostErrorTransaccionListener(PostErrorTransaccionListener pPostErrorTransaccionListener) {
 		lPostErrorTransaccion = pPostErrorTransaccionListener;
 	}
 
@@ -473,14 +473,13 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 			System.out.println("NO EXISTE LISTENER REGISTRADO PARA LA POST SELECCION REGISTRO "
 					+ this.getClass().getCanonicalName());
 	}
-	
-	protected void addPostSeleccionRegistroListener(PostSeleccionEntidadListener<ENTIDAD, Id> pPostSeleccionEntidadListener)
-	{
+
+	protected void addPostSeleccionRegistroListener(
+			PostSeleccionEntidadListener<ENTIDAD, Id> pPostSeleccionEntidadListener) {
 		lPostSeleccionEntidad = pPostSeleccionEntidadListener;
 	}
-	
-	protected void addPostTransaccion(PostTransaccionListener pPostTransaccionListener)
-	{
+
+	protected void addPostTransaccion(PostTransaccionListener pPostTransaccionListener) {
 		lPostTransaccion = pPostTransaccionListener;
 	}
 

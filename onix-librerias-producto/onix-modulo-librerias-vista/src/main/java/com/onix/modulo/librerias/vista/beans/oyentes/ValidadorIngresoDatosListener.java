@@ -6,4 +6,5 @@ import com.onix.modulo.librerias.vista.exceptions.ErrorValidacionVisual;
 public interface ValidadorIngresoDatosListener 
 {
 	public void validarDatosIngreso() throws ErrorValidacionVisual;
+	//
 }
