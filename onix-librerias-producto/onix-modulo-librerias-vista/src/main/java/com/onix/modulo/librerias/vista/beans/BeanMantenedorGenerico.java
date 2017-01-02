@@ -40,6 +40,8 @@ import com.onix.modulo.librerias.vista.exceptions.ErrorValidacionVisual;
 public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimientoEntidad<EAO, ENTIDAD, Id>, Id extends Serializable, ENTIDAD extends EntidadBaseAuditable<Id>, EAO extends GenericEAO<ENTIDAD, Id>>
 		implements Serializable {
 
+	private static final String USUARIO_GENERICO_WEB = "USR_WEB";
+
 	protected ENTIDAD entidadRegistrar;
 
 	protected ENTIDAD entidadSelecionable;
@@ -225,13 +227,15 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 							"No es posible realizar esta operación si ningún usuario está autenticado");
 				}
 			} else {
-				this.entidadRegistrar.setAuditoria("USR_WEB");
+				this.entidadRegistrar.setAuditoria(USUARIO_GENERICO_WEB);
 			}
 			accionesPreTransaccionServicio();
 			getServicioMantenedor().guardarActualizar(entidadRegistrar);
 			metodoPostTransaccion();
-			if (presentarMensaje)
-				addMensaje(JsfUtil.MENSAJE_INFO_OPERACION);
+			if (presentarMensaje) {
+				addMensaje(getMensajeTransaccion().length() < 1 ? JsfUtil.MENSAJE_INFO_OPERACION
+						: getMensajeTransaccion());
+			}
 		} catch (ErrorValidacionVisual e1) {
 			e1.printStackTrace();
 			if (presentarMensaje)
@@ -380,6 +384,11 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 	public String getDescripcionPagina() {
 		String lDescripcionPagina = listaEtiquetasPantalla.get(NombresEtiquetas.DESCRIPCIONPAGINA);
 		return lDescripcionPagina == null ? "" : lDescripcionPagina;
+	}
+
+	public String getMensajeTransaccion() {
+		String lMensajeTransaccion = listaEtiquetasPantalla.get(NombresEtiquetas.MENSAJE_TRANSACCION);
+		return lMensajeTransaccion == null ? "" : lMensajeTransaccion;
 	}
 
 	public String getAyudaPagina() {

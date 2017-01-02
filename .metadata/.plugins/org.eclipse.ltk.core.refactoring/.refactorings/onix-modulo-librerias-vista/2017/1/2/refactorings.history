@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract constant &apos;USUARIO_GENERICO_WEB&apos; from expression &apos;&quot;USR_WEB&quot;&apos;&#x0D;&#x0A;- Original project: &apos;onix-modulo-librerias-vista&apos;&#x0D;&#x0A;- Constant name: &apos;USUARIO_GENERICO_WEB&apos;&#x0D;&#x0A;- Constant expression: &apos;&quot;USR_WEB&quot;&apos;&#x0D;&#x0A;- Declared visibility: &apos;private&apos;&#x0D;&#x0A;- Replace occurrences of expression with constant" description="Extract constant &apos;USUARIO_GENERICO_WEB&apos;" flags="786432" id="org.eclipse.jdt.ui.extract.constant" input="/src\/main\/java&lt;com.onix.modulo.librerias.vista.beans{BeanMantenedorGenerico.java" name="USUARIO_GENERICO_WEB" qualify="false" replace="true" selection="7361 9" stamp="1483324525411" version="1.0" visibility="2"/>
+</session>

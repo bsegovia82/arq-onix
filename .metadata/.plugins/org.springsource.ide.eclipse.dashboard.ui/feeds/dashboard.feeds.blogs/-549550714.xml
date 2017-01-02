@@ -5,7 +5,21 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2016-12-28T21:53:43Z</updated>
+  <updated>2016-12-30T13:35:00Z</updated>
+  <entry>
+    <title>Spring Framework 5.0 M4 released</title>
+    <link rel="alternate" href="https://spring.io/blog/2016/12/30/spring-framework-5-0-m4-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Juergen Hoeller</name>
+    </author>
+    <id>tag:spring.io,2016-12-30:2757</id>
+    <updated>2016-12-30T13:35:00Z</updated>
+    <content type="html">&lt;p&gt;Dear Spring community,&lt;/p&gt;
+&lt;p&gt;It is my pleasure to announce that &lt;a href="https://jira.spring.io/jira/secure/ReleaseNote.jspa?projectId=10000&amp;version=15721"&gt;the fourth Spring Framework 5.0 milestone&lt;/a&gt; is available now, right in time to wrap up 2016! Once again, please check &lt;a href="http://projects.spring.io/spring-framework/"&gt;the project page&lt;/a&gt; for how to obtain it from our milestone repository and the updated &lt;a href="http://docs.spring.io/spring/docs/5.0.0.M4/spring-framework-reference/html/web-reactive.html"&gt;&amp;ldquo;Reactive Web Applications&amp;rdquo;&lt;/a&gt; documentation.&lt;/p&gt;
+&lt;p&gt;This milestone brings our reactive efforts close to completion and introduces a functional bean registration facility as well as comprehensive support for the Kotlin language. Stay tuned for a dedicated blog post on Kotlin&amp;hellip;&lt;/p&gt;
+&lt;p&gt;Cheers,&lt;br/&gt;Juergen&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>Spring Tips: Spring Tips 2016</title>
     <link rel="alternate" href="https://spring.io/blog/2016/12/28/spring-tips-spring-tips-2016" />
@@ -103,7 +117,7 @@ They can be provided later at runtime via &lt;code&gt;addQueues()&lt;/code&gt;&l
   &lt;li&gt;Spring Boot co-founder and co-lead Phil Webb has just &lt;a href="https://spring.io/blog/2016/12/23/spring-boot-1-4-3-available-now"&gt;announced Spring Boot 1.4.3&lt;/a&gt; with over 70 fixes, improvements and so much more!&lt;/li&gt;
   &lt;li&gt;Spring Security lead Rob Winch has just announced a &lt;a href="https://spring.io/blog/2016/12/22/cve-2016-9879-spring-security-3-2-10-4-1-4-4-2-1-released"&gt;CVE for Spring Security 3.2.1, 4.1.4, and 4.2.1 with according fix&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Spring Security lead Rob Winch just announced &lt;a href="https://spring.io/blog/2016/12/22/spring-ldap-2-2-1-2-3-rc1-released"&gt;Spring LDAP 2.2.1 and 2.3&lt;/a&gt;. This release includes a lot of new features and saw the move of Spring LDAP to the Spring Data umbrella project.&lt;/li&gt;
-  &lt;li&gt;Spring Tool Suite lead Martin Lipper just announced &lt;a href="https://spring.io/blog/2016/12/22/spring-tool-suite-3-8-3-released"&gt;Spring Tool Suite 3.8.3&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Tool Suite lead Martin Lippert just announced &lt;a href="https://spring.io/blog/2016/12/22/spring-tool-suite-3-8-3-released"&gt;Spring Tool Suite 3.8.3&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Spring ninja Stephane Nicoll just &lt;a href="https://spring.io/blog/2016/12/21/spring-framework-4-3-5-4-2-9-and-3-2-18-available-now"&gt;announced Spring Framework 4.3.5, 4.2.9, and 3.2.18&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;speaking of Spring Tool Suite, last week I did another Spring Tip, this one &lt;a href="https://spring.io/blog/2016/12/21/spring-tips-spring-tool-suite"&gt;looking at the Spring Tool Suite&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;nice! Google has announced &lt;a href="https://cloudplatform.googleblog.com/2016/12/Stackdriver-Trace-Zipkin-distributed-tracing-and-performance-analysis-for-everyone.html?m=1"&gt;support for Zipkin headers on Stackdriver&lt;/a&gt;&lt;/li&gt;
@@ -482,35 +496,5 @@ They can be provided later at runtime via &lt;code&gt;addQueues()&lt;/code&gt;&l
 &lt;div class="paragraph"&gt;
 &lt;p&gt;&lt;a href="http://projects.spring.io/spring-session/"&gt;Project Site&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-session/docs/1.3.0.RELEASE/reference/html5/"&gt;Reference&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-session"&gt;Help&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;</content>
-  </entry>
-  <entry>
-    <title>Dependency Management Plugin 1.0.0.RC1</title>
-    <link rel="alternate" href="https://spring.io/blog/2016/12/16/dependency-management-plugin-1-0-0-rc1" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Andy Wilkinson</name>
-    </author>
-    <id>tag:spring.io,2016-12-16:2737</id>
-    <updated>2016-12-16T10:31:03Z</updated>
-    <content type="html">&lt;p&gt;It&amp;rsquo;s my pleasure to announce that 1.0.0.RC1 of the &lt;a href="https://github.com/spring-gradle-plugins/dependency-management-plugin"&gt;Dependency Management Plugin&lt;/a&gt; has been released. It&amp;rsquo;s available from &lt;a href="https://plugins.gradle.org/plugin/io.spring.dependency-management"&gt;Gradle&amp;rsquo;s Plugin Portal&lt;/a&gt; as well as Maven Central and Bintray.&lt;/p&gt;&lt;h2&gt;&lt;a href="#what-rsquo-s-new" class="anchor" name="what-rsquo-s-new"&gt;&lt;/a&gt;What&amp;rsquo;s new?&lt;/h2&gt;
-&lt;p&gt;The plugin&amp;rsquo;s been rewritten in Java and its API has been formalised. A clear separation between that API and the plugin&amp;rsquo;s internals has been introduced. This has required a few breaking changes but you are unlikely to be affected if you were using the Groovy DSL.&lt;/p&gt;
-&lt;p&gt;Converting to Java and formalising the API has also enabled a couple of enhancements:&lt;/p&gt;&lt;h3&gt;&lt;a href="#official-support-for-gradle-3" class="anchor" name="official-support-for-gradle-3"&gt;&lt;/a&gt; Official support for Gradle 3&lt;/h3&gt;
-&lt;p&gt;Previously, the plugin was written in Groovy and attempted to support Gradle 1, 2, and 3. This &lt;a href="https://github.com/spring-gradle-plugins/dependency-management-plugin/issues/112"&gt;proved to be overly ambitious&lt;/a&gt;. The two main problems were binary incompatibilities across the three different Groovy runtimes (1.8, 2.3, and 2.4) and breaking changes across the three versions of Gradle. To address these, the Gradle team&amp;rsquo;s recommendation was to rewrite the plugin in Java and to drop support for Gradle 1.x. This release does just that, with the plugin&amp;rsquo;s main code now being 100% Java and Gradle 2.9 now being the minimum supported version. As a result, Gradle 3.x is now officially supported and it should be easier to support new versions of Gradle in the future. A welcome side-effect is a 13% reduction in the size of the plugin&amp;rsquo;s jar file.&lt;/p&gt;&lt;h3&gt;&lt;a href="#better-support-for-gradle-script-kotlin" class="anchor" name="better-support-for-gradle-script-kotlin"&gt;&lt;/a&gt;Better support for Gradle Script Kotlin&lt;/h3&gt;
-&lt;p&gt;Previously, the plugin&amp;rsquo;s API was heavily influenced by the fact that it was written in Groovy and its API and DSL were rather Groovy-centric. For example, Groovy Closures were used in a number of places without providing a non-Groovy alternative. This required Kotlin scripts to adapt a function to a closure, for example:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint kotlin"&gt;configure&amp;lt;DependencyManagementExtension&amp;gt; {&#xD;
-    imports(delegateClosureOf&amp;lt;ImportsHandler&amp;gt; {&#xD;
-        mavenBom(&amp;quot;io.spring.platform:platform-bom:Athens-SR1&amp;quot;)&#xD;
-    })&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;The conversion to Java highlighted the problem and, taking a lead from Gradle&amp;rsquo;s own API, 1.0 overloads a number of methods that previously only took a Groovy &lt;code&gt;Closure&lt;/code&gt; to also take a Gradle &lt;code&gt;Action&lt;/code&gt;. The overloaded methods allow you to neaten things up a bit, for example:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint kotlin"&gt;configure&amp;lt;DependencyManagementExtension&amp;gt; {&#xD;
-    imports {&#xD;
-        it.mavenBom(&amp;quot;io.spring.platform:platform-bom:Athens-SR1&amp;quot;)&#xD;
-    }&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;&lt;h2&gt;&lt;a href="#what-rsquo-s-next" class="anchor" name="what-rsquo-s-next"&gt;&lt;/a&gt;What&amp;rsquo;s next?&lt;/h2&gt;
-&lt;p&gt;With the API having been formalised and the plugin nearing 1.0, now is a great time to take it for a spin and let us know on &lt;a href="https://github.com/spring-gradle-plugins/dependency-management-plugin/issues"&gt;GitHub&lt;/a&gt; or &lt;a href="https://gitter.im/spring-gradle-plugins/dependency-management-plugin"&gt;Gitter&lt;/a&gt; of any problems you find or improvements that you&amp;rsquo;d like to see.&lt;/p&gt;
-&lt;p&gt;Thank you for all of the feedback and suggestions that you have contributed to the plugin thus far.&lt;/p&gt;</content>
   </entry>
 </feed>
