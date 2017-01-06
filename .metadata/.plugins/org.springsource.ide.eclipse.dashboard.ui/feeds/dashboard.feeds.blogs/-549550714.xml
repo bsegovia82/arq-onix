@@ -5,7 +5,491 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2016-12-30T13:35:00Z</updated>
+  <updated>2017-01-05T20:18:00Z</updated>
+  <entry>
+    <title>Spring Integration 5.0 Milestone 2 Available</title>
+    <link rel="alternate" href="https://spring.io/blog/2017/01/05/spring-integration-5-0-milestone-2-available" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Artem Bilan</name>
+    </author>
+    <id>tag:spring.io,2017-01-05:2762</id>
+    <updated>2017-01-05T20:18:00Z</updated>
+    <content type="html">&lt;div class="paragraph"&gt;
+&lt;p&gt;On behalf of the Spring Integration team I’d like to announce the Second Milestone of Spring Integration &lt;a href="https://jira.spring.io/jira/secure/ReleaseNote.jspa?projectId=10121&amp;amp;version=15774"&gt;5.0&lt;/a&gt;, which is available in the &lt;a href="https://repo.spring.io/milestone/"&gt;Milestone Repository&lt;/a&gt;.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Some highlights of this release since the &lt;a href="https://spring.io/blog/2016/12/02/spring-integration-5-0-milestone-1-available"&gt;previous&lt;/a&gt; Milestone.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Of course, first of all, big thanks to you, the community, for your contributions!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="mongodb-improvements"&gt;&lt;a class="anchor" href="#mongodb-improvements"&gt;&lt;/a&gt;MongoDb Improvements&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;MongoDbOutboundGateway&lt;/code&gt; - for performing queries or any arbitrary operation on the collection&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;An initial Java DSL support for MongoDB components&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;The MongoDb component now can use &lt;code&gt;org.springframework.data.mongodb.core.query.Query&lt;/code&gt; API in their expressions&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@Bean
+public IntegrationFlow mongoDbGatewayFlow() {
+    return f -&amp;gt; f
+        .handle(MongoDb.outboundGateway(this.mongoTemplate)
+                            .collectionCallback(MongoCollection::count)
+                            .collectionNameFunction(m -&amp;gt;
+                                           m.getHeaders().get("collection")));
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="messaginggateway-and-java-dsl"&gt;&lt;a class="anchor" href="#messaginggateway-and-java-dsl"&gt;&lt;/a&gt;@MessagingGateway and Java DSL&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The Java DSL &lt;code&gt;IntegrationFlow&lt;/code&gt; can now start from the interface marked with &lt;code&gt;@MessagingGateway&lt;/code&gt;, and all the method calls on the target proxy bean will perform sending &lt;code&gt;Message&lt;/code&gt; to the downstream &lt;code&gt;IntegrationFlow&lt;/code&gt;.
+This lets you omit &lt;code&gt;@IntegrationComponentScan&lt;/code&gt; and extra channels configuration.
+For example a simple gateway for Control Bus component:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@MessagingGateway
+public interface ControlBusGateway {
+
+    void send(String command);
+
+}
+...
+@Bean
+public IntegrationFlow controlBusFlow() {
+    return IntegrationFlows.from(ControlBusGateway.class)
+                 .controlBus()
+                 .get();
+}&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="sect1"&gt;
+&lt;h2 id="reactive-streams-support"&gt;&lt;a class="anchor" href="#reactive-streams-support"&gt;&lt;/a&gt;Reactive Streams Support&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;And of course some news from the Reactive Streams subject.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The &lt;code&gt;MessageChannelReactiveUtils&lt;/code&gt; can be used to adapt any &lt;code&gt;MessageChannel&lt;/code&gt; to the &lt;code&gt;org.reactivestreams.Publisher&lt;/code&gt;.
+This can be useful when you would like to "flux" an upstream data via integration loosely coupled manner from one side and reactive back pressure from another:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@Autowired
+private PollableChannel queueChannel;
+...
+Flux.from(MessageChannelReactiveUtils.&amp;lt;String&amp;gt;toPublisher(this.queueChannel))
+                   .map(Message::getPayload)
+                   .map(String::toUpperCase)
+                   .doOnNext(results::add)
+                   .subscribe(v -&amp;gt; done.countDown());&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;This technique is used now in the existing &lt;code&gt;IntegrationFlowDefinition.toReactivePublisher()&lt;/code&gt;:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;@Bean
+public Publisher&amp;lt;Message&amp;lt;Integer&amp;gt;&amp;gt; pollableReactiveFlow() {
+    return IntegrationFlows
+             .from("inputChannel")
+             .split(s -&amp;gt; s.delimiters(","))
+             .&amp;lt;String, Integer&amp;gt;transform(Integer::parseInt)
+             .channel(MessageChannels.queue())
+             .toReactivePublisher();
+}
+...
+@Autowired
+@Qualifier("pollableReactiveFlow")
+private Publisher&amp;lt;Message&amp;lt;Integer&amp;gt;&amp;gt; pollablePublisher;&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;The &lt;code&gt;ReactiveChannel&lt;/code&gt; now has ability to subscribe to upstream &lt;code&gt;Publisher&lt;/code&gt; alongside with the regular (but back pressure) &lt;code&gt;send(Message&amp;lt;?&amp;gt;)&lt;/code&gt; implementation.
+This allowed us to introduce a feature like start an &lt;code&gt;IntegrationFlow&lt;/code&gt; from the &lt;code&gt;Publisher&lt;/code&gt;:&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="listingblock"&gt;
+&lt;div class="content"&gt;
+&lt;pre class="prettyprint highlight"&gt;&lt;code class="language-java" data-lang="java"&gt;Flux&amp;lt;Message&amp;lt;?&amp;gt;&amp;gt; messageFlux = Flux.just("1,2,3,4")
+        .map(v -&amp;gt; v.split(","))
+        .flatMapIterable(Arrays::asList)
+        .map(Integer::parseInt)
+        .map(GenericMessage&amp;lt;Integer&amp;gt;::new);
+
+QueueChannel resultChannel = new QueueChannel();
+
+IntegrationFlow integrationFlow =
+        IntegrationFlows.from(messageFlux)
+                .&amp;lt;Integer, Integer&amp;gt;transform(p -&amp;gt; p * 2)
+                .channel(resultChannel)
+                .get();
+
+this.integrationFlowContext.registration(integrationFlow)
+        .register();&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Such wise and placing &lt;code&gt;ReactiveChannel&lt;/code&gt; in between endpoints (&lt;code&gt;MessageChannels.reactive()&lt;/code&gt;), we can reach the best of both integration and reactive worlds!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;See &lt;a href="http://docs.spring.io/spring-integration/docs/5.0.0.M2/reference/html/whats-new.html"&gt;What&amp;#8217;s New&lt;/a&gt; for more information.&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;We are going to provide more features and improvement in the next Milestones, so, stay tuned and don&amp;#8217;t hesitate to come back to us for any feedback!&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;a href="http://projects.spring.io/spring-integration/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-integration"&gt;GitHub&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-integration"&gt;Help&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-integration/reference/html/"&gt;Documentation&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-integration"&gt;Chat&lt;/a&gt;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring Batch 4.0.0.M1 is now available</title>
+    <link rel="alternate" href="https://spring.io/blog/2017/01/04/spring-batch-4-0-0-m1-is-now-available" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Michael Minella</name>
+    </author>
+    <id>tag:spring.io,2017-01-04:2761</id>
+    <updated>2017-01-04T22:31:44Z</updated>
+    <content type="html">&lt;p&gt;We are pleased to announce that Spring Batch 4.0.0.M1 is now available via Github and the Pivotal download repository. This release represents the first milestone for the Spring Batch 4.0 release. Many thanks to all of those who contributed to this release.&lt;/p&gt;&lt;h2&gt;&lt;a href="#what-rsquo-s-new" class="anchor" name="what-rsquo-s-new"&gt;&lt;/a&gt;What&amp;rsquo;s new?&lt;/h2&gt;
+&lt;p&gt;We have taken this opportunity to look at Spring Batch from a new light in a few areas. Specifically:&lt;br/&gt;* Java baseline&lt;br/&gt;* Dependency baseline&lt;br/&gt;* Java configuration&lt;/p&gt;&lt;h3&gt;&lt;a href="#java-baseline" class="anchor" name="java-baseline"&gt;&lt;/a&gt;Java Baseline&lt;/h3&gt;
+&lt;p&gt;Spring Batch has historically followed the baseline of Spring Framework with the intent of providing the best interoperability between Spring Batch and Spring Framework versions as possible. Spring Batch 4.0 is taking this opportunity to upgrade to Spring Framework 5 as the minimum required version. With this, Java 8 will be required for Spring Batch 4. If you&amp;rsquo;ve been using Spring Batch with Java 8 already, this should be a pretty transparent as Spring Batch has had a solid Java 8 story for years now. Doing things like the following has been supported as long as Java 8 has been around:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;@Bean&#xD;
+public JdbcCursorItemReader&amp;lt;Foo&amp;gt; reader() {&#xD;
+	JdbcCursorItemReader&amp;lt;Foo&amp;gt; reader = new JdbcCursorItemReader&amp;lt;&amp;gt;();&#xD;
+&#xD;
+	reader.setDataSource(this.dataSource);&#xD;
+	reader.setName(&amp;quot;fooReader&amp;quot;);&#xD;
+	reader.setSql(&amp;quot;SELECT * FROM FOO ORDER BY FIRST&amp;quot;);&#xD;
+	reader.setRowMapper((rs, rowNum) -&amp;gt; {&#xD;
+		Foo foo = new Foo();&#xD;
+&#xD;
+		foo.setFirst(rs.getInt(&amp;quot;FIRST&amp;quot;));&#xD;
+		foo.setFirst(rs.getString(&amp;quot;SECOND&amp;quot;));&#xD;
+		foo.setFirst(rs.getString(&amp;quot;THIRD&amp;quot;));&#xD;
+&#xD;
+		return foo;&#xD;
+	});&#xD;
+&#xD;
+	return reader;&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Just like Spring Framework 5&amp;rsquo;s re-baselining on Java 8, this is has a larger impact internally to the framework. Now we, the developers and contributors of the framework, will be able to utilize the interesting features of Java 8 that you&amp;rsquo;ve been using all along.&lt;/p&gt;&lt;h3&gt;&lt;a href="#dependencies-baseline" class="anchor" name="dependencies-baseline"&gt;&lt;/a&gt;Dependencies Baseline&lt;/h3&gt;
+&lt;p&gt;Along with the re-baselining of Java in accordance with Spring Framework, Spring Batch 4 is also taking a full look at all dependencies and upgrading them to the latest versions. This is as much to keep up with the latest as it is for us to be able to provide support for the functionality we provide. We need to be dependent upon supported versions of those dependencies so we can have bugs addressed. Because of this, we need to keep up with their currently supported versions. An example of this is Hibernate. Spring Batch 3.x supported Hibernate back to 4.2.x. However, if an issue with Hibernate 4.2.x was found, it wouldn&amp;rsquo;t be fixed there. It JBoss would only fix it in 5.2. Because of that, we need to stay up to date. Spring Framework 5 has taken a full review of all it&amp;rsquo;s dependencies. Spring Batch 4 updates all it&amp;rsquo;s dependencies to be in alignment with Spring Framework.&lt;/p&gt;&lt;h3&gt;&lt;a href="#java-configuration" class="anchor" name="java-configuration"&gt;&lt;/a&gt;Java Configuration&lt;/h3&gt;
+&lt;p&gt;Java configuration to Spring Batch is not new. Spring Batch 2.2 had the &lt;code&gt;@EnableBatchProcessing&lt;/code&gt; annotation as well as the related builders. However, there was still much to be desired from the java configuration story. For example, using what was available in Spring Batch 3.0.7, the configuration of a &lt;code&gt;FlatFileItemReader&lt;/code&gt; may look something like the following:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;@Bean&#xD;
+public FlatFileItemReader reader(Resource resource) throws Exception {&#xD;
+	FlatFileItemReader&amp;lt;Foo&amp;gt; reader = new FlatFileItemReader&amp;lt;&amp;gt;();&#xD;
+&#xD;
+	reader.setName(&amp;quot;fooReader&amp;quot;);&#xD;
+	reader.setResource(resource);&#xD;
+&#xD;
+	BeanWrapperFieldSetMapper&amp;lt;Foo&amp;gt; fieldSetMapper = &#xD;
+		new BeanWrapperFieldSetMapper&amp;lt;&amp;gt;();&#xD;
+	fieldSetMapper.setTargetType(Foo.class);&#xD;
+	fieldSetMapper.afterPropertiesSet();&#xD;
+&#xD;
+	DelimitedLineTokenizer tokenizer = new DelimitedLineTokenizer();&#xD;
+	tokenizer.setNames(String [] {&amp;quot;first&amp;quot;, &amp;quot;second&amp;quot;, &amp;quot;third&amp;quot;});&#xD;
+	tokenizer.afterProperitesSet();&#xD;
+&#xD;
+	DefaultLineMapper lineMapper = new DefaultLineMapper();&#xD;
+	lineMapper.setLineTokenizer(tokenizer);&#xD;
+	lineMapper.setFieldSetMapper(fieldSetMapper);&#xD;
+&#xD;
+	reader.setLineMapper(lineMapper);&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;However, in Spring Batch 4, we are introducing a collection of builders that will simplify the building of the provided readers and writers. The above example using Spring Batch 3.0.x translates into the following using the builders in Spring Batch 4:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint"&gt;@Bean&#xD;
+public FlatFileItemReader reader(Resource resource) {&#xD;
+	return new FlatFileItemReaderBuilder&amp;lt;Foo&amp;gt;()&#xD;
+		.name(&amp;quot;fooReader&amp;quot;)&#xD;
+		.resource(resource)&#xD;
+		.delimited()&#xD;
+		.names(new String[] {&amp;quot;first&amp;quot;, &amp;quot;second&amp;quot;, &amp;quot;third&amp;quot;})&#xD;
+		.targetType(Foo.class)&#xD;
+		.build();&#xD;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;As of this milestone, builders for the &lt;code&gt;FlatFileItemReader&lt;/code&gt;, &lt;code&gt;FlatFileItemWriter&lt;/code&gt;, &lt;code&gt;JdbcCursorItemReader&lt;/code&gt;, and the &lt;code&gt;JdbcBatchItemWriter&lt;/code&gt; are available. We will address the other item readers and item writers prior to Spring Batch 4 going generally available.&lt;/p&gt;&lt;h2&gt;&lt;a href="#what-rsquo-s-next" class="anchor" name="what-rsquo-s-next"&gt;&lt;/a&gt;What&amp;rsquo;s next?&lt;/h2&gt;
+&lt;p&gt;Looking ahead, we plan on implementing builders for the other Spring Batch readers and writers. We also plan on taking a full look at our documentation. The documentation currently takes what we&amp;rsquo;d consider an &amp;ldquo;XML first&amp;rdquo; approach. For the GA release of Spring Batch, we intend on refactoring the documentation to be more &amp;ldquo;java first&amp;rdquo; in it&amp;rsquo;s approach to provide better insight into how to configure batch applications using java configuration. Look out for further milestones and Spring Batch 4 to be generally available shortly after Spring Framework 5 goes GA.&lt;/p&gt;&lt;h2&gt;&lt;a href="#what-do-you-think" class="anchor" name="what-do-you-think"&gt;&lt;/a&gt;What do you think?&lt;/h2&gt;
+&lt;p&gt;We look forward to your feedback on these new features in &lt;a href="https://jira.spring.io/browse/BATCH/"&gt;Jira&lt;/a&gt;, &lt;a href="https://stackoverflow.com/tags/spring-batch"&gt;StackOverflow&lt;/a&gt;, or to me directly via Twitter &lt;a href="https://twitter.com/michaelminella"&gt;@michaelminella&lt;/a&gt;!&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://projects.spring.io/spring-batch/"&gt;Spring Batch Home&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-batch"&gt;Source on GitHub&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-batch/4.0.x/reference/html/index.html"&gt;Reference Documentation&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Spring IO Platform Athens-SR2</title>
+    <link rel="alternate" href="https://spring.io/blog/2017/01/04/spring-io-platform-athens-sr2" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Andy Wilkinson</name>
+    </author>
+    <id>tag:spring.io,2017-01-04:2760</id>
+    <updated>2017-01-04T21:26:45Z</updated>
+    <content type="html">&lt;p&gt;I am pleased to announce that &lt;a href="http://platform.spring.io/platform"&gt;Spring IO Platform&lt;/a&gt; Athens-SR2 is now available from both &lt;a href="http://repo.spring.io/release"&gt;repo.spring.io&lt;/a&gt; and &lt;a href="http://search.maven.org/#search%7Cga%7C1%7Cg%3Aio.spring.platform"&gt;Maven Central&lt;/a&gt;. &lt;/p&gt;
+&lt;p&gt;This maintenance release upgrades the versions of a number of the projects in the Platform:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Spring AMQP 1.6.6.RELEASE&lt;/li&gt;
+  &lt;li&gt;Spring Boot 1.4.3.RELEASE&lt;/li&gt;
+  &lt;li&gt;Spring Data Hopper SR6&lt;/li&gt;
+  &lt;li&gt;Spring Framework 4.3.5.RELEASE&lt;/li&gt;
+  &lt;li&gt;Spring Integration 4.3.6.RELEASE&lt;/li&gt;
+  &lt;li&gt;Spring Retry 1.1.5.RELEASE&lt;/li&gt;
+  &lt;li&gt;Spring Security 4.1.4.RELEASE&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The versions of a number of third-party dependencies have also been updated.&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://platform.spring.io/platform"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-io/platform"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-io/platform/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/platform/docs/Athens-SR2/reference/htmlsingle"&gt;Documentation&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>Introducing Kotlin support in Spring Framework 5.0</title>
+    <link rel="alternate" href="https://spring.io/blog/2017/01/04/introducing-kotlin-support-in-spring-framework-5-0" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Sébastien Deleuze</name>
+    </author>
+    <id>tag:spring.io,2017-01-03:2758</id>
+    <updated>2017-01-04T14:05:00Z</updated>
+    <content type="html">&lt;p&gt;Following the &lt;a href="https://spring.io/blog/2016/02/15/developing-spring-boot-applications-with-kotlin"&gt;Kotlin support on start.spring.io&lt;/a&gt; we introduced a few months ago, we have continued to work to ensure that Spring and &lt;a href="https://kotlin.link/"&gt;Kotlin&lt;/a&gt; play well together. One of the key strengths of Kotlin is that it provides a very good &lt;a href="https://kotlinlang.org/docs/reference/java-interop.html"&gt;interoperability&lt;/a&gt; with libraries written in Java. But there are ways to go even further and allow writing fully idiomatic Kotlin code when developing your next Spring application. In addition to Spring Framework support for Java 8 that Kotlin applications can leverage like functional web or bean registration APIs, there are additional Kotlin dedicated features that should allow you to reach a new level of productivity.&lt;/p&gt;
+&lt;p&gt;That’s why we are introducing a dedicated Kotlin support in &lt;a href="https://spring.io/blog/2016/12/30/spring-framework-5-0-m4-released"&gt;Spring Framework 5.0 M4&lt;/a&gt;, and I would like to summarize in this blog post the features that are designed to make your developer experience seamless when using these technologies together. You can use &lt;a href="https://jira.spring.io/issues/?filter=15463"&gt;this link&lt;/a&gt; to find Kotlin related issues in Spring Framework bug tracker.&lt;/p&gt;&lt;h2&gt;&lt;a href="#leveraging-kotlin-nullable-information" class="anchor" name="leveraging-kotlin-nullable-information"&gt;&lt;/a&gt;Leveraging Kotlin nullable information&lt;/h2&gt;
+&lt;p&gt;Originally based on a community contribution from &lt;a href="https://github.com/rocketraman"&gt;Raman Gupta&lt;/a&gt;, Spring now takes advantage of &lt;a href="https://kotlinlang.org/docs/reference/null-safety.html"&gt;Kotlin null-safety support&lt;/a&gt; to determine if an HTTP parameter is required without having to define explicitly the &lt;code&gt;required&lt;/code&gt; attribute. That means &lt;code&gt;@RequestParam name: String?&lt;/code&gt; with be treated as not required and &lt;code&gt;@RequestParam name: String&lt;/code&gt; as required. This is also supported on Spring Messaging &lt;code&gt;@Header&lt;/code&gt; annotation.&lt;/p&gt;
+&lt;p&gt;In a similar fashion, Spring bean injection with &lt;code&gt;@Autowired&lt;/code&gt; or &lt;code&gt;@Inject&lt;/code&gt; uses this information to know if a bean is required or not. &lt;code&gt;@Autowired lateinit var foo: Foo&lt;/code&gt; implies that a bean of type &lt;code&gt;Foo&lt;/code&gt; must be registered in the application context while &lt;code&gt;@Autowired lateinit var foo: Foo?&lt;/code&gt; won’t raise an error if such bean does not exist.&lt;/p&gt;&lt;h2&gt;&lt;a href="#extensions-for-resttemplate-and-functional-web-api" class="anchor" name="extensions-for-resttemplate-and-functional-web-api"&gt;&lt;/a&gt;Extensions for RestTemplate and Functional Web API&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://kotlinlang.org/docs/reference/extensions.html"&gt;Kotlin extensions&lt;/a&gt; allow to extend existing APIs in a non-intrusive way, providing a better alternative to utility classes or Kotlin specific class hierarchies to add Kotlin dedicated features to Spring. Some libraries like &lt;a href="https://github.com/MarioAriasC/KotlinPrimavera/wiki"&gt;KotlinPrimavera&lt;/a&gt; from &lt;a href="https://github.com/MarioAriasC"&gt;Mario Arias&lt;/a&gt; have already showed various kind of Kotlin helpers we can bring to Spring API in order to allow writing more idiomatic code. With Spring Framework 5, we integrate the most useful and popular extensions in Spring Framework dependencies, and we are adding new ones!&lt;/p&gt;
+&lt;p&gt;For example, &lt;a href="https://kotlinlang.org/docs/reference/inline-functions.html#reified-type-parameters"&gt;Kotlin reified type parameters&lt;/a&gt; provide a workaround for JVM &lt;a href="https://docs.oracle.com/javase/tutorial/java/generics/erasure.html"&gt;generics type erasure&lt;/a&gt;, so we have introduced some extensions to take advantage of this feature to provide a better API when possible.&lt;/p&gt;
+&lt;p&gt;That allows to provide convenient API for &lt;code&gt;RestTemplate&lt;/code&gt; (thanks to &lt;a href="https://github.com/jkschneider"&gt;Jon Schneider&lt;/a&gt; from Netflix for contributing this). For example, to retrieve a list of &lt;code&gt;Foo&lt;/code&gt; objects in Java you have to write:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;List&amp;lt;Foo&amp;gt; result = restTemplate.exchange(url, HttpMethod.GET, null, new ParameterizedTypeReference&amp;lt;List&amp;lt;Foo&amp;gt;&amp;gt;() { }).getBody();
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Or that way if you use an intermediate array:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;List&amp;lt;Foo&amp;gt; result = Arrays.asList(restTemplate.getForObject(url, Foo[].class));
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;While in Kotlin with Spring Framework 5 extensions you will be able to write:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint koltin"&gt;val result : List&amp;lt;Foo&amp;gt; = restTemplate.getForObject(url)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Be aware that Kotlin extensions are statically resolved, you have to import them. In the example above, you need to add &lt;code&gt;import org.springframework.web.client.RestOperationsExtension.getForObject&lt;/code&gt; to be able to use it. Kotlin extensions are generally automatically suggested by IDEs like IntelliJ IDEA (like static imports), but it does not work yet for extensions nested in a container &lt;code&gt;object&lt;/code&gt; (you can vote for &lt;a href="https://youtrack.jetbrains.com/issue/KT-15440"&gt;KT-15440&lt;/a&gt;) so until it is fixed you will have to add Spring Kotlin extensions imports manually.&lt;/p&gt;
+&lt;p&gt;Available &lt;code&gt;RestTemplate&lt;/code&gt; or functional web API extensions currently available in Spring Framework 5.0 M4 are:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://github.com/spring-projects/spring-framework/blob/master/spring-web/src/main/kotlin/org/springframework/web/client/RestOperationsExtension.kt"&gt;RestOperationsExtension&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/spring-projects/spring-framework/blob/master/spring-web-reactive/src/main/kotlin/org/springframework/web/reactive/function/server/ServerRequestExtension.kt"&gt;ServerRequestExtension&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/spring-projects/spring-framework/blob/master/spring-web-reactive/src/main/kotlin/org/springframework/web/reactive/function/BodyInsertersExtension.kt"&gt;BodyInsertersExtension&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/spring-projects/spring-framework/blob/master/spring-web-reactive/src/main/kotlin/org/springframework/web/reactive/function/BodyExtractorsExtension.kt"&gt;BodyExtractorsExtension&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/spring-projects/spring-framework/blob/master/spring-web-reactive/src/main/kotlin/org/springframework/web/reactive/function/client/ClientResponseExtension.kt"&gt;ClientResponseExtension&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;These extensions also provide member functions supporting natively Kotlin &lt;code&gt;KClass&lt;/code&gt;, allowing you to specify &lt;code&gt;Foo::class&lt;/code&gt; parameter instead of &lt;code&gt;Foo::class.java&lt;/code&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#reactor-kotlin-extensions" class="anchor" name="reactor-kotlin-extensions"&gt;&lt;/a&gt;Reactor Kotlin extensions&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://projectreactor.io/"&gt;Reactor&lt;/a&gt; is the reactive foundation Spring Framework 5.0 is built upon, and there are good chances you are going to use its &lt;a href="https://projectreactor.io/docs/core/release/api/reactor/core/publisher/Mono.html"&gt;Mono&lt;/a&gt;, &lt;a href="https://projectreactor.io/docs/core/release/api/reactor/core/publisher/Flux.html"&gt;Flux&lt;/a&gt; and &lt;a href="https://projectreactor.io/docs/test/release/api/reactor/test/StepVerifier.html"&gt;StepVerifier&lt;/a&gt; APIs when developing a reactive web application.&lt;/p&gt;
+&lt;p&gt;So today we are also introducing Kotlin support in Reactor, via the new &lt;a href="https://github.com/reactor/reactor-kotlin"&gt;reactor-kotlin&lt;/a&gt; project! It provides extensions to be able to create &lt;code&gt;Mono&lt;/code&gt; instances from any class instance by writing &lt;code&gt;foo.toMono()&lt;/code&gt; which many will prefer to &lt;code&gt;Mono.just(foo)&lt;/code&gt;. It also supports for example creating a &lt;code&gt;Flux&lt;/code&gt; from a Java 8 &lt;code&gt;Stream&lt;/code&gt; instance with &lt;code&gt;stream.toFlux()&lt;/code&gt;. &lt;code&gt;Iterable&lt;/code&gt;, &lt;code&gt;CompletableFuture&lt;/code&gt; and &lt;code&gt;Throwable&lt;/code&gt; extensions as well as &lt;code&gt;KClass&lt;/code&gt; based variants of Reactor API are also provided.&lt;/p&gt;
+&lt;p&gt;This is still the early days of this project, so feel free to &lt;a href="https://github.com/reactor/reactor-kotlin/pulls"&gt;contribute&lt;/a&gt; your own extensions if you find missing bits.&lt;/p&gt;&lt;h2&gt;&lt;a href="#functional-bean-registration-with-kotlin" class="anchor" name="functional-bean-registration-with-kotlin"&gt;&lt;/a&gt;Functional bean registration with Kotlin&lt;/h2&gt;
+&lt;p&gt;Spring Framework 5.0 introduces a new way to register beans using lambda as an alternative to XML or JavaConfig with &lt;code&gt;@Configuration&lt;/code&gt; and &lt;code&gt;@Bean&lt;/code&gt;. In a nutshell, it makes it possible to register beans with a &lt;code&gt;Supplier&lt;/code&gt; lambda that acts as a &lt;code&gt;FactoryBean&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;In Java you will for example write:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint java"&gt;AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext();&#xD;
+context.registerBean(Foo.class);&#xD;
+context.registerBean(Bar.class, () -&amp;gt; new &#xD;
+	Bar(context.getBean(Foo.class))&#xD;
+);
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;While in Kotlin, reified type parameters allow us to simply write:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint kotlin"&gt;val context = AnnotationConfigApplicationContext()&#xD;
+context.registerBean(Foo::class)&#xD;
+context.registerBean(Supplier {&#xD;
+	Bar(context.getBean(Foo::class))&#xD;
+})
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;You can see a concrete example of Spring application using both functional &lt;a href="https://github.com/mix-it/mixit/blob/master/src/main/kotlin/mixit/controller/UserController.kt"&gt;web&lt;/a&gt; and &lt;a href="https://github.com/mix-it/mixit/blob/master/src/main/kotlin/mixit/Application.kt"&gt;bean registration&lt;/a&gt; API at &lt;a href="https://github.com/mix-it/mixit/"&gt;https://github.com/mix-it/mixit/&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;ApplicationContext&lt;/code&gt; related Kotlin extensions available are:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://github.com/spring-projects/spring-framework/blob/master/spring-beans/src/main/kotlin/org/springframework/beans/factory/BeanFactoryExtension.kt"&gt;BeanFactoryExtension&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/spring-projects/spring-framework/blob/master/spring-beans/src/main/kotlin/org/springframework/beans/factory/ListableBeanFactoryExtension.kt"&gt;ListableBeanFactoryExtension&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/spring-projects/spring-framework/blob/master/spring-context/src/main/kotlin/org/springframework/context/support/GenericApplicationContextExtension.kt"&gt;GenericApplicationContextExtension&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h2&gt;&lt;a href="#no-need-to-declare-your-bean-class-as-open-anymore" class="anchor" name="no-need-to-declare-your-bean-class-as-open-anymore"&gt;&lt;/a&gt;No need to declare your bean class as open anymore&lt;/h2&gt;
+&lt;p&gt;Until now, one of the few pain points you faced when building a Spring Boot application with Kotlin was the need to add an &lt;code&gt;open&lt;/code&gt; keyword on each class and their member functions of Spring beans proxified with CGLIB like &lt;code&gt;@Configuration&lt;/code&gt; classes. The root cause of this requirement comes from the fact that in Kotlin, &lt;a href="https://discuss.kotlinlang.org/t/classes-final-by-default/166"&gt;classes are final by default&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Fortunately, Kotlin 1.0.6 now provides a &lt;code&gt;kotlin-spring&lt;/code&gt; plugin that open classes and their member functions by default for classes annotated or meta-annotated with one of the following annotation:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;code&gt;@Component&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;@Async&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;@Transactional&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code&gt;@Cacheable&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Meta-annotations support means that classes annotated with&lt;code&gt;@Configuration&lt;/code&gt;, &lt;code&gt;@Controller&lt;/code&gt;, &lt;code&gt;@RestController&lt;/code&gt;, &lt;code&gt;@Service&lt;/code&gt; or &lt;code&gt;@Repository&lt;/code&gt; are automatically opened since these annotations are meta-annotated with &lt;code&gt;@Component&lt;/code&gt;. &lt;/p&gt;
+&lt;p&gt;We have updated &lt;a href="http://start.spring.io/#!language=kotlin"&gt;start.spring.io&lt;/a&gt; to enabled it by default. You can have a look to &lt;a href="https://blog.jetbrains.com/kotlin/2016/12/kotlin-1-0-6-is-here/"&gt;this Kotlin 1.0.6 blog post&lt;/a&gt; for more details, including the new &lt;code&gt;kotlin-jpa&lt;/code&gt; and &lt;code&gt;kotlin-noarg&lt;/code&gt; plugins really useful with Spring Data entities.&lt;/p&gt;&lt;h2&gt;&lt;a href="#kotlin-based-gradle-build-configuration" class="anchor" name="kotlin-based-gradle-build-configuration"&gt;&lt;/a&gt;Kotlin based Gradle build configuration&lt;/h2&gt;
+&lt;p&gt;Back in May, Gradle &lt;a href="https://blog.gradle.org/kotlin-meets-gradle"&gt;announced&lt;/a&gt; that they are going to support writing build and config files in Kotlin in addition to Groovy. This makes it possible to have full auto-completion and validation in your IDE, because such files are regular statically-typed Kotlin Script files. This is likely to become the natural choice for Kotlin based project, but this is also valuable for Java projects too.&lt;/p&gt;
+&lt;p&gt;Since May, the &lt;a href="https://github.com/gradle/gradle-script-kotlin"&gt;gradle-script-kotlin&lt;/a&gt; project has continued to evolve, and is now usable with 2 warnings to keep in mind:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;You need Kotlin 1.1-EAP IDEA plugin to get autocompletion (but wait Kotlin &lt;code&gt;1.1-M05&lt;/code&gt; if you are using &lt;code&gt;kotlin-spring&lt;/code&gt; plugin since &lt;code&gt;1.1-M04&lt;/code&gt; does not work reliably with this plugin yet)&lt;/li&gt;
+  &lt;li&gt;The documentation is not complete, but the Gradle team is really helpful on the #gradle channel of the Kotlin Slack.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Both &lt;a href="https://github.com/sdeleuze/spring-boot-kotlin-demo"&gt;spring-boot-kotlin-demo&lt;/a&gt; and &lt;a href="https://github.com/mix-it/mixit/"&gt;mixit&lt;/a&gt; projects use such Kotlin based Gradle builds, so feel free to have a look. We are &lt;a href="https://github.com/spring-io/initializr/issues/334"&gt;discussing&lt;/a&gt; adding such support on start.spring.io.&lt;/p&gt;&lt;h2&gt;&lt;a href="#kotlin-script-based-templates" class="anchor" name="kotlin-script-based-templates"&gt;&lt;/a&gt;Kotlin Script based templates&lt;/h2&gt;
+&lt;p&gt;As of version 4.3, Spring Framework provides a &lt;a href="http://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/servlet/view/script/ScriptTemplateView.html"&gt;ScriptTemplateView&lt;/a&gt; to render templates using script engines that supports &lt;a href="https://www.jcp.org/en/jsr/detail?id=223"&gt;JSR-223&lt;/a&gt;. Kotlin 1.1-M04 provides such support and allows to render Kotlin based templates, see &lt;a href="https://github.com/spring-projects/spring-framework/commit/badde3a479a53e1dd0777dd1bd5b55cb1021cf9e"&gt;this commit&lt;/a&gt; for details.&lt;/p&gt;
+&lt;p&gt;This enables some interesting use cases like writing type-safe templates using &lt;a href="https://github.com/Kotlin/kotlinx.html"&gt;kotlinx.html&lt;/a&gt; DSL or simply Kotlin multiline &lt;code&gt;String&lt;/code&gt; with interpolation, as demonstrated in this &lt;a href="https://github.com/sdeleuze/kotlin-script-templating"&gt;kotlin-script-templating&lt;/a&gt; project. This could allow you to write this kind of templates with full autocompletion and refactoring support in your IDE:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint kotlin"&gt;import io.spring.demo.User&#xD;
+import io.spring.demo.joinToLine&#xD;
+&#xD;
+&amp;quot;&amp;quot;&amp;quot;&#xD;
+${include(&amp;quot;header&amp;quot;, bindings)}&#xD;
+&amp;lt;h1&amp;gt;Title : $title&amp;lt;/h1&amp;gt;&#xD;
+&amp;lt;ul&amp;gt;&#xD;
+    ${(users as List&amp;lt;User&amp;gt;).joinToLine{ &amp;quot;&amp;lt;li&amp;gt;User ${it.firstname} ${it.lastname}&amp;lt;/li&amp;gt;&amp;quot; }}&#xD;
+&amp;lt;/ul&amp;gt;&#xD;
+${include(&amp;quot;footer&amp;quot;)}&#xD;
+&amp;quot;&amp;quot;&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;This feature is still work in progress, but I am collaborating with the Kotlin team to tentatively make it production ready with nested template and i18n support on both MVC and Reactive sides for Spring Framework 5.0 GA.&lt;/p&gt;&lt;h2&gt;&lt;a href="#conclusion" class="anchor" name="conclusion"&gt;&lt;/a&gt;Conclusion&lt;/h2&gt;
+&lt;p&gt;The more I write Spring Boot applications with Kotlin, the more I feel these 2 technologies share the same mindset and allow you to write applications more efficiently with expressive, short and readable code, and Spring Framework 5 Kotlin support is a significant step towards combining these technologies in a natural, simple and powerful way.&lt;/p&gt;
+&lt;p&gt;Kotlin can be used to write &lt;a href="https://github.com/sdeleuze/spring-boot-kotlin-demo"&gt;annotation-based Spring Boot applications&lt;/a&gt;, but will also be a good fit with the new kind of &lt;a href="https://github.com/mix-it/mixit/"&gt;functional and reactive applications&lt;/a&gt; that Spring Framework 5.0 will enable.&lt;/p&gt;
+&lt;p&gt;Kotlin team did a great job by fixing almost all the pain points we reported, so big thanks to them. The upcoming Kotlin 1.1 release is expected to also fix &lt;a href="https://youtrack.jetbrains.com/issue/KT-11235"&gt;KT-11235&lt;/a&gt; in order to allow specifying array annotation attribute single value without &lt;code&gt;arrayOf()&lt;/code&gt;. The main remaining issue you will face is probably &lt;a href="https://youtrack.jetbrains.com/issue/KT-14984"&gt;KT-14984&lt;/a&gt; that will require specifying explicitly lambda type (like &lt;code&gt;Supplier { }&lt;/code&gt; or &lt;code&gt;HandlerFunction  { }&lt;/code&gt;) where just specifying &lt;code&gt;{ }&lt;/code&gt; should be enough.&lt;/p&gt;
+&lt;p&gt;Feel free to test Spring Framework 5.0 Kotlin support by going to &lt;a href="https://start.spring.io/#!language=kotlin"&gt;start.spring.io&lt;/a&gt; and generating a Spring Boot &lt;code&gt;2.0.0 (SNAPSHOT)&lt;/code&gt; project and send us your feedback here or in the &lt;code&gt;#spring&lt;/code&gt; channel of &lt;a href="http://slack.kotlinlang.org/"&gt;Kotlin Slack&lt;/a&gt;. You can also &lt;a href="https://github.com/spring-projects/spring-framework/pulls"&gt;contribute&lt;/a&gt; the Kotlin extensions you need ;-)&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>This Week in Spring - January 3rd, 2017</title>
+    <link rel="alternate" href="https://spring.io/blog/2017/01/03/this-week-in-spring-january-3rd-2017" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2017-01-03:2759</id>
+    <updated>2017-01-03T20:29:00Z</updated>
+    <content type="html">&lt;p&gt;Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! We&amp;rsquo;re now squarely in 2017, and 0 as always - there is &lt;em&gt;much&lt;/em&gt; to cover! &lt;/p&gt;
+&lt;p&gt;This is also the first week of the year. I note it with some pride because it also marks the 6th anniversary of the first installment of &lt;em&gt;This Week in Spring&lt;/em&gt;, in January 2011, which I&amp;rsquo;ve since continued every Tuesday without fail come sickness, holiday, travel or otherwise. It&amp;rsquo;s been a heckuva run and I&amp;rsquo;m excited to see what will grace This Week in Spring in the next 6+ years! I&amp;rsquo;m eternally grateful for all the people (from the community and internal to VMWare and now Pivotal) that have contributed to This Week in Spring over the years! For the last 3+ years my friend and Pivotal&amp;rsquo;s own &lt;a href="https://twitter.com/PieterHumphrey"&gt;Pieter Humphrey&lt;/a&gt; has been an amazing help in making this happen, so thanks Pieter!&lt;/p&gt;
+&lt;p&gt;As usual, if you have things you would like to see added to This Week in Spring, then don&amp;rsquo;t hesitate to &lt;a href="http://twitter.com/starbuxman"&gt;ping me on Twitter&lt;/a&gt; or ping &lt;a href="mailto:josh@joshlong.com"&gt;me by email&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Now then, let&amp;rsquo;s get to it! &lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Spring Framework lead and co-founder Juergen Hoeller &lt;a href="https://spring.io/blog/2016/12/30/spring-framework-5-0-m4-released"&gt;just announced Spring Framework 5.0 M4&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Last week, I didn&amp;rsquo;t publish a new Spring Tips video (and nor will I tomorrow) since I&amp;rsquo;m on vacation ( &lt;em&gt;This Week in Spring&lt;/em&gt; aside!) but I did look at &lt;a href="https://spring.io/blog/2016/12/28/spring-tips-spring-tips-2016"&gt;resources every user should be aware to find educational content on all things Spring&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Integration and messaging ninja &lt;a href="https://spring.io/blog/2016/12/28/spring-amqp-1-7-rc1-available-now"&gt;Artem Bilan just announced Spring AMQP 1.7RC1&lt;/a&gt; which includes new support for the Amqp Client 4.0, updates to Log4j 2.7, Spring Retry 1.2, new support in &lt;code&gt;spring-rabbit-junit&lt;/code&gt; for convenient rules like &lt;code&gt;BrokerRunning&lt;/code&gt; and support for configuring how connections appear from the broker itself.&lt;/li&gt;
+  &lt;li&gt;If you&amp;rsquo;ve ever wondered how you can extend Spring Boot, community contributor Dieter Hubau from Ordina / JWorks did a great talk on &lt;a href="https://spring.io/blog/2017/01/03/springone-platform-2016-replay-writing-your-own-spring-boot-starter"&gt;Writing your own Spring Boot Starter&lt;/a&gt; at SpringOne Platform 2016.&lt;/li&gt;
+  &lt;li&gt;Greg Turnquist talks about &lt;a href="https://spring.io/blog/2017/01/03/springone-platform-2016-replay-spinnaker-land-of-a-1000-builds"&gt;Continuous Delivery with Spinnaker&lt;/a&gt; in this SpringOne Platform 2016 replay. After watching, make sure to check out the &lt;a href="https://spring.io/blog/2016/12/19/spring-cloud-spinnaker-1-0-0-m3"&gt;latest M3 release&lt;/a&gt; of Spring Cloud Spinnaker while you&amp;rsquo;re at it!&lt;/li&gt;
+  &lt;li&gt;Ever wondered why Spring on Cloud Foundry is such a smooth experience? Or Groovy? Or Grails? Watch SpringOne rockstar speaker &amp;amp; a buildpack team lead Ben Hale talk about &lt;a href="https://spring.io/blog/2017/01/03/springone-platform-2016-replay-java-buildpack-developer-enhancements"&gt;updates to the Cloud Foundry Java Buildpack&lt;/a&gt; in his SpringOne Platform replay. Building on a base of amazing features like the &lt;a href="https://github.com/cloudfoundry/java-buildpack/blob/master/docs/jre-open_jdk_jre.md"&gt;memory calculator&lt;/a&gt; Ben gives you the latest on why the buildpack provides the best Java SE support avaialble on the cloud today.&lt;/li&gt;
+  &lt;li&gt;Christoph Strobl takes us through the latest in &lt;a href="https://spring.io/blog/2017/01/03/springone-platform-2016-replay-next-level-redis-with-spring"&gt;Spring Data Redis&lt;/a&gt; in his SpringOne Platform 2016 talk.&lt;/li&gt;
+  &lt;li&gt;Eitan Suez explains &lt;a href="https://spring.io/blog/2017/01/03/springone-platform-2016-replay-where-does-apache-geode-fit-in-cqrs-architectures"&gt;how Apache Geode fits into CQRS architecture&lt;/a&gt; in this SpringOne Platform 2016 replay.&lt;/li&gt;
+  &lt;li&gt;Never worked with Spring Data before? Here&amp;rsquo;s a &lt;a href="https://spring.io/blog/2017/01/03/springone-platform-2016-replay-introduction-to-spring-data"&gt;great introduction&lt;/a&gt; from Greg Turnquist given at the SpringOne Platform 2016 conference.&lt;/li&gt;
+  &lt;li&gt;Mark Paluch talks about Spring Cloud&amp;rsquo;s support for HashiCorp Vault in his SpringOne Platform replay, &lt;a href="https://spring.io/blog/2017/01/03/springone-platform-2016-replay-managing-secrets-at-scale"&gt;Managing scerets at scale&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;the Asimio Tech blog has a few nice posts up of late. This one looks at &lt;a href="http://tech.asimio.net/2016/12/09/Centralized-and-Versioned-Configuration-using-Spring-Cloud-Config-Server-and-Git.html"&gt;centralizing configuration with the Spring Cloud Config Server&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;.. and this one looks at troubleshooting &lt;a href="http://tech.asimio.net/2016/12/27/Troubleshooting-Spring-RestTemplate-Requests-Timeout.html"&gt;timeouts with Spring&amp;rsquo;s &lt;code&gt;RestTemplate&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;take a peak at some of what we&amp;rsquo;re experimenting with around serverless function-type workloads in the recently announced but still very early days &lt;a href="https://github.com/markfisher/spring-cloud-function"&gt;Spring Cloud Function project&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;this is a short-and-sweet look at how to apply &lt;a href="https://twitter.com/craigburke1"&gt;Craig Burke&lt;/a&gt;&amp;rsquo;s &lt;a href="http://josdem.io/techtalk/spring/spring_boot_bower_plugin/"&gt;Bower Gradle plugin&lt;/a&gt; to a Gradle-build (not really all that much to do with Spring Boot, despite the title, but interesting nonetheless)&lt;/li&gt;
+  &lt;li&gt;learn how to separate integration from &lt;a href="https://moelholm.com/2016/10/22/spring-boot-separating-tests/"&gt;unit tests through JUnit or Spring Boot&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;this Japanese-language post looks at &lt;a href="http://pppurple.hatenablog.com/entry/2016/12/29/233141"&gt;constructor injection in a Spring application&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring MVC ninja Rossen Stoyanchev hints that the Spring 5 web and reactive effort, informally referred to as Spring Reactive thus far, &lt;a href="https://twitter.com/rstoya05/status/814539765601157120"&gt;will get a name in early January&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;this is an oldie but a goodie from Pivotal&amp;rsquo;s own David Julia, &lt;a href="https://blog.pivotal.io/pivotal-labs/products/refactoring-towards-expressive-rest-apis-let-your-code-be-your-guide"&gt;looking at how to write expressive REST APIs&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;This seems to be a very cool (non-Pivotal) community for &lt;a href="http://springcloud.cn/"&gt;Chinese-language speakers using Spring Cloud&lt;/a&gt; complete with examples of its use in China. Very cool!&lt;/li&gt;
+  &lt;li&gt;Matt Raible wrote a really nice post detailing some useful tips when &lt;a href="https://stormpath.com/blog/angularjs-spring-boot-tips"&gt;building Spring Boot and Angular.js applications with Stormpath&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;I really enjoyed Bartosz Jedrzejewski&amp;rsquo;s blog looking at &lt;a href="http://blog.scottlogic.com/2016/11/22/spring-boot-and-mongodb.html"&gt;building Spring Boot applications with MongoDB&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;this is a nice post that simply looks at how to &lt;a href="https://github.com/neo4j-examples/movies-java-spring-boot-jdbc"&gt;stand up Spring Boot applications that listen on multiple ports&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Spring Data Neo4j lead Michael Hunger just updated a very nice example of &lt;a href="https://github.com/neo4j-examples/movies-java-spring-boot-jdbc"&gt;using Neo4j&amp;rsquo;s Cypher language to communicate through a JDBC driver with Neo4j&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;the &lt;em&gt;Trying Things&lt;/em&gt; blog has a nice look &lt;a href="https://tryingthings.wordpress.com/2016/12/19/cucumber-selenium-spring-boot/"&gt;at writing Cucumber tests with Spring Boot&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Karl Penzhorn did a nice job looking at how to build a simple CRUD application &lt;a href="https://www.javacodegeeks.com/2016/12/build-crud-application-react-spring-boot-user-authentication.html"&gt;using Spring Boot, React, complete with security and user authentication&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;I dig &lt;a href="http://ledze.mx/index.php/10-spring-boot/restful/8-spring-boot-datarest-restful-mvc-thymeleaf-extrabonus-actuator-y-remote-shell"&gt;this Spanish-language look at building a Spring Boot-based web application&lt;/a&gt; that features all the usual goodies plus Actuator, Thymeleaf, and even the Spring Boot remote shell!&lt;/li&gt;
+  &lt;li&gt;the folks in the RedHat/JBoss Ininispan group just released &lt;a href="http://blog.infinispan.org/2016/12/spring-boot-starters.html"&gt;some nice Infinispan Spring Boot starters data grid and Spring Boot&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <title>SpringOne Platform 2016 Replay: Introduction to Spring Data</title>
+    <link rel="alternate" href="https://spring.io/blog/2017/01/03/springone-platform-2016-replay-introduction-to-spring-data" />
+    <category term="news" label="News and Events" />
+    <author>
+      <name>Pieter Humphrey</name>
+    </author>
+    <id>tag:spring.io,2017-01-05:2768</id>
+    <updated>2017-01-03T20:25:00Z</updated>
+    <content type="html">&lt;p&gt;Recorded at SpringOne Platform 2016.&lt;br/&gt;Speaker: Greg Turnquist&lt;br/&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/introduction-to-spring-data"&gt;http://www.slideshare.net/SpringCentral/introduction-to-spring-data&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Are you still writing data queries by hand? Learn how Spring Data gives you the tools to leap over that hurdle and dive into solving problems. Feeling locked into your relational database due to having written gobs of SQL operations? In this live coding session, see how Spring Data provides the means to reduce that risk and give you the means to branch into other data stores. With a couple extra lines of code, you can even have a RESTful interface in no time flat.&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/wn1KYxxm0wo" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
+  </entry>
+  <entry>
+    <title>SpringOne Platform 2016 Replay: Managing secrets at scale</title>
+    <link rel="alternate" href="https://spring.io/blog/2017/01/03/springone-platform-2016-replay-managing-secrets-at-scale" />
+    <category term="news" label="News and Events" />
+    <author>
+      <name>Pieter Humphrey</name>
+    </author>
+    <id>tag:spring.io,2017-01-05:2769</id>
+    <updated>2017-01-03T20:25:00Z</updated>
+    <content type="html">&lt;p&gt;Recorded at SpringOne Platform 2016.&lt;br/&gt;Speaker: Mark Paluch&lt;br/&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/managing-secrets-at-scale-64889986"&gt;http://www.slideshare.net/SpringCentral/managing-secrets-at-scale-64889986&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Running multiple instances of microservices, deploying Docker images to Kubernetes is the current trend. But what about security? Are you encrypting passwords? Where do you store the key? How often do you rotate secrets? A modern system requires access to a multitude of secrets: database credentials, API keys for external services, credentials for service-oriented architecture communication and often much more. Traditional, manual patterns cannot keep the security bar high with dynamic deployment scenarios. Secrets should stay secret and not get distributed amongst the landscape. Come to this session to learn how to keep the security bar high while running services that require secrets. You&amp;rsquo;ll see how to securely share and manage secrets (certificates, passwords, keys) for your services using Vault and how to use it with Spring Boot.&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/tKAHqu9oT0Y" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
+  </entry>
+  <entry>
+    <title>SpringOne Platform 2016 Replay: Where Does Apache Geode Fit in CQRS Architectures?</title>
+    <link rel="alternate" href="https://spring.io/blog/2017/01/03/springone-platform-2016-replay-where-does-apache-geode-fit-in-cqrs-architectures" />
+    <category term="news" label="News and Events" />
+    <author>
+      <name>Pieter Humphrey</name>
+    </author>
+    <id>tag:spring.io,2017-01-05:2767</id>
+    <updated>2017-01-03T20:24:00Z</updated>
+    <content type="html">&lt;p&gt;Recorded at SpringOne Platform 2016.&lt;br/&gt;Speaker: Eitan Suez&lt;br/&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/where-does-apache-geode-fit-in-cqrs-architectures"&gt;http://www.slideshare.net/SpringCentral/where-does-apache-geode-fit-in-cqrs-architectures&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In this talk, Eitan Suez will explore the question: Where does Geode fit in an organization&amp;rsquo;s system architecture? Geode is a unique and feature-rich product that perhaps hasn&amp;rsquo;t seen as much adoption as it deserves. Today&amp;rsquo;s apps are no longer the straightforward, database-backed web applications we used to build a few years ago. Applications have become more sophisticated, as they&amp;rsquo;ve had to meet the need to scale, to be reliable, fault-tolerant, and to integrate with other systems. In this talk, Eitan will suggest one particular fit for Geode in the context of a CQRS architecture, and welcomes you to attend, and to contribute by sharing how you&amp;rsquo;ve put Geode to use in your organization.&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/4YvssVImztY" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
+  </entry>
+  <entry>
+    <title>SpringOne Platform 2016 Replay: Next Level Redis with Spring</title>
+    <link rel="alternate" href="https://spring.io/blog/2017/01/03/springone-platform-2016-replay-next-level-redis-with-spring" />
+    <category term="news" label="News and Events" />
+    <author>
+      <name>Pieter Humphrey</name>
+    </author>
+    <id>tag:spring.io,2017-01-05:2766</id>
+    <updated>2017-01-03T20:23:00Z</updated>
+    <content type="html">&lt;p&gt;Recorded at SpringOne Platform 2016.&lt;br/&gt;Speaker: Christoph Strobl&lt;br/&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/next-level-redis-with-spring"&gt;http://www.slideshare.net/SpringCentral/next-level-redis-with-spring&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Redis is one of the most popular Open Source Key Value Stores these days. Spring Data Redis Lead Christoph Strobl takes you on a tour through high availability and cluster scenarios. He explains Object Hash Mapping and Secondary Indexes as well as the Spring Data Repository abstraction that let’s you seamlessly interact with Redis.&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/VvK-uLWDHFo" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
+  </entry>
+  <entry>
+    <title>SpringOne Platform 2016 Replay: Java Buildpack Developer Enhancements</title>
+    <link rel="alternate" href="https://spring.io/blog/2017/01/03/springone-platform-2016-replay-java-buildpack-developer-enhancements" />
+    <category term="news" label="News and Events" />
+    <author>
+      <name>Pieter Humphrey</name>
+    </author>
+    <id>tag:spring.io,2017-01-05:2765</id>
+    <updated>2017-01-03T20:22:00Z</updated>
+    <content type="html">&lt;p&gt;Recorded at SpringOne Platform 2016.&lt;br/&gt;Speaker: Ben Hale&lt;br/&gt;Slides: &lt;a href="http://www.slideshare.net/Pivotal/java-buildpack-developer-enhancements"&gt;http://www.slideshare.net/Pivotal/java-buildpack-developer-enhancements&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Over the years, the Java Experience team has worked hard to ensure that Cloud Foundry was the best place to run Java applications in the cloud. As that support has matured we’ve turned our attention to the developer experience. In this session, you’ll hear from the lead developer of the buildpack about the new support for JMX access, debugging, and profiling. Rounding out this session will be a short tour of other production features added recently.&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/xzLGdSsngoA" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
+  </entry>
+  <entry>
+    <title>SpringOne Platform 2016 Replay: Spinnaker - Land of a 1000 Builds</title>
+    <link rel="alternate" href="https://spring.io/blog/2017/01/03/springone-platform-2016-replay-spinnaker-land-of-a-1000-builds" />
+    <category term="news" label="News and Events" />
+    <author>
+      <name>Pieter Humphrey</name>
+    </author>
+    <id>tag:spring.io,2017-01-05:2764</id>
+    <updated>2017-01-03T20:21:00Z</updated>
+    <content type="html">&lt;p&gt;Recorded at SpringOne Platform 2016.&lt;br/&gt;Speaker: Greg Turnquist&lt;br/&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/spinnaker-land-of-a-1000-builds"&gt;http://www.slideshare.net/SpringCentral/spinnaker-land-of-a-1000-builds&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;How do big shops like Netflix make it possible to deploy hundreds if not thousands of releases every single day? FInd out with a tour through the microservice, Spring Boot-based system known as Spinnaker. Spinnaker is the open source continuous deployment tool that supports multiple clouds, multiple languages, and multiple providers. See how to keep your arms around complex deployment processes, multiple targets, and diverse teams.&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/aCLIEtYlsSA" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
+  </entry>
+  <entry>
+    <title>SpringOne Platform 2016 Replay: Writing your own Spring Boot Starter</title>
+    <link rel="alternate" href="https://spring.io/blog/2017/01/03/springone-platform-2016-replay-writing-your-own-spring-boot-starter" />
+    <category term="news" label="News and Events" />
+    <author>
+      <name>Pieter Humphrey</name>
+    </author>
+    <id>tag:spring.io,2017-01-05:2763</id>
+    <updated>2017-01-03T20:20:00Z</updated>
+    <content type="html">&lt;p&gt;Recorded at SpringOne Platform 2016.&lt;br/&gt;Speaker: Dieter Hubau&lt;br/&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/writing-your-own-spring-boot-starter"&gt;http://www.slideshare.net/SpringCentral/writing-your-own-spring-boot-starter&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Anyone who is actively using Spring must have heard of Spring Boot by now. It is the current de facto standard tool to start with a new Spring project and will become even more prevalent over the coming years. Next to an easy to use interface at start.spring.io and very good documentation, there are a ton of so called Spring Boot Starters which a developer can use to jumpstart their development. While the auto-configuration and starters often seem to be magically endowed creatures originating from the deepest regions of the forest moon of Endor&amp;hellip; there are not. In fact, anyone can write his or her own Spring Boot Starter. During the presentation, I will explain the inner workings of a Spring Boot Starter project and go over the necessary code for creating our own. I will use my recently developed starter for integrating Spring Social with a Redis backed datastore. At the end of the session, the audience will know that the Spring Boot autoconfiguration and starter projects are not magical unicorns, but easy to understand components in the Spring Boot ecosystem. They will also learn how to create their own Spring Boot Starter project and hopefully, they will be inclined to become proactively involved in the Spring Boot project.&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/EDdd56vyjPg" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
+  </entry>
   <entry>
     <title>Spring Framework 5.0 M4 released</title>
     <link rel="alternate" href="https://spring.io/blog/2016/12/30/spring-framework-5-0-m4-released" />
@@ -238,263 +722,6 @@ They can be provided later at runtime via &lt;code&gt;addQueues()&lt;/code&gt;&l
 | &lt;a href="http://stackoverflow.com/questions/tagged/spring-ldap"&gt;Help&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;/div&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Tool Suite 3.8.3 released</title>
-    <link rel="alternate" href="https://spring.io/blog/2016/12/22/spring-tool-suite-3-8-3-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Martin Lippert</name>
-    </author>
-    <id>tag:spring.io,2016-12-22:2750</id>
-    <updated>2016-12-22T15:37:00Z</updated>
-    <content type="html">&lt;p&gt;Dear Spring Community,&lt;/p&gt;
-&lt;p&gt;I am happy to announce the 3.8.3 release of the Spring Tool Suite, our Eclipse-based tooling.&lt;/p&gt;
-&lt;p&gt;STS 3.8.3 focuses on adopting Eclipse Neon.2 and fixing existing issues. The list of changes include:&lt;/p&gt;
-&lt;ul&gt;&#xD;
-&lt;li&gt;Updated to Eclipse Neon.2&lt;/li&gt;&#xD;
-&lt;li&gt;Added support for one-time passcode for Cloud Foundry targets in the Spring Boot Dashboard&lt;/li&gt;&#xD;
-&lt;li&gt;Added support for WAR packaging of Spring Boot apps when deploying them to CF in the Spring Boot Dashboard&lt;/li&gt;&#xD;
-&lt;li&gt;Added support for health-check in Cloud Foundry manifest files&lt;/li&gt;&#xD;
-&lt;li&gt;Fixed a number of most-reported errors from the automated error reporting&lt;/li&gt;&#xD;
-&lt;li&gt;and more...&lt;/li&gt;&#xD;
-&lt;/ul&gt;
-&lt;p&gt;To download the distributions, please go visit:&lt;/p&gt;
-&lt;ul&gt;&#xD;
-&lt;li&gt;Spring Tool Suite: &lt;a href="https://spring.io/tools/sts/all"&gt;https://spring.io/tools/sts/all&lt;/a&gt;&lt;/li&gt;&#xD;
-&lt;/ul&gt;
-&lt;p&gt;Detailed new and noteworthy notes can be found here: &lt;a href="http://docs.spring.io/sts/nan/v383/NewAndNoteworthy.html"&gt;STS 3.8.3 New &amp;amp; Noteworthy&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Enjoy!&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Framework 4.3.5, 4.2.9 and 3.2.18 available now</title>
-    <link rel="alternate" href="https://spring.io/blog/2016/12/21/spring-framework-4-3-5-4-2-9-and-3-2-18-available-now" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Stéphane Nicoll</name>
-    </author>
-    <id>tag:spring.io,2016-12-21:2741</id>
-    <updated>2016-12-21T19:34:00Z</updated>
-    <content type="html">&lt;p&gt;It is my pleasure to announce that the Spring Framework &lt;a href="https://jira.spring.io/secure/ReleaseNote.jspa?projectId=10000&amp;version=15779"&gt;4.3.5&lt;/a&gt;, &lt;a href="https://jira.spring.io/secure/ReleaseNote.jspa?projectId=10000&amp;version=15723"&gt;4.2.9&lt;/a&gt; and &lt;a href="https://jira.spring.io/secure/ReleaseNote.jspa?projectId=10000&amp;version=15566"&gt;3.2.18&lt;/a&gt; maintenance releases &lt;a href="http://projects.spring.io/spring-framework"&gt;are available now&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;4.3.5 is a significant refinement release with 37 enhancements (including e.g. WebSocket support for the recently released Jetty 9.4) and several bug fixes, serving as the basis for the upcoming Spring Boot 1.4.3 release.&lt;/p&gt;
-&lt;p&gt;Please note that the 4.2.9 and 3.2.18 bug fix releases are the last in their respective line, with 4.2.x being superseded by 4.3.x now and 3.2.x reaching its EOL point. Going forward, we expect all users to upgrade to 4.3.5+ for further support.&lt;/p&gt;
-&lt;p&gt;All three releases also fix a path traversal vulnerability (CVE-2016-9878) in &lt;code&gt;ResourceServlet&lt;/code&gt;.&lt;br/&gt;If you happen to be among its rare users, please upgrade ASAP. Note that this functionality has been superseded for years already and will get removed in 5.0, so we actually recommend a migration to Spring MVC&amp;rsquo;s resource handling features within a &lt;code&gt;DispatcherServlet&lt;/code&gt; setup.&lt;/p&gt;
-&lt;p&gt;&lt;a href="http://projects.spring.io/spring-framework/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-framework"&gt;GitHub&lt;/a&gt; | &lt;a href="https://jira.spring.io/browse/SPR"&gt;Issues&lt;/a&gt; | &lt;a href="https://docs.spring.io/spring-framework/docs/current/spring-framework-reference/htmlsingle/"&gt;Documentation&lt;/a&gt;&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Tips: Spring Tool Suite</title>
-    <link rel="alternate" href="https://spring.io/blog/2016/12/21/spring-tips-spring-tool-suite" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2016-12-15:2736</id>
-    <updated>2016-12-21T09:14:00Z</updated>
-    <content type="html">&lt;p&gt;Speaker: &lt;a href="https://www.twitter.com/starbuxman"&gt;Josh Long&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Hi Spring fans! In this installment we look at the Spring Tool Suite, your premier Eclipse-based destination for building Spring applications.&lt;/p&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/6mtI4vmsQ08" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring - December 20, 2016</title>
-    <link rel="alternate" href="https://spring.io/blog/2016/12/20/this-week-in-spring-december-20-2016" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2016-12-20:2740</id>
-    <updated>2016-12-20T16:04:00Z</updated>
-    <content type="html">&lt;p&gt;Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! This week I&amp;rsquo;m in the winter wonderland of Toronto, Canada, hanging out with the amazing Pivotal Labs Toronto office and working with some of the largest financial institutions in all of Canada as they transition to Spring Cloud and to Pivotal Cloud Foundry. I love seeing seemingly large, lumbering companies run at startup speeds and crave it.&lt;/p&gt;
-&lt;p&gt;This week is the week of Christmas for some in the world, followed shortly by the western western new year. If you celebrate either (or both) of them, then, on behalf of the Spring team, let me wish you the happiest of holidays! I, for one, can&amp;rsquo;t believe we&amp;rsquo;re now less than two weeks away from 2017 (and with it, the beginning of the 7th year writing &lt;em&gt;This Week in Spring&lt;/em&gt;!)&lt;/p&gt;
-&lt;p&gt;Thankfully, there&amp;rsquo;s a lot to be seen so let&amp;rsquo;s get to it.&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Spring ninja Greg Turnquist has announced that &lt;a href="https://spring.io/blog/2016/12/19/spring-cloud-spinnaker-1-0-0-m2"&gt;Spring Cloud Spinnaker 1.0.0.M2 has been released&lt;/a&gt;!&lt;/li&gt;
-  &lt;li&gt;All around great guy and Spring Session and Spring Security lead &lt;a href="https://spring.io/blog/2016/12/16/spring-session-1-3-0-released"&gt;Rob Winch has just announced Spring Session 1.3.0&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring IO Platform lead and Spring (and Spring Boot) ninja Andy Wilkinson has just announced &lt;a href="https://spring.io/blog/2016/12/16/dependency-management-plugin-1-0-0-rc1"&gt;the newly rewritten and streamlined Gradle dependency management plugin 1.0.0.RC1&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Statemachine lead Janne Valkealahti has just announced &lt;a href="https://spring.io/blog/2016/12/15/spring-statemachine-1-2-0-released"&gt;Spring Statemachine 1.2.0&lt;/a&gt;, which supports UML submachines, state do actions, and so much more&lt;/li&gt;
-  &lt;li&gt;Rajini Sivaram has just announced &lt;a href="https://spring.io/blog/2016/12/15/reactor-kafka-1-0-0-m1-released"&gt;the first milestone of the Reactor Kafka module&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;last week, continuing the &lt;em&gt;Spring Tips&lt;/em&gt; series, I looked at how to demystify what&amp;rsquo;s happening behind the scenes when &lt;a href="https://spring.io/blog/2016/12/14/spring-tips-demystifying-bootiful-magic"&gt;Spring Boot&amp;rsquo;s auto-configuration kicks in&lt;/a&gt;. Watch this video to code with confidence! Then check out Stéphane Nicoll and Brian Clozel for some additional Spring Boot magic in their S1P 2016 replay, &lt;a href="https://spring.io/blog/2016/12/20/springone-platform-2016-replay-10-ways-to-get-super-productive-with-spring-boot"&gt;10 Ways to Get Super Productive with Spring Boot&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Big week for SpringOne Platform 2016 replays - starting with a Simon Ritter JDK daily double! First, it&amp;rsquo;s &lt;a href="https://spring.io/blog/2016/12/20/springone-platform-2016-replay-project-jigsaw-in-jdk-9-modularity-comes-to-java"&gt;JDK 9 Modularity with Jigsaw&lt;/a&gt; and then a talk on &lt;a href="https://spring.io/blog/2016/12/20/springone-platform-2016-replay-jdk-8-lessons-learnt-with-lambdas-and-streams"&gt;Lessons leanrt with JDK 8 Lambdas and Streams&lt;/a&gt;.&lt;/li&gt;
-  &lt;li&gt;Stephane Nicoll and Yann Cebron from JetBrains live code their way through &lt;a href="https://spring.io/blog/2016/12/20/springone-platform-2016-replay-40-tips-tricks-for-spring-in-intellij-idea"&gt;40 Tips and Tricks for IntelliJ IDEA&lt;/a&gt; in this SpringOne Platform 2016 replay.&lt;/li&gt;
-  &lt;li&gt;James Weaver gives a gentle introduction to Machine Learning in &lt;a href="https://spring.io/blog/2016/12/20/springone-platform-2016-replay-machine-learning-exposed"&gt;Machine Learning Exposed!&lt;/a&gt; with lots of Cloud Foundry and Spring demos.&lt;/li&gt;
-  &lt;li&gt;Sebastian Deleluze shows us how he was &lt;a href="https://spring.io/blog/2016/12/20/springone-platform-2016-replay-developing-a-geospatial-webservice-with-kotlin-and-spring-boot"&gt;Developing a Geospatial Webservice with Kotlin and Spring Boot&lt;/a&gt; in this S1P 2016 replay.&lt;/li&gt;
-  &lt;li&gt;GitLab has an interesting post on how to &lt;a href="https://about.gitlab.com/2016/12/14/continuous-delivery-of-a-spring-boot-application-with-gitlab-ci-and-kubernetes/"&gt;continuously deploy a Spring Boot application a cloud platform (which could as easily be Cloud Foundry)&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;last week I had the pleasure of doing a presentation with my buddy and &lt;a href="Http://twitter.com/jbaruch"&gt;JFrog&amp;rsquo;s very own Baruch&lt;/a&gt; and as part of that talk we designed a continuous delivery pipeline using Spring and JFrog Artifactory and Bintray which ulimately trigged a webhook automatically transitioning a Cloud Foundry application from a staging URL to a production URL (on the hypothetical acceptance of the story). That code, to switch the URL, was deployed on Pivotal Web Services (which is a Cloud Foundry deployment) and used the newly minted Reactor-powered Cloud Foundry Java client. I think it&amp;rsquo;s a &lt;em&gt;super&lt;/em&gt; cool API, and worth some investigation. Here&amp;rsquo;s &lt;a href="https://github.com/joshlong/cf-promoter/blob/master/src/main/java/com/example/PromoterApplication.java"&gt;the code, for your reference&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;This is an interesting look &lt;a href="https://www.javacodegeeks.com/2016/12/spring-boot-application-context-hierarchy.html"&gt;at how Spring manages application contexts&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;the future of the web is HTTPS, with HTTP all but requiring it effectively. Browser vendors are pushing for this as well. What&amp;rsquo;s your SSL strategy look like? &lt;a href="https://www.infoq.com/news/2016/12/google-pushing-https?utm_source=infoq&amp;utm_medium=popular_widget&amp;utm_campaign=popular_content_list&amp;utm_content=homepage"&gt;I thought this post on InfoQ was interesting&lt;/a&gt;. Remember, Spring Boot makes it dead simple to specify SSL keys and Cloud Foundry makes it even easier to securely terminate HTTPS at the platform router level instead of per node.&lt;/li&gt;
-  &lt;li&gt;if you&amp;rsquo;re looking for something to feed your mind this holiday, may I humbly suggest you check &lt;a href="https://www.youtube.com/playlist?list=PLgGXSWYM2FpPw8rV0tZoMiJYSCiLhPnOc"&gt;out the Spring Tips videos&lt;/a&gt; I&amp;rsquo;ve been doing recently?&lt;/li&gt;
-&lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <title>SpringOne Platform 2016 Replay: 10 Ways to Get Super Productive with Spring Boot</title>
-    <link rel="alternate" href="https://spring.io/blog/2016/12/20/springone-platform-2016-replay-10-ways-to-get-super-productive-with-spring-boot" />
-    <category term="news" label="News and Events" />
-    <author>
-      <name>Pieter Humphrey</name>
-    </author>
-    <id>tag:spring.io,2016-12-21:2747</id>
-    <updated>2016-12-20T13:20:00Z</updated>
-    <content type="html">&lt;p&gt;Recorded at SpringOne Platform 2016.&lt;br/&gt;Speakers: Stéphane Nicoll, Brian Clozel&lt;br/&gt;Slides: None, all live coding&lt;br/&gt;Spring Boot DevTools is not the only new feature that boosts your productivity. During this live coding session, we’ll work on 10 common app features and see how Boot is making your life easier.&lt;/p&gt;
-&lt;p&gt;We’ll cover the following:&lt;/p&gt;
-&lt;p&gt;Development cycle with Devtools, H2 Web console and persistent web sessions&lt;br/&gt;Manage custom error pages&lt;br/&gt;Managing application Cache&lt;br/&gt;Supporting OAuth2 in your app&lt;br/&gt;Using your custom AuthenticationPrincipal&lt;br/&gt;Using a persistent database in production&lt;br/&gt;Evolving your database schema with Flyway&lt;br/&gt;Custom Boot configuration (key hint, metadata)&lt;br/&gt;Gathering and exporting app Metrics&lt;br/&gt;Dealing with static resources in web apps&lt;/p&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/j7rQstg94Hk" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
-  </entry>
-  <entry>
-    <title>SpringOne Platform 2016 Replay: JDK 8: Lessons Learnt With Lambdas and Streams</title>
-    <link rel="alternate" href="https://spring.io/blog/2016/12/20/springone-platform-2016-replay-jdk-8-lessons-learnt-with-lambdas-and-streams" />
-    <category term="news" label="News and Events" />
-    <author>
-      <name>Pieter Humphrey</name>
-    </author>
-    <id>tag:spring.io,2016-12-21:2746</id>
-    <updated>2016-12-20T12:51:00Z</updated>
-    <content type="html">&lt;p&gt;Recorded at SpringOne Platform 2016.&lt;br/&gt;Speaker: Simon Ritter, Azul&lt;br/&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/jdk8-lessons-learnt-with-lambdas-and-streams"&gt;http://www.slideshare.net/SpringCentral/jdk8-lessons-learnt-with-lambdas-and-streams&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Lambda expressions and the streams API add a more functional style of programming to Java; something developers have not really had in the past.&lt;/p&gt;
-&lt;p&gt;This session will start with a short summary of the key features of both Lambda expressions and streams before moving on to some real world examples of how to use them effectively, including a number of lessons learnt from trying to apply an imperative style of programming when it should have been functional.&lt;/p&gt;
-&lt;p&gt;We&amp;rsquo;ll finish off with a quick look at some of the ideas for improvements to streams in JDK 9.&lt;/p&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/wZKmA6XodNE" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
-  </entry>
-  <entry>
-    <title>SpringOne Platform 2016 Replay: 40 Tips &amp; Tricks for Spring in IntelliJ IDEA</title>
-    <link rel="alternate" href="https://spring.io/blog/2016/12/20/springone-platform-2016-replay-40-tips-tricks-for-spring-in-intellij-idea" />
-    <category term="news" label="News and Events" />
-    <author>
-      <name>Pieter Humphrey</name>
-    </author>
-    <id>tag:spring.io,2016-12-21:2745</id>
-    <updated>2016-12-20T12:47:00Z</updated>
-    <content type="html">&lt;p&gt;Recorded at SpringOne Platform 2016.&lt;br/&gt;Speakers: Stephane Nicoll and Yann Cebron, JetBrains&lt;br/&gt;Slides: None, live coding&lt;br/&gt;IDEs can be powerful, but hard to learn. Some features are hidden or simply not well known.&lt;/p&gt;
-&lt;p&gt;Let’s end this dilemma and make you more productive and efficient when working on Spring applications. Learn how to navigate, edit and perform refactorings across a variety of common Spring technologies.&lt;/p&gt;
-&lt;p&gt;You’ll leave this session with a whole stack of power tricks - right from the developers working on it.&lt;/p&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/e7DR88jQa0Q" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
-  </entry>
-  <entry>
-    <title>SpringOne Platform 2016 Replay: Project Jigsaw in JDK 9: Modularity Comes To Java</title>
-    <link rel="alternate" href="https://spring.io/blog/2016/12/20/springone-platform-2016-replay-project-jigsaw-in-jdk-9-modularity-comes-to-java" />
-    <category term="news" label="News and Events" />
-    <author>
-      <name>Pieter Humphrey</name>
-    </author>
-    <id>tag:spring.io,2016-12-21:2744</id>
-    <updated>2016-12-20T12:36:00Z</updated>
-    <content type="html">&lt;p&gt;Recorded at SpringOne Platform 2016.&lt;br/&gt;Speaker: Simon Ritter, Azul Systems&lt;br/&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/project-jigsaw-in-jdk-9-modularity-comes-to-java-64849781"&gt;http://www.slideshare.net/SpringCentral/project-jigsaw-in-jdk-9-modularity-comes-to-java-64849781&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Project Jigsaw will bring modularity to the Java platform; something that will enable better security, performance and flexibility for deployment of applications. This talk will look at the fundamentals of how modularity in Java will work. Developers will need to understand that these changes go significantly further than just separating the standard class libraries into a number of discrete units.&lt;/p&gt;
-&lt;p&gt;This talk will explain the impact project Jigsaw will have on developers in terms of building their applications, as well as helping them to understand how things like encapsulation of private APIs, which have up until now been visible, will change in JDK 9.&lt;/p&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/Ks7J_qQVR7Y" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
-  </entry>
-  <entry>
-    <title>SpringOne Platform 2016 Replay: Machine Learning Exposed!</title>
-    <link rel="alternate" href="https://spring.io/blog/2016/12/20/springone-platform-2016-replay-machine-learning-exposed" />
-    <category term="news" label="News and Events" />
-    <author>
-      <name>Pieter Humphrey</name>
-    </author>
-    <id>tag:spring.io,2016-12-21:2743</id>
-    <updated>2016-12-20T10:26:00Z</updated>
-    <content type="html">&lt;p&gt;Recorded at SpringOne Platform 2016.&lt;br/&gt;Speaker: James Weaver&lt;br/&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/machine-learning-exposed-64845395"&gt;http://www.slideshare.net/SpringCentral/machine-learning-exposed-64845395&lt;/a&gt;&lt;br/&gt;The term &amp;ldquo;machine learning&amp;rdquo; is increasingly bandied about in corporate settings and cocktail parties, but what is it, really? In this session we&amp;rsquo;ll answer that question, providing an approachable overview of machine learning concepts, technologies, and use cases. We&amp;rsquo;ll then take a deeper dive into machine learning topics such as supervised learning, unsupervised learning, and deep learning. We&amp;rsquo;ll also survey various machine learning APIs and platforms. Technologies including Spring and Cloud Foundry will be leveraged in the demos. You&amp;rsquo;ll be the hit of your next party when you&amp;rsquo;re able to express the near-magical inner-workings of artificial neural networks!&lt;/p&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/4sf8IBGWnNo" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
-  </entry>
-  <entry>
-    <title>SpringOne Platform 2016 Replay:  Developing a Geospatial Webservice with Kotlin and Spring Boot</title>
-    <link rel="alternate" href="https://spring.io/blog/2016/12/20/springone-platform-2016-replay-developing-a-geospatial-webservice-with-kotlin-and-spring-boot" />
-    <category term="news" label="News and Events" />
-    <author>
-      <name>Pieter Humphrey</name>
-    </author>
-    <id>tag:spring.io,2016-12-21:2742</id>
-    <updated>2016-12-20T08:44:00Z</updated>
-    <content type="html">&lt;p&gt;Recorded at SpringOne Platform 2016.&lt;br/&gt;Speaker: Sébastien Deleuze&lt;br/&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/developing-a-geospatial-webservice-with-kotlin-and-spring-boot"&gt;http://www.slideshare.net/SpringCentral/developing-a-geospatial-webservice-with-kotlin-and-spring-boot&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;As described in this announcement &lt;a href="https://spring.io/blog/2016/02/15/developing-spring-boot-applications-with-kotlin"&gt;I made on the Spring blog&lt;/a&gt;, it is now easy to create a Spring Boot application using Kotlin.&lt;/p&gt;
-&lt;p&gt;Thanks to a &lt;a href="https://spring.io/blog/2016/03/20/a-geospatial-messenger-with-kotlin-spring-boot-and-postgresql"&gt;sample Geospatial messenger application&lt;/a&gt;, I will show how Spring Boot and Kotlin share the same pragmatic, innovative and opinionated mindset to allow you to build simple but powerful projects.&lt;/p&gt;
-&lt;p&gt;This talk will provide an opportunity to show how to use a relational database without JPA in order to use advanced PostgreSQL functionalities (like its powerful spatial database extender PostGIS or native JSON support) while keeping a lightweight stack.&lt;/p&gt;
-&lt;p&gt;I will also demonstrate the upcoming Kotlin to Javascript transpiler that allows you to share code between client and server (domain model, validation) and to code your frontend with autocomplete, static typing and so on.&lt;/p&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/8QPqIgRV4FM" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Cloud Spinnaker 1.0.0.M3</title>
-    <link rel="alternate" href="https://spring.io/blog/2016/12/19/spring-cloud-spinnaker-1-0-0-m3" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Greg Turnquist</name>
-    </author>
-    <id>tag:spring.io,2016-12-19:2739</id>
-    <updated>2016-12-19T20:39:00Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;Greetings Spring community,&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;I am happy to release the second milestone for &lt;a href="https://cloud.spring.io/spring-cloud-spinnaker/"&gt;Spring Cloud Spinnaker&lt;/a&gt;. Spring Cloud Spinnaker bundles up the &lt;a href="http://www.spinnaker.io/"&gt;continuous delivery Spinnaker platform&lt;/a&gt;, and provides a 1-click installer to let you install it to any &lt;a href="https://www.cloudfoundry.org/use/cloud-foundry-certified/"&gt;certified Cloud Foundry provider&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;UPDATE: This blog post originally cited M2, however one of our early adopters spotted a &lt;a href="https://github.com/spring-cloud/spring-cloud-spinnaker/issues/118"&gt;critical bug&lt;/a&gt;, so M3 has been built and released with the fix in hand.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Key features included in this release:&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="ulist"&gt;
-&lt;ul&gt;
-&lt;li&gt;
-&lt;p&gt;Much more simplified way to login, select your org and space from dropdowns, etc., shooting for as simple an experience as possible.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Ability to manage two CF spaces&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Support for Jenkins and Travis CI monitoring.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Configure email and slack notifications&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Move to hosted uber JARs, meaning installing the installer is no longer a bugbear&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Other enhancements regarding to Spinnaker itself include ability to clone server groups, an upgrade to our Reactor-based cf-java-client 2 library, and also enhance UX showing more CF information than ever.&lt;/p&gt;
-&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;If your team/meetup/JUG is interested in hearing more about Spinnaker, &lt;a href="https://spring.io/team/gturnquist"&gt;check in with me&lt;/a&gt; and we can arrange a Google Hangout.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Cheers,&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="https://github.com/spring-cloud/spring-cloud-spinnaker"&gt;Source&lt;/a&gt; | &lt;a href="https://circleci.com/gh/spring-cloud/spring-cloud-spinnaker"&gt;PR CI&lt;/a&gt; | &lt;a href="https://jenkins.spring.io/view/All/job/spring-cloud-spinnaker/"&gt;Master CI&lt;/a&gt; | &lt;a href="http://www.spinnaker.io/docs"&gt;Docs&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spinnaker"&gt;Questions&lt;/a&gt; | &lt;a href="http://join.spinnaker.io/"&gt;Slack&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Session 1.3.0 Released</title>
-    <link rel="alternate" href="https://spring.io/blog/2016/12/16/spring-session-1-3-0-released" />
-    <category term="releases" label="Releases" />
-    <author>
-      <name>Rob Winch</name>
-    </author>
-    <id>tag:spring.io,2016-12-16:2738</id>
-    <updated>2016-12-16T15:19:54Z</updated>
-    <content type="html">&lt;div class="paragraph"&gt;
-&lt;p&gt;On behalf of the community, I&amp;#8217;m pleased to announce the release of Spring Session 1.3.0.RELEASE. This release evolved through &lt;a href="https://github.com/spring-projects/spring-session/milestone/6?closed=1"&gt;1.3.0.M1&lt;/a&gt;,
-&lt;a href="https://github.com/spring-projects/spring-session/milestone/18?closed=1"&gt;1.3.0.M2&lt;/a&gt;,
-&lt;a href="https://github.com/spring-projects/spring-session/milestone/16?closed=1"&gt;1.3.0.RC1&lt;/a&gt;, and
-&lt;a href="https://github.com/spring-projects/spring-session/milestone/19?closed=1"&gt;1.3.0.RELEASE&lt;/a&gt;&lt;/p&gt;
-&lt;/div&gt;
-&lt;h1 id="what-s-new-in-spring-session-1-3-0-release" class="sect0"&gt;&lt;a class="anchor" href="#what-s-new-in-spring-session-1-3-0-release"&gt;&lt;/a&gt;What’s New in Spring Session 1.3.0.RELEASE&lt;/h1&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;You can find highlights of what&amp;#8217;s new in the &lt;a href="http://docs.spring.io/spring-session/docs/1.3.0.RELEASE/reference/html5/#what-s-new-in-1-3"&gt;What’s New in Spring Session 1.3.0.RELEASE&lt;/a&gt; section of the reference. For details refer to the changelog links above.&lt;/p&gt;
-&lt;/div&gt;
-&lt;h1 id="contributions" class="sect0"&gt;&lt;a class="anchor" href="#contributions"&gt;&lt;/a&gt;Contributions&lt;/h1&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Without the community we couldn&amp;#8217;t be the successful project we are today. I&amp;#8217;d like to thank everyone that created issues &amp;amp; provided feedback.&lt;/p&gt;
-&lt;/div&gt;
-&lt;h1 id="feedback-please" class="sect0"&gt;&lt;a class="anchor" href="#feedback-please"&gt;&lt;/a&gt;Feedback Please&lt;/h1&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;If you have feedback on this release, I encourage you to reach out via &lt;a href="http://stackoverflow.com/questions/tagged/spring-session"&gt;StackOverflow&lt;/a&gt;, &lt;a href="https://github.com/spring-projects/spring-session/issues"&gt;GitHub Issues&lt;/a&gt;, or via the comments section. You can also ping me &lt;a href="https://twitter.com/rob_winch"&gt;@rob_winch&lt;/a&gt; or Joe &lt;a href="https://twitter.com/joe_grandja"&gt;@joe_grandja&lt;/a&gt; on Twitter.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;Of course the best feedback comes in the form of &lt;a href="https://github.com/spring-projects/spring-session/blob/1.3.0.RELEASE/CONTRIBUTING.adoc"&gt;contributions&lt;/a&gt;.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class="paragraph"&gt;
-&lt;p&gt;&lt;a href="http://projects.spring.io/spring-session/"&gt;Project Site&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-session/docs/1.3.0.RELEASE/reference/html5/"&gt;Reference&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-session"&gt;Help&lt;/a&gt;&lt;/p&gt;
 &lt;/div&gt;</content>
   </entry>
 </feed>

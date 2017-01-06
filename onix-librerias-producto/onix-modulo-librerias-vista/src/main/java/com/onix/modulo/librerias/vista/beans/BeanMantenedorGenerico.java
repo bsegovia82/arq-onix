@@ -68,13 +68,15 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 	public static final String OCULTAR_DIALOGO = "hide";
 
 	/**
-	 * 
+	 * IN USUARIO RESPONSA
 	 */
 	private static final long serialVersionUID = 1L;
 
 	protected BeanMantenedorGenerico(ENTIDAD entidad, Class<ENTIDAD> entidadClase) {
 		entidadRegistrar = entidad;
 		clase = entidadClase;
+		listaEtiquetasPantalla = new HashMap<>();
+		cargarListaEtiquetas();
 	}
 
 	public ENTIDAD getEntidadRegistrar() {
@@ -98,9 +100,7 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 		try {
 			listaEntidades = getServicioMantenedor().listaObjetos(clase, true);
 			nombreAtributoCambioEstado = "ENTIDAD_CAMBIAR";
-			listaEtiquetasPantalla = new HashMap<>();
 			metodoPostConstruct();
-			cargarListaEtiquetas();
 		} catch (Throwable e) {
 			listaEntidades = new ArrayList<ENTIDAD>();
 			e.printStackTrace();
@@ -233,7 +233,10 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 			getServicioMantenedor().guardarActualizar(entidadRegistrar);
 			metodoPostTransaccion();
 			if (presentarMensaje) {
-				addMensaje(getMensajeTransaccion().length() < 1 ? JsfUtil.MENSAJE_INFO_OPERACION
+				System.out.println("********************************************");
+				System.out.println("MENSAJE " + getMensajeTransaccion());
+				System.out.println("********************************************");
+				addMensaje(getMensajeTransaccion().length() < 2 ? JsfUtil.MENSAJE_INFO_OPERACION
 						: getMensajeTransaccion());
 			}
 		} catch (ErrorValidacionVisual e1) {
@@ -372,47 +375,47 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 	// Desde aqui se consultan las etieutas
 	// ********************************
 	public String getTituloPagina() {
-		String lTitulo = listaEtiquetasPantalla.get(NombresEtiquetas.TITULOPAGINA);
+		String lTitulo = listaEtiquetasPantalla.get(NombresEtiquetas.TITULOPAGINA.toString());
 		return lTitulo == null ? "" : lTitulo;
 	}
 
 	public String getMensajeTablaVacia() {
-		String lTablaVacia = listaEtiquetasPantalla.get(NombresEtiquetas.TABLAVACIA);
+		String lTablaVacia = listaEtiquetasPantalla.get(NombresEtiquetas.TABLAVACIA.toString());
 		return lTablaVacia == null ? "" : lTablaVacia;
 	}
 
 	public String getDescripcionPagina() {
-		String lDescripcionPagina = listaEtiquetasPantalla.get(NombresEtiquetas.DESCRIPCIONPAGINA);
+		String lDescripcionPagina = listaEtiquetasPantalla.get(NombresEtiquetas.DESCRIPCIONPAGINA.toString());
 		return lDescripcionPagina == null ? "" : lDescripcionPagina;
 	}
 
 	public String getMensajeTransaccion() {
-		String lMensajeTransaccion = listaEtiquetasPantalla.get(NombresEtiquetas.MENSAJE_TRANSACCION);
+		String lMensajeTransaccion = listaEtiquetasPantalla.get(NombresEtiquetas.MENSAJE_TRANSACCION.toString());
 		return lMensajeTransaccion == null ? "" : lMensajeTransaccion;
 	}
 
 	public String getAyudaPagina() {
-		String lAyudaPagina = listaEtiquetasPantalla.get(NombresEtiquetas.AYUDAPAGINA);
+		String lAyudaPagina = listaEtiquetasPantalla.get(NombresEtiquetas.AYUDAPAGINA.toString());
 		return lAyudaPagina == null ? "" : lAyudaPagina;
 	}
 
 	public String getTab() {
-		String lTab = listaEtiquetasPantalla.get(NombresEtiquetas.TAB);
+		String lTab = listaEtiquetasPantalla.get(NombresEtiquetas.TAB.toString());
 		return lTab == null ? "" : lTab;
 	}
 
 	public String getCabeceraTabla() {
-		String lCabeceraTabla = listaEtiquetasPantalla.get(NombresEtiquetas.CABECERATABLA);
+		String lCabeceraTabla = listaEtiquetasPantalla.get(NombresEtiquetas.CABECERATABLA.toString());
 		return lCabeceraTabla == null ? "" : lCabeceraTabla;
 	}
 
 	public String getCabeceraDialogo() {
-		String lCabeceraDialogo = listaEtiquetasPantalla.get(NombresEtiquetas.CABECERADIALOGO);
+		String lCabeceraDialogo = listaEtiquetasPantalla.get(NombresEtiquetas.CABECERADIALOGO.toString());
 		return lCabeceraDialogo == null ? "" : lCabeceraDialogo;
 	}
 
 	public String getCabeceraPanelDialogo() {
-		String lCabeceraPanelDialogo = listaEtiquetasPantalla.get(NombresEtiquetas.CABECERAPANELDIALOGO);
+		String lCabeceraPanelDialogo = listaEtiquetasPantalla.get(NombresEtiquetas.CABECERAPANELDIALOGO.toString());
 		return lCabeceraPanelDialogo == null ? "" : lCabeceraPanelDialogo;
 	}
 

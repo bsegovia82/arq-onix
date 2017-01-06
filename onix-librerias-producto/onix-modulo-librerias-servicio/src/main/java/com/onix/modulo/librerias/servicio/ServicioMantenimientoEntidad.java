@@ -53,7 +53,6 @@ public abstract class ServicioMantenimientoEntidad
 		entidad.setObservacion(entidad.getObservacion() == null || entidad.getObservacion().length() < 2 ? OBSERVACION_APLICACION
 				: entidad.getObservacion());
 		entidad.setAuditoria(entidad.getAuditoria() == null ? REFERENCIA : entidad.getAuditoria());
-		
 	}
 
 	private void preLlenadoActualizacion(ENTIDAD entidad)

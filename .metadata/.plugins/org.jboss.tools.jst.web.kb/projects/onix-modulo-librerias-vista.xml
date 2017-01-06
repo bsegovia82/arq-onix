@@ -130,7 +130,7 @@
  <validation>
   <core validator-id="jboss.cdi.core"/>
   <el>
-   <linked-el length="18" name="%0" offset="11875" path="%1"/>
+   <linked-el length="18" name="%0" offset="12101" path="%1"/>
   </el>
  </validation>
  <aliases>
