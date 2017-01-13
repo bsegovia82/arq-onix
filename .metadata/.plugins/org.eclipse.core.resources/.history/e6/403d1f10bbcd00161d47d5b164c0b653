@@ -1,9 +1,0 @@
-package com.onix.modulo.librerias.vista.beans.oyentes;
-
-@FunctionalInterface
-public interface ValidadorIngresoDatosListener3 
-{
-
-	public void validarDatosIngreso();
-	
-}

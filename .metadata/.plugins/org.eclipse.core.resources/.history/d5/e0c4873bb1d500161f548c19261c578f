@@ -1,0 +1,7 @@
+package com.onix.modulo.librerias.servicio.oyentes;
+
+
+@FunctionalInterface
+public interface AccionValidacionListener {
+
+}

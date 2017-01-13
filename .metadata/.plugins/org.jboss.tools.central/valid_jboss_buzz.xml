@@ -9,6 +9,172 @@
 <link href="http://tiny-man.rhcloud.com" rel="alternate" />
 
 <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/atom+xml" href="http://feeds.feedburner.com/jbossbuzz" /><feedburner:info uri="jbossbuzz" /><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" /><entry>
+	<id>https://tools.jboss.org/blog/am1-for-neon.2.html</id>
+	<link href="http://feedproxy.google.com/~r/jbossbuzz/~3/6iy4Rm36Vto/am1-for-neon.2.html" rel="alternate" type="text/html" />
+	<title>JBoss Tools 4.4.3.AM1 for Eclipse Neon.2</title>
+	<summary type="html"><![CDATA[
+      <div><div id="preamble">
+      <div class="sectionbody">
+      <div class="paragraph">
+      <p>Happy to announce 4.4.3.AM1 (Developer Milestone 1) build for Eclipse Neon.2.</p>
+      </div>
+      <div class="paragraph">
+      <p>Downloads available at <a href="https://tools.jboss.org/downloads/jbosstools/neon/4.4.3.AM1.html">JBoss Tools 4.4.3 AM1</a>.</p>
+      </div>
+      </div>
+      </div>
+      <div class="sect1">
+      <h2 id="what-is-new"><a class="anchor" href="#what-is-new"></a>What is New?</h2>
+      <div class="sectionbody">
+      <div class="paragraph">
+      <p>Full info is at <a href="https://tools.jboss.org/documentation/whatsnew/jbosstools/4.4.3.AM1.html">this page</a>. Some highlights are below.</p>
+      </div>
+      <div class="sect2">
+      <h3 id="openshift-3"><a class="anchor" href="#openshift-3"></a>OpenShift 3</h3>
+      <div class="paragraph">
+      <p>Although our main focus is bug fixes, we continue to work on providing better experience for container based development in JBoss Tools and Developer Studio. Let’s go through a few interesting updates here and you can find more details on <a href="https://tools.jboss.org/documentation/whatsnew/jbosstools/4.4.2.AM1.html">the What’s New page</a>.</p>
+      </div>
+      <div class="sect3">
+      <h4 id="scaling-from-pod-resources"><a class="anchor" href="#scaling-from-pod-resources"></a>Scaling from pod resources</h4>
+      <div class="paragraph">
+      <p>When an application is being deployed to Openshift, it was possible to scale the pod resources from the
+      service resource.</p>
+      </div>
+      <div class="imageblock">
+      <div class="content">
+      <img src="https://tools.jboss.org/documentation/whatsnew/openshift/images/scale-command-from-service.png" alt="scale command from service" width="600" />
+      </div>
+      </div>
+      <div class="paragraph">
+      <p>However, it was not a very logical choice. So the command is also available at the pod level, leading to better usability.</p>
+      </div>
+      <div class="imageblock">
+      <div class="content">
+      <img src="https://tools.jboss.org/documentation/whatsnew/openshift/images/scale-command-from-pod.png" alt="scale command from pod" width="600" />
+      </div>
+      </div>
+      <div class="paragraph">
+      <p>Enjoy!</p>
+      </div>
+      <div class="paragraph">
+      <p>Jeff Maury</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div></div>
+    ]]></summary>
+	<content type="html">&lt;html&gt;&lt;body&gt;&lt;div&gt;&lt;div&gt;
+      &lt;div&gt;
+      &lt;div&gt;
+      &lt;p&gt;Happy to announce 4.4.3.AM1 (Developer Milestone 1) build for Eclipse Neon.2.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+      &lt;p&gt;Downloads available at &lt;a href="https://tools.jboss.org/downloads/jbosstools/neon/4.4.3.AM1.html" target="_blank"&gt;JBoss Tools 4.4.3 AM1&lt;/a&gt;.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+      &lt;h2&gt;&lt;a href="#what-is-new" target="_blank"&gt;&lt;/a&gt;What is New?&lt;/h2&gt;
+      &lt;div&gt;
+      &lt;div&gt;
+      &lt;p&gt;Full info is at &lt;a href="https://tools.jboss.org/documentation/whatsnew/jbosstools/4.4.3.AM1.html" target="_blank"&gt;this page&lt;/a&gt;. Some highlights are below.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+      &lt;h3&gt;&lt;a href="#openshift-3" target="_blank"&gt;&lt;/a&gt;OpenShift 3&lt;/h3&gt;
+      &lt;div&gt;
+      &lt;p&gt;Although our main focus is bug fixes, we continue to work on providing better experience for container based development in JBoss Tools and Developer Studio. Let&amp;rsquo;s go through a few interesting updates here and you can find more details on &lt;a href="https://tools.jboss.org/documentation/whatsnew/jbosstools/4.4.2.AM1.html" target="_blank"&gt;the What&amp;rsquo;s New page&lt;/a&gt;.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+      &lt;h4&gt;&lt;a href="#scaling-from-pod-resources" target="_blank"&gt;&lt;/a&gt;Scaling from pod resources&lt;/h4&gt;
+      &lt;div&gt;
+      &lt;p&gt;When an application is being deployed to Openshift, it was possible to scale the pod resources from the
+      service resource.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+      &lt;div&gt;
+      &lt;img src="https://tools.jboss.org/documentation/whatsnew/openshift/images/scale-command-from-service.png" alt="scale command from service" width="600"&gt;&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+      &lt;p&gt;However, it was not a very logical choice. So the command is also available at the pod level, leading to better usability.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+      &lt;div&gt;
+      &lt;img src="https://tools.jboss.org/documentation/whatsnew/openshift/images/scale-command-from-pod.png" alt="scale command from pod" width="600"&gt;&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+      &lt;p&gt;Enjoy!&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+      &lt;p&gt;Jeff Maury&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;
+&lt;img src="http://feeds.feedburner.com/~r/jbossbuzz/~4/6iy4Rm36Vto" height="1" width="1" alt=""/&gt;</content>
+	<updated>2017-01-11T21:51:27+00:00</updated>
+	<author><name>jeffmaury</name></author>
+	<source>
+		<link rel="self" href="http://tools.jboss.org/blog/" />
+		<title>JBoss Tools</title></source>
+
+	<category term="release" />
+
+	<category term="jbosstools" />
+
+	<category term="jbosscentral" />
+
+
+<feedburner:origLink>https://tools.jboss.org/blog/am1-for-neon.2.html</feedburner:origLink></entry>
+
+<entry>
+	<id>https://developer.jboss.org/blogs/weekly-editorial/2017/01/06/the-week-in-jboss-6th-jan-2017</id>
+	<link href="http://feedproxy.google.com/~r/jbossbuzz/~3/iuvWBcydcrI/the-week-in-jboss-6th-jan-2017" rel="alternate" type="text/html" />
+	<title>The Week in JBoss (6th Jan, 2017)</title>
+	<summary type="html"><![CDATA[<!-- [DocumentBodyStart:23e39f00-bbac-47ad-9911-3759826fe3b4] --><div class="jive-rendered-content"><p>To those of you in a geography that recently incremented its year counter: Happy New Year! This week much of the JBoss community is returning refreshed from the holiday break. And on their return we've seen the usual flurry of releases and useful tutorials and demos...</p><p style="min-height: 8pt; padding: 0px;">&#160;</p><h2><a class="jive-link-external-small" href="http://wei-meilin.blogspot.co.uk/2017/01/red-hat-jboss-fuse-getting-started-with.html?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed:+blogspot/hFXzh+(Christina+%E7%9A%84+J%E8%80%81%E9%97%86)" rel="nofollow">Getting Started with Fuse Integration Service 2.0 Tech preview</a></h2><p>In this post Christina Lin walks us through the steps needed to get started with Fuse Integration Service 2.0 (Tech preview). There&#8217;s even a video to make it easier to follow along.</p><p style="min-height: 8pt; padding: 0px;">&#160;</p><h2><a class="jive-link-external-small" href="http://www.schabell.org/2017/01/appdev-in-cloud-hr-employee-rewards-app-openshift.html?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+schabell%2Fjboss+%28Eric+D.+Schabell+-+JBoss%29" rel="nofollow">App Dev in the Cloud - HR Employee Rewards Application on OpenShift</a></h2><p>In this Blog post, Eric presents an update to his "HR Employee Rewards Application&#8221; demo application. In this update he&#8217;s fully containerized the application and shown how it can be ran on the OpenShift Container Platform.</p><p style="min-height: 8pt; padding: 0px;">&#160;</p><h2>Releases</h2><ul><li><a class="jive-link-external-small" href="http://blog.keycloak.org/2017/01/keycloak-250final-released.html" rel="nofollow">Keycloak 2.5.0.Final</a></li><li><a class="jive-link-external-small" href="http://blog.infinispan.org/2017/01/hotrod-clients-cc-810beta1-released.html?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+Infinispan+%28Infinispan%29" rel="nofollow">Infinispan Hotrod clients C++/C# 8.1.0.Beta1</a>. This release comes with new near caching support.</li><li><a class="jive-link-external-small" href="http://www.cdi-spec.org/news/2017/01/05/CDI_2_Beta_1_is_available/" rel="nofollow">Weld 3.0 Beta1</a>. This release represents the first beta of the CDI 2.0 Reference Implementation.</li><li><a class="jive-link-external-small" href="http://arquillian.org/blog/2017/01/04/resolver-2-2-5/" rel="nofollow">ShrinkWrap Resolver 2.2.5</a></li><li><a class="jive-link-external-small" href="http://in.relation.to/2017/01/05/hibernate-ogm-5-beta3-and-5/" rel="nofollow">Hibernate OGM 5.0.4</a>. This is a bugfix release recommended for all 5.0.x users.</li><li><a class="jive-link-external-small" href="http://in.relation.to/2017/01/05/hibernate-ogm-5-beta3-and-5/" rel="nofollow">Hibernate OGM 5.1 Beta3</a></li><li><a class="jive-link-external-small" href="http://wildfly-swarm.io/posts/announcing-wildfly-swarm-2017-1-1/" rel="nofollow">WildFly Swarm 2017.1.1</a></li><li><a class="jive-link-external-small" href="http://arquillian.org/blog/2017/01/05/arquillian-algeron-1-0-0-Alpha5/" rel="nofollow">Arquillian Algeron Extension 1.0.0.Alpha5</a> (previously the Arquillian Pact extension). In this release developers can define states using a Cucumber like expression. There is also integration with AssertJ among various other improvements and bug fixes.</li><li><a class="jive-link-external-small" href="http://teiid.blogspot.co.uk/2017/01/teiid-912-released.html" rel="nofollow">Teiid 9.1.2</a></li><li><a class="jive-link-external-small" href="http://arquillian.org/blog/2017/01/06/arquillian-core-1-1-12-Final/" rel="nofollow">Arquillian Core 1.1.12.Final</a>. This release comes with improved support for injection in JUnit @Rules and report improvements that combine multiple errors.</li></ul></div><!-- [DocumentBodyEnd:23e39f00-bbac-47ad-9911-3759826fe3b4] -->]]></summary>
+	<content type="html">&lt;html&gt;&lt;!-- [DocumentBodyStart:23e39f00-bbac-47ad-9911-3759826fe3b4] --&gt;&lt;body&gt;&lt;div&gt;&lt;p&gt;To those of you in a geography that recently incremented its year counter: Happy New Year! This week much of the JBoss community is returning refreshed from the holiday break. And on their return we've seen the usual flurry of releases and useful tutorials and demos...&lt;/p&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;h2&gt;&lt;a href="http://wei-meilin.blogspot.co.uk/2017/01/red-hat-jboss-fuse-getting-started-with.html?utm_source=feedburner&amp;amp;utm_medium=feed&amp;amp;utm_campaign=Feed:+blogspot/hFXzh+(Christina+%E7%9A%84+J%E8%80%81%E9%97%86)" rel="nofollow" target="_blank"&gt;Getting Started with Fuse Integration Service 2.0 Tech preview&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;In this post Christina Lin walks us through the steps needed to get started with Fuse Integration Service 2.0 (Tech preview). There&amp;rsquo;s even a video to make it easier to follow along.&lt;/p&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;h2&gt;&lt;a href="http://www.schabell.org/2017/01/appdev-in-cloud-hr-employee-rewards-app-openshift.html?utm_source=feedburner&amp;amp;utm_medium=feed&amp;amp;utm_campaign=Feed%3A+schabell%2Fjboss+%28Eric+D.+Schabell+-+JBoss%29" rel="nofollow" target="_blank"&gt;App Dev in the Cloud - HR Employee Rewards Application on OpenShift&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;In this Blog post, Eric presents an update to his "HR Employee Rewards Application&amp;rdquo; demo application. In this update he&amp;rsquo;s fully containerized the application and shown how it can be ran on the OpenShift Container Platform.&lt;/p&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;h2&gt;Releases&lt;/h2&gt;&lt;ul&gt;&lt;li&gt;&lt;a href="http://blog.keycloak.org/2017/01/keycloak-250final-released.html" rel="nofollow" target="_blank"&gt;Keycloak 2.5.0.Final&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="http://blog.infinispan.org/2017/01/hotrod-clients-cc-810beta1-released.html?utm_source=feedburner&amp;amp;utm_medium=feed&amp;amp;utm_campaign=Feed%3A+Infinispan+%28Infinispan%29" rel="nofollow" target="_blank"&gt;Infinispan Hotrod clients C++/C# 8.1.0.Beta1&lt;/a&gt;. This release comes with new near caching support.&lt;/li&gt;&lt;li&gt;&lt;a href="http://www.cdi-spec.org/news/2017/01/05/CDI_2_Beta_1_is_available/" rel="nofollow" target="_blank"&gt;Weld 3.0 Beta1&lt;/a&gt;. This release represents the first beta of the CDI 2.0 Reference Implementation.&lt;/li&gt;&lt;li&gt;&lt;a href="http://arquillian.org/blog/2017/01/04/resolver-2-2-5/" rel="nofollow" target="_blank"&gt;ShrinkWrap Resolver 2.2.5&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="http://in.relation.to/2017/01/05/hibernate-ogm-5-beta3-and-5/" rel="nofollow" target="_blank"&gt;Hibernate OGM 5.0.4&lt;/a&gt;. This is a bugfix release recommended for all 5.0.x users.&lt;/li&gt;&lt;li&gt;&lt;a href="http://in.relation.to/2017/01/05/hibernate-ogm-5-beta3-and-5/" rel="nofollow" target="_blank"&gt;Hibernate OGM 5.1 Beta3&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="http://wildfly-swarm.io/posts/announcing-wildfly-swarm-2017-1-1/" rel="nofollow" target="_blank"&gt;WildFly Swarm 2017.1.1&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="http://arquillian.org/blog/2017/01/05/arquillian-algeron-1-0-0-Alpha5/" rel="nofollow" target="_blank"&gt;Arquillian Algeron Extension 1.0.0.Alpha5&lt;/a&gt; (previously the Arquillian Pact extension). In this release developers can define states using a Cucumber like expression. There is also integration with AssertJ among various other improvements and bug fixes.&lt;/li&gt;&lt;li&gt;&lt;a href="http://teiid.blogspot.co.uk/2017/01/teiid-912-released.html" rel="nofollow" target="_blank"&gt;Teiid 9.1.2&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="http://arquillian.org/blog/2017/01/06/arquillian-core-1-1-12-Final/" rel="nofollow" target="_blank"&gt;Arquillian Core 1.1.12.Final&lt;/a&gt;. This release comes with improved support for injection in JUnit @Rules and report improvements that combine multiple errors.&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;!-- [DocumentBodyEnd:23e39f00-bbac-47ad-9911-3759826fe3b4] --&gt;&lt;/body&gt;&lt;/html&gt;
+&lt;img src="http://feeds.feedburner.com/~r/jbossbuzz/~4/iuvWBcydcrI" height="1" width="1" alt=""/&gt;</content>
+	<updated>2017-01-06T19:23:52+00:00</updated>
+	<author><name>Paul Robinson</name></author>
+	<source>
+		<link rel="self" href="http://community.jboss.org/blogs/weekly-editorial/feeds/" />
+		<title>Weekly Editorial</title></source>
+
+	<category term="hibernate" />
+
+	<category term="teiid" />
+
+	<category term="infinispan" />
+
+	<category term="shrinkwrap" />
+
+	<category term="weld" />
+
+	<category term="cdi" />
+
+	<category term="ogm" />
+
+	<category term="openshift" />
+
+	<category term="arquilian" />
+
+	<category term="fuse" />
+
+	<category term="wildfly" />
+
+	<category term="keycloak" />
+
+	<category term="fuse integration service" />
+
+	<category term="wildfly swarm" />
+
+	<category term="swarm" />
+
+
+<feedburner:origLink>https://developer.jboss.org/blogs/weekly-editorial/2017/01/06/the-week-in-jboss-6th-jan-2017</feedburner:origLink></entry>
+
+<entry>
 	<id>https://developer.jboss.org/blogs/weekly-editorial/2016/12/31/this-week-in-jboss-30th-december-2016-a-disturbance-in-the-force</id>
 	<link href="http://feedproxy.google.com/~r/jbossbuzz/~3/esko1O2SRWI/this-week-in-jboss-30th-december-2016-a-disturbance-in-the-force" rel="alternate" type="text/html" />
 	<title>This week in JBoss (30th December 2016): A disturbance in the force</title>
@@ -1484,861 +1650,6 @@
 
 
 <feedburner:origLink>https://tools.jboss.org/blog/2015-06-23-beta1-for-mars.html</feedburner:origLink></entry>
-
-<entry>
-	<id>https://tools.jboss.org/blog/eclipse-for-docker-has-arrived.html</id>
-	<link href="http://feedproxy.google.com/~r/jbossbuzz/~3/S7h_byMO5l4/eclipse-for-docker-has-arrived.html" rel="alternate" type="text/html" />
-	<title>Eclipse for Docker has arrived on Mars</title>
-	<summary type="html"><![CDATA[
-      <div><div id="preamble">
-      <div class="sectionbody">
-      <div class="paragraph">
-      <p>Eclipse Mars has arrived, and with it comes a brand new Docker tooling for it.</p>
-      </div>
-      <div class="admonitionblock note">
-      <table>
-      <tr>
-      <td class="icon">
-      <i class="fa icon-note" title="Note"></i>
-      </td>
-      <td class="content">
-      This blog is a cross-post from
-      <a href="http://www.eclipse.org/community/eclipse_newsletter/2015/june/">Eclipse
-      Newsletter: Landed On MARS</a> where you can read about more things
-      included in recent released Eclipse Mars.
-      </td>
-      </tr>
-      </table>
-      </div>
-      </div>
-      </div>
-      <div class="sect1">
-      <h2 id="goals"><a class="anchor" href="#goals"></a>Goals</h2>
-      <div class="sectionbody">
-      <div class="paragraph">
-      <p>We wanted to have a way to easily start/stop and deploy
-      Docker containers directly from Eclipse.</p>
-      </div>
-      <div class="paragraph">
-      <p>We wanted something that would run on all three major platforms:
-      Windows, Linux and OS X.</p>
-      </div>
-      <div class="paragraph">
-      <p>We wanted something that would work together with existing Docker
-      command line tools, but also utilized provide better overview and
-      easier/faster access to common operations, from a visual perspective.</p>
-      </div>
-      <div class="paragraph">
-      <p>We wanted it to be released with Eclipse Mars.</p>
-      </div>
-      <div class="paragraph">
-      <p>…​and that is what we got now.</p>
-      </div>
-      <div class="paragraph">
-      <p>This article runs through how to get it installed, the main features and what the future plans are.</p>
-      </div>
-      </div>
-      </div>
-      <div class="sect1">
-      <h2 id="where-do-i-get-it"><a class="anchor" href="#where-do-i-get-it"></a>Where do I get it ?</h2>
-      <div class="sectionbody">
-      <div class="paragraph">
-      <p>With Eclipse Mars released, you can get it from the Eclipse Mars
-      updatesite, the feature is named <code>Docker Tooling</code>.</p>
-      </div>
-      <div class="paragraph">
-      <p>If you want to try the latest greatest builds you can use <code>Linux Tools</code>
-      project nightly builds update site at
-      <code><a href="http://download.eclipse.org/linuxtools/updates-docker-nightly/" class="bare">http://download.eclipse.org/linuxtools/updates-docker-nightly/</a></code></p>
-      </div>
-      <div class="paragraph">
-      <p>To use the plugins, it is assumed that Docker is already installed.
-      You can see <a href="https://docs.docker.com/installation/#installation">Docker’s Installation guide</a> on how
-      to do this on various platforms.</p>
-      </div>
-      </div>
-      </div>
-      <div class="sect1">
-      <h2 id="views-and-perspectives"><a class="anchor" href="#views-and-perspectives"></a>Views and Perspectives</h2>
-      <div class="sectionbody">
-      <div class="paragraph">
-      <p>Once you have installed the Docker tooling, you will get access to three new views:</p>
-      </div>
-      <div class="dlist">
-      <dl>
-      <dt class="hdlist1">Docker Explorer </dt>
-      <dd>
-      <p>a tree view listing all connected Docker instances, with image and containers.</p>
-      </dd>
-      <dt class="hdlist1">Docker Containers </dt>
-      <dd>
-      <p>a table view listing containers for selected Docker connection</p>
-      </dd>
-      <dt class="hdlist1">Docker Images </dt>
-      <dd>
-      <p>a table view listing images available in the selected Docker connection</p>
-      </dd>
-      </dl>
-      </div>
-      <div class="paragraph">
-      <p>The easiest way to get to see these are by opening the <em>Docker Tooling</em> perspective.</p>
-      </div>
-      <div class="imageblock">
-      <div class="content">
-      <img src="./images/dockerarrived/docker_tooling_perspective.png" alt="Docker Tooling Perspective" />
-      </div>
-      </div>
-      <div class="paragraph">
-      <p>In the screen above, the Docker tooling are connected to a locally running Docker deamon named <code>boot2docker</code>.</p>
-      </div>
-      </div>
-      </div>
-      <div class="sect1">
-      <h2 id="connect"><a class="anchor" href="#connect"></a>Connect</h2>
-      <div class="sectionbody">
-      <div class="paragraph">
-      <p>To configure this you click the <code>Add Connection…​</code> button in the <code>Docker Explorer</code> view.</p>
-      </div>
-      <div class="paragraph">
-      <p>This will start a wizard that will try to detect your default Docker
-      connection setup, dependent on your operating system.</p>
-      </div>
-      <div class="imageblock">
-      <div class="content">
-      <img src="./images/dockerarrived/add_docker_connection.png" alt="Add Connection Wizard" />
-      </div>
-      </div>
-      <div class="paragraph">
-      <p>In Linux it will use standard unix sockets and if on Windows or OSX, it will look for the following
-      environment variables: <code>DOCKER_HOST</code>, <code>DOCKER_TLS_VERIFY</code> and <code>DOCKER_CERT_PATH</code>.</p>
-      </div>
-      <div class="paragraph">
-      <p>If neither of these are detectable, you can click <code>Use custom connection settings</code> and provide the connection info.</p>
-      </div>
-      <div class="paragraph">
-      <p>When you have the connection working you can get started using Docker images.</p>
-      </div>
-      </div>
-      </div>
-      <div class="sect1">
-      <h2 id="pull-individual-images"><a class="anchor" href="#pull-individual-images"></a>Pull individual images</h2>
-      <div class="sectionbody">
-      <div class="paragraph">
-      <p>To pull an image, you use the <code>Pull Image</code> in the Docker Image view.</p>
-      </div>
-      <div class="imageblock">
-      <div class="content">
-      <img src="./images/dockerarrived/docker_pull_image.png" alt="Pull Image" />
-      </div>
-      </div>
-      <div class="paragraph">
-      <p>Here, I’m simply pulling the <a href="https://registry.hub.docker.com/u/jboss/wildfly/">jboss/wildfly</a> image, a image amongst many available at <a href="http://hub.docker.com" class="bare">http://hub.docker.com</a>.</p>
-      </div>
-      </div>
-      </div>
-      <div class="sect1">
-      <h2 id="run"><a class="anchor" href="#run"></a>Run</h2>
-      <div class="sectionbody">
-      <div class="paragraph">
-      <p>To run the image, the easiest way is to right-click on the image in the Docker Explorer.</p>
-      </div>
-      <div class="imageblock">
-      <div class="content">
-      <img src="./images/dockerarrived/docker_explorer_run.png" alt="Run Image from Docker Explorer" width="400" />
-      </div>
-      </div>
-      <div class="paragraph">
-      <p>Here, I’ve initially filtered the list to just show images matching <code>wildfly</code> and then using right-click to choose the <code>Run Image…​</code> action.</p>
-      </div>
-      <div class="imageblock">
-      <div class="content">
-      <img src="./images/dockerarrived/docker_run_image.png" alt="Docker Run" />
-      </div>
-      </div>
-      <div class="paragraph">
-      <p>From within this dialog you can also search in Docker Hub for other images by clicking <code>Search…​</code>.</p>
-      </div>
-      <div class="imageblock">
-      <div class="content">
-      <img src="./images/dockerarrvied/docker_search.png" alt="Docker search" />
-      </div>
-      </div>
-      <div class="paragraph">
-      <p>In this example, I’m only going to focus on running using the defaults, but in the Run Image wizard you can also configure
-      ports, links, volumes, environment variables etc.</p>
-      </div>
-      <div class="paragraph">
-      <p>By default, we enable interactive and tty mode to allow you to interact with the docker container in the console (i.e. if the image asks for input).</p>
-      </div>
-      <div class="paragraph">
-      <p>When you click <code>Finish</code>, the container will start and show output in a Console and the Docker Containers view will show which ports are used.</p>
-      </div>
-      <div class="imageblock">
-      <div class="content">
-      <img src="./images/dockerarrived/docker_run_console.png" alt="Console" />
-      </div>
-      </div>
-      <div class="paragraph">
-      <p>In here, the port at 8080 (the web server) is mapped to 32768 on the docker daemon.</p>
-      </div>
-      <div class="paragraph">
-      <p>To show this I just need to goto <a href="http://dockerhost:32768" class="bare">http://dockerhost:32768</a> to access it. <code>dockerhost</code> is the IP of the docker daemon.</p>
-      </div>
-      <div class="imageblock">
-      <div class="content">
-      <img src="./images/dockerarrived/docker_browser.png" alt="Browse" />
-      </div>
-      </div>
-      </div>
-      </div>
-      <div class="sect1">
-      <h2 id="build"><a class="anchor" href="#build"></a>Build</h2>
-      <div class="sectionbody">
-      <div class="paragraph">
-      <p>If you have a <code>Dockerfile</code> you can build it via the <code>hammer</code> icon on the Image view. This will start the Build wizard.</p>
-      </div>
-      <div class="imageblock">
-      <div class="content">
-      <img src="./images/dockerarrived/docker_build.png" alt="docker build" />
-      </div>
-      </div>
-      <div class="paragraph">
-      <p>Once built, the image will show up and be possible to use for <a href="#run">running</a>.</p>
-      </div>
-      </div>
-      </div>
-      <div class="sect1">
-      <h2 id="properties"><a class="anchor" href="#properties"></a>Properties</h2>
-      <div class="sectionbody">
-      <div class="paragraph">
-      <p>You can view properties for all the various parts: connection, image and container, including getting a tree view of what <code>docker inspect</code> would show.</p>
-      </div>
-      <div class="imageblock">
-      <div class="content">
-      <img src="./images/dockerarrived/docker_properties.png" alt="docker properties" width="300" />
-      </div>
-      </div>
-      </div>
-      </div>
-      <div class="sect1">
-      <h2 id="future"><a class="anchor" href="#future"></a>Future</h2>
-      <div class="sectionbody">
-      <div class="paragraph">
-      <p>For Eclipse Mars we added all of the above base features and you can use it in your day-to-day work with Docker.</p>
-      </div>
-      <div class="paragraph">
-      <p>For Eclipse Mars SR1, we will work on getting some of the rough edges fixed, like &apos;Run&apos; and &apos;Build&apos; should be available in the context menu and not only in the views menu.</p>
-      </div>
-      <div class="paragraph">
-      <p>Work also started in Eclipse CDT to support using Docker images to build binaries for an OS other than the one you are running on.
-      The vision for this would allow running on Windows or Mac, but target native deployment on multiple various Linux architectures.</p>
-      </div>
-      <div class="paragraph">
-      <p>Furthermore in <a href="https://tools.jboss.org">JBoss Tools</a> we are working on better integrating Docker with Eclipse server adapters, to ease deployment of your web applications to a Docker container. You can see how server deployment works with the current Docker tooling by leveraging <a href="https://tools.jboss.org/blog/2015-03-02-getting-started-with-docker-and-wildfly.html">docker volumes</a> and <a href="https://tools.jboss.org/blog/2015-03-03-docker-and-wildfly-2.html">remote deployment</a> support.</p>
-      </div>
-      <div class="paragraph">
-      <p>If you have suggestions or find bugs, please open these in the <a href="https://bugs.eclipse.org/bugs/enter_bug.cgi?product=Linux%20Tools">Linux Tools project under Docker</a>.</p>
-      </div>
-      <div class="paragraph">
-      <p>Have fun!</p>
-      </div>
-      <div class="paragraph">
-      <p>Max Rydahl Andersen<br />
-      <a href="http://twitter.com/maxandersen">@maxandersen</a></p>
-      </div>
-      </div>
-      </div></div>
-    ]]></summary>
-	<content type="html">&lt;html&gt;&lt;body&gt;&lt;div&gt;&lt;div&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;p&gt;Eclipse Mars has arrived, and with it comes a brand new Docker tooling for it.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;table&gt;&lt;tr&gt;&lt;td&gt;
-      &lt;i title="Note"&gt;&lt;/i&gt;
-      &lt;/td&gt;
-      &lt;td&gt;
-      This blog is a cross-post from
-      &lt;a href="http://www.eclipse.org/community/eclipse_newsletter/2015/june/" target="_blank"&gt;Eclipse
-      Newsletter: Landed On MARS&lt;/a&gt; where you can read about more things
-      included in recent released Eclipse Mars.
-      &lt;/td&gt;
-      &lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;h2&gt;&lt;a href="#goals" target="_blank"&gt;&lt;/a&gt;Goals&lt;/h2&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;p&gt;We wanted to have a way to easily start/stop and deploy
-      Docker containers directly from Eclipse.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;We wanted something that would run on all three major platforms:
-      Windows, Linux and OS X.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;We wanted something that would work together with existing Docker
-      command line tools, but also utilized provide better overview and
-      easier/faster access to common operations, from a visual perspective.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;We wanted it to be released with Eclipse Mars.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;&amp;hellip;&amp;#8203;and that is what we got now.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;This article runs through how to get it installed, the main features and what the future plans are.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;h2&gt;&lt;a href="#where-do-i-get-it" target="_blank"&gt;&lt;/a&gt;Where do I get it ?&lt;/h2&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;p&gt;With Eclipse Mars released, you can get it from the Eclipse Mars
-      updatesite, the feature is named &lt;code&gt;Docker Tooling&lt;/code&gt;.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;If you want to try the latest greatest builds you can use &lt;code&gt;Linux Tools&lt;/code&gt;
-      project nightly builds update site at
-      &lt;code&gt;&lt;a href="http://download.eclipse.org/linuxtools/updates-docker-nightly/" target="_blank"&gt;http://download.eclipse.org/linuxtools/updates-docker-nightly/&lt;/a&gt;&lt;/code&gt;&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;To use the plugins, it is assumed that Docker is already installed.
-      You can see &lt;a href="https://docs.docker.com/installation/#installation" target="_blank"&gt;Docker&amp;rsquo;s Installation guide&lt;/a&gt; on how
-      to do this on various platforms.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;h2&gt;&lt;a href="#views-and-perspectives" target="_blank"&gt;&lt;/a&gt;Views and Perspectives&lt;/h2&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;p&gt;Once you have installed the Docker tooling, you will get access to three new views:&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;dl&gt;&lt;dt&gt;Docker Explorer &lt;/dt&gt;
-      &lt;dd&gt;
-      &lt;p&gt;a tree view listing all connected Docker instances, with image and containers.&lt;/p&gt;
-      &lt;/dd&gt;
-      &lt;dt&gt;Docker Containers &lt;/dt&gt;
-      &lt;dd&gt;
-      &lt;p&gt;a table view listing containers for selected Docker connection&lt;/p&gt;
-      &lt;/dd&gt;
-      &lt;dt&gt;Docker Images &lt;/dt&gt;
-      &lt;dd&gt;
-      &lt;p&gt;a table view listing images available in the selected Docker connection&lt;/p&gt;
-      &lt;/dd&gt;
-      &lt;/dl&gt;&lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;The easiest way to get to see these are by opening the &lt;em&gt;Docker Tooling&lt;/em&gt; perspective.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;img src="./images/dockerarrived/docker_tooling_perspective.png" alt="Docker Tooling Perspective"&gt;&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;In the screen above, the Docker tooling are connected to a locally running Docker deamon named &lt;code&gt;boot2docker&lt;/code&gt;.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;h2&gt;&lt;a href="#connect" target="_blank"&gt;&lt;/a&gt;Connect&lt;/h2&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;p&gt;To configure this you click the &lt;code&gt;Add Connection&amp;hellip;&amp;#8203;&lt;/code&gt; button in the &lt;code&gt;Docker Explorer&lt;/code&gt; view.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;This will start a wizard that will try to detect your default Docker
-      connection setup, dependent on your operating system.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;img src="./images/dockerarrived/add_docker_connection.png" alt="Add Connection Wizard"&gt;&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;In Linux it will use standard unix sockets and if on Windows or OSX, it will look for the following
-      environment variables: &lt;code&gt;DOCKER_HOST&lt;/code&gt;, &lt;code&gt;DOCKER_TLS_VERIFY&lt;/code&gt; and &lt;code&gt;DOCKER_CERT_PATH&lt;/code&gt;.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;If neither of these are detectable, you can click &lt;code&gt;Use custom connection settings&lt;/code&gt; and provide the connection info.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;When you have the connection working you can get started using Docker images.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;h2&gt;&lt;a href="#pull-individual-images" target="_blank"&gt;&lt;/a&gt;Pull individual images&lt;/h2&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;p&gt;To pull an image, you use the &lt;code&gt;Pull Image&lt;/code&gt; in the Docker Image view.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;img src="./images/dockerarrived/docker_pull_image.png" alt="Pull Image"&gt;&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;Here, I&amp;rsquo;m simply pulling the &lt;a href="https://registry.hub.docker.com/u/jboss/wildfly/" target="_blank"&gt;jboss/wildfly&lt;/a&gt; image, a image amongst many available at &lt;a href="http://hub.docker.com" target="_blank"&gt;http://hub.docker.com&lt;/a&gt;.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;h2&gt;&lt;a href="#run" target="_blank"&gt;&lt;/a&gt;Run&lt;/h2&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;p&gt;To run the image, the easiest way is to right-click on the image in the Docker Explorer.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;img src="./images/dockerarrived/docker_explorer_run.png" alt="Run Image from Docker Explorer" width="400"&gt;&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;Here, I&amp;rsquo;ve initially filtered the list to just show images matching &lt;code&gt;wildfly&lt;/code&gt; and then using right-click to choose the &lt;code&gt;Run Image&amp;hellip;&amp;#8203;&lt;/code&gt; action.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;img src="./images/dockerarrived/docker_run_image.png" alt="Docker Run"&gt;&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;From within this dialog you can also search in Docker Hub for other images by clicking &lt;code&gt;Search&amp;hellip;&amp;#8203;&lt;/code&gt;.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;img src="./images/dockerarrvied/docker_search.png" alt="Docker search"&gt;&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;In this example, I&amp;rsquo;m only going to focus on running using the defaults, but in the Run Image wizard you can also configure
-      ports, links, volumes, environment variables etc.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;By default, we enable interactive and tty mode to allow you to interact with the docker container in the console (i.e. if the image asks for input).&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;When you click &lt;code&gt;Finish&lt;/code&gt;, the container will start and show output in a Console and the Docker Containers view will show which ports are used.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;img src="./images/dockerarrived/docker_run_console.png" alt="Console"&gt;&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;In here, the port at 8080 (the web server) is mapped to 32768 on the docker daemon.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;To show this I just need to goto &lt;a href="http://dockerhost:32768" target="_blank"&gt;http://dockerhost:32768&lt;/a&gt; to access it. &lt;code&gt;dockerhost&lt;/code&gt; is the IP of the docker daemon.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;img src="./images/dockerarrived/docker_browser.png" alt="Browse"&gt;&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;h2&gt;&lt;a href="#build" target="_blank"&gt;&lt;/a&gt;Build&lt;/h2&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;p&gt;If you have a &lt;code&gt;Dockerfile&lt;/code&gt; you can build it via the &lt;code&gt;hammer&lt;/code&gt; icon on the Image view. This will start the Build wizard.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;img src="./images/dockerarrived/docker_build.png" alt="docker build"&gt;&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;Once built, the image will show up and be possible to use for &lt;a href="#run" target="_blank"&gt;running&lt;/a&gt;.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;h2&gt;&lt;a href="#properties" target="_blank"&gt;&lt;/a&gt;Properties&lt;/h2&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;p&gt;You can view properties for all the various parts: connection, image and container, including getting a tree view of what &lt;code&gt;docker inspect&lt;/code&gt; would show.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;img src="./images/dockerarrived/docker_properties.png" alt="docker properties" width="300"&gt;&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;h2&gt;&lt;a href="#future" target="_blank"&gt;&lt;/a&gt;Future&lt;/h2&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;p&gt;For Eclipse Mars we added all of the above base features and you can use it in your day-to-day work with Docker.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;For Eclipse Mars SR1, we will work on getting some of the rough edges fixed, like 'Run' and 'Build' should be available in the context menu and not only in the views menu.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;Work also started in Eclipse CDT to support using Docker images to build binaries for an OS other than the one you are running on.
-      The vision for this would allow running on Windows or Mac, but target native deployment on multiple various Linux architectures.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;Furthermore in &lt;a href="https://tools.jboss.org" target="_blank"&gt;JBoss Tools&lt;/a&gt; we are working on better integrating Docker with Eclipse server adapters, to ease deployment of your web applications to a Docker container. You can see how server deployment works with the current Docker tooling by leveraging &lt;a href="https://tools.jboss.org/blog/2015-03-02-getting-started-with-docker-and-wildfly.html" target="_blank"&gt;docker volumes&lt;/a&gt; and &lt;a href="https://tools.jboss.org/blog/2015-03-03-docker-and-wildfly-2.html" target="_blank"&gt;remote deployment&lt;/a&gt; support.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;If you have suggestions or find bugs, please open these in the &lt;a href="https://bugs.eclipse.org/bugs/enter_bug.cgi?product=Linux%20Tools" target="_blank"&gt;Linux Tools project under Docker&lt;/a&gt;.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;Have fun!&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;Max Rydahl Andersen&lt;br&gt;&lt;a href="http://twitter.com/maxandersen" target="_blank"&gt;@maxandersen&lt;/a&gt;&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;
-&lt;img src="http://feeds.feedburner.com/~r/jbossbuzz/~4/S7h_byMO5l4" height="1" width="1" alt=""/&gt;</content>
-	<updated>2016-12-12T22:16:17+00:00</updated>
-	<author><name>maxandersen</name></author>
-	<source>
-		<link rel="self" href="http://tools.jboss.org/blog/" />
-		<title>JBoss Tools</title></source>
-
-	<category term="docker" />
-
-	<category term="jbosscentral" />
-
-
-<feedburner:origLink>https://tools.jboss.org/blog/eclipse-for-docker-has-arrived.html</feedburner:origLink></entry>
-
-<entry>
-	<id>https://tools.jboss.org/blog/bower-support-is-coming.html</id>
-	<link href="http://feedproxy.google.com/~r/jbossbuzz/~3/BfgzyRRPkSc/bower-support-is-coming.html" rel="alternate" type="text/html" />
-	<title>Bower support is coming to JBoss Tools</title>
-	<summary type="html"><![CDATA[
-      <div><div id="preamble">
-      <div class="sectionbody">
-      <div class="paragraph">
-      <p>In this article I’m happy to introduce brand new JBoss Bower Tools:</p>
-      </div>
-      <div class="imageblock">
-      <div class="content">
-      <img src="./images/20150721_bower/jbosstools-bower.png" alt="Bower JBoss Tools" />
-      </div>
-      </div>
-      <div class="paragraph">
-      <p><a href="http://bower.io/">Bower</a> is a front-end package manager which works by fetching and installing frameworks, libraries, assets. It offers a generic, unopinionated solution to the problem of front-end package management, while exposing the package dependency model via an API that can be consumed by a more opinionated build stack. Bower provides declarative dependency management (dependencies are declared and tracked in a manifest file, <code>bower.json</code>).</p>
-      </div>
-      </div>
-      </div>
-      <div class="sect1">
-      <h2 id="pre-requirements"><a class="anchor" href="#pre-requirements"></a>Pre-Requirements</h2>
-      <div class="sectionbody">
-      <div class="paragraph">
-      <p>JBoss Bower Tools fall back on <strong>native</strong>  Node.js and Bower calls. Hence, the following software must be pre-installed:</p>
-      </div>
-      <div class="ulist">
-      <ul>
-      <li>
-      <p>Node.js</p>
-      </li>
-      <li>
-      <p>npm</p>
-      </li>
-      <li>
-      <p>Bower</p>
-      </li>
-      </ul>
-      </div>
-      <div class="admonitionblock tip">
-      <table>
-      <tr>
-      <td class="icon">
-      <i class="fa icon-tip" title="Tip"></i>
-      </td>
-      <td class="content">
-      Installation instructions for <strong>Node.js</strong> and <strong>npm</strong> can be found <a href="https://docs.npmjs.com/getting-started/installing-node">here</a>. Bower is a command line utility which is installed via npm command <code>npm install -g bower</code>
-      </td>
-      </tr>
-      </table>
-      </div>
-      <div class="paragraph">
-      <p>And then of course <a href="https://tools.jboss.org/downloads/jbosstools/mars/4.3.0.Nightly.html">latest build of JBoss Tools for Mars</a>.</p>
-      </div>
-      </div>
-      </div>
-      <div class="sect1">
-      <h2 id="quick-start-guide"><a class="anchor" href="#quick-start-guide"></a>Quick Start Guide</h2>
-      <div class="sectionbody">
-      <div class="paragraph">
-      <p>For now only <strong><a href="http://bower.io/docs/api/#init">init</a></strong> and <strong><a href="http://bower.io/docs/api/#update">update</a></strong> commands of Bower API are supported. In order to initialize Bower one need to select <strong>File → New…​ → Other…​</strong> and choose <strong>&quot;Bower Init&quot;</strong> wizard:</p>
-      </div>
-      <div class="imageblock">
-      <div class="content">
-      <img src="./images/20150721_bower/bower-init-new-wizard.png" alt="Bower Init wizard" />
-      </div>
-      </div>
-      <div class="paragraph">
-      <p>This wizard helps to create <code>bower.json</code> file depending on set of preferences:</p>
-      </div>
-      <div class="imageblock">
-      <div class="content">
-      <img src="./images/20150721_bower/bower-init-wizard-page.png" alt="Bower Init wizard page" />
-      </div>
-      </div>
-      <div class="paragraph">
-      <p>After pressing <strong>&quot;Finish&quot;</strong> button <code>bower.json</code> will be created under specified directory:</p>
-      </div>
-      <div class="imageblock">
-      <div class="content">
-      <img src="./images/20150721_bower/bower-json-default.png" alt="Default bower.json" />
-      </div>
-      </div>
-      <div class="paragraph">
-      <p>In order to add new dependencies one need to specify them in <code>bower.json</code>:</p>
-      </div>
-      <div class="imageblock">
-      <div class="content">
-      <img src="./images/20150721_bower/bower-dependencies.png" alt="Bower dependencies" />
-      </div>
-      </div>
-      <div class="paragraph">
-      <p>For updating dependencies user should right-click on the <code>bower.json</code> → <strong>Run As…​</strong> → <strong>Bower Update</strong></p>
-      </div>
-      <div class="admonitionblock tip">
-      <table>
-      <tr>
-      <td class="icon">
-      <i class="fa icon-tip" title="Tip"></i>
-      </td>
-      <td class="content">
-      In most cases <strong>Bower</strong> and <strong>Node.js</strong> will be detected in the system automatically. However, if the detection failed warn dialog will be shown for specifying location in preferences:
-      </td>
-      </tr>
-      </table>
-      </div>
-      <div class="imageblock">
-      <div class="content">
-      <img src="./images/20150721_bower/bower-preferences.png" alt="Bower preferences" />
-      </div>
-      </div>
-      <div class="paragraph">
-      <p><strong>&quot;Bower Update&quot;</strong> launch shortcut makes a native call which will install required packages or update them to the newest version according to <code>bower.json</code>:</p>
-      </div>
-      <div class="imageblock">
-      <div class="content">
-      <img src="./images/20150721_bower/bower-update-launch.png" alt="Bower Update launch" />
-      </div>
-      </div>
-      <div class="paragraph">
-      <p>Specified packages will be created under <code>bower_components</code> folder after <strong>&quot;Bower Update&quot;</strong> execution:</p>
-      </div>
-      <div class="imageblock">
-      <div class="content">
-      <img src="./images/20150721_bower/bower-components.png" alt="Bower components" />
-      </div>
-      </div>
-      <div class="paragraph">
-      <p>Basically, that is all - one can now use those packages for future front-end development.</p>
-      </div>
-      </div>
-      </div>
-      <div class="sect1">
-      <h2 id="demo"><a class="anchor" href="#demo"></a>Demo</h2>
-      <div class="sectionbody">
-      <div class="paragraph">
-      <p>Here is a short demo <a href="https://vimeo.com/133675030">video</a> which describes a basic use case of JBoss Bower Tools:</p>
-      </div>
-      <div class="videoblock">
-      <div class="content">
-      <iframe width="640" height="400" src="//player.vimeo.com/video/133675030" frameborder="0" allowfullscreen=""></iframe>
-      </div>
-      </div>
-      </div>
-      </div>
-      <div class="sect1">
-      <h2 id="how-to-give-it-a-go"><a class="anchor" href="#how-to-give-it-a-go"></a>How to give it a go ?</h2>
-      <div class="sectionbody">
-      <div class="paragraph">
-      <p>Bower support will be available in <code>4.3.0.Beta2</code> release and above. You can also use our nightly <a href="http://download.jboss.org/jbosstools/updates/nightly/mars/">update site</a> in order to try Bower Tools (<code>JBoss Tools JavaScript Tools</code> category) before the official release:</p>
-      </div>
-      <div class="imageblock">
-      <div class="content">
-      <img src="./images/20150721_bower/bower-javascript-tools.png" alt="Bower dependencies" />
-      </div>
-      </div>
-      </div>
-      </div>
-      <div class="sect1">
-      <h2 id="conclusion"><a class="anchor" href="#conclusion"></a>Conclusion</h2>
-      <div class="sectionbody">
-      <div class="paragraph">
-      <p>We are trying our best to make our tools as good as possible. User feedback is what we are seeking for now. We look forward to hearing your comments, remarks and proposals.<br />
-      Have fun!</p>
-      </div>
-      <div class="paragraph">
-      <p>Ilya Buziuk<br />
-      <a href="https://twitter.com/ilyabuziuk">@ilyabuziuk</a></p>
-      </div>
-      </div>
-      </div></div>
-    ]]></summary>
-	<content type="html">&lt;html&gt;&lt;body&gt;&lt;div&gt;&lt;div&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;p&gt;In this article I&amp;rsquo;m happy to introduce brand new JBoss Bower Tools:&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;img src="./images/20150721_bower/jbosstools-bower.png" alt="Bower JBoss Tools"&gt;&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;&lt;a href="http://bower.io/" target="_blank"&gt;Bower&lt;/a&gt; is a front-end package manager which works by fetching and installing frameworks, libraries, assets. It offers a generic, unopinionated solution to the problem of front-end package management, while exposing the package dependency model via an API that can be consumed by a more opinionated build stack. Bower provides declarative dependency management (dependencies are declared and tracked in a manifest file, &lt;code&gt;bower.json&lt;/code&gt;).&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;h2&gt;&lt;a href="#pre-requirements" target="_blank"&gt;&lt;/a&gt;Pre-Requirements&lt;/h2&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;p&gt;JBoss Bower Tools fall back on &lt;strong&gt;native&lt;/strong&gt;  Node.js and Bower calls. Hence, the following software must be pre-installed:&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;ul&gt;&lt;li&gt;
-      &lt;p&gt;Node.js&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-      &lt;p&gt;npm&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-      &lt;p&gt;Bower&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;/ul&gt;&lt;/div&gt;
-      &lt;div&gt;
-      &lt;table&gt;&lt;tr&gt;&lt;td&gt;
-      &lt;i title="Tip"&gt;&lt;/i&gt;
-      &lt;/td&gt;
-      &lt;td&gt;
-      Installation instructions for &lt;strong&gt;Node.js&lt;/strong&gt; and &lt;strong&gt;npm&lt;/strong&gt; can be found &lt;a href="https://docs.npmjs.com/getting-started/installing-node" target="_blank"&gt;here&lt;/a&gt;. Bower is a command line utility which is installed via npm command &lt;code&gt;npm install -g bower&lt;/code&gt;
-      &lt;/td&gt;
-      &lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;And then of course &lt;a href="https://tools.jboss.org/downloads/jbosstools/mars/4.3.0.Nightly.html" target="_blank"&gt;latest build of JBoss Tools for Mars&lt;/a&gt;.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;h2&gt;&lt;a href="#quick-start-guide" target="_blank"&gt;&lt;/a&gt;Quick Start Guide&lt;/h2&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;p&gt;For now only &lt;strong&gt;&lt;a href="http://bower.io/docs/api/#init" target="_blank"&gt;init&lt;/a&gt;&lt;/strong&gt; and &lt;strong&gt;&lt;a href="http://bower.io/docs/api/#update" target="_blank"&gt;update&lt;/a&gt;&lt;/strong&gt; commands of Bower API are supported. In order to initialize Bower one need to select &lt;strong&gt;File &amp;rarr; New&amp;hellip;&amp;#8203; &amp;rarr; Other&amp;hellip;&amp;#8203;&lt;/strong&gt; and choose &lt;strong&gt;"Bower Init"&lt;/strong&gt; wizard:&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;img src="./images/20150721_bower/bower-init-new-wizard.png" alt="Bower Init wizard"&gt;&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;This wizard helps to create &lt;code&gt;bower.json&lt;/code&gt; file depending on set of preferences:&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;img src="./images/20150721_bower/bower-init-wizard-page.png" alt="Bower Init wizard page"&gt;&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;After pressing &lt;strong&gt;"Finish"&lt;/strong&gt; button &lt;code&gt;bower.json&lt;/code&gt; will be created under specified directory:&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;img src="./images/20150721_bower/bower-json-default.png" alt="Default bower.json"&gt;&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;In order to add new dependencies one need to specify them in &lt;code&gt;bower.json&lt;/code&gt;:&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;img src="./images/20150721_bower/bower-dependencies.png" alt="Bower dependencies"&gt;&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;For updating dependencies user should right-click on the &lt;code&gt;bower.json&lt;/code&gt; &amp;rarr; &lt;strong&gt;Run As&amp;hellip;&amp;#8203;&lt;/strong&gt; &amp;rarr; &lt;strong&gt;Bower Update&lt;/strong&gt;&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;table&gt;&lt;tr&gt;&lt;td&gt;
-      &lt;i title="Tip"&gt;&lt;/i&gt;
-      &lt;/td&gt;
-      &lt;td&gt;
-      In most cases &lt;strong&gt;Bower&lt;/strong&gt; and &lt;strong&gt;Node.js&lt;/strong&gt; will be detected in the system automatically. However, if the detection failed warn dialog will be shown for specifying location in preferences:
-      &lt;/td&gt;
-      &lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;img src="./images/20150721_bower/bower-preferences.png" alt="Bower preferences"&gt;&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;&lt;strong&gt;"Bower Update"&lt;/strong&gt; launch shortcut makes a native call which will install required packages or update them to the newest version according to &lt;code&gt;bower.json&lt;/code&gt;:&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;img src="./images/20150721_bower/bower-update-launch.png" alt="Bower Update launch"&gt;&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;Specified packages will be created under &lt;code&gt;bower_components&lt;/code&gt; folder after &lt;strong&gt;"Bower Update"&lt;/strong&gt; execution:&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;img src="./images/20150721_bower/bower-components.png" alt="Bower components"&gt;&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;Basically, that is all - one can now use those packages for future front-end development.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;h2&gt;&lt;a href="#demo" target="_blank"&gt;&lt;/a&gt;Demo&lt;/h2&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;p&gt;Here is a short demo &lt;a href="https://vimeo.com/133675030" target="_blank"&gt;video&lt;/a&gt; which describes a basic use case of JBoss Bower Tools:&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;h2&gt;&lt;a href="#how-to-give-it-a-go" target="_blank"&gt;&lt;/a&gt;How to give it a go ?&lt;/h2&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;p&gt;Bower support will be available in &lt;code&gt;4.3.0.Beta2&lt;/code&gt; release and above. You can also use our nightly &lt;a href="http://download.jboss.org/jbosstools/updates/nightly/mars/" target="_blank"&gt;update site&lt;/a&gt; in order to try Bower Tools (&lt;code&gt;JBoss Tools JavaScript Tools&lt;/code&gt; category) before the official release:&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;img src="./images/20150721_bower/bower-javascript-tools.png" alt="Bower dependencies"&gt;&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;h2&gt;&lt;a href="#conclusion" target="_blank"&gt;&lt;/a&gt;Conclusion&lt;/h2&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;p&gt;We are trying our best to make our tools as good as possible. User feedback is what we are seeking for now. We look forward to hearing your comments, remarks and proposals.&lt;br&gt;
-      Have fun!&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;Ilya Buziuk&lt;br&gt;&lt;a href="https://twitter.com/ilyabuziuk" target="_blank"&gt;@ilyabuziuk&lt;/a&gt;&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;
-&lt;img src="http://feeds.feedburner.com/~r/jbossbuzz/~4/BfgzyRRPkSc" height="1" width="1" alt=""/&gt;</content>
-	<updated>2016-12-12T22:16:17+00:00</updated>
-	<author><name>ibuziuk</name></author>
-	<source>
-		<link rel="self" href="http://tools.jboss.org/blog/" />
-		<title>JBoss Tools</title></source>
-
-	<category term="bower" />
-
-	<category term="javascript" />
-
-	<category term="jbosstools" />
-
-	<category term="devstudio" />
-
-
-<feedburner:origLink>https://tools.jboss.org/blog/bower-support-is-coming.html</feedburner:origLink></entry>
 
 
 </feed><!-- vim:ft=xml

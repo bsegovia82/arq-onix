@@ -179,5 +179,6 @@
 		<module>onix-modulo-librerias-seguridad</module>
 		<module>onix-modulo-librerias-servicio</module>
 		<module>onix-modulo-librerias-vista</module>
+		<module>onix-modulo-librerias-timer</module>
 	</modules>
 </project>

@@ -1,0 +1,13 @@
+package com.onix.modulo.librerias.servicio.oyentes;
+
+import com.onix.modulo.librerias.dominio.entidades.base.EntidadBaseAuditable;
+
+public interface AccionTransaccionalListener<EntidadBaseAuditable<Id>>
+{
+
+	
+	public void controlTransaccional(ENTIDAD entidad)
+	{
+		
+	}
+}

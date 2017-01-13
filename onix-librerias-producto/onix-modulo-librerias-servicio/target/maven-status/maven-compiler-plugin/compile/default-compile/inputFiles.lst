@@ -1,4 +1,8 @@
 D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\java\com\onix\modulo\librerias\eao\GenericEAO.java
 D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\java\com\onix\modulo\librerias\exceptions\ErrorValidacionGeneral.java
 D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\java\com\onix\modulo\librerias\servicio\ServicioMantenimientoEntidad.java
+D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\java\com\onix\modulo\librerias\servicio\oyentes\AccionValidacionSimpleListener.java
+D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\java\com\onix\modulo\librerias\servicio\oyentes\AccionValidacionListener.java
+D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\java\com\onix\modulo\librerias\servicio\oyentes\PreLlenadoRegistroListener.java
 D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\java\com\onix\modulo\librerias\exceptions\ErrorServicioNegocio.java
+D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\java\com\onix\modulo\librerias\servicio\oyentes\AccionTransaccionalListener.java

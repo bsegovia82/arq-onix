@@ -1,0 +1,10 @@
+package com.onix.modulo.librerias.servicio.oyentes;
+
+public interface AccionTransaccionalListener {
+
+	
+	public void eventoTrasaccional(ENTIDAD entidad)
+	{
+		
+	}
+}

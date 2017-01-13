@@ -1,0 +1,11 @@
+package com.onix.modulo.librerias.servicio.oyentes;
+
+import java.io.Serializable;
+
+import com.onix.modulo.librerias.dominio.entidades.base.EntidadBaseAuditable;
+
+@FunctionalInterface
+public interface AccionTransaccionalListener<ENTIDAD extends EntidadBaseAuditable<Id>, Id extends Serializable> {
+
+	public void controlTransaccional(ENTIDAD entidad);
+}

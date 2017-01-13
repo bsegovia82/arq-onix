@@ -52,9 +52,8 @@ public abstract class GenericEAO
 		Query query = 
 				getAdminEntidad().
 				createNativeQuery(sql, clase);
-		for (Entry<String, Object> registro : parametros.entrySet()) {
+		for (Entry<String, Object> registro : parametros.entrySet())
 			query.setParameter(registro.getKey(), registro.getValue());
-		}
 		return query.getResultList();
 	}
 
@@ -65,9 +64,8 @@ public abstract class GenericEAO
 			String namedQuery, 
 			HashMap<String, Object> parametros) {
 		Query query = getAdminEntidad().createNamedQuery(namedQuery);
-		for (Entry<String, Object> registro : parametros.entrySet()) {
+		for (Entry<String, Object> registro : parametros.entrySet())
 			query.setParameter(registro.getKey(), registro.getValue());
-		}
 		return query.getResultList();
 	}
 

@@ -1,0 +1,56 @@
+package com.onix.modulo.librerias.timer;
+
+import java.util.Date;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
+import javax.ejb.Timeout;
+import javax.ejb.Timer;
+import javax.ejb.TimerConfig;
+import javax.ejb.TimerService;
+
+public abstract class TimerEjecutorIntervaloTiempo {
+
+	@Resource
+	private TimerService timerService;
+
+	private DatosEjecucionTimer lDatosEjecucionTimer;
+	
+	@PostConstruct
+	private void init() 
+	{
+		temporizarEjecucion(inicializacionTimer());
+		
+	}
+	
+	protected abstract DatosEjecucionTimer inicializacionTimer();
+
+	private void temporizarEjecucion(DatosEjecucionTimer pDatosEjecucionTimer) 
+	{
+		timerService.createSingleActionTimer(pDatosEjecucionTimer.getlIntervaloEjecucion()*60*1000,
+				new TimerConfig(pDatosEjecucionTimer.getlNombreTimer(), pDatosEjecucionTimer.getlPersistente()));
+	}
+	
+	@Timeout
+	public void execute(Timer timer) {
+		
+		try
+		{
+			
+		}catch(Throwable lError)
+		{
+			lError.printStackTrace();
+		}finally
+		{
+			timer.cancel();
+			temporizarEjecucion(new Integer(servicioParametros.getValorParametro("PROCESO_NOTIFICACION_MAS_NOT_TIEMPO")));
+		}
+		
+		System.out.println("Timer Service : " + timer.getInfo());
+		System.out.println("Current Time : " + new Date());
+		System.out.println("Next Timeout : " + timer.getNextTimeout());
+		System.out.println("Time Remaining : " + timer.getTimeRemaining());
+		System.out.println("____________________________________________");
+	}
+
+}
