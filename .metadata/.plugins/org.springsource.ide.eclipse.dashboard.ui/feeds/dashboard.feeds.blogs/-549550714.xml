@@ -476,8 +476,8 @@ context.registerBean(Bar.class, () -&amp;gt; new &#xD;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;You can see a concrete example of Spring application using both functional &lt;a href="https://github.com/mix-it/mixit/blob/master/src/main/kotlin/mixit/controller/UserController.kt"&gt;web&lt;/a&gt; and &lt;a href="https://github.com/mix-it/mixit/blob/master/src/main/kotlin/mixit/Context.kt"&gt;bean registration&lt;/a&gt; API at &lt;a href="https://github.com/mix-it/mixit/"&gt;https://github.com/mix-it/mixit/&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;ApplicationContext&lt;/code&gt; related Kotlin extensions available are &lt;a href="https://github.com/spring-projects/spring-framework/blob/master/spring-beans/src/main/kotlin/org/springframework/beans/factory/BeanFactoryExtensions.kt"&gt;BeanFactoryExtensions&lt;/a&gt;, &lt;a href="https://github.com/spring-projects/spring-framework/blob/master/spring-beans/src/main/kotlin/org/springframework/beans/factory/ListableBeanFactoryExtensions.kt"&gt;ListableBeanFactoryExtensions&lt;/a&gt;, &lt;a href="https://github.com/spring-projects/spring-framework/blob/master/spring-context/src/main/kotlin/org/springframework/context/support/GenericApplicationContextExtensions.kt"&gt;GenericApplicationContextExtensions&lt;/a&gt; and &lt;a href="https://github.com/spring-projects/spring-framework/blob/master/spring-context/src/main/kotlin/org/springframework/context/annotation/AnnotationConfigApplicationContextExtensions.kt"&gt;AnnotationConfigApplicationContextExtensions&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#spring-web-functional-api-the-kotlin-way" class="anchor" name="spring-web-functional-api-the-kotlin-way"&gt;&lt;/a&gt;Spring Web functional API, the Kotlin way&lt;/h2&gt;
-&lt;p&gt;Spring Framework 5.0 comes with a &lt;code&gt;RouterFunctionDsl&lt;/code&gt; that allows you to leverage the &lt;a href="https://spring.io/blog/2016/09/22/new-in-spring-5-functional-web-framework"&gt;Spring Functional Web API&lt;/a&gt; recently announced with clean and idiomatic Kotin code:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint kotlin"&gt;fun route(request: ServerRequest) = RouterFunctionDsl {&#xD;
+&lt;p&gt;Spring Framework 5.0 comes with a Kotlin routing DSL that allows you to leverage the &lt;a href="https://spring.io/blog/2016/09/22/new-in-spring-5-functional-web-framework"&gt;Spring Functional Web API&lt;/a&gt; recently announced with clean and idiomatic Kotin code:&lt;/p&gt;
+&lt;pre&gt;&lt;code class="prettyprint kotlin"&gt;fun route(request: ServerRequest) = route(request) {&#xD;
     accept(TEXT_HTML).apply {&#xD;
             (GET(&amp;quot;/user/&amp;quot;) or GET(&amp;quot;/users/&amp;quot;)) { findAllView() }&#xD;
             GET(&amp;quot;/user/{login}&amp;quot;) { findViewById() }&#xD;
@@ -487,7 +487,7 @@ context.registerBean(Bar.class, () -&amp;gt; new &#xD;
             POST(&amp;quot;/api/user/&amp;quot;) { create() }&#xD;
             POST(&amp;quot;/api/user/{login}&amp;quot;) { findOne() }&#xD;
     }&#xD;
- } (request)
+ }
 &lt;/code&gt;&lt;/pre&gt;
 &lt;p&gt;Thanks to Yevhenii Melnyk for its early prototype and help!&lt;/p&gt;&lt;h2&gt;&lt;a href="#leveraging-kotlin-nullable-information" class="anchor" name="leveraging-kotlin-nullable-information"&gt;&lt;/a&gt;Leveraging Kotlin nullable information&lt;/h2&gt;
 &lt;p&gt;Originally based on a community contribution from &lt;a href="https://github.com/rocketraman"&gt;Raman Gupta&lt;/a&gt;, Spring now takes advantage of &lt;a href="https://kotlinlang.org/docs/reference/null-safety.html"&gt;Kotlin null-safety support&lt;/a&gt; to determine if an HTTP parameter is required without having to define explicitly the &lt;code&gt;required&lt;/code&gt; attribute. That means &lt;code&gt;@RequestParam name: String?&lt;/code&gt; with be treated as not required and &lt;code&gt;@RequestParam name: String&lt;/code&gt; as required. This is also supported on Spring Messaging &lt;code&gt;@Header&lt;/code&gt; annotation.&lt;/p&gt;

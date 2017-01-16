@@ -48,7 +48,7 @@ public abstract class GenericEAO
 	@TransactionAttribute(
 			TransactionAttributeType.SUPPORTS
 			)
-	protected List<ENTIDAD> ejecutarQueryNativo(String sql, HashMap<String, Object> parametros, Class<ENTIDAD> clase) {
+	public List<ENTIDAD> ejecutarQueryNativo(String sql, HashMap<String, Object> parametros, Class<ENTIDAD> clase) {
 		Query query = 
 				getAdminEntidad().
 				createNativeQuery(sql, clase);

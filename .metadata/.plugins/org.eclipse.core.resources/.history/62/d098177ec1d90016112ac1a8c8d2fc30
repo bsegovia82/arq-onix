@@ -1,9 +1,0 @@
-package com.onix.modulo.librerias.timer;
-
-@Singleton
-@LocalBean
-@Startup
-public class TimerEjecutorIntervaloTiempo 
-{
-
-}

@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.util.HashMap"/>
-<fullyQualifiedTypeName name="java.io.Serializable"/>
 <fullyQualifiedTypeName name="com.onix.modulo.librerias.servicio.oyentes.AccionValidacionListener"/>
 <fullyQualifiedTypeName name="com.onix.modulo.librerias.exceptions.ErrorServicioNegocio"/>
 <fullyQualifiedTypeName name="org.jboss.sasl.util.UsernamePasswordHashUtil"/>
@@ -10,4 +8,14 @@
 <fullyQualifiedTypeName name="javax.annotation.PostConstruct"/>
 <fullyQualifiedTypeName name="java.lang.FunctionalInterface"/>
 <fullyQualifiedTypeName name="ENTIDAD"/>
+<fullyQualifiedTypeName name="javax.ejb.Timer"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
+<fullyQualifiedTypeName name="javax.ejb.TimerConfig"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="com.sun.source.doctree.SerialDataTree"/>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
+<fullyQualifiedTypeName name="com.arjuna.ats.internal.arjuna.objectstore.jdbc.accessors.accessor"/>
+<fullyQualifiedTypeName name="com.onix.modulo.librerias.timer.DatosEjecucionTimer"/>
+<fullyQualifiedTypeName name="java.lang.Throwable"/>
+<fullyQualifiedTypeName name="javax.mail.Session"/>
 </qualifiedTypeNameHistroy>

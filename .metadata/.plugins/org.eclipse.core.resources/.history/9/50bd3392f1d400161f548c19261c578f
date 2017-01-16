@@ -1,5 +1,0 @@
-package com.onix.modulo.librerias.servicio.oyentes;
-
-public interface PreLlenadoActualizacionRegistroListener {
-
-}

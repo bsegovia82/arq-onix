@@ -3,6 +3,7 @@ com\onix\modulo\librerias\exceptions\ErrorValidacionGeneral.class
 com\onix\modulo\librerias\servicio\oyentes\PreLlenadoRegistroListener.class
 com\onix\modulo\librerias\servicio\oyentes\AccionValidacionListener.class
 com\onix\modulo\librerias\servicio\ServicioMantenimientoEntidad.class
+com\onix\modulo\librerias\notificacion\NotificadorMail.class
 com\onix\modulo\librerias\servicio\oyentes\AccionValidacionSimpleListener.class
 com\onix\modulo\librerias\servicio\oyentes\AccionTransaccionalListener.class
 com\onix\modulo\librerias\exceptions\ErrorServicioNegocio.class

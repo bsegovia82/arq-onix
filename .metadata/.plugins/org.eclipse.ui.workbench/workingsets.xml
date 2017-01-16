@@ -3,11 +3,11 @@
 <workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1479499921361_1" label="onix-librerias-producto" name="onix-librerias-producto">
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/onix-modulo-librerias-dominio" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/onix-modulo-librerias-seguridad" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/onix-modulo-librerias-timer" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/onix-modulo-librerias-vista" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/onix-modulo-librerias-generales" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/onix-librerias-producto" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/onix-modulo-librerias-servicio" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/onix-modulo-librerias-timer" type="4"/>
 </workingSet>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1479499807281_0" label="Window Working Set" name="Aggregate for window 1479499807280"/>
 </workingSetManager>

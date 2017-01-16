@@ -1,7 +1,0 @@
-package com.onix.modulo.librerias.servicio.oyentes;
-
-public interface PreLlenadoRegistroListener {
-
-	public void preCargaDatosRegistro();
-	
-}

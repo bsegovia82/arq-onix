@@ -128,15 +128,9 @@
   <path value="D:/repositorio/org/jboss/as/jboss-as-clustering-jgroups/7.1.0.Final/jboss-as-clustering-jgroups-7.1.0.Final.jar"/>
  </paths>
  <validation>
-  <el>
-   <linked-el length="18" name="%0" offset="12101" path="%1"/>
-  </el>
+  <el/>
  </validation>
- <aliases>
-  <alias path="p" value="%0"/>
-  <alias
-   path="/onix-modulo-librerias-vista/src/main/java/com/onix/modulo/librerias/vista/beans/BeanMantenedorGenerico.java" value="%1"/>
- </aliases>
+ <aliases/>
  <includes/>
  <uris/>
 </kb-project>
