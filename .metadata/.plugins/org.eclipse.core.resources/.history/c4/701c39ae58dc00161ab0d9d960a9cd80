@@ -36,6 +36,7 @@ public abstract class TimerEjecutorIntervaloTiempo {
 		System.out.println("____________________________________________");
 		System.out.println("Inicio de ejecución Servicio timer : " + timer.getInfo());
 		System.out.println("Ejecución actual : " + new Date());
+		System.out.println("____________________________________________");
 		try {
 			ejecutarAccionRecurrente();
 		} catch (Throwable lError) {
