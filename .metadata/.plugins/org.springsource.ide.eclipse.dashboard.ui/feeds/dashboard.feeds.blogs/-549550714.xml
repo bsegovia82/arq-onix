@@ -5,7 +5,116 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2017-01-12T19:32:52Z</updated>
+  <updated>2017-01-17T09:54:00Z</updated>
+  <entry>
+    <title>This Week in Spring - January 17th, 2017</title>
+    <link rel="alternate" href="https://spring.io/blog/2017/01/17/this-week-in-spring-january-17th-2017" />
+    <category term="engineering" label="Engineering" />
+    <author>
+      <name>Josh Long</name>
+    </author>
+    <id>tag:spring.io,2017-01-17:2789</id>
+    <updated>2017-01-17T09:54:00Z</updated>
+    <content type="html">&lt;p&gt;Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! We&amp;rsquo;ve got a lot to get into this week - even &lt;em&gt;more&lt;/em&gt; so than usual! So, let&amp;rsquo;s get into it!&lt;/p&gt;
+&lt;p&gt;&lt;blockquote class="twitter-tweet" data-partner="tweetdeck"&gt;&lt;p lang="en" dir="ltr"&gt;Starting to put together topics for the next season of Spring Tips: what would you like to see discussed?&lt;/p&gt;&amp;mdash; Josh Long (???, ???) (@starbuxman) &lt;a href="https://twitter.com/starbuxman/status/819903565342851076"&gt;January 13, 2017&lt;/a&gt;&lt;/blockquote&gt;&lt;br/&gt;&lt;script async src="//platform.twitter.com/widgets.js" charset="utf-8"&gt;&lt;/script&gt;&lt;/p&gt;
+&lt;p&gt;This week there are a &lt;em&gt;lot&lt;/em&gt; of great SpringOne Platform 2016 replays available online thanks to our very own &lt;a href="http://twitter.com/PieterHumphrey"&gt;Pieter Humphrey&lt;/a&gt;!&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Don&amp;rsquo;t miss Stéphane Maldini&amp;rsquo;s SpringOne Platform (S1P) 2016 talk introducing &lt;a href="https://spring.io/blog/2017/01/16/springone-platform-2016-replay-reactor-3-0-a-jvm-foundation-for-java-8-and-reactive-streams"&gt;Reactor 3.0&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;or this S1P 2016 talk by Sebastien Deleuze and Stephane Maldini &lt;a href="https://spring.io/blog/2017/01/16/springone-platform-2016-replay-a-lite-rx-api-for-the-jvm"&gt;on reactive programming options for the JVM&lt;/a&gt; (introducing Reactor and RxJava, among others)&lt;/li&gt;
+  &lt;li&gt;Yahoo! &lt;a href="https://twitter.com/mgrzejszczak/status/819955779000213505"&gt;Marcin just tweeted&lt;/a&gt; some exciting news: &lt;a href="https://cloud.spring.io/spring-cloud-contract/spring-cloud-contract.html#_pact_converter"&gt;Pact support has been added to Spring Cloud Contract&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Noriaki Tatsumi ( from Capital One) gave a nice S1P 2016 talk on &lt;a href="https://spring.io/blog/2017/01/16/springone-platform-2016-replay-operating-a-high-velocity-large-organization-with-spring-cloud-microservices"&gt;operating a high velocity organization with Spring Cloud&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Google&amp;rsquo;s Ray Tsang and Bret McGowen put together a nice &lt;a href="https://spring.io/blog/2017/01/16/springone-platform-2016-replay-grpc-101-for-spring-developers"&gt;talk on using gRPC for Spring Developers&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;in this S1P 2016 talk, Ben Hale, Paul Harris and Stephane Maldini introduce some &lt;a href="https://spring.io/blog/2017/01/16/springone-platform-2016-replay-designing-implementing-and-using-reactive-apis"&gt;of the nuance of building reactive APIs&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Ryan Baxter has just announced &lt;a href="https://spring.io/blog/2017/01/12/spring-cloud-camden-sr4-is-available"&gt;Spring Cloud Camden.SR4&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Glenn Renfro just &lt;a href="https://spring.io/blog/2017/01/10/spring-cloud-task-1-1-2-release-is-now-available"&gt;announced Spring Cloud Task 1.1.2.RELEASE&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;speaking of Spring Cloud Contract, I really dig this post by epages&amp;rsquo; Mathias on building &lt;a href="https://developer.epages.com/blog/2017/01/17/how-to-test-eventbased-services-using-contracts.html"&gt;and testing event-driven microservices with Spring Cloud Contract&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;I &lt;em&gt;loved&lt;/em&gt; our very own Toshiaki Maki&amp;rsquo;s exhaustive repository demonstrating how to &lt;a href="https://github.com/making/spring-boot-db-samples"&gt;use Spring Boot with a larger number of different SQL persistence technologies&lt;/a&gt;. &lt;em&gt;Great&lt;/em&gt; resource! Bookmark this!&lt;/li&gt;
+  &lt;li&gt;and speaking of persistence options, I really enjoyed community hero &lt;a href="https://www.youtube.com/shared?ci=N3HpOiGbM60"&gt;Michael Simmons&amp;rsquo; talk on JOOQ and Spring Boot&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Hortonworks&amp;rsquo;s Tim Spann got a few great posts on &lt;a href="https://community.hortonworks.com/topics/microservice.html"&gt;using Spring Boot with Apache Phoenix or Apache Hive&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Martin Westergaard Lassen has put together a nice post on his top favorite seven (ahem! six.. :D) &lt;a href="http://container-solutions.com/my-top-7-favourite-features-of-spring-boot/"&gt;features of Spring Boot&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;I really liked this post by Apigee&amp;rsquo;s Alan Ho on the reasons &lt;a href="http://sdtimes.com/guest-view-microservices-death-diffusing-monolith-time-bomb/"&gt;that organizations diffuse monolithic time-bombs&lt;/a&gt;: &amp;ldquo;If the monolithic stack doesn’t go, the good developers will&amp;rdquo;&lt;/li&gt;
+  &lt;li&gt;Yahoo! just open-sourced their &lt;a href="http://sdtimes.com/yahoo-open-sources-continuous-delivery-tool-screwdriver/"&gt;continuous delivery platform called Screwdriver&lt;/a&gt;. This has little or nothing to do with Spring or Pivotal, directly, yet, but it&amp;rsquo;s yet another contender in the ever expanding ecosystem of continuous delivery tools, along with Pivotal&amp;rsquo;s Concourse, Netlfix Spinnaker (to which Pivotal, Google, Microsoft and Netflix all commit and contribute), Jenkins and so many more. Remember, at the end of the day, the most important metric for organizational agility isn&amp;rsquo;t cloud computing or microservices, it&amp;rsquo;s the ability to continuously (quickly and safely) deliver value to the customer.&lt;/li&gt;
+  &lt;li&gt;This is super cool! Now you &lt;a href="https://blog.switchbit.io/camel-spring-cloud-stream/"&gt;can use Apache Camel with Spring Cloud Stream&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;this is a topic near and dear to my heart: using &lt;a href="https://github.com/aglassman/coffee-bot"&gt;a Spring Boot Slack bot to notify people of the availability of coffee&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Hurray! &lt;a href="https://github.com/spring-cloud/spring-cloud-commons/issues/162"&gt;Cloud Foundry surgical routing is now supported in Spring Cloud Ribbon-based load-balancing&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;want to consume of the Spring Cloud Services from .NET applications? &lt;a href="https://www.altoros.com/blog/enabling-dotnet-core-microservices-with-steeltoe-and-pivotal-cloud-foundry/"&gt;Check out this post on Steeltoe&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Evan Brown put &lt;a href="https://cloudplatform.googleblog.com/2017/01/partnering-on-open-source-Google-and-Pivotal-engineers-talk-Cloud-Foundry-on-GCP.html"&gt;together a succinct blog&lt;/a&gt; introducing a replay of a talk on how to deploy Pivotal Cloud Foundry on Google Cloud Platform. &lt;a href="https://www.youtube.com/watch?v=TBsc7kiog5Q"&gt;Check out this talk on BOSH and Cloud Foundry Basics for Google Cloud Platform, pt. 1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;want to learn how to use Spring Cloud Security (and its OAuth support for clients) with &lt;a href="https://developers.redhat.com/blog/2017/01/05/spring-boot-and-oauth2-with-keycloak/"&gt;RedHat&amp;rsquo;s Keycloak? Check this blog out by RedHat&amp;rsquo;s Kamesh out&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
+  </entry>
+  <entry>
+    <title>SpringOne Platform 2016 Replay: Reactor 3.0, a JVM foundation for Java 8 and Reactive Streams</title>
+    <link rel="alternate" href="https://spring.io/blog/2017/01/16/springone-platform-2016-replay-reactor-3-0-a-jvm-foundation-for-java-8-and-reactive-streams" />
+    <category term="news" label="News and Events" />
+    <author>
+      <name>Pieter Humphrey</name>
+    </author>
+    <id>tag:spring.io,2017-01-17:2788</id>
+    <updated>2017-01-16T19:51:00Z</updated>
+    <content type="html">&lt;p&gt;Recorded at SpringOne Platform 2016.&lt;br/&gt;Speaker: Stéphane Maldini&lt;br/&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/reactor-30-a-jvm-foundation-for-java-8-and-reactive-streams"&gt;http://www.slideshare.net/SpringCentral/reactor-30-a-jvm-foundation-for-java-8-and-reactive-streams&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The apparent simplicity of the publisher/subscriber model as exposed in Reactive-Streams can be deceiving. The relatively fast release cycle for libraries in that space is not a myth, concurrency is hard. To keep out undesired side-effects, most Reactive projects have adopted a vertical approach potentially excluding developers from decision-making around execution model or sometimes language.&lt;/p&gt;
+&lt;p&gt;What if we were able to leave the developer in control, positioning as a robust foundation and making the most of the now industrial standard Java 8 ?&lt;/p&gt;
+&lt;p&gt;What if we hardened this foundation through open-source and research collaboration, with a direct feedback loop from Pivotal engineering ?&lt;/p&gt;
+&lt;p&gt;In essence, that&amp;rsquo;s what we aim to achieve with Reactor 2.5. This session is an invitation to explore how the new Reactor design, structure and features can progressively help you go Reactive and show how it plays out in your applications today and tomorrow.&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/ctZGFTI3XI8" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
+  </entry>
+  <entry>
+    <title>SpringOne Platform 2016 Replay: A lite Rx API for the JVM</title>
+    <link rel="alternate" href="https://spring.io/blog/2017/01/16/springone-platform-2016-replay-a-lite-rx-api-for-the-jvm" />
+    <category term="news" label="News and Events" />
+    <author>
+      <name>Pieter Humphrey</name>
+    </author>
+    <id>tag:spring.io,2017-01-17:2787</id>
+    <updated>2017-01-16T19:48:00Z</updated>
+    <content type="html">&lt;p&gt;Recorded at SpringOne Platform 2016.&lt;br/&gt;Speakers: Sebastien Deleuze, Stephane Maldini&lt;br/&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/a-lite-rx-api-for-the-jvm"&gt;http://www.slideshare.net/SpringCentral/a-lite-rx-api-for-the-jvm&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;RxJava is a fully fledged and widely used solution to develop Reactive applications, but some interesting alternatives exist. After an overview of the main Reactive APIs available and of Spring Boot Reactive support, this workshop introduces how to develop Reactive applications using Reactor Core 2.5-a powerful and fast alternative. We will learn how to use Flux (N values) and Mono (single value) types with various exercises. This new API (which is the core of Reactor 2.5) is a game changer in the world of Reactive API on the JVM thanks to its Reactive eXtensions-based API (natively based on Reactive Streams and Java 8) and its unmatched performance.&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/Rrna-uwYL1o" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
+  </entry>
+  <entry>
+    <title>SpringOne Platform 2016 Replay: Operating a High Velocity Large Organization with Spring Cloud Microservices</title>
+    <link rel="alternate" href="https://spring.io/blog/2017/01/16/springone-platform-2016-replay-operating-a-high-velocity-large-organization-with-spring-cloud-microservices" />
+    <category term="news" label="News and Events" />
+    <author>
+      <name>Pieter Humphrey</name>
+    </author>
+    <id>tag:spring.io,2017-01-17:2785</id>
+    <updated>2017-01-16T18:45:00Z</updated>
+    <content type="html">&lt;p&gt;Recorded at SpringOne Platform 2016.&lt;br/&gt;Speakers: Noriaki Tatsumi, Capital One&lt;br/&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/operating-a-high-velocity-large-organization-with-spring-cloud-microservices"&gt;http://www.slideshare.net/SpringCentral/operating-a-high-velocity-large-organization-with-spring-cloud-microservices&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Releases are hard for many large organizations with complex systems. Challenges like manual processes, change approvals, compliances, legacy systems, varying deployment targets, and scheduled downtimes prevent companies from releasing fast and frequently. Many of us know that when Continuous Delivery is embraced and microservices architecture is done right, those challenges can become things of the past. Some high performing companies like Netflix have successfully demonstrated the concept. Now it&amp;rsquo;s your turn. This presentation prepares you to build a microservices architecture that&amp;rsquo;s not only reliable, resilient, and scalable but also addresses the challenges large organizations typically face.&lt;/p&gt;
+&lt;p&gt;One of the missions of Capital One&amp;rsquo;s Security and Technology Analytics division is to improve detection and prevention of cyberattacks across all of the Capital One enterprise systems. We envision, create, deploy, and maintain critical security tools powered by streaming big data, state of the art machine learning, micro-services architecture, and beautiful visualizations both in the cloud and our data centers. We have a need to build, test, and release software fast and frequently with multiple teams in a reliable way. The security analysts and the data scientists frequently introduce new feature requirements and experiments in small batches. The presentation is based on our approach and experience.&lt;/p&gt;
+&lt;p&gt;We will dive into the technical details on how Spring Cloud empowers developers to build the patterns and components of microservices foundation quickly. The subtopics include:&lt;/p&gt;
+&lt;p&gt;Core patterns and components of microservices architecture and their roles&lt;br/&gt;Identification of common challenges large organizations face and how microservices architecture addresses them&lt;br/&gt;Building a reusable, sharable, and portable microservices foundation&lt;br/&gt;Sample code and demos to show how easily developers can get started with building microservices architecture using Spring Cloud&lt;br/&gt;We will conclude the presentation by realizing how feasible and realistic it is for your organization to be the next high velocity organization that leverages the benefits of microservices, powered by Spring Cloud.&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/Uc1El9Zc1Yg" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
+  </entry>
+  <entry>
+    <title>SpringOne Platform 2016 Replay: gRPC 101 for Spring developers</title>
+    <link rel="alternate" href="https://spring.io/blog/2017/01/16/springone-platform-2016-replay-grpc-101-for-spring-developers" />
+    <category term="news" label="News and Events" />
+    <author>
+      <name>Pieter Humphrey</name>
+    </author>
+    <id>tag:spring.io,2017-01-17:2784</id>
+    <updated>2017-01-16T18:23:00Z</updated>
+    <content type="html">&lt;p&gt;Recorded at SpringOne Platform 2016&lt;br/&gt;Speakers: Ray Tsang, Bret McGowen, Google&lt;br/&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/grpc-101-for-spring-developers"&gt;http://www.slideshare.net/SpringCentral/grpc-101-for-spring-developers&lt;/a&gt;&lt;br/&gt;gRPC is a high performance, open source, general RPC framework that puts mobile and HTTP/2 first. gRPC is based on many years of Google&amp;rsquo;s experience in building distributed systems - it is designed to be low latency, bandwidth and CPU efficient, to create massively distributed systems that span data centers, as well as power mobile apps, real-time communications, IoT devices and APIs. It&amp;rsquo;s also interoperable between multiple languages.&lt;/p&gt;
+&lt;p&gt;But beyond that fact that it&amp;rsquo;s more efficient than REST, we&amp;rsquo;ll look into how to use gRPC&amp;rsquo;s streaming API, where you can establish server-side streaming, client-side streaming, and bidirectional streaming! This allows developers to build sophisticated real-time applications with ease.&lt;/p&gt;
+&lt;p&gt;In addition to learning about gRPC and HTTP/2 concepts with code and demonstrations, we&amp;rsquo;ll also deep dive into integration with existing build systems such as Maven and Gradle, but also frameworks such as Spring Boot and RxJava.&lt;/p&gt;
+&lt;p&gt;Writing/using a Spring Boot starter to run gRPC server&lt;br/&gt;Configuring projects to generate gRPC stub code&lt;br/&gt;Integrating w/ RxJava&amp;rsquo;s observable sequences, which matches very well with gRPC&amp;rsquo;s Stream Observable constructs&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/BOW7jd136Ok" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
+  </entry>
+  <entry>
+    <title>SpringOne Platform 2016 Replay: Designing, Implementing, and Using Reactive APIs</title>
+    <link rel="alternate" href="https://spring.io/blog/2017/01/16/springone-platform-2016-replay-designing-implementing-and-using-reactive-apis" />
+    <category term="news" label="News and Events" />
+    <author>
+      <name>Pieter Humphrey</name>
+    </author>
+    <id>tag:spring.io,2017-01-17:2783</id>
+    <updated>2017-01-16T18:07:00Z</updated>
+    <content type="html">&lt;p&gt;Recorded at SpringOne Platform 2016.&lt;br/&gt;Speakers: - Ben Hale, Paul Harris, Stephane Maldini&lt;br/&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/designing-implementing-and-using-reactive-apis"&gt;http://www.slideshare.net/SpringCentral/designing-implementing-and-using-reactive-apis&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;The Java community is on the cusp of a major change in programming model. As the industry moves towards high-performance micro-service architectures, the need for a reactive programming model becomes clear. In this session, the lead developers of the Cloud Foundry Java Client will talk about what led them to choose a reactive API. Using that project as a lens, they&amp;rsquo;ll explore how they designed and implemented this API using Project Reactor and what users will expect when using a reactive API. If you are a developer looking to provide reactive APIs, this is your chance to gain the experience of team building a large, production-ready reactive library.&lt;/p&gt;
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/VN3SzWPsIuU" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
+  </entry>
   <entry>
     <title>Spring Cloud Camden.SR4 Is Available</title>
     <link rel="alternate" href="https://spring.io/blog/2017/01/12/spring-cloud-camden-sr4-is-available" />
@@ -447,196 +556,5 @@ public FlatFileItemReader reader(Resource resource) {&#xD;
 &lt;/ul&gt;
 &lt;p&gt;The versions of a number of third-party dependencies have also been updated.&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://platform.spring.io/platform"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-io/platform"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-io/platform/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/platform/docs/Athens-SR2/reference/htmlsingle"&gt;Documentation&lt;/a&gt;&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>Introducing Kotlin support in Spring Framework 5.0</title>
-    <link rel="alternate" href="https://spring.io/blog/2017/01/04/introducing-kotlin-support-in-spring-framework-5-0" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Sébastien Deleuze</name>
-    </author>
-    <id>tag:spring.io,2017-01-03:2758</id>
-    <updated>2017-01-04T14:05:00Z</updated>
-    <content type="html">&lt;p&gt;Following the &lt;a href="https://spring.io/blog/2016/02/15/developing-spring-boot-applications-with-kotlin"&gt;Kotlin support on start.spring.io&lt;/a&gt; we introduced a few months ago, we have continued to work to ensure that Spring and &lt;a href="https://kotlin.link/"&gt;Kotlin&lt;/a&gt; play well together. One of the key strengths of Kotlin is that it provides a very good &lt;a href="https://kotlinlang.org/docs/reference/java-interop.html"&gt;interoperability&lt;/a&gt; with libraries written in Java. But there are ways to go even further and allow writing fully idiomatic Kotlin code when developing your next Spring application. In addition to Spring Framework support for Java 8 that Kotlin applications can leverage like functional web or bean registration APIs, there are additional Kotlin dedicated features that should allow you to reach a new level of productivity.&lt;/p&gt;
-&lt;p&gt;That’s why we are introducing a dedicated Kotlin support in &lt;a href="https://spring.io/blog/2016/12/30/spring-framework-5-0-m4-released"&gt;Spring Framework 5.0 M4&lt;/a&gt;, and I would like to summarize in this blog post the features that are designed to make your developer experience seamless when using these technologies together. You can use &lt;a href="https://jira.spring.io/issues/?filter=15463"&gt;this link&lt;/a&gt; to find Kotlin related issues in Spring Framework bug tracker.&lt;/p&gt;
-&lt;p&gt;A key building block of our Kotlin support is &lt;a href="https://kotlinlang.org/docs/reference/extensions.html"&gt;Kotlin extensions&lt;/a&gt;. They allow to extend existing APIs in a non-intrusive way, providing a better alternative to utility classes or Kotlin specific class hierarchies to add Kotlin dedicated features to Spring. Some libraries like &lt;a href="https://github.com/MarioAriasC/KotlinPrimavera/wiki"&gt;KotlinPrimavera&lt;/a&gt; from &lt;a href="https://github.com/MarioAriasC"&gt;Mario Arias&lt;/a&gt; have already showed various kind of Kotlin helpers we can bring to Spring API in order to allow writing more idiomatic code. With Spring Framework 5, we integrate the most useful and popular extensions in Spring Framework dependencies, and we are adding new ones! Be aware that Kotlin extensions are statically resolved, you have to import them (like static imports in Java).&lt;/p&gt;&lt;h2&gt;&lt;a href="#functional-bean-registration-with-kotlin" class="anchor" name="functional-bean-registration-with-kotlin"&gt;&lt;/a&gt;Functional bean registration with Kotlin&lt;/h2&gt;
-&lt;p&gt;Spring Framework 5.0 introduces a new way to register beans using lambda as an alternative to XML or JavaConfig with &lt;code&gt;@Configuration&lt;/code&gt; and &lt;code&gt;@Bean&lt;/code&gt;. In a nutshell, it makes it possible to register beans with a &lt;code&gt;Supplier&lt;/code&gt; lambda that acts as a &lt;code&gt;FactoryBean&lt;/code&gt;.&lt;/p&gt;
-&lt;p&gt;In Java you will for example write:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;GenericApplicationContext context = new GenericApplicationContext();&#xD;
-context.registerBean(Foo.class);&#xD;
-context.registerBean(Bar.class, () -&amp;gt; new &#xD;
-	Bar(context.getBean(Foo.class))&#xD;
-);
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;While in Kotlin, reified type parameters allow us to simply write:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint kotlin"&gt;val context = GenericApplicationContext {&#xD;
-    registerBean&amp;lt;Foo&amp;gt;()&#xD;
-    registerBean { Bar(it.getBean&amp;lt;Foo&amp;gt;()) }&#xD;
-}
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;You can see a concrete example of Spring application using both functional &lt;a href="https://github.com/mix-it/mixit/blob/master/src/main/kotlin/mixit/controller/UserController.kt"&gt;web&lt;/a&gt; and &lt;a href="https://github.com/mix-it/mixit/blob/master/src/main/kotlin/mixit/Context.kt"&gt;bean registration&lt;/a&gt; API at &lt;a href="https://github.com/mix-it/mixit/"&gt;https://github.com/mix-it/mixit/&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;ApplicationContext&lt;/code&gt; related Kotlin extensions available are &lt;a href="https://github.com/spring-projects/spring-framework/blob/master/spring-beans/src/main/kotlin/org/springframework/beans/factory/BeanFactoryExtensions.kt"&gt;BeanFactoryExtensions&lt;/a&gt;, &lt;a href="https://github.com/spring-projects/spring-framework/blob/master/spring-beans/src/main/kotlin/org/springframework/beans/factory/ListableBeanFactoryExtensions.kt"&gt;ListableBeanFactoryExtensions&lt;/a&gt;, &lt;a href="https://github.com/spring-projects/spring-framework/blob/master/spring-context/src/main/kotlin/org/springframework/context/support/GenericApplicationContextExtensions.kt"&gt;GenericApplicationContextExtensions&lt;/a&gt; and &lt;a href="https://github.com/spring-projects/spring-framework/blob/master/spring-context/src/main/kotlin/org/springframework/context/annotation/AnnotationConfigApplicationContextExtensions.kt"&gt;AnnotationConfigApplicationContextExtensions&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#spring-web-functional-api-the-kotlin-way" class="anchor" name="spring-web-functional-api-the-kotlin-way"&gt;&lt;/a&gt;Spring Web functional API, the Kotlin way&lt;/h2&gt;
-&lt;p&gt;Spring Framework 5.0 comes with a Kotlin routing DSL that allows you to leverage the &lt;a href="https://spring.io/blog/2016/09/22/new-in-spring-5-functional-web-framework"&gt;Spring Functional Web API&lt;/a&gt; recently announced with clean and idiomatic Kotin code:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint kotlin"&gt;fun route(request: ServerRequest) = route(request) {&#xD;
-    accept(TEXT_HTML).apply {&#xD;
-            (GET(&amp;quot;/user/&amp;quot;) or GET(&amp;quot;/users/&amp;quot;)) { findAllView() }&#xD;
-            GET(&amp;quot;/user/{login}&amp;quot;) { findViewById() }&#xD;
-    }&#xD;
-    accept(APPLICATION_JSON).apply {&#xD;
-            (GET(&amp;quot;/api/user/&amp;quot;) or GET(&amp;quot;/api/users/&amp;quot;)) { findAll() }&#xD;
-            POST(&amp;quot;/api/user/&amp;quot;) { create() }&#xD;
-            POST(&amp;quot;/api/user/{login}&amp;quot;) { findOne() }&#xD;
-    }&#xD;
- }
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Thanks to Yevhenii Melnyk for its early prototype and help!&lt;/p&gt;&lt;h2&gt;&lt;a href="#leveraging-kotlin-nullable-information" class="anchor" name="leveraging-kotlin-nullable-information"&gt;&lt;/a&gt;Leveraging Kotlin nullable information&lt;/h2&gt;
-&lt;p&gt;Originally based on a community contribution from &lt;a href="https://github.com/rocketraman"&gt;Raman Gupta&lt;/a&gt;, Spring now takes advantage of &lt;a href="https://kotlinlang.org/docs/reference/null-safety.html"&gt;Kotlin null-safety support&lt;/a&gt; to determine if an HTTP parameter is required without having to define explicitly the &lt;code&gt;required&lt;/code&gt; attribute. That means &lt;code&gt;@RequestParam name: String?&lt;/code&gt; with be treated as not required and &lt;code&gt;@RequestParam name: String&lt;/code&gt; as required. This is also supported on Spring Messaging &lt;code&gt;@Header&lt;/code&gt; annotation.&lt;/p&gt;
-&lt;p&gt;In a similar fashion, Spring bean injection with &lt;code&gt;@Autowired&lt;/code&gt; or &lt;code&gt;@Inject&lt;/code&gt; uses this information to know if a bean is required or not. &lt;code&gt;@Autowired lateinit var foo: Foo&lt;/code&gt; implies that a bean of type &lt;code&gt;Foo&lt;/code&gt; must be registered in the application context while &lt;code&gt;@Autowired lateinit var foo: Foo?&lt;/code&gt; won’t raise an error if such bean does not exist.&lt;/p&gt;&lt;h2&gt;&lt;a href="#extensions-for-resttemplate-and-functional-web-api" class="anchor" name="extensions-for-resttemplate-and-functional-web-api"&gt;&lt;/a&gt;Extensions for RestTemplate and Functional Web API&lt;/h2&gt;
-&lt;p&gt;For example, &lt;a href="https://kotlinlang.org/docs/reference/inline-functions.html#reified-type-parameters"&gt;Kotlin reified type parameters&lt;/a&gt; provide a workaround for JVM &lt;a href="https://docs.oracle.com/javase/tutorial/java/generics/erasure.html"&gt;generics type erasure&lt;/a&gt;, so we have introduced some extensions to take advantage of this feature to provide a better API when possible.&lt;/p&gt;
-&lt;p&gt;That allows to provide convenient API for &lt;code&gt;RestTemplate&lt;/code&gt; (thanks to &lt;a href="https://github.com/jkschneider"&gt;Jon Schneider&lt;/a&gt; from Netflix for contributing this). For example, to retrieve a list of &lt;code&gt;Foo&lt;/code&gt; objects in Java you have to write:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;List&amp;lt;Foo&amp;gt; result = restTemplate.exchange(url, HttpMethod.GET, null, new ParameterizedTypeReference&amp;lt;List&amp;lt;Foo&amp;gt;&amp;gt;() { }).getBody();
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Or that way if you use an intermediate array:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint java"&gt;List&amp;lt;Foo&amp;gt; result = Arrays.asList(restTemplate.getForObject(url, Foo[].class));
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;While in Kotlin with Spring Framework 5 extensions you will be able to write:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint kotlin"&gt;val result: List&amp;lt;Foo&amp;gt; = restTemplate.getForObject(url)
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;Web API Kotlin extensions available in Spring Framework 5.0 are &lt;a href="https://github.com/spring-projects/spring-framework/blob/master/spring-web/src/main/kotlin/org/springframework/web/client/RestOperationsExtensions.kt"&gt;RestOperationsExtensions&lt;/a&gt;, &lt;a href="https://github.com/spring-projects/spring-framework/blob/master/spring-web-reactive/src/main/kotlin/org/springframework/web/reactive/function/server/ServerRequestExtensions.kt"&gt;ServerRequestExtensions&lt;/a&gt;, &lt;a href="https://github.com/spring-projects/spring-framework/blob/master/spring-web-reactive/src/main/kotlin/org/springframework/web/reactive/function/BodyInsertersExtensions.kt"&gt;BodyInsertersExtensions&lt;/a&gt;, &lt;a href="https://github.com/spring-projects/spring-framework/blob/master/spring-web-reactive/src/main/kotlin/org/springframework/web/reactive/function/BodyExtractorsExtensions.kt"&gt;BodyExtractorsExtensions&lt;/a&gt;, &lt;a href="https://github.com/spring-projects/spring-framework/blob/master/spring-web-reactive/src/main/kotlin/org/springframework/web/reactive/function/client/ClientResponseExtensions.kt"&gt;ClientResponseExtensions&lt;/a&gt;, &lt;a href="https://github.com/spring-projects/spring-framework/blob/master/spring-context/src/main/kotlin/org/springframework/ui/ModelExtensions.kt"&gt;ModelExtensions&lt;/a&gt; and &lt;a href="https://github.com/spring-projects/spring-framework/blob/master/spring-context/src/main/kotlin/org/springframework/ui/ModelMapExtensions.kt"&gt;ModelMapExtensions&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;These extensions also provide member functions supporting natively Kotlin &lt;code&gt;KClass&lt;/code&gt;, allowing you to specify &lt;code&gt;Foo::class&lt;/code&gt; parameter instead of &lt;code&gt;Foo::class.java&lt;/code&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#reactor-kotlin-extensions" class="anchor" name="reactor-kotlin-extensions"&gt;&lt;/a&gt;Reactor Kotlin extensions&lt;/h2&gt;
-&lt;p&gt;&lt;a href="https://projectreactor.io/"&gt;Reactor&lt;/a&gt; is the reactive foundation Spring Framework 5.0 is built upon, and there are good chances you are going to use its &lt;a href="https://projectreactor.io/docs/core/release/api/reactor/core/publisher/Mono.html"&gt;Mono&lt;/a&gt;, &lt;a href="https://projectreactor.io/docs/core/release/api/reactor/core/publisher/Flux.html"&gt;Flux&lt;/a&gt; and &lt;a href="https://projectreactor.io/docs/test/release/api/reactor/test/StepVerifier.html"&gt;StepVerifier&lt;/a&gt; APIs when developing a reactive web application.&lt;/p&gt;
-&lt;p&gt;So today we are also introducing Kotlin support in Reactor, via the new &lt;a href="https://github.com/reactor/reactor-kotlin"&gt;reactor-kotlin&lt;/a&gt; project! It provides extensions to be able to create &lt;code&gt;Mono&lt;/code&gt; instances from any class instance by writing &lt;code&gt;foo.toMono()&lt;/code&gt; which many will prefer to &lt;code&gt;Mono.just(foo)&lt;/code&gt;. It also supports for example creating a &lt;code&gt;Flux&lt;/code&gt; from a Java 8 &lt;code&gt;Stream&lt;/code&gt; instance with &lt;code&gt;stream.toFlux()&lt;/code&gt;. &lt;code&gt;Iterable&lt;/code&gt;, &lt;code&gt;CompletableFuture&lt;/code&gt; and &lt;code&gt;Throwable&lt;/code&gt; extensions as well as &lt;code&gt;KClass&lt;/code&gt; based variants of Reactor API are also provided.&lt;/p&gt;
-&lt;p&gt;This is still the early days of this project, so feel free to &lt;a href="https://github.com/reactor/reactor-kotlin/pulls"&gt;contribute&lt;/a&gt; your own extensions if you find missing bits.&lt;/p&gt;&lt;h2&gt;&lt;a href="#no-need-to-declare-your-bean-class-as-open-anymore" class="anchor" name="no-need-to-declare-your-bean-class-as-open-anymore"&gt;&lt;/a&gt;No need to declare your bean class as open anymore&lt;/h2&gt;
-&lt;p&gt;Until now, one of the few pain points you faced when building a Spring Boot application with Kotlin was the need to add an &lt;code&gt;open&lt;/code&gt; keyword on each class and their member functions of Spring beans proxified with CGLIB like &lt;code&gt;@Configuration&lt;/code&gt; classes. The root cause of this requirement comes from the fact that in Kotlin, &lt;a href="https://discuss.kotlinlang.org/t/classes-final-by-default/166"&gt;classes are final by default&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Fortunately, Kotlin 1.0.6 now provides a &lt;code&gt;kotlin-spring&lt;/code&gt; plugin that open classes and their member functions by default for classes annotated or meta-annotated with one of the following annotation:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;code&gt;@Component&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;@Async&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;@Transactional&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code&gt;@Cacheable&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Meta-annotations support means that classes annotated with&lt;code&gt;@Configuration&lt;/code&gt;, &lt;code&gt;@Controller&lt;/code&gt;, &lt;code&gt;@RestController&lt;/code&gt;, &lt;code&gt;@Service&lt;/code&gt; or &lt;code&gt;@Repository&lt;/code&gt; are automatically opened since these annotations are meta-annotated with &lt;code&gt;@Component&lt;/code&gt;. &lt;/p&gt;
-&lt;p&gt;We have updated &lt;a href="http://start.spring.io/#!language=kotlin"&gt;start.spring.io&lt;/a&gt; to enabled it by default. You can have a look to &lt;a href="https://blog.jetbrains.com/kotlin/2016/12/kotlin-1-0-6-is-here/"&gt;this Kotlin 1.0.6 blog post&lt;/a&gt; for more details, including the new &lt;code&gt;kotlin-jpa&lt;/code&gt; and &lt;code&gt;kotlin-noarg&lt;/code&gt; plugins really useful with Spring Data entities.&lt;/p&gt;&lt;h2&gt;&lt;a href="#kotlin-based-gradle-build-configuration" class="anchor" name="kotlin-based-gradle-build-configuration"&gt;&lt;/a&gt;Kotlin based Gradle build configuration&lt;/h2&gt;
-&lt;p&gt;Back in May, Gradle &lt;a href="https://blog.gradle.org/kotlin-meets-gradle"&gt;announced&lt;/a&gt; that they are going to support writing build and config files in Kotlin in addition to Groovy. This makes it possible to have full auto-completion and validation in your IDE, because such files are regular statically-typed Kotlin Script files. This is likely to become the natural choice for Kotlin based project, but this is also valuable for Java projects too.&lt;/p&gt;
-&lt;p&gt;Since May, the &lt;a href="https://github.com/gradle/gradle-script-kotlin"&gt;gradle-script-kotlin&lt;/a&gt; project has continued to evolve, and is now usable with 2 warnings to keep in mind:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;You need Kotlin 1.1-EAP IDEA plugin to get autocompletion (but wait Kotlin &lt;code&gt;1.1-M05&lt;/code&gt; if you are using &lt;code&gt;kotlin-spring&lt;/code&gt; plugin since &lt;code&gt;1.1-M04&lt;/code&gt; does not work reliably with this plugin yet)&lt;/li&gt;
-  &lt;li&gt;The documentation is not complete, but the Gradle team is really helpful on the #gradle channel of the Kotlin Slack.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Both &lt;a href="https://github.com/sdeleuze/spring-boot-kotlin-demo"&gt;spring-boot-kotlin-demo&lt;/a&gt; and &lt;a href="https://github.com/mix-it/mixit/"&gt;mixit&lt;/a&gt; projects use such Kotlin based Gradle builds, so feel free to have a look. We are &lt;a href="https://github.com/spring-io/initializr/issues/334"&gt;discussing&lt;/a&gt; adding such support on start.spring.io.&lt;/p&gt;&lt;h2&gt;&lt;a href="#kotlin-script-based-templates" class="anchor" name="kotlin-script-based-templates"&gt;&lt;/a&gt;Kotlin Script based templates&lt;/h2&gt;
-&lt;p&gt;As of version 4.3, Spring Framework provides a &lt;a href="http://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/servlet/view/script/ScriptTemplateView.html"&gt;ScriptTemplateView&lt;/a&gt; to render templates using script engines that supports &lt;a href="https://www.jcp.org/en/jsr/detail?id=223"&gt;JSR-223&lt;/a&gt;. Kotlin 1.1-M04 provides such support and allows to render Kotlin based templates, see &lt;a href="https://github.com/spring-projects/spring-framework/commit/badde3a479a53e1dd0777dd1bd5b55cb1021cf9e"&gt;this commit&lt;/a&gt; for details.&lt;/p&gt;
-&lt;p&gt;This enables some interesting use cases like writing type-safe templates using &lt;a href="https://github.com/Kotlin/kotlinx.html"&gt;kotlinx.html&lt;/a&gt; DSL or simply Kotlin multiline &lt;code&gt;String&lt;/code&gt; with interpolation, as demonstrated in this &lt;a href="https://github.com/sdeleuze/kotlin-script-templating"&gt;kotlin-script-templating&lt;/a&gt; project. This could allow you to write this kind of templates with full autocompletion and refactoring support in your IDE:&lt;/p&gt;
-&lt;pre&gt;&lt;code class="prettyprint kotlin"&gt;import io.spring.demo.User&#xD;
-import io.spring.demo.joinToLine&#xD;
-&#xD;
-&amp;quot;&amp;quot;&amp;quot;&#xD;
-${include(&amp;quot;header&amp;quot;, bindings)}&#xD;
-&amp;lt;h1&amp;gt;Title : $title&amp;lt;/h1&amp;gt;&#xD;
-&amp;lt;ul&amp;gt;&#xD;
-    ${(users as List&amp;lt;User&amp;gt;).joinToLine{ &amp;quot;&amp;lt;li&amp;gt;User ${it.firstname} ${it.lastname}&amp;lt;/li&amp;gt;&amp;quot; }}&#xD;
-&amp;lt;/ul&amp;gt;&#xD;
-${include(&amp;quot;footer&amp;quot;)}&#xD;
-&amp;quot;&amp;quot;&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;p&gt;This feature is still work in progress, but I am collaborating with the Kotlin team to tentatively make it production ready with nested template and i18n support on both MVC and Reactive sides for Spring Framework 5.0 GA.&lt;/p&gt;&lt;h2&gt;&lt;a href="#conclusion" class="anchor" name="conclusion"&gt;&lt;/a&gt;Conclusion&lt;/h2&gt;
-&lt;p&gt;The more I write Spring Boot applications with Kotlin, the more I feel these 2 technologies share the same mindset and allow you to write applications more efficiently with expressive, short and readable code, and Spring Framework 5 Kotlin support is a significant step towards combining these technologies in a natural, simple and powerful way.&lt;/p&gt;
-&lt;p&gt;Kotlin can be used to write &lt;a href="https://github.com/sdeleuze/spring-boot-kotlin-demo"&gt;annotation-based Spring Boot applications&lt;/a&gt;, but will also be a good fit with the new kind of &lt;a href="https://github.com/mix-it/mixit/"&gt;functional and reactive applications&lt;/a&gt; that Spring Framework 5.0 will enable.&lt;/p&gt;
-&lt;p&gt;Kotlin team did a great job by fixing almost all the pain points we reported, so big thanks to them. The upcoming Kotlin 1.1 release is expected to also fix &lt;a href="https://youtrack.jetbrains.com/issue/KT-11235"&gt;KT-11235&lt;/a&gt; in order to allow specifying array annotation attribute single value without &lt;code&gt;arrayOf()&lt;/code&gt;. The main remaining issue you will face is maybe &lt;a href="https://youtrack.jetbrains.com/issue/KT-14984"&gt;KT-14984&lt;/a&gt; that will require specifying explicitly lambda type where just specifying &lt;code&gt;{ }&lt;/code&gt; should be enough.&lt;/p&gt;
-&lt;p&gt;Feel free to test Spring Framework 5.0 Kotlin support by going to &lt;a href="https://start.spring.io/#!language=kotlin"&gt;start.spring.io&lt;/a&gt; and generating a Spring Boot &lt;code&gt;2.0.0 (SNAPSHOT)&lt;/code&gt; project and send us your feedback here or in the &lt;code&gt;#spring&lt;/code&gt; channel of &lt;a href="http://slack.kotlinlang.org/"&gt;Kotlin Slack&lt;/a&gt;. You can also &lt;a href="https://github.com/spring-projects/spring-framework/pulls"&gt;contribute&lt;/a&gt; the Kotlin extensions you need ;-)&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>This Week in Spring - January 3rd, 2017</title>
-    <link rel="alternate" href="https://spring.io/blog/2017/01/03/this-week-in-spring-january-3rd-2017" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2017-01-03:2759</id>
-    <updated>2017-01-03T20:29:00Z</updated>
-    <content type="html">&lt;p&gt;Welcome to another installment of &lt;em&gt;This Week in Spring&lt;/em&gt;! We&amp;rsquo;re now squarely in 2017, and 0 as always - there is &lt;em&gt;much&lt;/em&gt; to cover! &lt;/p&gt;
-&lt;p&gt;This is also the first week of the year. I note it with some pride because it also marks the 6th anniversary of the first installment of &lt;em&gt;This Week in Spring&lt;/em&gt;, in January 2011, which I&amp;rsquo;ve since continued every Tuesday without fail come sickness, holiday, travel or otherwise. It&amp;rsquo;s been a heckuva run and I&amp;rsquo;m excited to see what will grace This Week in Spring in the next 6+ years! I&amp;rsquo;m eternally grateful for all the people (from the community and internal to VMWare and now Pivotal) that have contributed to This Week in Spring over the years! For the last 3+ years my friend and Pivotal&amp;rsquo;s own &lt;a href="https://twitter.com/PieterHumphrey"&gt;Pieter Humphrey&lt;/a&gt; has been an amazing help in making this happen, so thanks Pieter!&lt;/p&gt;
-&lt;p&gt;As usual, if you have things you would like to see added to This Week in Spring, then don&amp;rsquo;t hesitate to &lt;a href="http://twitter.com/starbuxman"&gt;ping me on Twitter&lt;/a&gt; or ping &lt;a href="mailto:josh@joshlong.com"&gt;me by email&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Now then, let&amp;rsquo;s get to it! &lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Spring Framework lead and co-founder Juergen Hoeller &lt;a href="https://spring.io/blog/2016/12/30/spring-framework-5-0-m4-released"&gt;just announced Spring Framework 5.0 M4&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Last week, I didn&amp;rsquo;t publish a new Spring Tips video (and nor will I tomorrow) since I&amp;rsquo;m on vacation ( &lt;em&gt;This Week in Spring&lt;/em&gt; aside!) but I did look at &lt;a href="https://spring.io/blog/2016/12/28/spring-tips-spring-tips-2016"&gt;resources every user should be aware to find educational content on all things Spring&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Integration and messaging ninja &lt;a href="https://spring.io/blog/2016/12/28/spring-amqp-1-7-rc1-available-now"&gt;Artem Bilan just announced Spring AMQP 1.7RC1&lt;/a&gt; which includes new support for the Amqp Client 4.0, updates to Log4j 2.7, Spring Retry 1.2, new support in &lt;code&gt;spring-rabbit-junit&lt;/code&gt; for convenient rules like &lt;code&gt;BrokerRunning&lt;/code&gt; and support for configuring how connections appear from the broker itself.&lt;/li&gt;
-  &lt;li&gt;If you&amp;rsquo;ve ever wondered how you can extend Spring Boot, community contributor Dieter Hubau from Ordina / JWorks did a great talk on &lt;a href="https://spring.io/blog/2017/01/03/springone-platform-2016-replay-writing-your-own-spring-boot-starter"&gt;Writing your own Spring Boot Starter&lt;/a&gt; at SpringOne Platform 2016.&lt;/li&gt;
-  &lt;li&gt;Greg Turnquist talks about &lt;a href="https://spring.io/blog/2017/01/03/springone-platform-2016-replay-spinnaker-land-of-a-1000-builds"&gt;Continuous Delivery with Spinnaker&lt;/a&gt; in this SpringOne Platform 2016 replay. After watching, make sure to check out the &lt;a href="https://spring.io/blog/2016/12/19/spring-cloud-spinnaker-1-0-0-m3"&gt;latest M3 release&lt;/a&gt; of Spring Cloud Spinnaker while you&amp;rsquo;re at it!&lt;/li&gt;
-  &lt;li&gt;Ever wondered why Spring on Cloud Foundry is such a smooth experience? Or Groovy? Or Grails? Watch SpringOne rockstar speaker &amp;amp; a buildpack team lead Ben Hale talk about &lt;a href="https://spring.io/blog/2017/01/03/springone-platform-2016-replay-java-buildpack-developer-enhancements"&gt;updates to the Cloud Foundry Java Buildpack&lt;/a&gt; in his SpringOne Platform replay. Building on a base of amazing features like the &lt;a href="https://github.com/cloudfoundry/java-buildpack/blob/master/docs/jre-open_jdk_jre.md"&gt;memory calculator&lt;/a&gt; Ben gives you the latest on why the buildpack provides the best Java SE support avaialble on the cloud today.&lt;/li&gt;
-  &lt;li&gt;Christoph Strobl takes us through the latest in &lt;a href="https://spring.io/blog/2017/01/03/springone-platform-2016-replay-next-level-redis-with-spring"&gt;Spring Data Redis&lt;/a&gt; in his SpringOne Platform 2016 talk.&lt;/li&gt;
-  &lt;li&gt;Eitan Suez explains &lt;a href="https://spring.io/blog/2017/01/03/springone-platform-2016-replay-where-does-apache-geode-fit-in-cqrs-architectures"&gt;how Apache Geode fits into CQRS architecture&lt;/a&gt; in this SpringOne Platform 2016 replay.&lt;/li&gt;
-  &lt;li&gt;Never worked with Spring Data before? Here&amp;rsquo;s a &lt;a href="https://spring.io/blog/2017/01/03/springone-platform-2016-replay-introduction-to-spring-data"&gt;great introduction&lt;/a&gt; from Greg Turnquist given at the SpringOne Platform 2016 conference.&lt;/li&gt;
-  &lt;li&gt;Mark Paluch talks about Spring Cloud&amp;rsquo;s support for HashiCorp Vault in his SpringOne Platform replay, &lt;a href="https://spring.io/blog/2017/01/03/springone-platform-2016-replay-managing-secrets-at-scale"&gt;Managing scerets at scale&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;the Asimio Tech blog has a few nice posts up of late. This one looks at &lt;a href="http://tech.asimio.net/2016/12/09/Centralized-and-Versioned-Configuration-using-Spring-Cloud-Config-Server-and-Git.html"&gt;centralizing configuration with the Spring Cloud Config Server&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;.. and this one looks at troubleshooting &lt;a href="http://tech.asimio.net/2016/12/27/Troubleshooting-Spring-RestTemplate-Requests-Timeout.html"&gt;timeouts with Spring&amp;rsquo;s &lt;code&gt;RestTemplate&lt;/code&gt;&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;take a peak at some of what we&amp;rsquo;re experimenting with around serverless function-type workloads in the recently announced but still very early days &lt;a href="https://github.com/markfisher/spring-cloud-function"&gt;Spring Cloud Function project&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;this is a short-and-sweet look at how to apply &lt;a href="https://twitter.com/craigburke1"&gt;Craig Burke&lt;/a&gt;&amp;rsquo;s &lt;a href="http://josdem.io/techtalk/spring/spring_boot_bower_plugin/"&gt;Bower Gradle plugin&lt;/a&gt; to a Gradle-build (not really all that much to do with Spring Boot, despite the title, but interesting nonetheless)&lt;/li&gt;
-  &lt;li&gt;learn how to separate integration from &lt;a href="https://moelholm.com/2016/10/22/spring-boot-separating-tests/"&gt;unit tests through JUnit or Spring Boot&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;this Japanese-language post looks at &lt;a href="http://pppurple.hatenablog.com/entry/2016/12/29/233141"&gt;constructor injection in a Spring application&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring MVC ninja Rossen Stoyanchev hints that the Spring 5 web and reactive effort, informally referred to as Spring Reactive thus far, &lt;a href="https://twitter.com/rstoya05/status/814539765601157120"&gt;will get a name in early January&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;this is an oldie but a goodie from Pivotal&amp;rsquo;s own David Julia, &lt;a href="https://blog.pivotal.io/pivotal-labs/products/refactoring-towards-expressive-rest-apis-let-your-code-be-your-guide"&gt;looking at how to write expressive REST APIs&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;This seems to be a very cool (non-Pivotal) community for &lt;a href="http://springcloud.cn/"&gt;Chinese-language speakers using Spring Cloud&lt;/a&gt; complete with examples of its use in China. Very cool!&lt;/li&gt;
-  &lt;li&gt;Matt Raible wrote a really nice post detailing some useful tips when &lt;a href="https://stormpath.com/blog/angularjs-spring-boot-tips"&gt;building Spring Boot and Angular.js applications with Stormpath&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;I really enjoyed Bartosz Jedrzejewski&amp;rsquo;s blog looking at &lt;a href="http://blog.scottlogic.com/2016/11/22/spring-boot-and-mongodb.html"&gt;building Spring Boot applications with MongoDB&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;this is a nice post that simply looks at how to &lt;a href="https://github.com/neo4j-examples/movies-java-spring-boot-jdbc"&gt;stand up Spring Boot applications that listen on multiple ports&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Spring Data Neo4j lead Michael Hunger just updated a very nice example of &lt;a href="https://github.com/neo4j-examples/movies-java-spring-boot-jdbc"&gt;using Neo4j&amp;rsquo;s Cypher language to communicate through a JDBC driver with Neo4j&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;the &lt;em&gt;Trying Things&lt;/em&gt; blog has a nice look &lt;a href="https://tryingthings.wordpress.com/2016/12/19/cucumber-selenium-spring-boot/"&gt;at writing Cucumber tests with Spring Boot&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Karl Penzhorn did a nice job looking at how to build a simple CRUD application &lt;a href="https://www.javacodegeeks.com/2016/12/build-crud-application-react-spring-boot-user-authentication.html"&gt;using Spring Boot, React, complete with security and user authentication&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;I dig &lt;a href="http://ledze.mx/index.php/10-spring-boot/restful/8-spring-boot-datarest-restful-mvc-thymeleaf-extrabonus-actuator-y-remote-shell"&gt;this Spanish-language look at building a Spring Boot-based web application&lt;/a&gt; that features all the usual goodies plus Actuator, Thymeleaf, and even the Spring Boot remote shell!&lt;/li&gt;
-  &lt;li&gt;the folks in the RedHat/JBoss Ininispan group just released &lt;a href="http://blog.infinispan.org/2016/12/spring-boot-starters.html"&gt;some nice Infinispan Spring Boot starters data grid and Spring Boot&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content>
-  </entry>
-  <entry>
-    <title>SpringOne Platform 2016 Replay: Introduction to Spring Data</title>
-    <link rel="alternate" href="https://spring.io/blog/2017/01/03/springone-platform-2016-replay-introduction-to-spring-data" />
-    <category term="news" label="News and Events" />
-    <author>
-      <name>Pieter Humphrey</name>
-    </author>
-    <id>tag:spring.io,2017-01-05:2768</id>
-    <updated>2017-01-03T20:25:00Z</updated>
-    <content type="html">&lt;p&gt;Recorded at SpringOne Platform 2016.&lt;br/&gt;Speaker: Greg Turnquist&lt;br/&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/introduction-to-spring-data"&gt;http://www.slideshare.net/SpringCentral/introduction-to-spring-data&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Are you still writing data queries by hand? Learn how Spring Data gives you the tools to leap over that hurdle and dive into solving problems. Feeling locked into your relational database due to having written gobs of SQL operations? In this live coding session, see how Spring Data provides the means to reduce that risk and give you the means to branch into other data stores. With a couple extra lines of code, you can even have a RESTful interface in no time flat.&lt;/p&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/wn1KYxxm0wo" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
-  </entry>
-  <entry>
-    <title>SpringOne Platform 2016 Replay: Managing secrets at scale</title>
-    <link rel="alternate" href="https://spring.io/blog/2017/01/03/springone-platform-2016-replay-managing-secrets-at-scale" />
-    <category term="news" label="News and Events" />
-    <author>
-      <name>Pieter Humphrey</name>
-    </author>
-    <id>tag:spring.io,2017-01-05:2769</id>
-    <updated>2017-01-03T20:25:00Z</updated>
-    <content type="html">&lt;p&gt;Recorded at SpringOne Platform 2016.&lt;br/&gt;Speaker: Mark Paluch&lt;br/&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/managing-secrets-at-scale-64889986"&gt;http://www.slideshare.net/SpringCentral/managing-secrets-at-scale-64889986&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Running multiple instances of microservices, deploying Docker images to Kubernetes is the current trend. But what about security? Are you encrypting passwords? Where do you store the key? How often do you rotate secrets? A modern system requires access to a multitude of secrets: database credentials, API keys for external services, credentials for service-oriented architecture communication and often much more. Traditional, manual patterns cannot keep the security bar high with dynamic deployment scenarios. Secrets should stay secret and not get distributed amongst the landscape. Come to this session to learn how to keep the security bar high while running services that require secrets. You&amp;rsquo;ll see how to securely share and manage secrets (certificates, passwords, keys) for your services using Vault and how to use it with Spring Boot.&lt;/p&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/tKAHqu9oT0Y" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
-  </entry>
-  <entry>
-    <title>SpringOne Platform 2016 Replay: Where Does Apache Geode Fit in CQRS Architectures?</title>
-    <link rel="alternate" href="https://spring.io/blog/2017/01/03/springone-platform-2016-replay-where-does-apache-geode-fit-in-cqrs-architectures" />
-    <category term="news" label="News and Events" />
-    <author>
-      <name>Pieter Humphrey</name>
-    </author>
-    <id>tag:spring.io,2017-01-05:2767</id>
-    <updated>2017-01-03T20:24:00Z</updated>
-    <content type="html">&lt;p&gt;Recorded at SpringOne Platform 2016.&lt;br/&gt;Speaker: Eitan Suez&lt;br/&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/where-does-apache-geode-fit-in-cqrs-architectures"&gt;http://www.slideshare.net/SpringCentral/where-does-apache-geode-fit-in-cqrs-architectures&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;In this talk, Eitan Suez will explore the question: Where does Geode fit in an organization&amp;rsquo;s system architecture? Geode is a unique and feature-rich product that perhaps hasn&amp;rsquo;t seen as much adoption as it deserves. Today&amp;rsquo;s apps are no longer the straightforward, database-backed web applications we used to build a few years ago. Applications have become more sophisticated, as they&amp;rsquo;ve had to meet the need to scale, to be reliable, fault-tolerant, and to integrate with other systems. In this talk, Eitan will suggest one particular fit for Geode in the context of a CQRS architecture, and welcomes you to attend, and to contribute by sharing how you&amp;rsquo;ve put Geode to use in your organization.&lt;/p&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/4YvssVImztY" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
-  </entry>
-  <entry>
-    <title>SpringOne Platform 2016 Replay: Next Level Redis with Spring</title>
-    <link rel="alternate" href="https://spring.io/blog/2017/01/03/springone-platform-2016-replay-next-level-redis-with-spring" />
-    <category term="news" label="News and Events" />
-    <author>
-      <name>Pieter Humphrey</name>
-    </author>
-    <id>tag:spring.io,2017-01-05:2766</id>
-    <updated>2017-01-03T20:23:00Z</updated>
-    <content type="html">&lt;p&gt;Recorded at SpringOne Platform 2016.&lt;br/&gt;Speaker: Christoph Strobl&lt;br/&gt;Slides: &lt;a href="http://www.slideshare.net/SpringCentral/next-level-redis-with-spring"&gt;http://www.slideshare.net/SpringCentral/next-level-redis-with-spring&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;Redis is one of the most popular Open Source Key Value Stores these days. Spring Data Redis Lead Christoph Strobl takes you on a tour through high availability and cluster scenarios. He explains Object Hash Mapping and Secondary Indexes as well as the Spring Data Repository abstraction that let’s you seamlessly interact with Redis.&lt;/p&gt;
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/VvK-uLWDHFo" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
   </entry>
 </feed>

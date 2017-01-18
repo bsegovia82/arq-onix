@@ -41,11 +41,12 @@ public abstract class TimerEjecutorIntervaloTiempo {
 		} catch (Throwable lError) {
 			lError.printStackTrace();
 		} finally {
+			System.out.println("Fin de ejecución Servicio timer : " + timer.getInfo());
+			System.out.println("____________________________________________");
 			timer.cancel();
 			temporizarEjecucion();
 		}
-		System.out.println("Fin de ejecución Servicio timer : " + timer.getInfo());
-		System.out.println("____________________________________________");
+		
 	}
 
 	protected abstract void ejecutarAccionRecurrente() throws Throwable;

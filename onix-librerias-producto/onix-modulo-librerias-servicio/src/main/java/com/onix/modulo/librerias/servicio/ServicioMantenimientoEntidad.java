@@ -140,6 +140,7 @@ public abstract class ServicioMantenimientoEntidad<EAO extends GenericEAO<ENTIDA
 
 	private void validarControlAuditoria(ENTIDAD entidad) throws ErrorValidacionGeneral {
 		String lUsuario = entidad.getAuditoria();
+		lUsuario=lUsuario==null?"":lUsuario;
 		if (lUsuario.length() < 3)
 			throw new ErrorValidacionGeneral(
 					"No es posible realizar la transacción, el registro no tiene un usuario responsable del evento");
