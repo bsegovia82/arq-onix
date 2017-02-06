@@ -13,9 +13,10 @@
 <fullyQualifiedTypeName name="javax.ejb.TimerConfig"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="com.sun.source.doctree.SerialDataTree"/>
-<fullyQualifiedTypeName name="java.io.Serializable"/>
 <fullyQualifiedTypeName name="com.arjuna.ats.internal.arjuna.objectstore.jdbc.accessors.accessor"/>
 <fullyQualifiedTypeName name="com.onix.modulo.librerias.timer.DatosEjecucionTimer"/>
 <fullyQualifiedTypeName name="java.lang.Throwable"/>
 <fullyQualifiedTypeName name="javax.mail.Session"/>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
+<fullyQualifiedTypeName name="java.lang.Class"/>
 </qualifiedTypeNameHistroy>

@@ -13,23 +13,15 @@ import javax.persistence.TypedQuery;
 
 import com.onix.modulo.librerias.dominio.entidades.IEntidadPersistible;
 
+public abstract class GenericEAO<ENTIDAD extends IEntidadPersistible<Id>, Id extends Serializable> {
+	private static final String ESTADO = "estado";
 
-public abstract class GenericEAO
-<ENTIDAD extends IEntidadPersistible<Id>, Id extends Serializable> 
-{
-	private static final 
-	String ESTADO = "estado";
+	private static final String CAMPO_PK = "id";
 
-	private static final 
-	String CAMPO_PK = "id";
+	public static final String ESTADO_ACTIVO = "A";
+	public static final String ESTADO_INACTIVO = "I";
 
-	public static final 
-	String ESTADO_ACTIVO = "A";
-	public static final 
-	String ESTADO_INACTIVO = "I";
-
-	protected abstract 
-	EntityManager getAdminEntidad();
+	protected abstract EntityManager getAdminEntidad();
 
 	public void insertar(ENTIDAD entidad) {
 		getAdminEntidad().persist(entidad);
@@ -45,13 +37,9 @@ public abstract class GenericEAO
 	}
 
 	@SuppressWarnings("unchecked")
-	@TransactionAttribute(
-			TransactionAttributeType.SUPPORTS
-			)
+	@TransactionAttribute(TransactionAttributeType.SUPPORTS)
 	public List<ENTIDAD> ejecutarQueryNativo(String sql, HashMap<String, Object> parametros, Class<ENTIDAD> clase) {
-		Query query = 
-				getAdminEntidad().
-				createNativeQuery(sql, clase);
+		Query query = getAdminEntidad().createNativeQuery(sql, clase);
 		for (Entry<String, Object> registro : parametros.entrySet())
 			query.setParameter(registro.getKey(), registro.getValue());
 		return query.getResultList();
@@ -59,12 +47,19 @@ public abstract class GenericEAO
 
 	@SuppressWarnings("unchecked")
 	@TransactionAttribute(TransactionAttributeType.SUPPORTS)
-	protected List<ENTIDAD> 
-	ejecutarNamedQuery(
-			String namedQuery, 
-			HashMap<String, Object> parametros) {
+	protected List<ENTIDAD> ejecutarNamedQuery(String namedQuery, HashMap<String, Object> parametros) {
 		Query query = getAdminEntidad().createNamedQuery(namedQuery);
 		for (Entry<String, Object> registro : parametros.entrySet())
+			query.setParameter(registro.getKey(), registro.getValue());
+		return query.getResultList();
+	}
+
+	@SuppressWarnings("unchecked")
+	@TransactionAttribute(TransactionAttributeType.SUPPORTS)
+	public <T extends Serializable> List<T> ejecutarNativeQueryList(String lQueryNativo,
+			HashMap<String, Object> lParametros, Class<T> lClase) {
+		Query query = getAdminEntidad().createNativeQuery(lQueryNativo, lClase);
+		for (Entry<String, Object> registro : lParametros.entrySet())
 			query.setParameter(registro.getKey(), registro.getValue());
 		return query.getResultList();
 	}
@@ -88,24 +83,27 @@ public abstract class GenericEAO
 	}
 
 	public List<ENTIDAD> obtenerListaObjetosPorCampoGenerico(String clave, Object valor, Class<ENTIDAD> clase) {
-		TypedQuery<ENTIDAD> listaResultante = getAdminEntidad().createQuery(construccionQueryGenerico(clase, clave, false),
-				clase);
+		TypedQuery<ENTIDAD> listaResultante = getAdminEntidad()
+				.createQuery(construccionQueryGenerico(clase, clave, false), clase);
 		return listaResultante.setParameter(clave, valor).getResultList();
 	}
-	
-	public List<ENTIDAD> obtenerListaObjetosPorCampoGenerico(String clave, Object valor, Class<ENTIDAD> clase, Boolean orderFecha) {
-		TypedQuery<ENTIDAD> listaResultante = getAdminEntidad().createQuery(construccionQueryGenerico(clase, clave, orderFecha),
-				clase);
+
+	public List<ENTIDAD> obtenerListaObjetosPorCampoGenerico(String clave, Object valor, Class<ENTIDAD> clase,
+			Boolean orderFecha) {
+		TypedQuery<ENTIDAD> listaResultante = getAdminEntidad()
+				.createQuery(construccionQueryGenerico(clase, clave, orderFecha), clase);
 		return listaResultante.setParameter(clave, valor).getResultList();
 	}
-	
+
 	public List<ENTIDAD> obtenerTodaListaObjetos(Class<ENTIDAD> clase) {
-		TypedQuery<ENTIDAD> listaResultante = getAdminEntidad().createQuery(construccionQueryGenerico(clase, false), clase);
+		TypedQuery<ENTIDAD> listaResultante = getAdminEntidad().createQuery(construccionQueryGenerico(clase, false),
+				clase);
 		return listaResultante.getResultList();
 	}
-	
+
 	public List<ENTIDAD> obtenerTodaListaObjetos(Class<ENTIDAD> clase, Boolean orderFecha) {
-		TypedQuery<ENTIDAD> listaResultante = getAdminEntidad().createQuery(construccionQueryGenerico(clase, orderFecha), clase);
+		TypedQuery<ENTIDAD> listaResultante = getAdminEntidad()
+				.createQuery(construccionQueryGenerico(clase, orderFecha), clase);
 		return listaResultante.getResultList();
 	}
 
@@ -117,18 +115,16 @@ public abstract class GenericEAO
 		return obtenerListaObjetosPorEstado(ESTADO_INACTIVO, clase);
 	}
 
-	private String construccionQueryGenerico(Class<ENTIDAD> clase, Boolean orderFecha)
-	{
+	private String construccionQueryGenerico(Class<ENTIDAD> clase, Boolean orderFecha) {
 		return construccionQueryGenerico(clase, null, orderFecha);
 	}
-	
+
 	private String construccionQueryGenerico(Class<ENTIDAD> clase, String campoParametro, Boolean orderFecha) {
 		String query = "select modelo  from " + clase.getCanonicalName() + " modelo ";
 		if (campoParametro != null) {
 			query += "where " + "modelo." + campoParametro + " = :" + campoParametro;
 		}
-		if (orderFecha)
-		{
+		if (orderFecha) {
 			query += " order by modelo.fechaRegistro desc";
 		}
 		return query;

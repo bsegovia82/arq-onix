@@ -1,5 +1,0 @@
-package com.onix.modulo.librerias.servicio.negocio;
-
-public interface ServicioValidadorControlAuditoria {
-
-}

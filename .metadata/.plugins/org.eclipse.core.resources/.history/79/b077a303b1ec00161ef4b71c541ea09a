@@ -1,0 +1,128 @@
+package com.onix.modulo.librerias.eao;
+
+import java.io.Serializable;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map.Entry;
+
+import javax.ejb.TransactionAttribute;
+import javax.ejb.TransactionAttributeType;
+import javax.persistence.EntityManager;
+import javax.persistence.Query;
+import javax.persistence.TypedQuery;
+
+import com.onix.modulo.librerias.dominio.entidades.IEntidadPersistible;
+
+public abstract class GenericEAO<ENTIDAD extends IEntidadPersistible<Id>, Id extends Serializable> {
+	private static final String ESTADO = "estado";
+
+	private static final String CAMPO_PK = "id";
+
+	public static final String ESTADO_ACTIVO = "A";
+	public static final String ESTADO_INACTIVO = "I";
+
+	protected abstract EntityManager getAdminEntidad();
+
+	public void insertar(ENTIDAD entidad) {
+		getAdminEntidad().persist(entidad);
+		getAdminEntidad().flush();
+	}
+
+	public ENTIDAD actualizar(ENTIDAD entidad) {
+		return getAdminEntidad().merge(entidad);
+	}
+
+	public void eliminar(ENTIDAD entidad) {
+		getAdminEntidad().remove(entidad);
+	}
+
+	@SuppressWarnings("unchecked")
+	@TransactionAttribute(TransactionAttributeType.SUPPORTS)
+	public List<ENTIDAD> ejecutarQueryNativo(String sql, HashMap<String, Object> parametros, Class<ENTIDAD> clase) {
+		Query query = getAdminEntidad().createNativeQuery(sql, clase);
+		for (Entry<String, Object> registro : parametros.entrySet())
+			query.setParameter(registro.getKey(), registro.getValue());
+		return query.getResultList();
+	}
+
+	@SuppressWarnings("unchecked")
+	@TransactionAttribute(TransactionAttributeType.SUPPORTS)
+	protected List<ENTIDAD> ejecutarNamedQuery(String namedQuery, HashMap<String, Object> parametros) {
+		Query query = getAdminEntidad().createNamedQuery(namedQuery);
+		for (Entry<String, Object> registro : parametros.entrySet())
+			query.setParameter(registro.getKey(), registro.getValue());
+		return query.getResultList();
+	}
+
+	@SuppressWarnings("unchecked")
+	@TransactionAttribute(TransactionAttributeType.SUPPORTS)
+	public <T extends Serializable> List<T> ejecutarNativeQueryList(String lQueryNativo, T lClase) {
+		return getAdminEntidad().createNativeQuery(lQueryNativo, lClase.getClass()).getResultList();
+	}
+
+	public List<ENTIDAD> obtenerListaObjetosPorEstado(String estado, Class<ENTIDAD> clase) {
+		return obtenerListaObjetosPorCampoGenerico(ESTADO, estado, clase);
+	}
+
+	public ENTIDAD obtenerObjetoPorPk(Id clavePrimaria, Class<ENTIDAD> clase) {
+		return obtenerObjetoPorCampoGenerico(CAMPO_PK, clavePrimaria, clase);
+	}
+
+	public ENTIDAD obtenerObjetoPorCampoGenerico(String clave, Object valor, Class<ENTIDAD> clase) {
+		List<ENTIDAD> listaResultado = obtenerListaObjetosPorCampoGenerico(clave, valor, clase);
+
+		if (listaResultado.isEmpty()) {
+			return null;
+		} else {
+			return listaResultado.get(0);
+		}
+	}
+
+	public List<ENTIDAD> obtenerListaObjetosPorCampoGenerico(String clave, Object valor, Class<ENTIDAD> clase) {
+		TypedQuery<ENTIDAD> listaResultante = getAdminEntidad()
+				.createQuery(construccionQueryGenerico(clase, clave, false), clase);
+		return listaResultante.setParameter(clave, valor).getResultList();
+	}
+
+	public List<ENTIDAD> obtenerListaObjetosPorCampoGenerico(String clave, Object valor, Class<ENTIDAD> clase,
+			Boolean orderFecha) {
+		TypedQuery<ENTIDAD> listaResultante = getAdminEntidad()
+				.createQuery(construccionQueryGenerico(clase, clave, orderFecha), clase);
+		return listaResultante.setParameter(clave, valor).getResultList();
+	}
+
+	public List<ENTIDAD> obtenerTodaListaObjetos(Class<ENTIDAD> clase) {
+		TypedQuery<ENTIDAD> listaResultante = getAdminEntidad().createQuery(construccionQueryGenerico(clase, false),
+				clase);
+		return listaResultante.getResultList();
+	}
+
+	public List<ENTIDAD> obtenerTodaListaObjetos(Class<ENTIDAD> clase, Boolean orderFecha) {
+		TypedQuery<ENTIDAD> listaResultante = getAdminEntidad()
+				.createQuery(construccionQueryGenerico(clase, orderFecha), clase);
+		return listaResultante.getResultList();
+	}
+
+	public List<ENTIDAD> obtenerListaObjetosPorEstadoActivo(Class<ENTIDAD> clase) {
+		return obtenerListaObjetosPorEstado(ESTADO_ACTIVO, clase);
+	}
+
+	public List<ENTIDAD> obtenerListaObjetosPorEstadoInactivo(Class<ENTIDAD> clase) {
+		return obtenerListaObjetosPorEstado(ESTADO_INACTIVO, clase);
+	}
+
+	private String construccionQueryGenerico(Class<ENTIDAD> clase, Boolean orderFecha) {
+		return construccionQueryGenerico(clase, null, orderFecha);
+	}
+
+	private String construccionQueryGenerico(Class<ENTIDAD> clase, String campoParametro, Boolean orderFecha) {
+		String query = "select modelo  from " + clase.getCanonicalName() + " modelo ";
+		if (campoParametro != null) {
+			query += "where " + "modelo." + campoParametro + " = :" + campoParametro;
+		}
+		if (orderFecha) {
+			query += " order by modelo.fechaRegistro desc";
+		}
+		return query;
+	}
+}

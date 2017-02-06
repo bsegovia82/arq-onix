@@ -2,13 +2,221 @@
 <?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/atom10full.xsl"?><?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?><feed xmlns="http://www.w3.org/2005/Atom" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0">
 <title>JBoss Central</title>
 <generator uri="http://tt-rss.org/">Tiny Tiny RSS/1.9</generator>
-<updated>2016-12-12T22:16:17+00:00</updated>
+<updated>2016-12-15T11:36:08+00:00</updated>
 <id>http://tiny-man.rhcloud.com/public.php?op=rss&amp;id=1&amp;key=b0143615132bd9efc4e83ba42a5574f6ab939b28</id>
 
 
 <link href="http://tiny-man.rhcloud.com" rel="alternate" />
 
 <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/atom+xml" href="http://feeds.feedburner.com/jbossbuzz" /><feedburner:info uri="jbossbuzz" /><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" /><entry>
+	<id>https://tools.jboss.org/blog/am2-for-neon.2.html</id>
+	<link href="http://feedproxy.google.com/~r/jbossbuzz/~3/Yf3a6Mt0YQU/am2-for-neon.2.html" rel="alternate" type="text/html" />
+	<title>JBoss Tools 4.4.3.AM2 for Eclipse Neon.2</title>
+	<summary type="html"><![CDATA[
+      <div><div id="preamble">
+      <div class="sectionbody">
+      <div class="paragraph">
+      <p>Happy to announce 4.4.3.AM2 (Developer Milestone 2) build for Eclipse Neon.2.</p>
+      </div>
+      <div class="paragraph">
+      <p>Downloads available at <a href="https://tools.jboss.org/downloads/jbosstools/neon/4.4.3.AM2.html">JBoss Tools 4.4.3 AM2</a>.</p>
+      </div>
+      </div>
+      </div>
+      <div class="sect1">
+      <h2 id="what-is-new"><a class="anchor" href="#what-is-new"></a>What is New?</h2>
+      <div class="sectionbody">
+      <div class="paragraph">
+      <p>Full info is at <a href="https://tools.jboss.org/documentation/whatsnew/jbosstools/4.4.3.AM2.html">this page</a>. Some highlights are below.</p>
+      </div>
+      <div class="sect2">
+      <h3 id="openshift-3"><a class="anchor" href="#openshift-3"></a>OpenShift 3</h3>
+      <div class="paragraph">
+      <p>Although our main focus is bug fixes, we continue to work on providing better experience for container based development in JBoss Tools and Developer Studio. Let’s go through a few interesting updates here and you can find more details on <a href="https://tools.jboss.org/documentation/whatsnew/jbosstools/4.4.2.AM1.html">the What’s New page</a>.</p>
+      </div>
+      <div class="sect3">
+      <h4 id="openshift-container-platform-3-4-support"><a class="anchor" href="#openshift-container-platform-3-4-support"></a>OpenShift Container Platform 3.4 support</h4>
+      <div class="paragraph">
+      <p>OpenShift Container Platform (OCP) 3.4 has been
+      <a href="https://www.redhat.com/en/about/press-releases/red-hat-breaks-down-barriers-enterprise-container-adoption-dynamic-storage-provisioning-latest-version-red-hat-openshift-container-platform" target="_blank">announced</a> by Red Hat.
+      JBossTools 4.4.3.AM2 has been validated against OCP 3.4.</p>
+      </div>
+      <div class="paragraph">
+      <p>If you are using JBossTools together with the <a href="https://developers.redhat.com/products/cdk/overview/" target="_blank">Container Development Toolkit</a> (CDK),
+      the latest version is using OCP 3.3 by default. If you are using CDK 2.3, there is a way to upgrade to OCP 3.4. Edit the <strong>Vagrantfile</strong>,
+      locate the line with <strong>IMAGE_TAG=&quot;&quot;</strong> and replace by <strong>IMAGE_TAG=&quot;v3.4.1.2-2&quot;</strong>. then restart the CDK VM (vagrant halt; vagrant up).</p>
+      </div>
+      <div class="admonitionblock warning">
+      <table>
+      <tr>
+      <td class="icon">
+      <i class="fa icon-warning" title="Warning"></i>
+      </td>
+      <td class="content">
+      It seems there are some upgrade problems between OCP 3.3 and OCP 3.4 so you may experience deploy errors. We recommand
+      that you destroy the CDK VM (vagrant destroy) before upgrading to OCP.
+      </td>
+      </tr>
+      </table>
+      </div>
+      <div class="paragraph">
+      <p>Enjoy!</p>
+      </div>
+      <div class="paragraph">
+      <p>Jeff Maury</p>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div></div>
+    ]]></summary>
+	<content type="html">&lt;html&gt;&lt;body&gt;&lt;div&gt;&lt;div&gt;
+      &lt;div&gt;
+      &lt;div&gt;
+      &lt;p&gt;Happy to announce 4.4.3.AM2 (Developer Milestone 2) build for Eclipse Neon.2.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+      &lt;p&gt;Downloads available at &lt;a href="https://tools.jboss.org/downloads/jbosstools/neon/4.4.3.AM2.html" target="_blank"&gt;JBoss Tools 4.4.3 AM2&lt;/a&gt;.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+      &lt;h2&gt;&lt;a href="#what-is-new" target="_blank"&gt;&lt;/a&gt;What is New?&lt;/h2&gt;
+      &lt;div&gt;
+      &lt;div&gt;
+      &lt;p&gt;Full info is at &lt;a href="https://tools.jboss.org/documentation/whatsnew/jbosstools/4.4.3.AM2.html" target="_blank"&gt;this page&lt;/a&gt;. Some highlights are below.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+      &lt;h3&gt;&lt;a href="#openshift-3" target="_blank"&gt;&lt;/a&gt;OpenShift 3&lt;/h3&gt;
+      &lt;div&gt;
+      &lt;p&gt;Although our main focus is bug fixes, we continue to work on providing better experience for container based development in JBoss Tools and Developer Studio. Let&amp;rsquo;s go through a few interesting updates here and you can find more details on &lt;a href="https://tools.jboss.org/documentation/whatsnew/jbosstools/4.4.2.AM1.html" target="_blank"&gt;the What&amp;rsquo;s New page&lt;/a&gt;.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+      &lt;h4&gt;&lt;a href="#openshift-container-platform-3-4-support" target="_blank"&gt;&lt;/a&gt;OpenShift Container Platform 3.4 support&lt;/h4&gt;
+      &lt;div&gt;
+      &lt;p&gt;OpenShift Container Platform (OCP) 3.4 has been
+      &lt;a href="https://www.redhat.com/en/about/press-releases/red-hat-breaks-down-barriers-enterprise-container-adoption-dynamic-storage-provisioning-latest-version-red-hat-openshift-container-platform" target="_blank"&gt;announced&lt;/a&gt; by Red Hat.
+      JBossTools 4.4.3.AM2 has been validated against OCP 3.4.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+      &lt;p&gt;If you are using JBossTools together with the &lt;a href="https://developers.redhat.com/products/cdk/overview/" target="_blank"&gt;Container Development Toolkit&lt;/a&gt; (CDK),
+      the latest version is using OCP 3.3 by default. If you are using CDK 2.3, there is a way to upgrade to OCP 3.4. Edit the &lt;strong&gt;Vagrantfile&lt;/strong&gt;,
+      locate the line with &lt;strong&gt;IMAGE_TAG=""&lt;/strong&gt; and replace by &lt;strong&gt;IMAGE_TAG="v3.4.1.2-2"&lt;/strong&gt;. then restart the CDK VM (vagrant halt; vagrant up).&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+      &lt;table&gt;&lt;tr&gt;&lt;td&gt;
+      &lt;i title="Warning"&gt;&lt;/i&gt;
+      &lt;/td&gt;
+      &lt;td&gt;
+      It seems there are some upgrade problems between OCP 3.3 and OCP 3.4 so you may experience deploy errors. We recommand
+      that you destroy the CDK VM (vagrant destroy) before upgrading to OCP.
+      &lt;/td&gt;
+      &lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
+      &lt;div&gt;
+      &lt;p&gt;Enjoy!&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div&gt;
+      &lt;p&gt;Jeff Maury&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;
+      &lt;/div&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;
+&lt;img src="http://feeds.feedburner.com/~r/jbossbuzz/~4/Yf3a6Mt0YQU" height="1" width="1" alt=""/&gt;</content>
+	<updated>2017-02-02T14:37:42+00:00</updated>
+	<author><name>jeffmaury</name></author>
+	<source>
+		<link rel="self" href="http://tools.jboss.org/blog/" />
+		<title>JBoss Tools</title></source>
+
+	<category term="release" />
+
+	<category term="jbosstools" />
+
+	<category term="jbosscentral" />
+
+
+<feedburner:origLink>https://tools.jboss.org/blog/am2-for-neon.2.html</feedburner:origLink></entry>
+
+<entry>
+	<id>https://developer.jboss.org/blogs/weekly-editorial/2017/01/26/this-week-in-jboss-26th-january-2017-its-raining-software-infinispan-teiid-keycloak-windup</id>
+	<link href="http://feedproxy.google.com/~r/jbossbuzz/~3/D1AuhpDYDGg/this-week-in-jboss-26th-january-2017-its-raining-software-infinispan-teiid-keycloak-windup" rel="alternate" type="text/html" />
+	<title>This week in JBoss (26th January 2017): It's raining software ! (Infinispan, Teiid, Keycloak, Windup...)</title>
+	<summary type="html"><![CDATA[<!-- [DocumentBodyStart:48a3eab0-9084-4ba5-8cb6-25f3c22a1d27] --><div class="jive-rendered-content"><p><em>Every week, the JBoss community releases some new software, but a lot of those releases are often framework or just bricks of more complex software (on this note, surprisingly, not Arquillian related release this week, for instance!). But this last week was different, because most of the releases where about products. Software you can run and deploy - and more importantly, use to implement solution to your problem. So, with new releases for Infinispan, Teiid, Keycloak, and even Windup, I'm calling it : it's raining (good) software !</em></p><p style="min-height: 8pt; padding: 0px;">&#160;</p><h2>Evangelist's Corner</h2><p style="min-height: 8pt; padding: 0px;">&#160;</p><p>As always, the JBoss evangelist have been busy releasing interesting content in the last days. The ever prolific Eric D. Schabell wrote an interesting article on how to<a class="jive-link-external-small" href="http://www.schabell.org/2017/01/adding-complex-business-logic-to-processes-jboss-bpm.html" rel="nofollow"> add complex business logic to processes with JBoss BPM</a>, but also took some time to discuss the upcoming <a class="jive-link-external-small" href="http://www.schabell.org/2017/01/devoxxfr-ready-for-appdev-cloud-circus.html" rel="nofollow">Devoxx France 2017: Ready for AppDev, Cloud and a Circus? </a>And while on the topic of BPM &amp; BRMS, an excellent technical article on how the <a class="jive-link-external-small" href="http://mswiderski.blogspot.de/2017/01/kie-server-router-integrated-with.html" rel="nofollow">KIE Server Router integrated with workbench</a> has also been released.</p><p style="min-height: 8pt; padding: 0px;">&#160;</p><p>On her side, Christina Lin discussed <a class="jive-link-external-small" href="https://developers.redhat.com/blog/2017/01/19/applying-api-best-practices-in-fuse/" rel="nofollow">Applying API Best Practices in Fuse on the RHD Blog</a>. Given the importance of API, and their importance, in ensuring that business runs smoothly, it is most definitely a crucial topic.</p><p style="min-height: 8pt; padding: 0px;">&#160;</p><h2>Explore new territories with Infinispan &amp; Keycloak</h2><p style="min-height: 8pt; padding: 0px;">&#160;</p><p>Last week saw the release of both new Infinispan version (with <a class="jive-link-external-small" href="http://blog.infinispan.org/2017/01/infinispan-900beta2-and-826final-are-out.html" rel="nofollow">Infinispan 9.0.0.Beta2 and 8.2.6.Final are out!</a>) and Keycloak (<a class="jive-link-external-small" href="http://blog.keycloak.org/2017/01/keycloak-251final-released.html" rel="nofollow">Keycloak 2.5.1.Final Released</a>), but also the release of a couple of interesting articles discussing their new feature or architecture changes. The first one is actually the second part of an ongoing article regarding <a class="jive-link-external-small" href="http://blog.infinispan.org/2017/01/data-container-changes-part-2.html" rel="nofollow">Data Container Changes in Infinispan (Part 2)</a>. Just behind this one, an other article covers the <a class="jive-link-external-small" href="http://blog.infinispan.org/2017/01/9x-jdbc-store-improvements.html" rel="nofollow">JDBC Store Improvements</a> made in Infinispan 9.x. On the Keycloak side of the action, <a class="jive-link-external-small" href="http://blog.keycloak.org/2017/01/administer-keycloak-server-from-shell.html" rel="nofollow">Administer Keycloak server from shell with Admin CLI</a> was released, documenting quite neatly how to managed and automate easily, regular operation - such as creating use or changing a password, with a Keycloak server.</p><p style="min-height: 8pt; padding: 0px;">&#160;</p><h2>Technical bytes</h2><p style="min-height: 8pt; padding: 0px;">&#160;</p><p>On top of the previous articles, there was two noteworthy articles released last week. The first one discussed how to use Vert.x conjointly to AMQP to <a class="jive-link-external-small" href="http://vertx.io/blog/building-services-and-apis-with-amqp-1-0/" rel="nofollow">Build services and APIs (Vert.x, AMQP).</a> The other one is actually a series of articles, as this is the now regular <a class="jive-link-external-small" href="http://in.relation.to/2017/01/23/hibernate-community-newsletter-2017-2/" rel="nofollow">Hibernate Community Newsletter 2/2017</a>. If you have any interest in a project (or several) from the Hibernate community, this newsletter is going to be a treasure trove for you.</p><p style="min-height: 8pt; padding: 0px;">&#160;</p><h2>Releases, releases, releases...</h2><p style="min-height: 8pt; padding: 0px;">&#160;</p><p>As mentioned above, there was certainly some very interesting releases last week - not just update of frameworks, but releases of products - so a lot of things to look at and explore <span aria-label="Happy" class="emoticon_happy emoticon-inline" style="height:16px;width:16px;"></span> :</p><ul><li><a class="jive-link-external-small" href="http://blog.infinispan.org/2017/01/infinispan-900beta2-and-826final-are-out.html" rel="nofollow">Infinispan: Infinispan 9.0.0.Beta2 and 8.2.6.Final are out!</a></li><li><a class="jive-link-external-small" href="http://teiid.blogspot.de/2017/01/teiid-92-beta2-released.html" rel="nofollow">Teiid 9.2 Beta2 Released</a></li><li><a class="jive-link-external-small" href="http://blog.keycloak.org/2017/01/keycloak-251final-released.html" rel="nofollow">Keycloak: Keycloak 2.5.1.Final Released</a></li><li><a class="jive-link-blog-small" data-containerId="5385" data-containerType="37" data-objectId="6036" data-objectType="38" href="https://developer.jboss.org/community/windup/blog/2017/01/26/windup-eclipse-plugin-310alpha1-release">WindUp Eclipse Plugin 3.1.0.CR1 release</a></li></ul><p style="min-height: 8pt; padding: 0px;">&#160;</p><h2>Decaf'</h2><p><br/>As always, after binging on Java for a little while, it also nice to get one head out of coffee cup, and take a look at what is happening around it. So, for the JavaScript enthusiasts out there, I'm pretty sure the following article on&#160; <a class="jive-link-external-small" href="https://developers.redhat.com/blog/2017/01/17/data-encapsulation-vs-immutability-in-javascript/" rel="nofollow">Data Encapsulation vs. Immutability in Javascript &#8211; RHD Blog</a> will be a treat ! If you are more into Docker these days - who is not ? <span aria-label="Wink" class="emoticon-inline emoticon_wink" style="height:16px;width:16px;"></span> - take a look at how ManageIQ might make your life easier :<a class="jive-link-external-small" href="https://developers.redhat.com/blog/2017/01/24/container-images-compliance-what-we-built-at-manageiq-to-remove-a-security-pain-point-part-1/" rel="nofollow">Container Images Compliance &#8211; what we built at ManageIQ to remove a security pain point &#8211; part 1 &#8211; RHD Blog</a></p></div><!-- [DocumentBodyEnd:48a3eab0-9084-4ba5-8cb6-25f3c22a1d27] -->]]></summary>
+	<content type="html">&lt;html&gt;&lt;!-- [DocumentBodyStart:48a3eab0-9084-4ba5-8cb6-25f3c22a1d27] --&gt;&lt;body&gt;&lt;div&gt;&lt;p&gt;&lt;em&gt;Every week, the JBoss community releases some new software, but a lot of those releases are often framework or just bricks of more complex software (on this note, surprisingly, not Arquillian related release this week, for instance!). But this last week was different, because most of the releases where about products. Software you can run and deploy - and more importantly, use to implement solution to your problem. So, with new releases for Infinispan, Teiid, Keycloak, and even Windup, I'm calling it : it's raining (good) software !&lt;/em&gt;&lt;/p&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;h2&gt;Evangelist's Corner&lt;/h2&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;p&gt;As always, the JBoss evangelist have been busy releasing interesting content in the last days. The ever prolific Eric D. Schabell wrote an interesting article on how to&lt;a href="http://www.schabell.org/2017/01/adding-complex-business-logic-to-processes-jboss-bpm.html" rel="nofollow" target="_blank"&gt; add complex business logic to processes with JBoss BPM&lt;/a&gt;, but also took some time to discuss the upcoming &lt;a href="http://www.schabell.org/2017/01/devoxxfr-ready-for-appdev-cloud-circus.html" rel="nofollow" target="_blank"&gt;Devoxx France 2017: Ready for AppDev, Cloud and a Circus? &lt;/a&gt;And while on the topic of BPM &amp;amp; BRMS, an excellent technical article on how the &lt;a href="http://mswiderski.blogspot.de/2017/01/kie-server-router-integrated-with.html" rel="nofollow" target="_blank"&gt;KIE Server Router integrated with workbench&lt;/a&gt; has also been released.&lt;/p&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;p&gt;On her side, Christina Lin discussed &lt;a href="https://developers.redhat.com/blog/2017/01/19/applying-api-best-practices-in-fuse/" rel="nofollow" target="_blank"&gt;Applying API Best Practices in Fuse on the RHD Blog&lt;/a&gt;. Given the importance of API, and their importance, in ensuring that business runs smoothly, it is most definitely a crucial topic.&lt;/p&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;h2&gt;Explore new territories with Infinispan &amp;amp; Keycloak&lt;/h2&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;p&gt;Last week saw the release of both new Infinispan version (with &lt;a href="http://blog.infinispan.org/2017/01/infinispan-900beta2-and-826final-are-out.html" rel="nofollow" target="_blank"&gt;Infinispan 9.0.0.Beta2 and 8.2.6.Final are out!&lt;/a&gt;) and Keycloak (&lt;a href="http://blog.keycloak.org/2017/01/keycloak-251final-released.html" rel="nofollow" target="_blank"&gt;Keycloak 2.5.1.Final Released&lt;/a&gt;), but also the release of a couple of interesting articles discussing their new feature or architecture changes. The first one is actually the second part of an ongoing article regarding &lt;a href="http://blog.infinispan.org/2017/01/data-container-changes-part-2.html" rel="nofollow" target="_blank"&gt;Data Container Changes in Infinispan (Part 2)&lt;/a&gt;. Just behind this one, an other article covers the &lt;a href="http://blog.infinispan.org/2017/01/9x-jdbc-store-improvements.html" rel="nofollow" target="_blank"&gt;JDBC Store Improvements&lt;/a&gt; made in Infinispan 9.x. On the Keycloak side of the action, &lt;a href="http://blog.keycloak.org/2017/01/administer-keycloak-server-from-shell.html" rel="nofollow" target="_blank"&gt;Administer Keycloak server from shell with Admin CLI&lt;/a&gt; was released, documenting quite neatly how to managed and automate easily, regular operation - such as creating use or changing a password, with a Keycloak server.&lt;/p&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;h2&gt;Technical bytes&lt;/h2&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;p&gt;On top of the previous articles, there was two noteworthy articles released last week. The first one discussed how to use Vert.x conjointly to AMQP to &lt;a href="http://vertx.io/blog/building-services-and-apis-with-amqp-1-0/" rel="nofollow" target="_blank"&gt;Build services and APIs (Vert.x, AMQP).&lt;/a&gt; The other one is actually a series of articles, as this is the now regular &lt;a href="http://in.relation.to/2017/01/23/hibernate-community-newsletter-2017-2/" rel="nofollow" target="_blank"&gt;Hibernate Community Newsletter 2/2017&lt;/a&gt;. If you have any interest in a project (or several) from the Hibernate community, this newsletter is going to be a treasure trove for you.&lt;/p&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;h2&gt;Releases, releases, releases...&lt;/h2&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;p&gt;As mentioned above, there was certainly some very interesting releases last week - not just update of frameworks, but releases of products - so a lot of things to look at and explore &lt;span aria-label="Happy"&gt;&lt;/span&gt; :&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href="http://blog.infinispan.org/2017/01/infinispan-900beta2-and-826final-are-out.html" rel="nofollow" target="_blank"&gt;Infinispan: Infinispan 9.0.0.Beta2 and 8.2.6.Final are out!&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="http://teiid.blogspot.de/2017/01/teiid-92-beta2-released.html" rel="nofollow" target="_blank"&gt;Teiid 9.2 Beta2 Released&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href="http://blog.keycloak.org/2017/01/keycloak-251final-released.html" rel="nofollow" target="_blank"&gt;Keycloak: Keycloak 2.5.1.Final Released&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a data-containerid="5385" data-containertype="37" data-objectid="6036" data-objecttype="38" href="https://developer.jboss.org/community/windup/blog/2017/01/26/windup-eclipse-plugin-310alpha1-release" target="_blank"&gt;WindUp Eclipse Plugin 3.1.0.CR1 release&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;h2&gt;Decaf'&lt;/h2&gt;&lt;p&gt;&lt;br&gt;As always, after binging on Java for a little while, it also nice to get one head out of coffee cup, and take a look at what is happening around it. So, for the JavaScript enthusiasts out there, I'm pretty sure the following article on&amp;nbsp; &lt;a href="https://developers.redhat.com/blog/2017/01/17/data-encapsulation-vs-immutability-in-javascript/" rel="nofollow" target="_blank"&gt;Data Encapsulation vs. Immutability in Javascript &amp;ndash; RHD Blog&lt;/a&gt; will be a treat ! If you are more into Docker these days - who is not ? &lt;span aria-label="Wink"&gt;&lt;/span&gt; - take a look at how ManageIQ might make your life easier :&lt;a href="https://developers.redhat.com/blog/2017/01/24/container-images-compliance-what-we-built-at-manageiq-to-remove-a-security-pain-point-part-1/" rel="nofollow" target="_blank"&gt;Container Images Compliance &amp;ndash; what we built at ManageIQ to remove a security pain point &amp;ndash; part 1 &amp;ndash; RHD Blog&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;!-- [DocumentBodyEnd:48a3eab0-9084-4ba5-8cb6-25f3c22a1d27] --&gt;&lt;/body&gt;&lt;/html&gt;
+&lt;img src="http://feeds.feedburner.com/~r/jbossbuzz/~4/D1AuhpDYDGg" height="1" width="1" alt=""/&gt;</content>
+	<updated>2017-01-26T18:03:30+00:00</updated>
+	<author><name>Romain Pelisse</name></author>
+	<source>
+		<link rel="self" href="http://community.jboss.org/blogs/weekly-editorial/feeds/" />
+		<title>Weekly Editorial</title></source>
+
+	<category term="jdbc" />
+
+	<category term="bpm" />
+
+	<category term="teiid" />
+
+	<category term="infinispan" />
+
+	<category term="fuse" />
+
+	<category term="windup" />
+
+	<category term="kie" />
+
+	<category term="docker" />
+
+	<category term="keycloak" />
+
+	<category term="devoxxfr" />
+
+	<category term="manageiq" />
+
+
+<feedburner:origLink>https://developer.jboss.org/blogs/weekly-editorial/2017/01/26/this-week-in-jboss-26th-january-2017-its-raining-software-infinispan-teiid-keycloak-windup</feedburner:origLink></entry>
+
+<entry>
+	<id>https://developer.jboss.org/blogs/weekly-editorial/2017/01/21/this-week-in-jboss-21st-january-2017-microservices-and-monitoring</id>
+	<link href="http://feedproxy.google.com/~r/jbossbuzz/~3/tNzevsu5R7s/this-week-in-jboss-21st-january-2017-microservices-and-monitoring" rel="alternate" type="text/html" />
+	<title>This week in JBoss (21st January 2017): Microservices and Monitoring</title>
+	<summary type="html"><![CDATA[<!-- [DocumentBodyStart:8da5ec80-b430-454d-badb-2f0ab02f8cbd] --><div class="jive-rendered-content"><p>Welcome to another edition of the JBoss Weekly Editorial, our regular trek through the JBoss Communities to catch up with their news</p><p style="min-height: 8pt; padding: 0px;">&#160;</p><h2>Microservices are Here to Stay</h2><p style="min-height: 8pt; padding: 0px;">&#160;</p><p>With many applications moving towards Microservices architectures we are seeing an explosion in the number of services being developed and deployed, something proving hard to manage with our pre-existing tools and techniques.&#160; In order to handle these new architectures we need to begin looking at alternative environments especially Cloud Native Platforms, such as <a class="jive-link-external-small" href="http://kubernetes.io/" rel="nofollow">Kubernetes</a>, which are better suited to <a class="jive-link-external-small" href="https://developers.redhat.com/blog/2017/01/20/microservices-deployments-evolution/" rel="nofollow">handle the deployment and management of these services with minimal interaction</a>.</p><p style="min-height: 8pt; padding: 0px;">&#160;</p><p>Having explored&#160; the environment and tooling&#160; needed to support Microservices&#160; it is time to focus on how we adapt our existing processes and applications.&#160; Eric was recently invited to give a presentation entitled "<a class="jive-link-external-small" href="http://www.schabell.org/2017/01/using-containers-build-microservices-architecture.html" rel="nofollow">Using Containers to Build a Microservices Architecture</a>" in which he concentrates on the journey you will follow when switching over to Microservices, his slides are now available and a recording of his presentation can also be obtained by signing up to the event.</p><p style="min-height: 8pt; padding: 0px;">&#160;</p><p>The next problem you will likely face when deploying Microservices relates to the monitoring of those services and collation of the metrics, a task greatly complicated by the number of services being deployed and the distribution of those services over many nodes.&#160; To address this requirement the <a class="jive-link-external-small" href="http://hawkular.org/" rel="nofollow">Hawkular</a> team have introduced the Hawkular OpenShift Agent, an infrastructural service <a class="jive-link-external-small" href="http://www.hawkular.org/blog/2017/01/17/obst-hosa.html" rel="nofollow">responsible for monitoring all the pods deployed on each node and sending metrics to Hawkular Metrics</a>.&#160; Hawkular OpenShift Agent is not the only option for providing metrics however as <a class="jive-link-external-small" href="http://www.hawkular.org/blog/2017/01/16/hawkular-metrics-with-dropwizard.html" rel="nofollow">Hawkular Metrics can integrate with other tools such as Dropwizard Metrics</a>, a popular metrics framework used within java applications.</p><p style="min-height: 8pt; padding: 0px;">&#160;</p><h2>Bean Validation 2.0 Progress</h2><p style="min-height: 8pt; padding: 0px;">&#160;</p><p><a class="jive-link-external-small" href="https://www.jcp.org/en/jsr/detail?id=380" rel="nofollow">JSR 380, the Bean Validation 2.0 Spec</a>, began its journey through the JCP a few months ago however there has already been significant progress.&#160; With a focus on updating the existing specification to take advantage of Java 8 features the Expert Group has begun its work by adding support for <a class="jive-link-external-small" href="https://www.jcp.org/en/jsr/detail?id=310" rel="nofollow">JSR 310, the Data and Time API</a>, and taking advantage of the additional locations for annotations to enhance the validation of Collections and other containers.&#160; Gunnar Morling, the Red Hat representative on the committee, has <a class="jive-link-external-small" href="http://beanvalidation.org/news/2017/01/19/bean-validation-2-0-progress-report/" rel="nofollow">more information on these new features and where the EG is heading next</a>.</p><p style="min-height: 8pt; padding: 0px;">&#160;</p><h2>Pluggable Task Assignments with jBPM 7</h2><p style="min-height: 8pt; padding: 0px;">&#160;</p><p>Nearly all Business Processes will, at some point, involve user interactions and the assignment of tasks to ensure the job is completed however there are numerous options for how this assignment can be handled.&#160; Tasks are traditionally assigned to a specific actor, multiple actors or groups however each has their issues.&#160; In order to better handle this situation&#160; jBPM 7 also provides a pluggable mechanism for handling task assignment along with two potential strategies which can be used.&#160; Maciej <a class="jive-link-external-small" href="http://mswiderski.blogspot.ca/2017/01/distribute-tasks-wisely-pluggable-task.html" rel="nofollow">has more information for those of you who are interested in learning more about the benefits of this approach</a> and some of the issues you may face if using traditional assignment.</p><p style="min-height: 8pt; padding: 0px;">&#160;</p><h2>New Releases</h2><p style="min-height: 8pt; padding: 0px;">&#160;</p><ul><li>The <a class="jive-link-external-small" href="http://hibernate.org/" rel="nofollow">Hibernate</a> team have announced the release of <a class="jive-link-external-small" href="http://in.relation.to/2017/01/19/hibernate-orm-527-final-release/" rel="nofollow">Hibernate ORM 5.2.7</a>, <a class="jive-link-external-small" href="http://in.relation.to/2017/01/19/hibernate-orm-5012-final-and-514-final-release/" rel="nofollow">Hibernate ORM 5.1.4.Final and Hibernate ORM 5.0.12.Final</a>.</li></ul><p style="min-height: 8pt; padding: 0px;">&#160;</p><p>Thank you for joining me in this week's Editorial, please come back next week when we will bring you more updates from the JBoss Communities.</p></div><!-- [DocumentBodyEnd:8da5ec80-b430-454d-badb-2f0ab02f8cbd] -->]]></summary>
+	<content type="html">&lt;html&gt;&lt;!-- [DocumentBodyStart:8da5ec80-b430-454d-badb-2f0ab02f8cbd] --&gt;&lt;body&gt;&lt;div&gt;&lt;p&gt;Welcome to another edition of the JBoss Weekly Editorial, our regular trek through the JBoss Communities to catch up with their news&lt;/p&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;h2&gt;Microservices are Here to Stay&lt;/h2&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;p&gt;With many applications moving towards Microservices architectures we are seeing an explosion in the number of services being developed and deployed, something proving hard to manage with our pre-existing tools and techniques.&amp;nbsp; In order to handle these new architectures we need to begin looking at alternative environments especially Cloud Native Platforms, such as &lt;a href="http://kubernetes.io/" rel="nofollow" target="_blank"&gt;Kubernetes&lt;/a&gt;, which are better suited to &lt;a href="https://developers.redhat.com/blog/2017/01/20/microservices-deployments-evolution/" rel="nofollow" target="_blank"&gt;handle the deployment and management of these services with minimal interaction&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;p&gt;Having explored&amp;nbsp; the environment and tooling&amp;nbsp; needed to support Microservices&amp;nbsp; it is time to focus on how we adapt our existing processes and applications.&amp;nbsp; Eric was recently invited to give a presentation entitled "&lt;a href="http://www.schabell.org/2017/01/using-containers-build-microservices-architecture.html" rel="nofollow" target="_blank"&gt;Using Containers to Build a Microservices Architecture&lt;/a&gt;" in which he concentrates on the journey you will follow when switching over to Microservices, his slides are now available and a recording of his presentation can also be obtained by signing up to the event.&lt;/p&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;p&gt;The next problem you will likely face when deploying Microservices relates to the monitoring of those services and collation of the metrics, a task greatly complicated by the number of services being deployed and the distribution of those services over many nodes.&amp;nbsp; To address this requirement the &lt;a href="http://hawkular.org/" rel="nofollow" target="_blank"&gt;Hawkular&lt;/a&gt; team have introduced the Hawkular OpenShift Agent, an infrastructural service &lt;a href="http://www.hawkular.org/blog/2017/01/17/obst-hosa.html" rel="nofollow" target="_blank"&gt;responsible for monitoring all the pods deployed on each node and sending metrics to Hawkular Metrics&lt;/a&gt;.&amp;nbsp; Hawkular OpenShift Agent is not the only option for providing metrics however as &lt;a href="http://www.hawkular.org/blog/2017/01/16/hawkular-metrics-with-dropwizard.html" rel="nofollow" target="_blank"&gt;Hawkular Metrics can integrate with other tools such as Dropwizard Metrics&lt;/a&gt;, a popular metrics framework used within java applications.&lt;/p&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;h2&gt;Bean Validation 2.0 Progress&lt;/h2&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;p&gt;&lt;a href="https://www.jcp.org/en/jsr/detail?id=380" rel="nofollow" target="_blank"&gt;JSR 380, the Bean Validation 2.0 Spec&lt;/a&gt;, began its journey through the JCP a few months ago however there has already been significant progress.&amp;nbsp; With a focus on updating the existing specification to take advantage of Java 8 features the Expert Group has begun its work by adding support for &lt;a href="https://www.jcp.org/en/jsr/detail?id=310" rel="nofollow" target="_blank"&gt;JSR 310, the Data and Time API&lt;/a&gt;, and taking advantage of the additional locations for annotations to enhance the validation of Collections and other containers.&amp;nbsp; Gunnar Morling, the Red Hat representative on the committee, has &lt;a href="http://beanvalidation.org/news/2017/01/19/bean-validation-2-0-progress-report/" rel="nofollow" target="_blank"&gt;more information on these new features and where the EG is heading next&lt;/a&gt;.&lt;/p&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;h2&gt;Pluggable Task Assignments with jBPM 7&lt;/h2&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;p&gt;Nearly all Business Processes will, at some point, involve user interactions and the assignment of tasks to ensure the job is completed however there are numerous options for how this assignment can be handled.&amp;nbsp; Tasks are traditionally assigned to a specific actor, multiple actors or groups however each has their issues.&amp;nbsp; In order to better handle this situation&amp;nbsp; jBPM 7 also provides a pluggable mechanism for handling task assignment along with two potential strategies which can be used.&amp;nbsp; Maciej &lt;a href="http://mswiderski.blogspot.ca/2017/01/distribute-tasks-wisely-pluggable-task.html" rel="nofollow" target="_blank"&gt;has more information for those of you who are interested in learning more about the benefits of this approach&lt;/a&gt; and some of the issues you may face if using traditional assignment.&lt;/p&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;h2&gt;New Releases&lt;/h2&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;The &lt;a href="http://hibernate.org/" rel="nofollow" target="_blank"&gt;Hibernate&lt;/a&gt; team have announced the release of &lt;a href="http://in.relation.to/2017/01/19/hibernate-orm-527-final-release/" rel="nofollow" target="_blank"&gt;Hibernate ORM 5.2.7&lt;/a&gt;, &lt;a href="http://in.relation.to/2017/01/19/hibernate-orm-5012-final-and-514-final-release/" rel="nofollow" target="_blank"&gt;Hibernate ORM 5.1.4.Final and Hibernate ORM 5.0.12.Final&lt;/a&gt;.&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;p&gt;Thank you for joining me in this week's Editorial, please come back next week when we will bring you more updates from the JBoss Communities.&lt;/p&gt;&lt;/div&gt;&lt;!-- [DocumentBodyEnd:8da5ec80-b430-454d-badb-2f0ab02f8cbd] --&gt;&lt;/body&gt;&lt;/html&gt;
+&lt;img src="http://feeds.feedburner.com/~r/jbossbuzz/~4/tNzevsu5R7s" height="1" width="1" alt=""/&gt;</content>
+	<updated>2017-01-21T17:21:22+00:00</updated>
+	<author><name>Kevin Conner</name></author>
+	<source>
+		<link rel="self" href="http://community.jboss.org/blogs/weekly-editorial/feeds/" />
+		<title>Weekly Editorial</title></source>
+
+	<category term="jbpm" />
+
+	<category term="containers" />
+
+	<category term="weekly_update" />
+
+	<category term="news" />
+
+	<category term="bean_validation" />
+
+	<category term="hibernate-orm" />
+
+	<category term="weekly_editorial" />
+
+	<category term="kubernetes" />
+
+	<category term="hawkular" />
+
+	<category term="microservices" />
+
+	<category term="hawkular-metrics" />
+
+	<category term="hawkular-openshift-agent" />
+
+
+<feedburner:origLink>https://developer.jboss.org/blogs/weekly-editorial/2017/01/21/this-week-in-jboss-21st-january-2017-microservices-and-monitoring</feedburner:origLink></entry>
+
+<entry>
 	<id>https://developer.jboss.org/blogs/weekly-editorial/2017/01/13/this-week-in-jboss-13th-january-2017-kicking-off-2017-with-releases-containers-and-more</id>
 	<link href="http://feedproxy.google.com/~r/jbossbuzz/~3/Q5mGMfTbZQo/this-week-in-jboss-13th-january-2017-kicking-off-2017-with-releases-containers-and-more" rel="alternate" type="text/html" />
 	<title>This week in JBoss (13th January 2017): Kicking off 2017 with Releases, Containers and more</title>
@@ -570,716 +778,6 @@
 
 
 <feedburner:origLink>https://tools.jboss.org/blog/10.2.0.rpm-installation.html</feedburner:origLink></entry>
-
-<entry>
-	<id>https://tools.jboss.org/blog/2016-05-18-EclipseFuseTooling-DiagramReworked.html</id>
-	<link href="http://feedproxy.google.com/~r/jbossbuzz/~3/m0lNZVBNjEM/2016-05-18-EclipseFuseTooling-DiagramReworked.html" rel="alternate" type="text/html" />
-	<title>JBoss Fuse Tooling - Diagram reworked with new shiny colors! (and more)</title>
-	<summary type="html"><![CDATA[
-      <div><div id="preamble">
-      <div class="sectionbody">
-      <div class="paragraph">
-      <p>Note: This article has been posted also on <a href="http://developers.redhat.com/blog/2016/05/17/jboss-fuse-tooling-diagram-reworked-new-shiny-colors-and-more/">Red Hat Developers Program blog</a></p>
-      </div>
-      <div class="paragraph">
-      <p>The JBoss Fuse Tooling has been reworked to provide a brighter Look’n’feel and a nice looking automatic layout. The work is still in progress but already available in beta version with the new JBoss Tool Studio version. Please install the JBoss Tools Studio that you can download from <a href="https://tools.jboss.org/downloads/devstudio/mars/9.1.0.GA.html">here</a>. And then follow the steps in this screenshot to have access to JBoss Fuse Tooling 8.0 Beta 2.</p>
-      </div>
-      <div class="paragraph">
-      <p><span class="image"><img src="https://tools.jboss.org/blog/images/fuse/201604/HowToInstall.png" alt="HowToInstall" /></span></p>
-      </div>
-      <div class="paragraph">
-      <p>Ok, now let’s see what’s new from a Diagram point view!</p>
-      </div>
-      </div>
-      </div>
-      <div class="sect1">
-      <h2 id="new-layout-and-look-n-feel"><a class="anchor" href="#new-layout-and-look-n-feel"></a>New layout and Look’n’Feel</h2>
-      <div class="sectionbody">
-      <div class="paragraph">
-      <p>It provides modern colors. Some of them are dynamic depending on the consumer/producer role.</p>
-      </div>
-      <div class="paragraph">
-      <p>The new default layout is vertical - the horizontal is still available from Preferences - providing more information in a more compact way.</p>
-      </div>
-      <div class="paragraph">
-      <p>Icons for each component are currently created. It helps to distinguish at first sight which kind of component it is without having to read the scheme of the URI.</p>
-      </div>
-      <div class="paragraph">
-      <p>An image is worth a thousands words, especially here, so have a look:</p>
-      </div>
-      <div class="paragraph">
-      <p><span class="image"><img src="https://tools.jboss.org/blog/images/fuse/201604/FuseNewLayoutAndLookNFeel.png" alt="FuseNewLayoutAndLookNFeel" /></span></p>
-      </div>
-      </div>
-      </div>
-      <div class="sect1">
-      <h2 id="multiple-routes-support"><a class="anchor" href="#multiple-routes-support"></a>Multiple routes support</h2>
-      <div class="sectionbody">
-      <div class="paragraph">
-      <p>Previously, the editor was supporting editing a single route per Camel file. It is now possible to develop several Camel routes in the same file with the JBoss Fuse Tooling.</p>
-      </div>
-      </div>
-      </div>
-      <div class="sect1">
-      <h2 id="palette-simplification"><a class="anchor" href="#palette-simplification"></a>Palette simplification</h2>
-      <div class="sectionbody">
-      <div class="paragraph">
-      <p>The Palette has been reworked too. The component list has been shortened to present the most common components only. You can use a search field to filter on the remaining ones. All the other components are still available using the &quot;Generic&quot; tool palette, it opens a dialog where you will be able to search for a specific component and have default filters/presentations.</p>
-      </div>
-      <div class="paragraph">
-      <p><span class="image"><img src="https://tools.jboss.org/blog/images/fuse/201604/PaletteHighlighted.png" alt="PaletteHighlighted" /></span>
-      <span class="image"><img src="https://tools.jboss.org/blog/images/fuse/201604/componentChoose.png" alt="componentChoose" /></span></p>
-      </div>
-      <div class="paragraph">
-      <p>If you feel that the component list of the palette must be configurable, you can vote on the corresponding <a href="https://issues.jboss.org/browse/FUSETOOLS-1300">feature request</a>.</p>
-      </div>
-      </div>
-      </div>
-      <div class="sect1">
-      <h2 id="validation-decorator"><a class="anchor" href="#validation-decorator"></a>Validation decorator</h2>
-      <div class="sectionbody">
-      <div class="paragraph">
-      <p>The Fuse Validation issues are now displayed on the diagram:</p>
-      </div>
-      <div class="paragraph">
-      <p><span class="image"><img src="https://tools.jboss.org/blog/images/fuse/201604/validationDiagram.png" alt="validationDiagram" /></span></p>
-      </div>
-      </div>
-      </div></div>
-    ]]></summary>
-	<content type="html">&lt;html&gt;&lt;body&gt;&lt;div&gt;&lt;div&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;p&gt;Note: This article has been posted also on &lt;a href="http://developers.redhat.com/blog/2016/05/17/jboss-fuse-tooling-diagram-reworked-new-shiny-colors-and-more/" target="_blank"&gt;Red Hat Developers Program blog&lt;/a&gt;&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;The JBoss Fuse Tooling has been reworked to provide a brighter Look&amp;rsquo;n&amp;rsquo;feel and a nice looking automatic layout. The work is still in progress but already available in beta version with the new JBoss Tool Studio version. Please install the JBoss Tools Studio that you can download from &lt;a href="https://tools.jboss.org/downloads/devstudio/mars/9.1.0.GA.html" target="_blank"&gt;here&lt;/a&gt;. And then follow the steps in this screenshot to have access to JBoss Fuse Tooling 8.0 Beta 2.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;&lt;span&gt;&lt;img src="https://tools.jboss.org/blog/images/fuse/201604/HowToInstall.png" alt="HowToInstall"&gt;&lt;/span&gt;&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;Ok, now let&amp;rsquo;s see what&amp;rsquo;s new from a Diagram point view!&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;h2&gt;&lt;a href="#new-layout-and-look-n-feel" target="_blank"&gt;&lt;/a&gt;New layout and Look&amp;rsquo;n&amp;rsquo;Feel&lt;/h2&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;p&gt;It provides modern colors. Some of them are dynamic depending on the consumer/producer role.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;The new default layout is vertical - the horizontal is still available from Preferences - providing more information in a more compact way.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;Icons for each component are currently created. It helps to distinguish at first sight which kind of component it is without having to read the scheme of the URI.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;An image is worth a thousands words, especially here, so have a look:&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;&lt;span&gt;&lt;img src="https://tools.jboss.org/blog/images/fuse/201604/FuseNewLayoutAndLookNFeel.png" alt="FuseNewLayoutAndLookNFeel"&gt;&lt;/span&gt;&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;h2&gt;&lt;a href="#multiple-routes-support" target="_blank"&gt;&lt;/a&gt;Multiple routes support&lt;/h2&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;p&gt;Previously, the editor was supporting editing a single route per Camel file. It is now possible to develop several Camel routes in the same file with the JBoss Fuse Tooling.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;h2&gt;&lt;a href="#palette-simplification" target="_blank"&gt;&lt;/a&gt;Palette simplification&lt;/h2&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;p&gt;The Palette has been reworked too. The component list has been shortened to present the most common components only. You can use a search field to filter on the remaining ones. All the other components are still available using the "Generic" tool palette, it opens a dialog where you will be able to search for a specific component and have default filters/presentations.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;&lt;span&gt;&lt;img src="https://tools.jboss.org/blog/images/fuse/201604/PaletteHighlighted.png" alt="PaletteHighlighted"&gt;&lt;/span&gt;
-      &lt;span&gt;&lt;img src="https://tools.jboss.org/blog/images/fuse/201604/componentChoose.png" alt="componentChoose"&gt;&lt;/span&gt;&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;If you feel that the component list of the palette must be configurable, you can vote on the corresponding &lt;a href="https://issues.jboss.org/browse/FUSETOOLS-1300" target="_blank"&gt;feature request&lt;/a&gt;.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;h2&gt;&lt;a href="#validation-decorator" target="_blank"&gt;&lt;/a&gt;Validation decorator&lt;/h2&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;p&gt;The Fuse Validation issues are now displayed on the diagram:&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;&lt;span&gt;&lt;img src="https://tools.jboss.org/blog/images/fuse/201604/validationDiagram.png" alt="validationDiagram"&gt;&lt;/span&gt;&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;
-&lt;img src="http://feeds.feedburner.com/~r/jbossbuzz/~4/m0lNZVBNjEM" height="1" width="1" alt=""/&gt;</content>
-	<updated>2016-12-12T22:16:17+00:00</updated>
-	<author><name>apupier</name></author>
-	<source>
-		<link rel="self" href="http://tools.jboss.org/blog/" />
-		<title>JBoss Tools</title></source>
-
-	<category term="jbtis" />
-
-	<category term="fuse" />
-
-
-<feedburner:origLink>https://tools.jboss.org/blog/2016-05-18-EclipseFuseTooling-DiagramReworked.html</feedburner:origLink></entry>
-
-<entry>
-	<id>https://tools.jboss.org/blog/devoxx15-docker-tooling.html</id>
-	<link href="http://feedproxy.google.com/~r/jbossbuzz/~3/APOO2sqvbAM/devoxx15-docker-tooling.html" rel="alternate" type="text/html" />
-	<title>Docker Tooling at Devoxx'15</title>
-	<summary type="html"><![CDATA[
-      <div><div class="admonitionblock note">
-      <table>
-      <tr>
-      <td class="icon">
-      <i class="fa icon-note" title="Note"></i>
-      </td>
-      <td class="content">
-      Article was updated on Nov. 12th with the video published on YouTube.
-      </td>
-      </tr>
-      </table>
-      </div>
-      <div class="paragraph">
-      <p>On Monday I had the chance to give a <a href="http://cfp.devoxx.be/2015/talk/OEI-9379/Docker_Tooling_for_JavaEE__Developers_">Tools In Action talk about Docker Tooling for Java EE Developers</a>.
-      After a quick introduction about the main concepts of Docker (images, containers, daemon, clients and registries), I
-      gave a demo of the tooling that we’ve been working on in the Linux Tools and JBoss Tools team.</p>
-      </div>
-      <div class="paragraph">
-      <p>The goal of the demo was to deploy and debug the &quot;HTML5 Kitchen Sink&quot; quick start application from JBoss Central in a
-      container running WildFly and linked to another container running PostgreSQL.</p>
-      </div>
-      <div class="paragraph">
-      <p>The demo showed how a user can:</p>
-      </div>
-      <div class="ulist">
-      <ul>
-      <li>
-      <p>Connect to a Docker Machine.</p>
-      </li>
-      <li>
-      <p>Pull images from Docker Hub.</p>
-      </li>
-      <li>
-      <p>Build custom images from a Dockerfile (as we needed to customized WildFly to include the PostgreSQL driver and datasource configuration)</p>
-      </li>
-      <li>
-      <p>Run images by configuring environment variables, links to other containers and data volumes.</p>
-      </li>
-      <li>
-      <p>Open a web browser on the published ports.</p>
-      </li>
-      <li>
-      <p>See the container logs streamed in the Eclipse console.</p>
-      </li>
-      <li>
-      <p>Create and configure a server adapter in the Servers View to deploy the application in the container data volume.</p>
-      </li>
-      </ul>
-      </div>
-      <div class="paragraph">
-      <p>As explained during the demo, the Docker tooling is available from the <a href="http://eclipse.org/linuxtools">Linux Tools project at Eclipse.org</a> and is also
-      bundled in <a href="https://tools.jboss.org/downloads/jbosstools/mars/4.3.0.Final.html">JBoss Tools</a> and <a href="https://tools.jboss.org/downloads/devstudio/mars/9.0.0.GA.html">Developer Studio</a>, so you can get it from the update sites or from the marketplace.</p>
-      </div>
-      <div class="paragraph">
-      <p>Slides for the demo are available <a href="http://www.slideshare.net/XavierCoulon/docker-tooling-for-java-ee-developers">on Slidehare</a>.</p>
-      </div>
-      <div class="paragraph">
-      <p>As Devoxx decided to stop Parleys and publish all talks for free on Youtube just after they were recorded, you can already watch
-      the presentation <a href="https://www.youtube.com/watch?v=tq58w0DYmgc">here</a>:</p>
-      </div>
-      <div class="videoblock">
-      <div class="content">
-      <iframe width="640" height="400" src="//www.youtube.com/embed/tq58w0DYmgc?rel=0" frameborder="0" allowfullscreen=""></iframe>
-      </div>
-      </div>
-      <div class="paragraph">
-      <p>As usual, feedback on the Docker tooling is much appreciated, so don’t hesitate to contact us on
-      <a href="mailto:linuxtools-dev@eclipse.org">linuxtools-dev@eclipse.org</a> or on <a href="mailto:jbosstools-dev@jboss.org">jbosstools-dev@jboss.org</a></p>
-      </div>
-      <div class="paragraph">
-      <p>Enjoy!<br />
-      Xavier<br />
-      <a href="http://twitter.com/xcoulon">@xcoulon</a></p>
-      </div></div>
-    ]]></summary>
-	<content type="html">&lt;html&gt;&lt;body&gt;&lt;div&gt;&lt;div&gt;
-      &lt;table&gt;&lt;tr&gt;&lt;td&gt;
-      &lt;i title="Note"&gt;&lt;/i&gt;
-      &lt;/td&gt;
-      &lt;td&gt;
-      Article was updated on Nov. 12th with the video published on YouTube.
-      &lt;/td&gt;
-      &lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;On Monday I had the chance to give a &lt;a href="http://cfp.devoxx.be/2015/talk/OEI-9379/Docker_Tooling_for_JavaEE__Developers_" target="_blank"&gt;Tools In Action talk about Docker Tooling for Java EE Developers&lt;/a&gt;.
-      After a quick introduction about the main concepts of Docker (images, containers, daemon, clients and registries), I
-      gave a demo of the tooling that we&amp;rsquo;ve been working on in the Linux Tools and JBoss Tools team.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;The goal of the demo was to deploy and debug the "HTML5 Kitchen Sink" quick start application from JBoss Central in a
-      container running WildFly and linked to another container running PostgreSQL.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;The demo showed how a user can:&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;ul&gt;&lt;li&gt;
-      &lt;p&gt;Connect to a Docker Machine.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-      &lt;p&gt;Pull images from Docker Hub.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-      &lt;p&gt;Build custom images from a Dockerfile (as we needed to customized WildFly to include the PostgreSQL driver and datasource configuration)&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-      &lt;p&gt;Run images by configuring environment variables, links to other containers and data volumes.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-      &lt;p&gt;Open a web browser on the published ports.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-      &lt;p&gt;See the container logs streamed in the Eclipse console.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;li&gt;
-      &lt;p&gt;Create and configure a server adapter in the Servers View to deploy the application in the container data volume.&lt;/p&gt;
-      &lt;/li&gt;
-      &lt;/ul&gt;&lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;As explained during the demo, the Docker tooling is available from the &lt;a href="http://eclipse.org/linuxtools" target="_blank"&gt;Linux Tools project at Eclipse.org&lt;/a&gt; and is also
-      bundled in &lt;a href="https://tools.jboss.org/downloads/jbosstools/mars/4.3.0.Final.html" target="_blank"&gt;JBoss Tools&lt;/a&gt; and &lt;a href="https://tools.jboss.org/downloads/devstudio/mars/9.0.0.GA.html" target="_blank"&gt;Developer Studio&lt;/a&gt;, so you can get it from the update sites or from the marketplace.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;Slides for the demo are available &lt;a href="http://www.slideshare.net/XavierCoulon/docker-tooling-for-java-ee-developers" target="_blank"&gt;on Slidehare&lt;/a&gt;.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;As Devoxx decided to stop Parleys and publish all talks for free on Youtube just after they were recorded, you can already watch
-      the presentation &lt;a href="https://www.youtube.com/watch?v=tq58w0DYmgc" target="_blank"&gt;here&lt;/a&gt;:&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;As usual, feedback on the Docker tooling is much appreciated, so don&amp;rsquo;t hesitate to contact us on
-      &lt;a href="mailto:linuxtools-dev@eclipse.org" target="_blank"&gt;linuxtools-dev@eclipse.org&lt;/a&gt; or on &lt;a href="mailto:jbosstools-dev@jboss.org" target="_blank"&gt;jbosstools-dev@jboss.org&lt;/a&gt;&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;Enjoy!&lt;br&gt;
-      Xavier&lt;br&gt;&lt;a href="http://twitter.com/xcoulon" target="_blank"&gt;@xcoulon&lt;/a&gt;&lt;/p&gt;
-      &lt;/div&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;
-&lt;img src="http://feeds.feedburner.com/~r/jbossbuzz/~4/APOO2sqvbAM" height="1" width="1" alt=""/&gt;</content>
-	<updated>2016-12-12T22:16:17+00:00</updated>
-	<author><name>xcoulon</name></author>
-	<source>
-		<link rel="self" href="http://tools.jboss.org/blog/" />
-		<title>JBoss Tools</title></source>
-
-	<category term="docker" />
-
-	<category term="eclipse" />
-
-	<category term="jbosscentral" />
-
-
-<feedburner:origLink>https://tools.jboss.org/blog/devoxx15-docker-tooling.html</feedburner:origLink></entry>
-
-<entry>
-	<id>https://tools.jboss.org/blog/beta2-for-mars.html</id>
-	<link href="http://feedproxy.google.com/~r/jbossbuzz/~3/id3F6-ilrbU/beta2-for-mars.html" rel="alternate" type="text/html" />
-	<title>Beta2 brings some Bower to Mars</title>
-	<summary type="html"><![CDATA[
-      <div><div id="preamble">
-      <div class="sectionbody">
-      <div class="paragraph">
-      <p>Today a new beta is available from our download and update sites!</p>
-      </div>
-      <div class="imageblock" style="text-align: center">
-      <div class="content">
-      <img src="./images/20150721_bower/jbosstools-bower.png" alt="jbosstools bower" />
-      </div>
-      </div>
-      <div class="admonitionblock caution">
-      <table>
-      <tr>
-      <td class="icon">
-      <i class="fa icon-caution" title="Caution"></i>
-      </td>
-      <td class="content">
-      Remember that since Beta1 we require Java 8 for installing and using of
-      JBoss Tools. We still support developing and running applications using older Java runtimes. See more in <a href="2015-06-23-beta1-for-mars.html#java-8-to-run-eclipse-older-runtimes-ok-for-builds-deployment">Beta1 blog</a>.
-      </td>
-      </tr>
-      </table>
-      </div>
-      </div>
-      </div>
-      <div class="sect1">
-      <h2 id="installation"><a class="anchor" href="#installation"></a>Installation</h2>
-      <div class="sectionbody">
-      <div class="paragraph">
-      <p>JBoss Developer Studio comes with everything pre-bundled in its installer. Simply download it from our <a href="https://www.jboss.org/products/devstudio.html">JBoss Products page</a> and run it like this:</p>
-      </div>
-      <div class="literalblock">
-      <div class="content">
-      <pre>java -jar jboss-devstudio-&lt;installername&gt;.jar</pre>
-      </div>
-      </div>
-      <div class="paragraph">
-      <p>JBoss Tools or Bring-Your-Own-Eclipse (BYOE) JBoss Developer Studio require a bit more:</p>
-      </div>
-      <div class="paragraph">
-      <p>This release requires at least Eclipse 4.5 (Mars) but we recommend
-      using the <a href="http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/marsr">Eclipse 4.5 Mars JEE Bundle</a> since then you get most of the dependencies
-      preinstalled.</p>
-      </div>
-      <div class="paragraph">
-      <p>Once you have installed Eclipse, you can either find us on the Eclipse Marketplace under &quot;JBoss Tools&quot; or &quot;JBoss Developer Studio&quot;.</p>
-      </div>
-      <div class="admonitionblock note">
-      <table>
-      <tr>
-      <td class="icon">
-      <i class="fa icon-note" title="Note"></i>
-      </td>
-      <td class="content">
-      We are now using Eclipse Marketplace feature of having just one market place entry for all old versions.
-      </td>
-      </tr>
-      </table>
-      </div>
-      <div class="paragraph">
-      <p>For JBoss Tools, you can also use our update site directly if you are up for it.</p>
-      </div>
-      <div class="literalblock">
-      <div class="content">
-      <pre>http://download.jboss.org/jbosstools/mars/development/updates</pre>
-      </div>
-      </div>
-      <div class="paragraph">
-      <p>Note: Integration Stack tooling will become available from JBoss Central at a later date.</p>
-      </div>
-      </div>
-      </div>
-      <div class="sect1">
-      <h2 id="what-is-new"><a class="anchor" href="#what-is-new"></a>What is new ?</h2>
-      <div class="sectionbody">
-      <div class="paragraph">
-      <p>Full info is at <a href="https://tools.jboss.org/documentation/whatsnew/jbosstools/4.3.0.Beta2.html">this page</a>. Some highlights are below.</p>
-      </div>
-      <div class="sect2">
-      <h3 id="bower"><a class="anchor" href="#bower"></a>Bower</h3>
-      <div class="paragraph">
-      <p>We’ve added support for easy setup and invocation of Bower using your locally installed <code>bower</code> command line tool on Windows, OS X and Linux.</p>
-      </div>
-      <div class="paragraph">
-      <p>We provide a Bower Init wizard for getting started.</p>
-      </div>
-      <div class="paragraph">
-      <p><span class="image"><img src="./images/20150721_bower/bower-init-wizard-page.png" alt="bower-init-wizard-page" /></span></p>
-      </div>
-      <div class="paragraph">
-      <p>Once your project has a <code>bower.json</code> file you can now easily run bower update
-      by right-clicking on the file and selecting <span class="menuseq"><span class="menu">Run</span> ▸ <span class="submenu">As…​</span> ▸ <span class="menuitem">Bower Update</span></span>.</p>
-      </div>
-      <div class="paragraph">
-      <p>We are working on contributing this and additional Javascript integration to Eclipse JSDT. We will keep you posted!</p>
-      </div>
-      </div>
-      <div class="sect2">
-      <h3 id="openshift-v3"><a class="anchor" href="#openshift-v3"></a>OpenShift v3</h3>
-      <div class="paragraph">
-      <p>We continue to work on improving OpenShift v3 tooling and this release has a few new features and important bug fixes but overall OpenShift v3 tooling is still in very early stages.</p>
-      </div>
-      <div class="sect3">
-      <h4 id="manage-your-openshift-v3-projects"><a class="anchor" href="#manage-your-openshift-v3-projects"></a>Manage your OpenShift v3 Projects</h4>
-      <div class="paragraph">
-      <p>You can now create and delete OpenShift v3 projects.</p>
-      </div>
-      <div class="paragraph">
-      <p><span class="image"><img src="./../documentation/whatsnew/openshift/images/manage-projects.png" alt="manage-projects" /></span></p>
-      </div>
-      <div class="paragraph">
-      <p><span class="image"><img src="./../documentation/whatsnew/openshift/images/manage-projects-wizard.png" alt="manage-projects-wizard" /></span></p>
-      </div>
-      <div class="paragraph">
-      <p>If you try to create a new application, but you have no project yet, the tools will prompt you to create one first.
-      Once you are done you can always get back and manage your OpenShift projects via a link in the application wizard.</p>
-      </div>
-      </div>
-      <div class="sect3">
-      <h4 id="manually-trigger-builds"><a class="anchor" href="#manually-trigger-builds"></a>Manually Trigger Builds</h4>
-      <div class="paragraph">
-      <p>You can manually trigger builds when selecting your Build Configs in the OpenShift Explorer.</p>
-      </div>
-      <div class="paragraph">
-      <p><span class="image"><img src="./../documentation/whatsnew/openshift/images/start-build.png" alt="start-build" /></span></p>
-      </div>
-      <div class="paragraph">
-      <p>Once you triggered you should see a new build appear in the Builds category in the OpenShift Explorer.
-      You can see its state next to its name or in the Properties view.
-      Refreshing the Explorer will show you when the build completes.</p>
-      </div>
-      </div>
-      <div class="sect3">
-      <h4 id="port-forwarding"><a class="anchor" href="#port-forwarding"></a>Port Forwarding</h4>
-      <div class="paragraph">
-      <p>Assuming that your application exposes ports you can now forward those to your local machine with JBoss Tools 4.3.0.Beta2.</p>
-      </div>
-      <div class="paragraph">
-      <p><span class="image"><img src="./../documentation/whatsnew/openshift/images/port-forwarding-wizard.png" alt="port-forwarding-wizard" /></span></p>
-      </div>
-      <div class="paragraph">
-      <p>More details of new OpenShift v3 features are at <a href="../documentation/whatsnew/jbosstools/4.3.0.Beta2.html#openshift">Whats New</a>.</p>
-      </div>
-      </div>
-      </div>
-      <div class="sect2">
-      <h3 id="java-ee-batch-tooling"><a class="anchor" href="#java-ee-batch-tooling"></a>Java EE Batch Tooling</h3>
-      <div class="paragraph">
-      <p>The batch tooling now has hyperlink support for <code>@BatchProperty</code> to navigate between classes and their relevant job <code>.xml</code> files.</p>
-      </div>
-      <div class="paragraph">
-      <p><span class="image"><img src="./../documentation/whatsnew/batch/images/4.3.0.Beta2/openon.gif" alt="openon" /></span></p>
-      </div>
-      <div class="paragraph">
-      <p>There are more news at <a href="../documentation/whatsnew/jbosstools/4.3.0.Beta2.html#batch">Whats New</a>.</p>
-      </div>
-      </div>
-      <div class="sect2">
-      <h3 id="exploded-nested-jars"><a class="anchor" href="#exploded-nested-jars"></a>Exploded nested jars</h3>
-      <div class="paragraph">
-      <p>In WildFly 8.2 there is now support for hotloading resources from exploded jars inside deployments, i.e. a jar inside your <code>WEB-INF/libs</code>.</p>
-      </div>
-      <div class="paragraph">
-      <p>This allows you to have faster reload times for module web applications using resources from nested jars.</p>
-      </div>
-      <div class="paragraph">
-      <p>Thanks to patch from <a href="https://developer.jboss.org/people/vsevolodgolovanov">Vsevolod Golovanov</a> we now support this when you are using our server tools. Thanks Vsevolod!</p>
-      </div>
-      </div>
-      <div class="sect2">
-      <h3 id="deploy-hybrid-project-to-feedhenry"><a class="anchor" href="#deploy-hybrid-project-to-feedhenry"></a>Deploy Hybrid project to FeedHenry</h3>
-      <div class="paragraph">
-      <p>You can now take a hybrid mobile project created with Thym and deploy it to a FeedHenry cloud.</p>
-      </div>
-      <div class="paragraph">
-      <p><span class="image"><img src="./../documentation/whatsnew/aerogear/images/1.2.0.Beta2/NewApplicationWiz.png" alt="NewApplicationWiz" /></span></p>
-      </div>
-      <div class="paragraph">
-      <p>Enjoy!</p>
-      </div>
-      <div class="paragraph">
-      <p>Alexey Kazakov</p>
-      </div>
-      </div>
-      </div>
-      </div></div>
-    ]]></summary>
-	<content type="html">&lt;html&gt;&lt;body&gt;&lt;div&gt;&lt;div&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;p&gt;Today a new beta is available from our download and update sites!&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;img src="./images/20150721_bower/jbosstools-bower.png" alt="jbosstools bower"&gt;&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;table&gt;&lt;tr&gt;&lt;td&gt;
-      &lt;i title="Caution"&gt;&lt;/i&gt;
-      &lt;/td&gt;
-      &lt;td&gt;
-      Remember that since Beta1 we require Java 8 for installing and using of
-      JBoss Tools. We still support developing and running applications using older Java runtimes. See more in &lt;a href="2015-06-23-beta1-for-mars.html#java-8-to-run-eclipse-older-runtimes-ok-for-builds-deployment" target="_blank"&gt;Beta1 blog&lt;/a&gt;.
-      &lt;/td&gt;
-      &lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;h2&gt;&lt;a href="#installation" target="_blank"&gt;&lt;/a&gt;Installation&lt;/h2&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;p&gt;JBoss Developer Studio comes with everything pre-bundled in its installer. Simply download it from our &lt;a href="https://www.jboss.org/products/devstudio.html" target="_blank"&gt;JBoss Products page&lt;/a&gt; and run it like this:&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;pre&gt;java -jar jboss-devstudio-&amp;lt;installername&amp;gt;.jar&lt;/pre&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;JBoss Tools or Bring-Your-Own-Eclipse (BYOE) JBoss Developer Studio require a bit more:&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;This release requires at least Eclipse 4.5 (Mars) but we recommend
-      using the &lt;a href="http://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/marsr" target="_blank"&gt;Eclipse 4.5 Mars JEE Bundle&lt;/a&gt; since then you get most of the dependencies
-      preinstalled.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;Once you have installed Eclipse, you can either find us on the Eclipse Marketplace under "JBoss Tools" or "JBoss Developer Studio".&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;table&gt;&lt;tr&gt;&lt;td&gt;
-      &lt;i title="Note"&gt;&lt;/i&gt;
-      &lt;/td&gt;
-      &lt;td&gt;
-      We are now using Eclipse Marketplace feature of having just one market place entry for all old versions.
-      &lt;/td&gt;
-      &lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;For JBoss Tools, you can also use our update site directly if you are up for it.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;pre&gt;http://download.jboss.org/jbosstools/mars/development/updates&lt;/pre&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;Note: Integration Stack tooling will become available from JBoss Central at a later date.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;h2&gt;&lt;a href="#what-is-new" target="_blank"&gt;&lt;/a&gt;What is new ?&lt;/h2&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;p&gt;Full info is at &lt;a href="https://tools.jboss.org/documentation/whatsnew/jbosstools/4.3.0.Beta2.html" target="_blank"&gt;this page&lt;/a&gt;. Some highlights are below.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;h3&gt;&lt;a href="#bower" target="_blank"&gt;&lt;/a&gt;Bower&lt;/h3&gt;
-      &lt;div&gt;
-      &lt;p&gt;We&amp;rsquo;ve added support for easy setup and invocation of Bower using your locally installed &lt;code&gt;bower&lt;/code&gt; command line tool on Windows, OS X and Linux.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;We provide a Bower Init wizard for getting started.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;&lt;span&gt;&lt;img src="./images/20150721_bower/bower-init-wizard-page.png" alt="bower-init-wizard-page"&gt;&lt;/span&gt;&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;Once your project has a &lt;code&gt;bower.json&lt;/code&gt; file you can now easily run bower update
-      by right-clicking on the file and selecting &lt;span&gt;&lt;span&gt;Run&lt;/span&gt;&amp;nbsp;&amp;#9656; &lt;span&gt;As&amp;hellip;&amp;#8203;&lt;/span&gt;&amp;nbsp;&amp;#9656; &lt;span&gt;Bower Update&lt;/span&gt;&lt;/span&gt;.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;We are working on contributing this and additional Javascript integration to Eclipse JSDT. We will keep you posted!&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;h3&gt;&lt;a href="#openshift-v3" target="_blank"&gt;&lt;/a&gt;OpenShift v3&lt;/h3&gt;
-      &lt;div&gt;
-      &lt;p&gt;We continue to work on improving OpenShift v3 tooling and this release has a few new features and important bug fixes but overall OpenShift v3 tooling is still in very early stages.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;h4&gt;&lt;a href="#manage-your-openshift-v3-projects" target="_blank"&gt;&lt;/a&gt;Manage your OpenShift v3 Projects&lt;/h4&gt;
-      &lt;div&gt;
-      &lt;p&gt;You can now create and delete OpenShift v3 projects.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;&lt;span&gt;&lt;img src="./../documentation/whatsnew/openshift/images/manage-projects.png" alt="manage-projects"&gt;&lt;/span&gt;&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;&lt;span&gt;&lt;img src="./../documentation/whatsnew/openshift/images/manage-projects-wizard.png" alt="manage-projects-wizard"&gt;&lt;/span&gt;&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;If you try to create a new application, but you have no project yet, the tools will prompt you to create one first.
-      Once you are done you can always get back and manage your OpenShift projects via a link in the application wizard.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;h4&gt;&lt;a href="#manually-trigger-builds" target="_blank"&gt;&lt;/a&gt;Manually Trigger Builds&lt;/h4&gt;
-      &lt;div&gt;
-      &lt;p&gt;You can manually trigger builds when selecting your Build Configs in the OpenShift Explorer.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;&lt;span&gt;&lt;img src="./../documentation/whatsnew/openshift/images/start-build.png" alt="start-build"&gt;&lt;/span&gt;&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;Once you triggered you should see a new build appear in the Builds category in the OpenShift Explorer.
-      You can see its state next to its name or in the Properties view.
-      Refreshing the Explorer will show you when the build completes.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;h4&gt;&lt;a href="#port-forwarding" target="_blank"&gt;&lt;/a&gt;Port Forwarding&lt;/h4&gt;
-      &lt;div&gt;
-      &lt;p&gt;Assuming that your application exposes ports you can now forward those to your local machine with JBoss Tools 4.3.0.Beta2.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;&lt;span&gt;&lt;img src="./../documentation/whatsnew/openshift/images/port-forwarding-wizard.png" alt="port-forwarding-wizard"&gt;&lt;/span&gt;&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;More details of new OpenShift v3 features are at &lt;a href="../documentation/whatsnew/jbosstools/4.3.0.Beta2.html#openshift" target="_blank"&gt;Whats New&lt;/a&gt;.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;h3&gt;&lt;a href="#java-ee-batch-tooling" target="_blank"&gt;&lt;/a&gt;Java EE Batch Tooling&lt;/h3&gt;
-      &lt;div&gt;
-      &lt;p&gt;The batch tooling now has hyperlink support for &lt;code&gt;@BatchProperty&lt;/code&gt; to navigate between classes and their relevant job &lt;code&gt;.xml&lt;/code&gt; files.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;&lt;span&gt;&lt;img src="./../documentation/whatsnew/batch/images/4.3.0.Beta2/openon.gif" alt="openon"&gt;&lt;/span&gt;&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;There are more news at &lt;a href="../documentation/whatsnew/jbosstools/4.3.0.Beta2.html#batch" target="_blank"&gt;Whats New&lt;/a&gt;.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;h3&gt;&lt;a href="#exploded-nested-jars" target="_blank"&gt;&lt;/a&gt;Exploded nested jars&lt;/h3&gt;
-      &lt;div&gt;
-      &lt;p&gt;In WildFly 8.2 there is now support for hotloading resources from exploded jars inside deployments, i.e. a jar inside your &lt;code&gt;WEB-INF/libs&lt;/code&gt;.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;This allows you to have faster reload times for module web applications using resources from nested jars.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;Thanks to patch from &lt;a href="https://developer.jboss.org/people/vsevolodgolovanov" target="_blank"&gt;Vsevolod Golovanov&lt;/a&gt; we now support this when you are using our server tools. Thanks Vsevolod!&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;h3&gt;&lt;a href="#deploy-hybrid-project-to-feedhenry" target="_blank"&gt;&lt;/a&gt;Deploy Hybrid project to FeedHenry&lt;/h3&gt;
-      &lt;div&gt;
-      &lt;p&gt;You can now take a hybrid mobile project created with Thym and deploy it to a FeedHenry cloud.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;&lt;span&gt;&lt;img src="./../documentation/whatsnew/aerogear/images/1.2.0.Beta2/NewApplicationWiz.png" alt="NewApplicationWiz"&gt;&lt;/span&gt;&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;Enjoy!&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;Alexey Kazakov&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;
-&lt;img src="http://feeds.feedburner.com/~r/jbossbuzz/~4/id3F6-ilrbU" height="1" width="1" alt=""/&gt;</content>
-	<updated>2016-12-12T22:16:17+00:00</updated>
-	<author><name>akazakov</name></author>
-	<source>
-		<link rel="self" href="http://tools.jboss.org/blog/" />
-		<title>JBoss Tools</title></source>
-
-	<category term="release" />
-
-	<category term="jbosstools" />
-
-	<category term="devstudio" />
-
-	<category term="jbosscentral" />
-
-
-<feedburner:origLink>https://tools.jboss.org/blog/beta2-for-mars.html</feedburner:origLink></entry>
 
 
 </feed><!-- vim:ft=xml
