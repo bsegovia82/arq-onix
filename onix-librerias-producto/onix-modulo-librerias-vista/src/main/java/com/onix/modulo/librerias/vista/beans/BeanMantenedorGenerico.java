@@ -316,6 +316,12 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 	}
 
 	@SuppressWarnings("unchecked")
+	public void seleccionarEntidad(ActionEvent evento) {
+		entidadRegistrar = (ENTIDAD) evento.getComponent().getAttributes().get(nombreAtributoCambioEstado);
+		postSeleccionRegistro(entidadRegistrar);
+	}
+	
+	@SuppressWarnings("unchecked")
 	public void cambiarEstado(ActionEvent evento) {
 		entidadSelecionable = (ENTIDAD) evento.getComponent().getAttributes().get(nombreAtributoCambioEstado);
 		try {

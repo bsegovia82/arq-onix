@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <kb-project>
  <depends-on-projects>
-  <project name="onix-modulo-librerias-generales"/>
   <project name="onix-modulo-librerias-servicio"/>
   <project name="onix-modulo-librerias-dominio"/>
+  <project name="onix-modulo-librerias-generales"/>
  </depends-on-projects>
  <used-by-projects/>
  <paths>
@@ -128,8 +128,9 @@
   <path value="D:/repositorio/org/jboss/as/jboss-as-clustering-jgroups/7.1.0.Final/jboss-as-clustering-jgroups-7.1.0.Final.jar"/>
  </paths>
  <validation>
+  <core validator-id="jboss.cdi.core"/>
   <el>
-   <linked-el length="18" name="%0" offset="12101" path="%1"/>
+   <linked-el length="18" name="%0" offset="12343" path="%1"/>
   </el>
  </validation>
  <aliases>

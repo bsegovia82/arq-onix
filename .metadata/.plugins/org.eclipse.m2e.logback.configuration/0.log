@@ -7233,3 +7233,399 @@ Caused by: org.codehaus.plexus.util.xml.pull.XmlPullParserException: Duplicated 
 2017-02-06 17:42:35,360 [Worker-58] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\resources
 2017-02-06 17:42:35,360 [Worker-58] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2017-02-06 17:42:35,360 [Worker-58] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\test\resources
+2017-02-09 13:14:56,205 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 13:14:56,208 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-dominio\src\main\resources
+2017-02-09 13:14:56,210 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 13:14:56,210 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-dominio\src\test\resources
+2017-02-09 13:14:57,786 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 13:14:57,786 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-generales\src\main\resources
+2017-02-09 13:14:57,788 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 13:14:57,789 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-generales\src\test\resources
+2017-02-09 13:14:58,862 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 13:14:58,862 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-seguridad\src\main\resources
+2017-02-09 13:14:58,865 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 13:14:58,865 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-seguridad\src\test\resources
+2017-02-09 13:15:01,509 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 13:15:01,510 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\resources
+2017-02-09 13:15:01,513 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 13:15:01,513 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\test\resources
+2017-02-09 13:15:03,051 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 13:15:03,079 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-02-09 13:15:03,090 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 13:15:03,091 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-02-09 13:15:07,505 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 13:15:07,506 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-vista\src\main\resources
+2017-02-09 13:15:07,509 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 13:15:07,509 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-vista\src\test\resources
+2017-02-09 14:23:22,197 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 14:23:22,199 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-vista\src\main\resources
+2017-02-09 14:23:22,203 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 14:23:22,203 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-vista\src\test\resources
+2017-02-09 14:23:33,947 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 14:23:33,947 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-vista\src\main\resources
+2017-02-09 14:23:33,949 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 14:23:33,950 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-vista\src\test\resources
+2017-02-09 17:41:41,354 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:41:41,360 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-dominio\src\main\resources
+2017-02-09 17:41:41,364 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:41:41,364 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-dominio\src\test\resources
+2017-02-09 17:41:52,417 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:41:52,418 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-generales\src\main\resources
+2017-02-09 17:41:52,420 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:41:52,421 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-generales\src\test\resources
+2017-02-09 17:41:53,819 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:41:53,819 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-seguridad\src\main\resources
+2017-02-09 17:41:53,821 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:41:53,821 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-seguridad\src\test\resources
+2017-02-09 17:41:58,313 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:41:58,313 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\resources
+2017-02-09 17:41:58,315 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:41:58,315 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\test\resources
+2017-02-09 17:41:59,389 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:41:59,396 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-02-09 17:41:59,400 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:41:59,400 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-02-09 17:42:03,929 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:42:03,930 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-vista\src\main\resources
+2017-02-09 17:42:03,933 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:42:03,934 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-vista\src\test\resources
+2017-02-09 17:42:07,805 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:42:07,806 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-dominio\src\main\resources
+2017-02-09 17:42:07,809 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:42:07,809 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-dominio\src\test\resources
+2017-02-09 17:42:09,174 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:42:09,174 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-generales\src\main\resources
+2017-02-09 17:42:09,180 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:42:09,180 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-generales\src\test\resources
+2017-02-09 17:42:10,498 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:42:10,499 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-seguridad\src\main\resources
+2017-02-09 17:42:10,500 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:42:10,500 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-seguridad\src\test\resources
+2017-02-09 17:42:12,486 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:42:12,486 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\resources
+2017-02-09 17:42:12,489 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:42:12,489 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\test\resources
+2017-02-09 17:42:13,525 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:42:13,526 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-02-09 17:42:13,529 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:42:13,530 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-02-09 17:42:15,019 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:42:15,020 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-vista\src\main\resources
+2017-02-09 17:42:15,022 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:42:15,022 [Worker-1] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-vista\src\test\resources
+2017-02-09 17:42:16,890 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:42:16,891 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-dominio\src\main\resources
+2017-02-09 17:42:16,893 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:42:16,893 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-dominio\src\test\resources
+2017-02-09 17:42:17,440 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:42:17,441 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-generales\src\main\resources
+2017-02-09 17:42:17,443 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:42:17,443 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-generales\src\test\resources
+2017-02-09 17:42:18,045 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:42:18,046 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-seguridad\src\main\resources
+2017-02-09 17:42:18,047 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:42:18,048 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-seguridad\src\test\resources
+2017-02-09 17:42:18,626 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:42:18,627 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\resources
+2017-02-09 17:42:18,632 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:42:18,632 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\test\resources
+2017-02-09 17:42:19,658 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:42:19,659 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-vista\src\main\resources
+2017-02-09 17:42:19,661 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:42:19,662 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-vista\src\test\resources
+2017-02-09 17:43:55,801 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:43:55,802 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\resources
+2017-02-09 17:43:55,803 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:43:55,803 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\test\resources
+2017-02-09 17:44:14,115 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:44:14,116 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\resources
+2017-02-09 17:44:14,118 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:44:14,118 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\test\resources
+2017-02-09 17:45:04,301 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:45:04,302 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\resources
+2017-02-09 17:45:04,303 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:45:04,304 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\test\resources
+2017-02-09 17:47:45,466 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:47:45,467 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\resources
+2017-02-09 17:47:45,470 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:47:45,470 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\test\resources
+2017-02-09 17:50:10,306 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:50:10,307 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\resources
+2017-02-09 17:50:10,310 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:50:10,310 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\test\resources
+2017-02-09 17:50:30,338 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:50:30,338 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\resources
+2017-02-09 17:50:30,341 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:50:30,341 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\test\resources
+2017-02-09 17:50:51,376 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:50:51,377 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\resources
+2017-02-09 17:50:51,381 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:50:51,381 [Worker-9] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\test\resources
+2017-02-09 17:50:58,893 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:50:58,894 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\resources
+2017-02-09 17:50:58,897 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:50:58,898 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\test\resources
+2017-02-09 17:51:04,331 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:51:04,332 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\resources
+2017-02-09 17:51:04,334 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:51:04,335 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\test\resources
+2017-02-09 17:51:08,491 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:51:08,492 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\resources
+2017-02-09 17:51:08,494 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:51:08,494 [Worker-14] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\test\resources
+2017-02-09 17:51:12,177 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:51:12,178 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\resources
+2017-02-09 17:51:12,180 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:51:12,181 [Worker-28] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\test\resources
+2017-02-09 17:51:17,738 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:51:17,738 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\resources
+2017-02-09 17:51:17,741 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:51:17,741 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\test\resources
+2017-02-09 17:51:27,364 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:51:27,365 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\resources
+2017-02-09 17:51:27,369 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:51:27,369 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\test\resources
+2017-02-09 17:51:32,978 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:51:32,978 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\resources
+2017-02-09 17:51:32,980 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 17:51:32,980 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\test\resources
+2017-02-09 18:11:43,058 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 18:11:43,068 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-dominio\src\main\resources
+2017-02-09 18:11:43,075 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 18:11:43,075 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-dominio\src\test\resources
+2017-02-09 18:11:53,590 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 18:11:53,590 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-generales\src\main\resources
+2017-02-09 18:11:53,592 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 18:11:53,593 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-generales\src\test\resources
+2017-02-09 18:12:17,018 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 18:12:17,019 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-seguridad\src\main\resources
+2017-02-09 18:12:17,021 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 18:12:17,021 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-seguridad\src\test\resources
+2017-02-09 18:12:19,874 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 18:12:19,875 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\resources
+2017-02-09 18:12:19,877 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 18:12:19,877 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\test\resources
+2017-02-09 18:12:20,590 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 18:12:20,597 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-02-09 18:12:20,601 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 18:12:20,602 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-02-09 18:12:23,247 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 18:12:23,247 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-vista\src\main\resources
+2017-02-09 18:12:23,249 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 18:12:23,249 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-vista\src\test\resources
+2017-02-09 18:12:24,716 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 18:12:24,716 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-dominio\src\main\resources
+2017-02-09 18:12:24,718 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 18:12:24,718 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-dominio\src\test\resources
+2017-02-09 18:12:25,995 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 18:12:25,996 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-generales\src\main\resources
+2017-02-09 18:12:25,999 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 18:12:25,999 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-generales\src\test\resources
+2017-02-09 18:12:26,897 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 18:12:26,898 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-seguridad\src\main\resources
+2017-02-09 18:12:26,899 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 18:12:26,900 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-seguridad\src\test\resources
+2017-02-09 18:12:28,343 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 18:12:28,344 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\resources
+2017-02-09 18:12:28,347 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 18:12:28,347 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\test\resources
+2017-02-09 18:12:30,005 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 18:12:30,006 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-02-09 18:12:30,008 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 18:12:30,009 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-02-09 18:12:31,515 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 18:12:31,516 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-vista\src\main\resources
+2017-02-09 18:12:31,519 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 18:12:31,519 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-vista\src\test\resources
+2017-02-09 18:19:24,163 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 18:19:24,165 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\resources
+2017-02-09 18:19:24,168 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 18:19:24,168 [Worker-26] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\test\resources
+2017-02-09 18:24:21,999 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 18:24:22,000 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\resources
+2017-02-09 18:24:22,002 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 18:24:22,002 [Worker-22] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\test\resources
+2017-02-09 18:24:24,380 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 18:24:24,381 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-dominio\src\main\resources
+2017-02-09 18:24:24,384 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 18:24:24,385 [Worker-29] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-dominio\src\test\resources
+2017-02-09 18:24:26,818 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 18:24:26,819 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\resources
+2017-02-09 18:24:26,826 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 18:24:26,826 [Worker-32] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\test\resources
+2017-02-09 18:24:30,392 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 18:24:30,393 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\resources
+2017-02-09 18:24:30,396 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-09 18:24:30,396 [Worker-31] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\test\resources
+2017-02-10 10:39:38,446 [Worker-291] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-10 10:39:38,460 [Worker-291] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-dominio\src\main\resources
+2017-02-10 10:39:38,473 [Worker-291] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-10 10:39:38,474 [Worker-291] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-dominio\src\test\resources
+2017-02-10 10:39:39,109 [Worker-291] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-10 10:39:39,110 [Worker-291] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\resources
+2017-02-10 10:39:39,113 [Worker-291] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-10 10:39:39,113 [Worker-291] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\test\resources
+2017-02-10 10:39:39,913 [Worker-290] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-10 10:39:39,913 [Worker-290] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-vista\src\main\resources
+2017-02-10 10:39:39,917 [Worker-290] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-10 10:39:39,918 [Worker-290] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-vista\src\test\resources
+2017-02-10 10:39:43,903 [Worker-286] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-10 10:39:43,903 [Worker-286] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\resources
+2017-02-10 10:39:43,907 [Worker-286] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-10 10:39:43,907 [Worker-286] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\test\resources
+2017-02-10 10:40:02,625 [Worker-287] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-10 10:40:02,626 [Worker-287] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\resources
+2017-02-10 10:40:02,629 [Worker-287] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-10 10:40:02,630 [Worker-287] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\test\resources
+2017-02-10 10:40:13,831 [Worker-287] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-10 10:40:13,832 [Worker-287] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\resources
+2017-02-10 10:40:13,834 [Worker-287] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-10 10:40:13,834 [Worker-287] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\test\resources
+2017-02-10 10:40:26,716 [Worker-282] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-10 10:40:26,716 [Worker-282] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\resources
+2017-02-10 10:40:26,719 [Worker-282] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-10 10:40:26,719 [Worker-282] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\test\resources
+2017-02-10 10:50:50,677 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-10 10:50:50,689 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-dominio\src\main\resources
+2017-02-10 10:50:50,693 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-10 10:50:50,694 [Worker-7] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-dominio\src\test\resources
+2017-02-10 10:51:05,036 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-10 10:51:05,046 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-dominio\src\main\resources
+2017-02-10 10:51:05,050 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-10 10:51:05,050 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-dominio\src\test\resources
+2017-02-10 10:51:07,147 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-10 10:51:07,147 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-generales\src\main\resources
+2017-02-10 10:51:07,149 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-10 10:51:07,150 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-generales\src\test\resources
+2017-02-10 10:51:08,185 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-10 10:51:08,185 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-seguridad\src\main\resources
+2017-02-10 10:51:08,188 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-10 10:51:08,188 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-seguridad\src\test\resources
+2017-02-10 10:51:10,694 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-10 10:51:10,695 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\resources
+2017-02-10 10:51:10,696 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-10 10:51:10,697 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\test\resources
+2017-02-10 10:51:11,569 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-10 10:51:11,579 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-02-10 10:51:11,584 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-10 10:51:11,585 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-02-10 10:51:15,659 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-10 10:51:15,660 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-vista\src\main\resources
+2017-02-10 10:51:15,665 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-10 10:51:15,665 [Worker-0] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-vista\src\test\resources
+2017-02-10 10:51:18,106 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-10 10:51:18,106 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-dominio\src\main\resources
+2017-02-10 10:51:18,111 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-10 10:51:18,111 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-dominio\src\test\resources
+2017-02-10 10:51:18,663 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-10 10:51:18,663 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-generales\src\main\resources
+2017-02-10 10:51:18,664 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-10 10:51:18,664 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-generales\src\test\resources
+2017-02-10 10:51:19,948 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-10 10:51:19,949 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-seguridad\src\main\resources
+2017-02-10 10:51:19,952 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-10 10:51:19,952 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-seguridad\src\test\resources
+2017-02-10 10:51:21,188 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-10 10:51:21,189 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\resources
+2017-02-10 10:51:21,192 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-10 10:51:21,193 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\test\resources
+2017-02-10 10:51:22,217 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-10 10:51:22,217 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-vista\src\main\resources
+2017-02-10 10:51:22,220 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-10 10:51:22,220 [Worker-5] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-vista\src\test\resources
+2017-02-10 10:52:56,809 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-10 10:52:56,810 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\resources
+2017-02-10 10:52:56,812 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-10 10:52:56,813 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\test\resources
+2017-02-12 11:20:57,095 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 11:20:57,102 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-dominio\src\main\resources
+2017-02-12 11:20:57,106 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 11:20:57,106 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-dominio\src\test\resources
+2017-02-12 11:21:06,039 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 11:21:06,039 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-generales\src\main\resources
+2017-02-12 11:21:06,042 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 11:21:06,043 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-generales\src\test\resources
+2017-02-12 11:21:07,357 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 11:21:07,357 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-seguridad\src\main\resources
+2017-02-12 11:21:07,359 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 11:21:07,359 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-seguridad\src\test\resources
+2017-02-12 11:21:11,746 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 11:21:11,746 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\resources
+2017-02-12 11:21:11,748 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 11:21:11,748 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\test\resources
+2017-02-12 11:21:12,700 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 11:21:12,709 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-02-12 11:21:12,715 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 11:21:12,715 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-02-12 11:21:17,197 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 11:21:17,198 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-vista\src\main\resources
+2017-02-12 11:21:17,201 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 11:21:17,202 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-vista\src\test\resources
+2017-02-12 11:21:20,133 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 11:21:20,133 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-dominio\src\main\resources
+2017-02-12 11:21:20,135 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 11:21:20,135 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-dominio\src\test\resources
+2017-02-12 11:21:21,340 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 11:21:21,341 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-generales\src\main\resources
+2017-02-12 11:21:21,346 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 11:21:21,346 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-generales\src\test\resources
+2017-02-12 11:21:22,834 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 11:21:22,834 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-seguridad\src\main\resources
+2017-02-12 11:21:22,837 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 11:21:22,838 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-seguridad\src\test\resources
+2017-02-12 11:21:24,735 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 11:21:24,735 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\resources
+2017-02-12 11:21:24,739 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 11:21:24,739 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\test\resources
+2017-02-12 11:21:26,310 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 11:21:26,311 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-02-12 11:21:26,313 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 11:21:26,314 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2017-02-12 11:21:29,286 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 11:21:29,287 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-vista\src\main\resources
+2017-02-12 11:21:29,290 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 11:21:29,290 [Worker-3] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-vista\src\test\resources
+2017-02-12 11:21:31,937 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 11:21:31,939 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-dominio\src\main\resources
+2017-02-12 11:21:31,942 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 11:21:31,943 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-dominio\src\test\resources
+2017-02-12 11:21:33,092 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 11:21:33,092 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-generales\src\main\resources
+2017-02-12 11:21:33,096 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 11:21:33,096 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-generales\src\test\resources
+2017-02-12 11:21:33,920 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 11:21:33,921 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-seguridad\src\main\resources
+2017-02-12 11:21:33,924 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 11:21:33,924 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-seguridad\src\test\resources
+2017-02-12 11:21:34,869 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 11:21:34,870 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\resources
+2017-02-12 11:21:34,878 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 11:21:34,879 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\test\resources
+2017-02-12 11:21:35,991 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 11:21:35,992 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-vista\src\main\resources
+2017-02-12 11:21:35,993 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 11:21:35,993 [Worker-13] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-vista\src\test\resources
+2017-02-12 11:22:15,219 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 11:22:15,220 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-dominio\src\main\resources
+2017-02-12 11:22:15,223 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 11:22:15,223 [Worker-19] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-dominio\src\test\resources
+2017-02-12 11:22:51,212 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 11:22:51,213 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-dominio\src\main\resources
+2017-02-12 11:22:51,216 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 11:22:51,216 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-dominio\src\test\resources
+2017-02-12 12:17:47,076 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 12:17:47,078 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-dominio\src\main\resources
+2017-02-12 12:17:47,080 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 12:17:47,081 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-dominio\src\test\resources
+2017-02-12 12:17:47,112 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 12:17:47,112 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\resources
+2017-02-12 12:17:47,114 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 12:17:47,114 [Worker-30] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\test\resources
+2017-02-12 12:17:53,140 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 12:17:53,141 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\resources
+2017-02-12 12:17:53,145 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 12:17:53,146 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\test\resources
+2017-02-12 12:18:01,514 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 12:18:01,514 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\main\resources
+2017-02-12 12:18:01,517 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-02-12 12:18:01,517 [Worker-27] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\externo\arq-onix\onix-librerias-producto\onix-modulo-librerias-servicio\src\test\resources

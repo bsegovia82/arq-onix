@@ -2,13 +2,47 @@
 <?xml-stylesheet type="text/xsl" media="screen" href="/~d/styles/atom10full.xsl"?><?xml-stylesheet type="text/css" media="screen" href="http://feeds.feedburner.com/~d/styles/itemcontent.css"?><feed xmlns="http://www.w3.org/2005/Atom" xmlns:feedburner="http://rssnamespace.org/feedburner/ext/1.0">
 <title>JBoss Central</title>
 <generator uri="http://tt-rss.org/">Tiny Tiny RSS/1.9</generator>
-<updated>2016-12-15T11:36:08+00:00</updated>
+<updated>2016-12-17T00:46:24+00:00</updated>
 <id>http://tiny-man.rhcloud.com/public.php?op=rss&amp;id=1&amp;key=b0143615132bd9efc4e83ba42a5574f6ab939b28</id>
 
 
 <link href="http://tiny-man.rhcloud.com" rel="alternate" />
 
 <atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="self" type="application/atom+xml" href="http://feeds.feedburner.com/jbossbuzz" /><feedburner:info uri="jbossbuzz" /><atom10:link xmlns:atom10="http://www.w3.org/2005/Atom" rel="hub" href="http://pubsubhubbub.appspot.com/" /><entry>
+	<id>https://developer.jboss.org/blogs/weekly-editorial/2017/02/06/this-week-in-jboss-3rd-february-2017-the-rain-keeps-falling</id>
+	<link href="http://feedproxy.google.com/~r/jbossbuzz/~3/DMMEpI3zz7Q/this-week-in-jboss-3rd-february-2017-the-rain-keeps-falling" rel="alternate" type="text/html" />
+	<title>This week in JBoss (3rd February 2017): The rain keeps falling</title>
+	<summary type="html"><![CDATA[<!-- [DocumentBodyStart:e189a54c-f905-4f04-b2d5-968d00814faa] --><div class="jive-rendered-content"><div class="paragraph"><p>Welcome back everyone! We&#8217;ve been busy this past week. A number of new releases have been completed this past week, a considerable amount of news, and all topped with a generous amount of content to boost your programming chops! We&#8217;ll dive in first with the new releases, follow-up with news, then look at the other content.</p><p style="min-height: 8pt; padding: 0px;">&#160;</p></div><div class="sect1"><h2>Releases</h2><p style="min-height: 8pt; padding: 0px;">&#160;</p><div class="sectionbody"><div class="paragraph"><p>There were nine releases last week! We&#8217;re really tearing it up out there with the release trains. Projects seeing releases this past week include Byteman, Wildfly Swarm, Hibernate Search and Validator, Teiid, and Hawkular Services. Listed below you can see the various release blog announcements below.</p></div><div class="ulist"><ul><li><p><a class="jive-link-external-small" href="http://bytemanblog.blogspot.com/2017/02/byteman-307-has-been-released.html" rel="nofollow">Byteman 3.0.7</a></p></li><li><p><a class="jive-link-external-small" href="https://wildfly-swarm.io/posts/announcing-wildfly-swarm-2017-2-0" rel="nofollow">Wildfly Swarm 2017.2.0</a></p></li><li><p><a class="jive-link-external-small" href="http://in.relation.to/2017/02/02/hibernate-validator-540-final-out/" rel="nofollow">Hibernate Validator 5.4.0.Final</a></p></li><li><p><a class="jive-link-external-small" href="http://teiid.blogspot.com/2017/02/teiid-913-released.html" rel="nofollow">Teiid 9.13</a></p></li><li><p><a class="jive-link-external-small" href="http://bytemanblog.blogspot.com/2017/02/byteman-400-beta3-has-been-released.html" rel="nofollow">Byteman 4.0.0-BETA3</a></p></li><li><p><a class="jive-link-external-small" href="http://www.hawkular.org/blog/2017/01/31/hawkular-services-0.30-released.html" rel="nofollow">Hawkular Services 0.30.0.Final</a></p></li><li><p><a class="jive-link-external-small" href="http://in.relation.to/2017/01/30/hibernate-search-5-6-0-Final-and-5-7-0-CR1/" rel="nofollow">Hibernate Search 5.6.0.Final and 5.7.0.CR1</a></p></li></ul></div></div></div><div class="sect1"><h2></h2><h2>News</h2><p style="min-height: 8pt; padding: 0px;">&#160;</p><div class="sectionbody"><div class="paragraph"><p>Some very exciting things happened last week, and our engineers were there to capture and blog about it!</p></div><div class="paragraph"><p>First up is CDI 2.0, which is now in <a class="jive-link-external-small" href="http://planet.jboss.org/post/cdi_2_0_is_in_public_review" rel="nofollow">Public Review</a>. Go through and read all the changes and how it will change CDI in this next version.</p></div><div class="paragraph"><p>Eric Schabell and many others, possibly including you, have received acceptances to Red Hat Summit 2017. You can read about what Eric will be talking about in his blog entry: <a class="jive-link-external-small" href="http://www.schabell.org/2017/02/red-hat-summit-2017-discover.html?utm_source=feedburner&amp;utm_medium=feed&amp;utm_campaign=Feed%3A+schabell%2Fjboss+%28Eric+D.Schabell-+JBoss%29" rel="nofollow">Upcoming Red Hat Summit session</a></p></div><div class="paragraph"><p>A couple of entries from the Hawkular universe came in last week. <a class="jive-link-external-small" href="http://www.hawkular.org/blog/2017/02/04/hawkular-apm-service-deployments.html" rel="nofollow">Hawkular APM: Comparing performance of service versions</a> discusses how you can compare the performance of different versions of a service as part of a continuous deployment pipeline. <a class="jive-link-external-small" href="http://www.hawkular.org/blog/2017/02/03/grafana-events.html" rel="nofollow">Display custom events in Grafana</a> discusses using and displaying Grafana Annotations as points in time on your charts.</p></div><div class="paragraph"><p>In a blog post and demo, <a class="jive-link-blog-small" data-containerId="5385" data-containerType="37" data-objectId="6063" data-objectType="38" href="https://developer.jboss.org/community/windup/blog/2017/02/02/windup-30-for-eclipse-ide-new-10-min-demo-by-john-steele">Windup 3.0 for Eclipse IDE</a>, Ondrej Zizka showcases the Windup 3.0 eclipse plugin. It&#8217;s still in development but is progressing along nicely. Lastly, and somewhat off the beaten path, Martin Sebor recaps his ISO C meeting that happened in October: <a class="jive-link-external-small" href="https://developers.redhat.com/blog/2017/02/01/october-2016-iso-c-meeting-report/" rel="nofollow">Trip Report: October WG14 Meeting</a>. For those doing development in C, you&#8217;ll want to read up about work being done in C11 and also a review of proposals for C2X, the next "major" revision of C.</p></div></div></div><div class="sect1"><h2></h2><h2>Tricks of the Trade</h2><p style="min-height: 8pt; padding: 0px;">&#160;</p><div class="sectionbody"><div class="paragraph"><p>These don&#8217;t come up on our editorials all the time, but we have a number of entries that simply aim at giving you more tools and tricks to pull out of your box. Most of the titles speak for themselves:</p><p style="min-height: 8pt; padding: 0px;">&#160;</p></div><div class="ulist"><ul><li><p><a class="jive-link-external-small" href="http://in.relation.to/2017/01/31/preventing-leaky-apis-with-jqassistant/" rel="nofollow">Preventing leaky APIs with jQAssistant</a></p></li><li><p><a class="jive-link-external-small" href="http://vertx.io/blog/an-introduction-to-the-vert-x-context-object/" rel="nofollow">Intro to the Vert.x Context Object</a></p></li><li><p><a class="jive-link-external-small" href="http://in.relation.to/2017/02/01/non-temporary-table-bulk-id-strategies/" rel="nofollow">Bulk-id strategies without temporary tables</a></p></li><li><p><a class="jive-link-external-small" href="https://www.optaplanner.org/blog/2017/02/03/FormulaForMeasuringUnfairness.html" rel="nofollow">Formula for Measuring Unfairness</a></p></li><li><p><a class="jive-link-external-small" href="https://developers.redhat.com/blog/2017/02/03/programmatic-debugging-part-1-the-challenge/" rel="nofollow">Programmatic Debugging Part 1</a></p></li><li><p><a class="jive-link-external-small" href="https://developers.redhat.com/blog/2017/02/02/adding-buffer-overflow-detection-to-string-functions/" rel="nofollow">Adding Buffer Overflow Detection to String Functions</a></p></li><li><p><a class="jive-link-external-small" href="https://developers.redhat.com/blog/2017/02/01/coala-setting-it-up-and-auto-patching/" rel="nofollow">Coala, setting it up and auto patching</a></p></li><li><p><a class="jive-link-external-small" href="https://developers.redhat.com/blog/2017/02/03/creating-your-first-asp-net-mvc-web-site-on-rhel/" rel="nofollow">Creating your first ASP.NET MVC site on RHEL</a></p></li></ul></div></div></div></div><!-- [DocumentBodyEnd:e189a54c-f905-4f04-b2d5-968d00814faa] -->]]></summary>
+	<content type="html">&lt;html&gt;&lt;!-- [DocumentBodyStart:e189a54c-f905-4f04-b2d5-968d00814faa] --&gt;&lt;body&gt;&lt;div&gt;&lt;div&gt;&lt;p&gt;Welcome back everyone! We&amp;rsquo;ve been busy this past week. A number of new releases have been completed this past week, a considerable amount of news, and all topped with a generous amount of content to boost your programming chops! We&amp;rsquo;ll dive in first with the new releases, follow-up with news, then look at the other content.&lt;/p&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;h2&gt;Releases&lt;/h2&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;div&gt;&lt;div&gt;&lt;p&gt;There were nine releases last week! We&amp;rsquo;re really tearing it up out there with the release trains. Projects seeing releases this past week include Byteman, Wildfly Swarm, Hibernate Search and Validator, Teiid, and Hawkular Services. Listed below you can see the various release blog announcements below.&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href="http://bytemanblog.blogspot.com/2017/02/byteman-307-has-been-released.html" rel="nofollow" target="_blank"&gt;Byteman 3.0.7&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;a href="https://wildfly-swarm.io/posts/announcing-wildfly-swarm-2017-2-0" rel="nofollow" target="_blank"&gt;Wildfly Swarm 2017.2.0&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;a href="http://in.relation.to/2017/02/02/hibernate-validator-540-final-out/" rel="nofollow" target="_blank"&gt;Hibernate Validator 5.4.0.Final&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;a href="http://teiid.blogspot.com/2017/02/teiid-913-released.html" rel="nofollow" target="_blank"&gt;Teiid 9.13&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;a href="http://bytemanblog.blogspot.com/2017/02/byteman-400-beta3-has-been-released.html" rel="nofollow" target="_blank"&gt;Byteman 4.0.0-BETA3&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;a href="http://www.hawkular.org/blog/2017/01/31/hawkular-services-0.30-released.html" rel="nofollow" target="_blank"&gt;Hawkular Services 0.30.0.Final&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;a href="http://in.relation.to/2017/01/30/hibernate-search-5-6-0-Final-and-5-7-0-CR1/" rel="nofollow" target="_blank"&gt;Hibernate Search 5.6.0.Final and 5.7.0.CR1&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;h2&gt;&lt;/h2&gt;&lt;h2&gt;News&lt;/h2&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;div&gt;&lt;div&gt;&lt;p&gt;Some very exciting things happened last week, and our engineers were there to capture and blog about it!&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;First up is CDI 2.0, which is now in &lt;a href="http://planet.jboss.org/post/cdi_2_0_is_in_public_review" rel="nofollow" target="_blank"&gt;Public Review&lt;/a&gt;. Go through and read all the changes and how it will change CDI in this next version.&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;Eric Schabell and many others, possibly including you, have received acceptances to Red Hat Summit 2017. You can read about what Eric will be talking about in his blog entry: &lt;a href="http://www.schabell.org/2017/02/red-hat-summit-2017-discover.html?utm_source=feedburner&amp;amp;utm_medium=feed&amp;amp;utm_campaign=Feed%3A+schabell%2Fjboss+%28Eric+D.Schabell-+JBoss%29" rel="nofollow" target="_blank"&gt;Upcoming Red Hat Summit session&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;A couple of entries from the Hawkular universe came in last week. &lt;a href="http://www.hawkular.org/blog/2017/02/04/hawkular-apm-service-deployments.html" rel="nofollow" target="_blank"&gt;Hawkular APM: Comparing performance of service versions&lt;/a&gt; discusses how you can compare the performance of different versions of a service as part of a continuous deployment pipeline. &lt;a href="http://www.hawkular.org/blog/2017/02/03/grafana-events.html" rel="nofollow" target="_blank"&gt;Display custom events in Grafana&lt;/a&gt; discusses using and displaying Grafana Annotations as points in time on your charts.&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;p&gt;In a blog post and demo, &lt;a data-containerid="5385" data-containertype="37" data-objectid="6063" data-objecttype="38" href="https://developer.jboss.org/community/windup/blog/2017/02/02/windup-30-for-eclipse-ide-new-10-min-demo-by-john-steele" target="_blank"&gt;Windup 3.0 for Eclipse IDE&lt;/a&gt;, Ondrej Zizka showcases the Windup 3.0 eclipse plugin. It&amp;rsquo;s still in development but is progressing along nicely. Lastly, and somewhat off the beaten path, Martin Sebor recaps his ISO C meeting that happened in October: &lt;a href="https://developers.redhat.com/blog/2017/02/01/october-2016-iso-c-meeting-report/" rel="nofollow" target="_blank"&gt;Trip Report: October WG14 Meeting&lt;/a&gt;. For those doing development in C, you&amp;rsquo;ll want to read up about work being done in C11 and also a review of proposals for C2X, the next "major" revision of C.&lt;/p&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;h2&gt;&lt;/h2&gt;&lt;h2&gt;Tricks of the Trade&lt;/h2&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;div&gt;&lt;div&gt;&lt;p&gt;These don&amp;rsquo;t come up on our editorials all the time, but we have a number of entries that simply aim at giving you more tools and tricks to pull out of your box. Most of the titles speak for themselves:&lt;/p&gt;&lt;p&gt;&amp;nbsp;&lt;/p&gt;&lt;/div&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;&lt;p&gt;&lt;a href="http://in.relation.to/2017/01/31/preventing-leaky-apis-with-jqassistant/" rel="nofollow" target="_blank"&gt;Preventing leaky APIs with jQAssistant&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;a href="http://vertx.io/blog/an-introduction-to-the-vert-x-context-object/" rel="nofollow" target="_blank"&gt;Intro to the Vert.x Context Object&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;a href="http://in.relation.to/2017/02/01/non-temporary-table-bulk-id-strategies/" rel="nofollow" target="_blank"&gt;Bulk-id strategies without temporary tables&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;a href="https://www.optaplanner.org/blog/2017/02/03/FormulaForMeasuringUnfairness.html" rel="nofollow" target="_blank"&gt;Formula for Measuring Unfairness&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;a href="https://developers.redhat.com/blog/2017/02/03/programmatic-debugging-part-1-the-challenge/" rel="nofollow" target="_blank"&gt;Programmatic Debugging Part 1&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;a href="https://developers.redhat.com/blog/2017/02/02/adding-buffer-overflow-detection-to-string-functions/" rel="nofollow" target="_blank"&gt;Adding Buffer Overflow Detection to String Functions&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;a href="https://developers.redhat.com/blog/2017/02/01/coala-setting-it-up-and-auto-patching/" rel="nofollow" target="_blank"&gt;Coala, setting it up and auto patching&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;li&gt;&lt;p&gt;&lt;a href="https://developers.redhat.com/blog/2017/02/03/creating-your-first-asp-net-mvc-web-site-on-rhel/" rel="nofollow" target="_blank"&gt;Creating your first ASP.NET MVC site on RHEL&lt;/a&gt;&lt;/p&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;&lt;!-- [DocumentBodyEnd:e189a54c-f905-4f04-b2d5-968d00814faa] --&gt;&lt;/body&gt;&lt;/html&gt;
+&lt;img src="http://feeds.feedburner.com/~r/jbossbuzz/~4/DMMEpI3zz7Q" height="1" width="1" alt=""/&gt;</content>
+	<updated>2017-02-06T23:22:50+00:00</updated>
+	<author><name>Jason Porter</name></author>
+	<source>
+		<link rel="self" href="http://community.jboss.org/blogs/weekly-editorial/feeds/" />
+		<title>Weekly Editorial</title></source>
+
+	<category term="byteman" />
+
+	<category term="api" />
+
+	<category term="debugging" />
+
+	<category term="hibernate-search" />
+
+	<category term="hibernate-validator" />
+
+	<category term="windup" />
+
+	<category term="hawkular" />
+
+	<category term="wildfly-swarm" />
+
+	<category term="teiiid" />
+
+
+<feedburner:origLink>https://developer.jboss.org/blogs/weekly-editorial/2017/02/06/this-week-in-jboss-3rd-february-2017-the-rain-keeps-falling</feedburner:origLink></entry>
+
+<entry>
 	<id>https://tools.jboss.org/blog/am2-for-neon.2.html</id>
 	<link href="http://feedproxy.google.com/~r/jbossbuzz/~3/Yf3a6Mt0YQU/am2-for-neon.2.html" rel="alternate" type="text/html" />
 	<title>JBoss Tools 4.4.3.AM2 for Eclipse Neon.2</title>
@@ -487,297 +521,6 @@
 
 
 <feedburner:origLink>https://developer.jboss.org/blogs/weekly-editorial/2016/12/16/this-week-in-jboss-16th-december-2016-staying-strong</feedburner:origLink></entry>
-
-<entry>
-	<id>https://tools.jboss.org/blog/10.2.0.rpm-installation.html</id>
-	<link href="http://feedproxy.google.com/~r/jbossbuzz/~3/dB10UJJnwPs/10.2.0.rpm-installation.html" rel="alternate" type="text/html" />
-	<title>Installing Red Hat Developer Studio 10.2.0.GA through RPM</title>
-	<summary type="html"><![CDATA[
-      <div><div id="preamble">
-      <div class="sectionbody">
-      <div class="paragraph">
-      <p>With the release of <a href="https://tools.jboss.org/downloads/devstudio/neon/10.2.0.GA.html">Red Hat JBoss Developer Studio 10.2</a>, it is now possible to install Red Hat JBoss Developer Studio as an RPM.
-      It is available as a tech preview. The purpose of this article is to describe the steps you should follow in order to install Red Hat JBoss Developer Studio.</p>
-      </div>
-      </div>
-      </div>
-      <div class="sect1">
-      <h2 id="red-hat-software-collections"><a class="anchor" href="#red-hat-software-collections"></a>Red Hat Software Collections</h2>
-      <div class="sectionbody">
-      <div class="paragraph">
-      <p>JBoss Developer Studio RPM relies on Red Hat Software Collections. You don’t need to install Red Hat Software Collections but you need to enable
-      the Red Hat Software Collections repositories before you start the installation of the Red Hat JBoss Developer Studio.</p>
-      </div>
-      <div class="sect2">
-      <h3 id="enabling-the-red-hat-software-collections-base-repository"><a class="anchor" href="#enabling-the-red-hat-software-collections-base-repository"></a>Enabling the Red Hat Software Collections base repository</h3>
-      <div class="paragraph">
-      <p>The identifier for the repository is <strong>rhel-server-rhscl-7-rpms</strong> on Red Hat Enterprise Linux Server and <strong>rhel-workstation-rhscl-7-rpms</strong> on Red Hat Enterprise Linux Workstation.</p>
-      </div>
-      <div class="paragraph">
-      <p>The command to enable the repository on Red Hat Enterprise Linux Server is:</p>
-      </div>
-      <div class="listingblock">
-      <div class="content">
-      <pre class="prettyprint highlight"><code>sudo subscription-manager repos --enable rhel-server-rhscl-7-rpms</code></pre>
-      </div>
-      </div>
-      <div class="paragraph">
-      <p>The command to enable the repository on Red Hat Enterprise Linux Workstation is:</p>
-      </div>
-      <div class="listingblock">
-      <div class="content">
-      <pre class="prettyprint highlight"><code>sudo subscription-manager repos --enable rhel-workstation-rhscl-7-rpms</code></pre>
-      </div>
-      </div>
-      <div class="paragraph">
-      <p>For more information, please refer to the <a href="https://access.redhat.com/documentation/en/red-hat-software-collections/?version=2/">Red Hat Software Collections</a> documentation.</p>
-      </div>
-      </div>
-      </div>
-      </div>
-      <div class="sect1">
-      <h2 id="jboss-developer-studio-repository"><a class="anchor" href="#jboss-developer-studio-repository"></a>JBoss Developer Studio repository</h2>
-      <div class="sectionbody">
-      <div class="paragraph">
-      <p>As this is a tech preview, you need to manually configure the JBoss Developer Studio repository.</p>
-      </div>
-      <div class="paragraph">
-      <p>Create a file <strong>/etc/yum.repos.d/rh-eclipse46-devstudio.repo</strong> with the following content:</p>
-      </div>
-      <div class="listingblock">
-      <div class="content">
-      <pre class="prettyprint highlight"><code>[rh-eclipse46-devstudio-stable-10.x]
-      name=rh-eclipse46-devstudio-stable-10.x
-      baseurl=https://devstudio.redhat.com/static/10.0/stable/rpms/x86_64/
-      enabled=1
-      gpgcheck=1
-      upgrade_requirements_on_install=1
-      metadata_expire=24h</code></pre>
-      </div>
-      </div>
-      </div>
-      </div>
-      <div class="sect1">
-      <h2 id="red-hat-developer-signing-key"><a class="anchor" href="#red-hat-developer-signing-key"></a>Red Hat developer signing key</h2>
-      <div class="sectionbody">
-      <div class="paragraph">
-      <p>As this is tech preview, you need to accept the Red Hat developer signing key that has been used for producing the JBoss Developer Studio RPM.</p>
-      </div>
-      <div class="paragraph">
-      <p>Execute the following command:</p>
-      </div>
-      <div class="listingblock">
-      <div class="content">
-      <pre class="prettyprint highlight"><code>sudo rpm --import &quot;https://www.redhat.com/security/a5787476.txt&quot;</code></pre>
-      </div>
-      </div>
-      </div>
-      </div>
-      <div class="sect1">
-      <h2 id="install-red-hat-jboss-developer-studio"><a class="anchor" href="#install-red-hat-jboss-developer-studio"></a>Install Red Hat JBoss Developer Studio</h2>
-      <div class="sectionbody">
-      <div class="paragraph">
-      <p>You’re now ready to install Red Hat JBoss Developer Studio through RPM.</p>
-      </div>
-      <div class="paragraph">
-      <p>Enter the following command:</p>
-      </div>
-      <div class="listingblock">
-      <div class="content">
-      <pre class="prettyprint highlight"><code>sudo yum install rh-eclipse46-devstudio</code></pre>
-      </div>
-      </div>
-      <div class="paragraph">
-      <p>Answer &apos;y&apos; when asked and after all required dependencies have been downloaded and installed, Red Hat JBoss Developer Studio is available on your
-      system through the standard update channel !!!</p>
-      </div>
-      <div class="paragraph">
-      <p>You should see messages like the following:</p>
-      </div>
-      <div class="imageblock">
-      <div class="content">
-      <img src="https://tools.jboss.org/blog/images/20161212-rpm/rh-eclipse46-devstudio.log.png" alt="rh eclipse46 devstudio.log" />
-      </div>
-      </div>
-      </div>
-      </div>
-      <div class="sect1">
-      <h2 id="launch-red-hat-jboss-developer-studio"><a class="anchor" href="#launch-red-hat-jboss-developer-studio"></a>Launch Red Hat JBoss Developer Studio</h2>
-      <div class="sectionbody">
-      <div class="paragraph">
-      <p>From the system menu, mouse over the <strong>Programming</strong> menu, and the <strong>Red Hat Eclipse</strong> menu item will appear.</p>
-      </div>
-      <div class="imageblock">
-      <div class="content">
-      <img src="https://tools.jboss.org/blog/images/20161212-rpm/programming-menu.png" alt="programming menu" />
-      </div>
-      </div>
-      <div class="paragraph">
-      <p>Select this menu item and Red Hat JBoss Developer Studio user interface will appear then:</p>
-      </div>
-      <div class="imageblock">
-      <div class="content">
-      <img src="https://tools.jboss.org/blog/images/20161212-rpm/devstudio.png" alt="devstudio" />
-      </div>
-      </div>
-      <div class="paragraph">
-      <p>Enjoy!</p>
-      </div>
-      <div class="paragraph">
-      <p>Jeff Maury</p>
-      </div>
-      </div>
-      </div></div>
-    ]]></summary>
-	<content type="html">&lt;html&gt;&lt;body&gt;&lt;div&gt;&lt;div&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;p&gt;With the release of &lt;a href="https://tools.jboss.org/downloads/devstudio/neon/10.2.0.GA.html" target="_blank"&gt;Red Hat JBoss Developer Studio 10.2&lt;/a&gt;, it is now possible to install Red Hat JBoss Developer Studio as an RPM.
-      It is available as a tech preview. The purpose of this article is to describe the steps you should follow in order to install Red Hat JBoss Developer Studio.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;h2&gt;&lt;a href="#red-hat-software-collections" target="_blank"&gt;&lt;/a&gt;Red Hat Software Collections&lt;/h2&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;p&gt;JBoss Developer Studio RPM relies on Red Hat Software Collections. You don&amp;rsquo;t need to install Red Hat Software Collections but you need to enable
-      the Red Hat Software Collections repositories before you start the installation of the Red Hat JBoss Developer Studio.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;h3&gt;&lt;a href="#enabling-the-red-hat-software-collections-base-repository" target="_blank"&gt;&lt;/a&gt;Enabling the Red Hat Software Collections base repository&lt;/h3&gt;
-      &lt;div&gt;
-      &lt;p&gt;The identifier for the repository is &lt;strong&gt;rhel-server-rhscl-7-rpms&lt;/strong&gt; on Red Hat Enterprise Linux Server and &lt;strong&gt;rhel-workstation-rhscl-7-rpms&lt;/strong&gt; on Red Hat Enterprise Linux Workstation.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;The command to enable the repository on Red Hat Enterprise Linux Server is:&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;pre&gt;&lt;code&gt;sudo subscription-manager repos --enable rhel-server-rhscl-7-rpms&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;The command to enable the repository on Red Hat Enterprise Linux Workstation is:&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;pre&gt;&lt;code&gt;sudo subscription-manager repos --enable rhel-workstation-rhscl-7-rpms&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;For more information, please refer to the &lt;a href="https://access.redhat.com/documentation/en/red-hat-software-collections/?version=2/" target="_blank"&gt;Red Hat Software Collections&lt;/a&gt; documentation.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;h2&gt;&lt;a href="#jboss-developer-studio-repository" target="_blank"&gt;&lt;/a&gt;JBoss Developer Studio repository&lt;/h2&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;p&gt;As this is a tech preview, you need to manually configure the JBoss Developer Studio repository.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;Create a file &lt;strong&gt;/etc/yum.repos.d/rh-eclipse46-devstudio.repo&lt;/strong&gt; with the following content:&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;pre&gt;&lt;code&gt;[rh-eclipse46-devstudio-stable-10.x]
-      name=rh-eclipse46-devstudio-stable-10.x
-      baseurl=https://devstudio.redhat.com/static/10.0/stable/rpms/x86_64/
-      enabled=1
-      gpgcheck=1
-      upgrade_requirements_on_install=1
-      metadata_expire=24h&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;h2&gt;&lt;a href="#red-hat-developer-signing-key" target="_blank"&gt;&lt;/a&gt;Red Hat developer signing key&lt;/h2&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;p&gt;As this is tech preview, you need to accept the Red Hat developer signing key that has been used for producing the JBoss Developer Studio RPM.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;Execute the following command:&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;pre&gt;&lt;code&gt;sudo rpm --import "https://www.redhat.com/security/a5787476.txt"&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;h2&gt;&lt;a href="#install-red-hat-jboss-developer-studio" target="_blank"&gt;&lt;/a&gt;Install Red Hat JBoss Developer Studio&lt;/h2&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;p&gt;You&amp;rsquo;re now ready to install Red Hat JBoss Developer Studio through RPM.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;Enter the following command:&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;pre&gt;&lt;code&gt;sudo yum install rh-eclipse46-devstudio&lt;/code&gt;&lt;/pre&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;Answer 'y' when asked and after all required dependencies have been downloaded and installed, Red Hat JBoss Developer Studio is available on your
-      system through the standard update channel !!!&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;You should see messages like the following:&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;img src="https://tools.jboss.org/blog/images/20161212-rpm/rh-eclipse46-devstudio.log.png" alt="rh eclipse46 devstudio.log"&gt;&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;h2&gt;&lt;a href="#launch-red-hat-jboss-developer-studio" target="_blank"&gt;&lt;/a&gt;Launch Red Hat JBoss Developer Studio&lt;/h2&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;p&gt;From the system menu, mouse over the &lt;strong&gt;Programming&lt;/strong&gt; menu, and the &lt;strong&gt;Red Hat Eclipse&lt;/strong&gt; menu item will appear.&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;img src="https://tools.jboss.org/blog/images/20161212-rpm/programming-menu.png" alt="programming menu"&gt;&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;Select this menu item and Red Hat JBoss Developer Studio user interface will appear then:&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;div&gt;
-      &lt;img src="https://tools.jboss.org/blog/images/20161212-rpm/devstudio.png" alt="devstudio"&gt;&lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;Enjoy!&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;div&gt;
-      &lt;p&gt;Jeff Maury&lt;/p&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;/div&gt;&lt;/div&gt;&lt;/body&gt;&lt;/html&gt;
-&lt;img src="http://feeds.feedburner.com/~r/jbossbuzz/~4/dB10UJJnwPs" height="1" width="1" alt=""/&gt;</content>
-	<updated>2016-12-15T11:36:08+00:00</updated>
-	<author><name>jeffmaury</name></author>
-	<source>
-		<link rel="self" href="http://tools.jboss.org/blog/" />
-		<title>JBoss Tools</title></source>
-
-	<category term="tech-preview" />
-
-	<category term="jbosstools" />
-
-	<category term="devstudio" />
-
-	<category term="rpm" />
-
-
-<feedburner:origLink>https://tools.jboss.org/blog/10.2.0.rpm-installation.html</feedburner:origLink></entry>
 
 
 </feed><!-- vim:ft=xml

@@ -1,6 +1,7 @@
 package com.onix.modulo.librerias.eao;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map.Entry;
@@ -57,11 +58,17 @@ public abstract class GenericEAO<ENTIDAD extends IEntidadPersistible<Id>, Id ext
 	@SuppressWarnings("unchecked")
 	@TransactionAttribute(TransactionAttributeType.SUPPORTS)
 	public <T extends Serializable> List<T> ejecutarNativeQueryList(String lQueryNativo,
-			HashMap<String, Object> lParametros, Class<T> lClase) {
-		Query query = getAdminEntidad().createNativeQuery(lQueryNativo, lClase);
+			HashMap<String, Object> lParametros,  Class<T> lClase) {
+		Query query = getAdminEntidad().createNativeQuery(lQueryNativo);
 		for (Entry<String, Object> registro : lParametros.entrySet())
 			query.setParameter(registro.getKey(), registro.getValue());
-		return query.getResultList();
+
+		List<T> lResultado = query.getResultList();
+//		List<T> lListaResultado = new ArrayList<>();
+//		for (Object oResultado : lResultado)
+//			lListaResultado.add(lClase.cast(oResultado));
+
+		return lResultado;
 	}
 
 	public List<ENTIDAD> obtenerListaObjetosPorEstado(String estado, Class<ENTIDAD> clase) {

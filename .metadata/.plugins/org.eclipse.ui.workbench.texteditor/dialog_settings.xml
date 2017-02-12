@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="guardar" key="selection"/>
+		<item value="ejecutarNativeQueryList" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="ejecutarNativeQueryList"/>
+			<item value="type"/>
+			<item value="selec"/>
 			<item value="guardar"/>
 			<item value="ejecutarQueryNativo"/>
 			<item value="lCargarDatosRegitrosInsert"/>
 			<item value="validacionesConBaseActualizar"/>
 			<item value="validacionesConBaseActualizar|"/>
-			<item value="actualizacionPrevia"/>
-			<item value="validacionesBasicasActualizar"/>
-			<item value="NombresEtiquetas"/>
 		</list>
 		<list key="replacehistory">
 		</list>

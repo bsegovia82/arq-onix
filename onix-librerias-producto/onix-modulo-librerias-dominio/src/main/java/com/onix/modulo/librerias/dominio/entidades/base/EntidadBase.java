@@ -22,6 +22,8 @@ public abstract class EntidadBase<Id extends Serializable> implements IEntidadPe
 	protected Id id;
 
 	protected String estado;
+	
+	private Long idReferencia;
 
 	@Override
 	public void setId(Id pId) {
@@ -36,6 +38,15 @@ public abstract class EntidadBase<Id extends Serializable> implements IEntidadPe
 
 	public void setEstado(String estado) {
 		this.estado = estado;
+	}
+	
+	@Column(name = "ID_REFERENCIA")
+	public Long getIdReferencia() {
+		return idReferencia;
+	}
+	
+	public void setIdReferencia(Long idReferencia) {
+		this.idReferencia = idReferencia;
 	}
 	
 	@Override
