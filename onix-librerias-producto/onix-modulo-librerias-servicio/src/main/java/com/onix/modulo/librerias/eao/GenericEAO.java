@@ -1,16 +1,15 @@
 package com.onix.modulo.librerias.eao;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
 
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
-import javax.persistence.TypedQuery;
 
 import com.onix.modulo.librerias.dominio.entidades.IEntidadPersistible;
 
@@ -58,17 +57,11 @@ public abstract class GenericEAO<ENTIDAD extends IEntidadPersistible<Id>, Id ext
 	@SuppressWarnings("unchecked")
 	@TransactionAttribute(TransactionAttributeType.SUPPORTS)
 	public <T extends Serializable> List<T> ejecutarNativeQueryList(String lQueryNativo,
-			HashMap<String, Object> lParametros,  Class<T> lClase) {
+			Map<String, Object> lParametros, Class<T> lClase) {
 		Query query = getAdminEntidad().createNativeQuery(lQueryNativo);
 		for (Entry<String, Object> registro : lParametros.entrySet())
 			query.setParameter(registro.getKey(), registro.getValue());
-
-		List<T> lResultado = query.getResultList();
-//		List<T> lListaResultado = new ArrayList<>();
-//		for (Object oResultado : lResultado)
-//			lListaResultado.add(lClase.cast(oResultado));
-
-		return lResultado;
+		return query.getResultList();
 	}
 
 	public List<ENTIDAD> obtenerListaObjetosPorEstado(String estado, Class<ENTIDAD> clase) {
@@ -82,36 +75,26 @@ public abstract class GenericEAO<ENTIDAD extends IEntidadPersistible<Id>, Id ext
 	public ENTIDAD obtenerObjetoPorCampoGenerico(String clave, Object valor, Class<ENTIDAD> clase) {
 		List<ENTIDAD> listaResultado = obtenerListaObjetosPorCampoGenerico(clave, valor, clase);
 
-		if (listaResultado.isEmpty()) {
-			return null;
-		} else {
-			return listaResultado.get(0);
-		}
+		return listaResultado.isEmpty() ? null : listaResultado.get(0);
 	}
 
 	public List<ENTIDAD> obtenerListaObjetosPorCampoGenerico(String clave, Object valor, Class<ENTIDAD> clase) {
-		TypedQuery<ENTIDAD> listaResultante = getAdminEntidad()
-				.createQuery(construccionQueryGenerico(clase, clave, false), clase);
-		return listaResultante.setParameter(clave, valor).getResultList();
+		return getAdminEntidad().createQuery(construccionQueryGenerico(clase, clave, false), clase)
+				.setParameter(clave, valor).getResultList();
 	}
 
 	public List<ENTIDAD> obtenerListaObjetosPorCampoGenerico(String clave, Object valor, Class<ENTIDAD> clase,
 			Boolean orderFecha) {
-		TypedQuery<ENTIDAD> listaResultante = getAdminEntidad()
-				.createQuery(construccionQueryGenerico(clase, clave, orderFecha), clase);
-		return listaResultante.setParameter(clave, valor).getResultList();
+		return getAdminEntidad().createQuery(construccionQueryGenerico(clase, clave, orderFecha), clase)
+				.setParameter(clave, valor).getResultList();
 	}
 
 	public List<ENTIDAD> obtenerTodaListaObjetos(Class<ENTIDAD> clase) {
-		TypedQuery<ENTIDAD> listaResultante = getAdminEntidad().createQuery(construccionQueryGenerico(clase, false),
-				clase);
-		return listaResultante.getResultList();
+		return getAdminEntidad().createQuery(construccionQueryGenerico(clase, false), clase).getResultList();
 	}
 
 	public List<ENTIDAD> obtenerTodaListaObjetos(Class<ENTIDAD> clase, Boolean orderFecha) {
-		TypedQuery<ENTIDAD> listaResultante = getAdminEntidad()
-				.createQuery(construccionQueryGenerico(clase, orderFecha), clase);
-		return listaResultante.getResultList();
+		return getAdminEntidad().createQuery(construccionQueryGenerico(clase, orderFecha), clase).getResultList();
 	}
 
 	public List<ENTIDAD> obtenerListaObjetosPorEstadoActivo(Class<ENTIDAD> clase) {

@@ -2641,3 +2641,143 @@ Binding(CTRL+U,
 		,,true),null),
 	org.eclipse.ui.defaultAcceleratorConfiguration,
 	org.eclipse.jdt.ui.javaEditorScope,,,system)
+!SESSION 2017-02-13 10:02:05.392 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_111
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_EC
+Framework arguments:  -product org.eclipse.epp.package.jee.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.jee.product
+
+!ENTRY org.eclipse.core.resources 2 10035 2017-02-13 10:02:20.521
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY org.eclipse.core.resources 4 2 2017-02-13 10:02:28.150
+!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.core.resources".
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: assertion failed: Current builder: il.org.spartan.plugin.Builder, new builder: il.org.spartan.plugin.Builder, configuration: RemoteSystemsTempFiles; []
+	at org.eclipse.core.runtime.Assert.isTrue(Assert.java:110)
+	at org.eclipse.core.internal.events.BuildCommand.addBuilder(BuildCommand.java:261)
+	at org.eclipse.core.internal.events.BuildManager.getBuilder(BuildManager.java:550)
+	at org.eclipse.core.internal.events.BuildManager.getBuilder(BuildManager.java:575)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:243)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:300)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:303)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:359)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:382)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:144)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-02-13 10:02:39.072
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\BYRON'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.jspresso.contrib.sjsplugin.spock 1 0 2017-02-13 10:02:40.161
+!MESSAGE Jspresso Spock plugin started
+
+!ENTRY org.eclipse.core.net 4 0 2017-02-13 10:02:40.578
+!MESSAGE WinHttp.DetectAutoProxyConfigUrl for wpad failed with error 'No se encontró la dirección URL de configuración automática del proxy.
+' #12180.
+
+!ENTRY org.eclipse.jface 2 0 2017-02-13 10:02:41.533
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2017-02-13 10:02:41.533
+!MESSAGE A conflict occurred for CTRL+U:
+Binding(CTRL+U,
+	ParameterizedCommand(Command(org.eclipse.jdt.debug.ui.commands.Execute,Execute,
+		Evaluate selected text,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7fefa1cc,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+U,
+	ParameterizedCommand(Command(org.projectusus.ui.internal.proportions.infopresenter.ShowUsusInfo,Show Info,
+		,
+		Category(org.projectusus.ui.commandCategory,Project Usus,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5a74d858,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+Binding(CTRL+U,
+	ParameterizedCommand(Command(org.moreunit.createtestmethod,Create Test Method,
+		Creation of a testmethod.,
+		Category(org.eclipse.jdt.ui.category.source,Source,Java Source Actions,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@7896b4d0,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.jdt.ui.javaEditorScope,,,system)
+
+!ENTRY org.jboss.tools.cdi.core 4 0 2017-02-13 10:02:51.115
+!MESSAGE ExceptionHandlerFactory [in ExceptionHandlerFactory.class [in javax.faces.context [in D:\repositorio\javax\javaee-api\7.0\javaee-api-7.0.jar]]] does not exist
+!STACK 1
+Java Model Exception: Java Model Status [ExceptionHandlerFactory [in ExceptionHandlerFactory.class [in javax.faces.context [in D:\repositorio\javax\javaee-api\7.0\javaee-api-7.0.jar]]] does not exist]
+	at org.eclipse.jdt.internal.core.JavaElement.newNotPresentException(JavaElement.java:556)
+	at org.eclipse.jdt.internal.core.JavaElement.openWhenClosed(JavaElement.java:590)
+	at org.eclipse.jdt.internal.core.BinaryType.getElementInfo(BinaryType.java:287)
+	at org.eclipse.jdt.internal.core.JavaElement.getElementInfo(JavaElement.java:302)
+	at org.eclipse.jdt.internal.core.BinaryType.getAnnotations(BinaryType.java:185)
+	at org.jboss.tools.cdi.internal.core.scanner.lib.BeanArchiveDetector.isAnnotatedBean(BeanArchiveDetector.java:255)
+	at org.jboss.tools.cdi.core.CDICoreBuilder.buildJars(CDICoreBuilder.java:426)
+	at org.jboss.tools.cdi.core.CDICoreBuilder.build(CDICoreBuilder.java:236)
+	at org.jboss.tools.cdi.core.CDICoreBuilder.<init>(CDICoreBuilder.java:98)
+	at org.jboss.tools.cdi.core.CDICoreNature.load(CDICoreNature.java:420)
+	at org.jboss.tools.cdi.core.CDICoreNature.resolveStorage(CDICoreNature.java:393)
+	at org.jboss.tools.cdi.core.CDICoreNature.resolve(CDICoreNature.java:406)
+	at org.jboss.tools.cdi.core.CDICoreNature.getAllDependentProjects(CDICoreNature.java:289)
+	at org.jboss.tools.cdi.internal.core.validation.CDIProjectTree.getRootProjects(CDIProjectTree.java:135)
+	at org.jboss.tools.cdi.internal.core.validation.CDIProjectTree.addProject(CDIProjectTree.java:58)
+	at org.jboss.tools.cdi.internal.core.validation.CDIProjectTree.<init>(CDIProjectTree.java:44)
+	at org.jboss.tools.cdi.internal.core.validation.CDICoreValidator.getProjectTree(CDICoreValidator.java:244)
+	at org.jboss.tools.cdi.internal.core.validation.CDICoreValidator.getValidatingProjects(CDICoreValidator.java:239)
+	at org.jboss.tools.common.validation.ValidationContext.init(ValidationContext.java:127)
+	at org.jboss.tools.common.validation.ValidationContext.<init>(ValidationContext.java:43)
+	at org.jboss.tools.common.validation.ContextValidationHelper.registerResource(ContextValidationHelper.java:109)
+	at org.eclipse.wst.validation.internal.FilterUtil.addToFileList(FilterUtil.java:290)
+	at org.eclipse.wst.validation.internal.FilterUtil.filterOut(FilterUtil.java:380)
+	at org.eclipse.wst.validation.internal.FilterUtil$1.visit(FilterUtil.java:575)
+	at org.eclipse.core.internal.resources.Resource$2.visit(Resource.java:119)
+	at org.eclipse.core.internal.resources.Resource$1.visitElement(Resource.java:83)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:82)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.doIteration(ElementTreeIterator.java:87)
+	at org.eclipse.core.internal.watson.ElementTreeIterator.iterate(ElementTreeIterator.java:129)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:93)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:51)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:116)
+	at org.eclipse.core.internal.resources.Resource.accept(Resource.java:109)
+	at org.eclipse.wst.validation.internal.FilterUtil.loadDeltas(FilterUtil.java:654)
+	at org.eclipse.wst.validation.internal.operations.ValidationOperation.loadFileDeltas(ValidationOperation.java:545)
+	at org.eclipse.wst.validation.internal.operations.ValidationOperation.getFileDeltas(ValidationOperation.java:519)
+	at org.eclipse.wst.validation.internal.operations.ValidationOperation.preValidate(ValidationOperation.java:791)
+	at org.eclipse.wst.validation.internal.operations.ValidationOperation.run(ValidationOperation.java:653)
+	at org.eclipse.wst.validation.internal.operations.ValidationBuilder.performFullBuild(ValidationBuilder.java:264)
+	at org.eclipse.wst.validation.internal.operations.ValidationBuilder.performFullBuild(ValidationBuilder.java:256)
+	at org.eclipse.wst.validation.internal.operations.ValidationBuilder.build(ValidationBuilder.java:182)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:734)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:205)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:245)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:300)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:303)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:262)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:402)
+	at org.eclipse.core.internal.resources.Project$1.run(Project.java:556)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2241)
+	at org.eclipse.core.internal.resources.Project.internalBuild(Project.java:534)
+	at org.eclipse.core.internal.resources.Project.build(Project.java:111)
+	at il.org.spartan.plugin.RefreshAll.go(RefreshAll.java:15)
+	at il.org.spartan.plugin.Plugin.startSpartan(Plugin.java:20)
+	at il.org.spartan.plugin.Plugin.earlyStartup(Plugin.java:31)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:90)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:68)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.Workbench$56.run(Workbench.java:2852)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 1 org.eclipse.jdt.core 4 969 2017-02-13 10:02:51.117
+!MESSAGE ExceptionHandlerFactory [in ExceptionHandlerFactory.class [in javax.faces.context [in D:\repositorio\javax\javaee-api\7.0\javaee-api-7.0.jar]]] does not exist
