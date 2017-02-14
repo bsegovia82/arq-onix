@@ -44,7 +44,7 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 
 	private static final String USUARIO_GENERICO_WEB = "USR_WEB";
 	
-	protected static final String REFERENCIA_SESION = "REFERENCIA_SESION";
+	
 
 	protected ENTIDAD entidadRegistrar;
 
@@ -274,7 +274,7 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 	private void cargarDatosRastreoRegistro() throws ErrorNoAutenticacion {
 		try {
 			this.entidadRegistrar.setAuditoria(JsfUtil.getUsuarioAutenticado().getName());
-			this.entidadRegistrar.setIdReferencia(obtenerObjetoSesion(REFERENCIA_SESION));
+			this.entidadRegistrar.setIdReferencia(obtenerObjetoSesion(JsfUtil.REFERENCIA_SESION));
 		} catch (Throwable e1) {
 			e1.printStackTrace();
 			throw new ErrorNoAutenticacion(

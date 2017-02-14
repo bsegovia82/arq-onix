@@ -48,6 +48,8 @@ import javax.servlet.http.HttpSession;
 
 public final class JsfUtil {
 
+	public static final String REFERENCIA_SESION = "REFERENCIA_SESION";
+	
 	public static final String MENSAJE_ERROR_OPERACION = "Ocurrió un error al completar la operación.";
 
 	public static final String CLAVE_INICIAL_DEFAULT = "123456789";
