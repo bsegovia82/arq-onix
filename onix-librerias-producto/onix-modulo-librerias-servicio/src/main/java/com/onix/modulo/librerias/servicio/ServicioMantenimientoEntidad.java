@@ -3,6 +3,7 @@ package com.onix.modulo.librerias.servicio;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import javax.annotation.PostConstruct;
 
@@ -194,8 +195,13 @@ public abstract class ServicioMantenimientoEntidad<EAO extends GenericEAO<ENTIDA
 	}
 
 	public List<ENTIDAD> listaObjetos(Class<ENTIDAD> clase, Boolean orderFecha) {
-
 		return getCrud().obtenerTodaListaObjetos(clase, orderFecha);
+	}
+	
+	public List<ENTIDAD> listaObjetos(Class<ENTIDAD> clase, Boolean orderFecha, String pUsuarioAutenticado) {
+
+		
+		return getCrud().obtenerTodaListaObjetos(clase, orderFecha, pUsuarioAutenticado);
 	}
 
 	public List<ENTIDAD> listaObjetosActivos(Class<ENTIDAD> clase) {

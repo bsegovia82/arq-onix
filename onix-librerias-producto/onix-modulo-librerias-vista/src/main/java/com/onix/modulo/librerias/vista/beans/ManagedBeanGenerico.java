@@ -5,6 +5,8 @@ import java.io.Serializable;
 import java.lang.reflect.Method;
 import java.util.Calendar;
 import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
 
 import javax.el.ExpressionFactory;
 import javax.el.ValueExpression;
@@ -144,5 +146,23 @@ public abstract class ManagedBeanGenerico implements Serializable {
 
 	public String getCurrentTimeZone() {
 		return Calendar.getInstance().getTimeZone().getID();
+	}
+	
+	public void agregarObjetoSesion(String pNombreAtributo, Serializable pObjetoGuardar) {
+		getsession().setAttribute(pNombreAtributo, pObjetoGuardar);
+	}
+
+	public void agregarObjetoSesion(Map<String, Serializable> pAtributosSesion) {
+		for (Entry<String, Serializable> lParObjetoClave : pAtributosSesion.entrySet())
+			agregarObjetoSesion(lParObjetoClave.getKey(), lParObjetoClave.getValue());
+	}
+
+	@SuppressWarnings("unchecked")
+	public <T extends Serializable > T obtenerObjetoSesion(String pNombreParametro) {
+		return (T) getsession().getAttribute(pNombreParametro);
+	}
+
+	public void eliminarObjetoSesion(String pNombreParametro) {
+		getsession().removeAttribute(pNombreParametro);
 	}
 }

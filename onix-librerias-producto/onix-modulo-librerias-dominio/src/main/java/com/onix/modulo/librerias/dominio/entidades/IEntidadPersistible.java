@@ -9,4 +9,7 @@ public interface IEntidadPersistible<Id extends Serializable>
 	public void setEstado(String estado);
 	public String getEstado();
 	public void setAuditoria(String usuario);
+	public Long getIdReferencia();
+	public void setIdReferencia(Long idReferencia);
+	
 }

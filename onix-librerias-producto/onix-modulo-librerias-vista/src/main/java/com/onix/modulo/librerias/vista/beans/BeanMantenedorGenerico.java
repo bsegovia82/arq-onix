@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 import javax.annotation.PostConstruct;
 import javax.el.ExpressionFactory;
@@ -41,6 +43,8 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 		implements Serializable {
 
 	private static final String USUARIO_GENERICO_WEB = "USR_WEB";
+	
+	protected static final String REFERENCIA_SESION = "REFERENCIA_SESION";
 
 	protected ENTIDAD entidadRegistrar;
 
@@ -98,7 +102,7 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 	@PostConstruct
 	protected void init() {
 		try {
-			listaEntidades = getServicioMantenedor().listaObjetos(clase, true);
+			listaEntidades = getServicioMantenedor().listaObjetos(clase, true, usuarioAutenticado());
 			nombreAtributoCambioEstado = "ENTIDAD_CAMBIAR";
 			metodoPostConstruct();
 		} catch (Throwable e) {
@@ -218,17 +222,10 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 	public void guardarOActualizar(boolean presentarMensaje, boolean pValidarAutenticado) {
 		try {
 			validacionesIngreso();
-			if (pValidarAutenticado) {
-				try {
-					this.entidadRegistrar.setAuditoria(JsfUtil.getUsuarioAutenticado().getName());
-				} catch (Throwable e1) {
-					e1.printStackTrace();
-					throw new ErrorNoAutenticacion(
-							"No es posible realizar esta operación si ningún usuario está autenticado");
-				}
-			} else {
+			if (pValidarAutenticado)
+				cargarDatosRastreoRegistro();
+			else  
 				this.entidadRegistrar.setAuditoria(USUARIO_GENERICO_WEB);
-			}
 			accionesPreTransaccionServicio();
 			getServicioMantenedor().guardarActualizar(entidadRegistrar);
 			metodoPostTransaccion();
@@ -236,8 +233,8 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 				System.out.println("********************************************");
 				System.out.println("MENSAJE " + getMensajeTransaccion());
 				System.out.println("********************************************");
-				addMensaje(getMensajeTransaccion().length() < 2 ? JsfUtil.MENSAJE_INFO_OPERACION
-						: getMensajeTransaccion());
+				addMensaje(getMensajeTransaccion().length() >= 2 ? getMensajeTransaccion()
+						: JsfUtil.MENSAJE_INFO_OPERACION);
 			}
 		} catch (ErrorValidacionVisual e1) {
 			e1.printStackTrace();
@@ -274,6 +271,17 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 
 	}
 
+	private void cargarDatosRastreoRegistro() throws ErrorNoAutenticacion {
+		try {
+			this.entidadRegistrar.setAuditoria(JsfUtil.getUsuarioAutenticado().getName());
+			this.entidadRegistrar.setIdReferencia(obtenerObjetoSesion(REFERENCIA_SESION));
+		} catch (Throwable e1) {
+			e1.printStackTrace();
+			throw new ErrorNoAutenticacion(
+					"No es posible realizar esta operación si ningún usuario está autenticado");
+		}
+	}
+
 	public void guardarOActualizar() {
 		guardarOActualizar(true, true);
 	}
@@ -283,7 +291,7 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 	}
 
 	protected void metodoPostTransaccion() {
-		listaEntidades = getServicioMantenedor().listaObjetos(clase, true);
+		listaEntidades = getServicioMantenedor().listaObjetos(clase, true, usuarioAutenticado());
 
 		if (lPostTransaccion != null)
 			lPostTransaccion.metodoPostTransaccion();
@@ -320,7 +328,7 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 		entidadRegistrar = (ENTIDAD) evento.getComponent().getAttributes().get(nombreAtributoCambioEstado);
 		postSeleccionRegistro(entidadRegistrar);
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public void cambiarEstado(ActionEvent evento) {
 		entidadSelecionable = (ENTIDAD) evento.getComponent().getAttributes().get(nombreAtributoCambioEstado);
@@ -401,27 +409,27 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 	}
 
 	public String getAyudaPagina() {
-		String lAyudaPagina = listaEtiquetasPantalla.get(NombresEtiquetas.AYUDAPAGINA.toString());
+		String lAyudaPagina = listaEtiquetasPantalla.get((NombresEtiquetas.AYUDAPAGINA + ""));
 		return lAyudaPagina == null ? "" : lAyudaPagina;
 	}
 
 	public String getTab() {
-		String lTab = listaEtiquetasPantalla.get(NombresEtiquetas.TAB.toString());
+		String lTab = listaEtiquetasPantalla.get((NombresEtiquetas.TAB + ""));
 		return lTab == null ? "" : lTab;
 	}
 
 	public String getCabeceraTabla() {
-		String lCabeceraTabla = listaEtiquetasPantalla.get(NombresEtiquetas.CABECERATABLA.toString());
+		String lCabeceraTabla = listaEtiquetasPantalla.get((NombresEtiquetas.CABECERATABLA + ""));
 		return lCabeceraTabla == null ? "" : lCabeceraTabla;
 	}
 
 	public String getCabeceraDialogo() {
-		String lCabeceraDialogo = listaEtiquetasPantalla.get(NombresEtiquetas.CABECERADIALOGO.toString());
+		String lCabeceraDialogo = listaEtiquetasPantalla.get((NombresEtiquetas.CABECERADIALOGO + ""));
 		return lCabeceraDialogo == null ? "" : lCabeceraDialogo;
 	}
 
 	public String getCabeceraPanelDialogo() {
-		String lCabeceraPanelDialogo = listaEtiquetasPantalla.get(NombresEtiquetas.CABECERAPANELDIALOGO.toString());
+		String lCabeceraPanelDialogo = listaEtiquetasPantalla.get((NombresEtiquetas.CABECERAPANELDIALOGO + ""));
 		return lCabeceraPanelDialogo == null ? "" : lCabeceraPanelDialogo;
 	}
 
@@ -499,6 +507,24 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 
 	protected void addPostTransaccion(PostTransaccionListener pPostTransaccionListener) {
 		lPostTransaccion = pPostTransaccionListener;
+	}
+
+	public void agregarObjetoSesion(String pNombreAtributo, Serializable pObjetoGuardar) {
+		getsession().setAttribute(pNombreAtributo, pObjetoGuardar);
+	}
+
+	public void agregarObjetoSesion(Map<String, Serializable> pAtributosSesion) {
+		for (Entry<String, Serializable> lParObjetoClave : pAtributosSesion.entrySet())
+			agregarObjetoSesion(lParObjetoClave.getKey(), lParObjetoClave.getValue());
+	}
+
+	@SuppressWarnings("unchecked")
+	public <T extends Serializable > T obtenerObjetoSesion(String pNombreParametro) {
+		return (T) getsession().getAttribute(pNombreParametro);
+	}
+
+	public void eliminarObjetoSesion(String pNombreParametro) {
+		getsession().removeAttribute(pNombreParametro);
 	}
 
 }
