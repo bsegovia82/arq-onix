@@ -126,8 +126,12 @@ public abstract class GenericEAO<ENTIDAD extends IEntidadPersistible<Id>, Id ext
 		}
 
 		if (pidReferencia != null) {
-			query += " and " + "modelo.idReferencia = (select t.idReferencia from OmsUsuario t "
-					+ " where t.usuario = '" + pidReferencia + "'" + " and t.estado = 'A') ";
+			if (campoParametro != null)
+				query += " and ";
+			else
+				query += " where ";
+			query += " modelo.idReferencia = (select t.idReferencia from OmsUsuario t " + " where t.usuario = '"
+					+ pidReferencia + "'" + " and t.estado = 'A') ";
 		}
 		if (orderFecha) {
 			query += " order by modelo.fechaRegistro desc";
