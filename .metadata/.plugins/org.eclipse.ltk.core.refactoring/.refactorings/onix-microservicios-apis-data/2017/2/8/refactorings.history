@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;com.barracuda.microservicios.data&apos; to &apos;com.onix.microservicios.api.data&apos;&#x0D;&#x0A;- Original project: &apos;onix-microservicios-apis-data&apos;&#x0D;&#x0A;- Original element: &apos;onix-microservicios-apis-data/src/main/java/com.barracuda.microservicios.data&apos;&#x0D;&#x0A;- Renamed element: &apos;onix-microservicios-apis-data/src/main/java/com.onix.microservicios.api.data&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;com.barracuda.microservicios.data&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src\/main\/java&lt;com.barracuda.microservicios.data" name="com.onix.microservicios.api.data" qualified="false" references="true" stamp="1487439957209" textual="false" version="1.0"/>
+</session>
