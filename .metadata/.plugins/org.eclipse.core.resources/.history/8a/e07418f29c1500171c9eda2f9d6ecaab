@@ -77,8 +77,8 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 	private static final long serialVersionUID = 1L;
 
 	protected BeanMantenedorGenerico(Class<ENTIDAD> entidadClase) {
-		clase = entidadClase;
 		incializarEntidad();
+		clase = entidadClase;
 		listaEtiquetasPantalla = new HashMap<>();
 		cargarListaEtiquetas();
 	}
