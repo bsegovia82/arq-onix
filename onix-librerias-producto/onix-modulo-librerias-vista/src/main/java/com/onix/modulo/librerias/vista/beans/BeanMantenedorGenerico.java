@@ -28,10 +28,10 @@ import com.onix.modulo.librerias.exceptions.ErrorServicioNegocio;
 import com.onix.modulo.librerias.exceptions.ErrorValidacionGeneral;
 import com.onix.modulo.librerias.servicio.ServicioMantenimientoEntidad;
 import com.onix.modulo.librerias.vista.JsfUtil;
-import com.onix.modulo.librerias.vista.beans.oyentes.PostSeleccionEntidadListener;
-import com.onix.modulo.librerias.vista.beans.oyentes.PostTransaccionListener;
 import com.onix.modulo.librerias.vista.beans.oyentes.PostConstructListener;
 import com.onix.modulo.librerias.vista.beans.oyentes.PostErrorTransaccionListener;
+import com.onix.modulo.librerias.vista.beans.oyentes.PostSeleccionEntidadListener;
+import com.onix.modulo.librerias.vista.beans.oyentes.PostTransaccionListener;
 import com.onix.modulo.librerias.vista.beans.oyentes.PreTransaccionListener;
 import com.onix.modulo.librerias.vista.beans.oyentes.ValidadorIngresoDatosListener;
 import com.onix.modulo.librerias.vista.exceptions.ErrorAccionesPreTransaccion;
@@ -43,8 +43,6 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 		implements Serializable {
 
 	private static final String USUARIO_GENERICO_WEB = "USR_WEB";
-	
-	
 
 	protected ENTIDAD entidadRegistrar;
 
@@ -64,6 +62,8 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 	private Class<ENTIDAD> clase;
 
 	private String nombreAtributoCambioEstado;
+	private String nombreAtributoDialogoAlterno;
+	private String nombreDialogoDefecto = "dialogoMantenimiento";
 
 	public static final String SERVLET_PDF = "/servlets/report/PDF";
 
@@ -76,8 +76,8 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 	 */
 	private static final long serialVersionUID = 1L;
 
-	protected BeanMantenedorGenerico(ENTIDAD entidad, Class<ENTIDAD> entidadClase) {
-		entidadRegistrar = entidad;
+	protected BeanMantenedorGenerico(Class<ENTIDAD> entidadClase) {
+		incializarEntidad();
 		clase = entidadClase;
 		listaEtiquetasPantalla = new HashMap<>();
 		cargarListaEtiquetas();
@@ -102,8 +102,13 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 	@PostConstruct
 	protected void init() {
 		try {
-			listaEntidades = getServicioMantenedor().listaObjetos(clase, true, usuarioAutenticado());
+			System.out.println("**********************************************");
+			System.out.println("TRANSACCION " + (isAutenticado() ? "CON AUTENTICACION " : "SIN AUTENTICACION"));
+			System.out.println("**********************************************");
+			listaEntidades = !isAutenticado() ? new ArrayList<>()
+					: getServicioMantenedor().listaObjetos(clase, true, usuarioAutenticado());
 			nombreAtributoCambioEstado = "ENTIDAD_CAMBIAR";
+			nombreAtributoDialogoAlterno = "DIALOGO_ALTERNO";
 			metodoPostConstruct();
 		} catch (Throwable e) {
 			listaEntidades = new ArrayList<ENTIDAD>();
@@ -224,9 +229,10 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 			validacionesIngreso();
 			if (pValidarAutenticado)
 				cargarDatosRastreoRegistro();
-			else  
+			else
 				this.entidadRegistrar.setAuditoria(USUARIO_GENERICO_WEB);
 			accionesPreTransaccionServicio();
+
 			getServicioMantenedor().guardarActualizar(entidadRegistrar);
 			metodoPostTransaccion();
 			if (presentarMensaje) {
@@ -236,6 +242,7 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 				addMensaje(getMensajeTransaccion().length() >= 2 ? getMensajeTransaccion()
 						: JsfUtil.MENSAJE_INFO_OPERACION);
 			}
+
 		} catch (ErrorValidacionVisual e1) {
 			e1.printStackTrace();
 			if (presentarMensaje)
@@ -277,8 +284,7 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 			this.entidadRegistrar.setIdReferencia(obtenerObjetoSesion(JsfUtil.REFERENCIA_SESION));
 		} catch (Throwable e1) {
 			e1.printStackTrace();
-			throw new ErrorNoAutenticacion(
-					"No es posible realizar esta operación si ningún usuario está autenticado");
+			throw new ErrorNoAutenticacion("No es posible realizar esta operación si ningún usuario está autenticado");
 		}
 	}
 
@@ -291,13 +297,19 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 	}
 
 	protected void metodoPostTransaccion() {
-		listaEntidades = getServicioMantenedor().listaObjetos(clase, true, usuarioAutenticado());
+		System.out.println("**********************************************");
+		System.out.println("TRANSACCION " + (isAutenticado() ? "CON AUTENTICACION " : "SIN AUTENTICACION"));
+		System.out.println("**********************************************");
+		listaEntidades = !isAutenticado() ? new ArrayList<>()
+				: getServicioMantenedor().listaObjetos(clase, true, usuarioAutenticado());
 
 		if (lPostTransaccion != null)
 			lPostTransaccion.metodoPostTransaccion();
 		else
 			System.out.println(
 					"NO EXISTE LISTENER REGISTRADO PARA LA POST TRANSACCION " + this.getClass().getCanonicalName());
+
+		incializarEntidad();
 	}
 
 	public String getEstadoActivo() {
@@ -311,9 +323,13 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 	@SuppressWarnings("unchecked")
 	public void actualizarEntidad(ActionEvent evento) {
 		entidadRegistrar = (ENTIDAD) evento.getComponent().getAttributes().get(nombreAtributoCambioEstado);
+		String lNombreDialogo = (String) evento.getComponent().getAttributes().get(nombreAtributoDialogoAlterno);
+		lNombreDialogo = lNombreDialogo == null ? nombreDialogoDefecto : lNombreDialogo;
 		postSeleccionRegistro(entidadRegistrar);
-		actualizarComponenteVisual("dialogoMantenimiento");
-		presentarDialogo("dialogoMantenimiento");
+
+		actualizarComponenteVisual(lNombreDialogo);
+		presentarDialogo(lNombreDialogo);
+
 	}
 
 	@SuppressWarnings("unchecked")
@@ -372,13 +388,11 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 		ejecutarComponenteVisual(prepararComandoDialogo(nombreDialogo, OCULTAR_DIALOGO));
 	}
 
-	@SuppressWarnings("el-syntax")
 	private String prepararComandoActualizarComponente(String idComponente) {
+
 		StringBuilder stringBuilder = new StringBuilder();
-		stringBuilder.append(":#{p:component('");
-		stringBuilder.append(idComponente);
-		stringBuilder.append("')}");
-		return stringBuilder.toString();
+		stringBuilder.append(":#{p:component('" + idComponente + "')}");
+		return stringBuilder + "";
 	}
 
 	public void actualizarComponenteVisual(String idComponente) {
@@ -519,12 +533,34 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 	}
 
 	@SuppressWarnings("unchecked")
-	public <T extends Serializable > T obtenerObjetoSesion(String pNombreParametro) {
+	public <T extends Serializable> T obtenerObjetoSesion(String pNombreParametro) {
 		return (T) getsession().getAttribute(pNombreParametro);
 	}
 
 	public void eliminarObjetoSesion(String pNombreParametro) {
 		getsession().removeAttribute(pNombreParametro);
+	}
+
+	public String getNombreAtributoDialogoAlterno() {
+		return nombreAtributoDialogoAlterno;
+	}
+
+	public void setNombreAtributoDialogoAlterno(String nombreAtributoDialogoAlterno) {
+		this.nombreAtributoDialogoAlterno = nombreAtributoDialogoAlterno;
+	}
+
+	public void eventoControlCierreDialogo() {
+		incializarEntidad();
+	}
+
+	private void incializarEntidad() {
+		try {
+			entidadRegistrar = clase.newInstance();
+		} catch (InstantiationException e) {
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

@@ -42,7 +42,7 @@ public class UtilEncriptarDataSource {
 	
 	public static void main(String[] args) throws Throwable
 	{
-		System.out.println(encode("123456789"));
+		System.out.println(decode("69097e5eb8990ec4ba95d525ae76a6a4"));
 	}
 	
 }
