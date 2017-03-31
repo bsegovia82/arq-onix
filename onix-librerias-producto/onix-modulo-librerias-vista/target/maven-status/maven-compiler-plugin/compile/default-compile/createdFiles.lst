@@ -2,6 +2,7 @@ com\onix\modulo\librerias\vista\interfaces\IGuardiaUsuarioSession.class
 com\onix\modulo\librerias\vista\interfaces\IServiciosAutenticacion.class
 com\onix\modulo\librerias\vista\beans\NombresEtiquetas.class
 com\onix\modulo\librerias\vista\filtros\FiltroNoCache.class
+com\onix\modulo\librerias\vista\beans\oyentes\PostCierreDialogo.class
 com\onix\modulo\librerias\vista\beans\oyentes\PostSeleccionEntidadListener.class
 com\onix\modulo\librerias\vista\filtros\FiltroSession.class
 com\onix\modulo\librerias\vista\beans\ManagedBeanGenerico.class

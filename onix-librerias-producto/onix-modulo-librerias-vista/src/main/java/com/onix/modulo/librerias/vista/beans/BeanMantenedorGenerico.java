@@ -28,6 +28,7 @@ import com.onix.modulo.librerias.exceptions.ErrorServicioNegocio;
 import com.onix.modulo.librerias.exceptions.ErrorValidacionGeneral;
 import com.onix.modulo.librerias.servicio.ServicioMantenimientoEntidad;
 import com.onix.modulo.librerias.vista.JsfUtil;
+import com.onix.modulo.librerias.vista.beans.oyentes.PostCierreDialogo;
 import com.onix.modulo.librerias.vista.beans.oyentes.PostConstructListener;
 import com.onix.modulo.librerias.vista.beans.oyentes.PostErrorTransaccionListener;
 import com.onix.modulo.librerias.vista.beans.oyentes.PostSeleccionEntidadListener;
@@ -56,6 +57,7 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 	private ValidadorIngresoDatosListener lValidadorIngreso;
 	private PostConstructListener lPostConstruct;
 	private PostTransaccionListener lPostTransaccion;
+	private PostCierreDialogo lPostCirreDialog;
 
 	private List<ENTIDAD> listaEntidades;
 
@@ -522,6 +524,12 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 	protected void addPostTransaccion(PostTransaccionListener pPostTransaccionListener) {
 		lPostTransaccion = pPostTransaccionListener;
 	}
+	
+	
+	protected void addPostEventoCierroDialogo (PostCierreDialogo pPostCirreDialog ) 
+	{
+		lPostCirreDialog = pPostCirreDialog;
+	}
 
 	public void agregarObjetoSesion(String pNombreAtributo, Serializable pObjetoGuardar) {
 		getsession().setAttribute(pNombreAtributo, pObjetoGuardar);
@@ -550,7 +558,19 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 	}
 
 	public void eventoControlCierreDialogo() {
+		
+		postCierreDialogo();
+		
 		incializarEntidad();
+	}
+
+	private void postCierreDialogo() 
+	{
+		if (lPostCirreDialog != null)
+			lPostCirreDialog.eventosCierreDialogo();
+		else
+			System.out.println("NO EXISTE LISTENER REGISTRADO PARA LA POST CIERRE DIALOGO "
+					+ this.getClass().getCanonicalName());
 	}
 
 	private void incializarEntidad() {
