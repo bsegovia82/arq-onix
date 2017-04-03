@@ -5,7 +5,37 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2017-03-29T01:56:00Z</updated>
+  <updated>2017-04-03T08:53:06Z</updated>
+  <entry>
+    <title>Spring Tool Suite 3.8.4 released</title>
+    <link rel="alternate" href="https://spring.io/blog/2017/04/03/spring-tool-suite-3-8-4-released" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Martin Lippert</name>
+    </author>
+    <id>tag:spring.io,2017-04-03:2885</id>
+    <updated>2017-04-03T08:53:06Z</updated>
+    <content type="html">&lt;p&gt;Dear Spring Community,&lt;/p&gt;
+&lt;p&gt;I am happy to announce the 3.8.4 release of the Spring Tool Suite, our Eclipse-based tooling.&lt;/p&gt;
+&lt;p&gt;Highlights from this release include:&lt;/p&gt;
+&lt;ul&gt;&#xD;
+&lt;li&gt;updated to Eclipse Neon.3&lt;/li&gt;&#xD;
+&lt;li&gt;completely revamped wizard for direct access to start.spring.io&lt;/li&gt;&#xD;
+&lt;li&gt;boot dashboard: support for local Spring Cloud CLI services&lt;/li&gt;&#xD;
+&lt;li&gt;boot dashboard: support for routes when deploying apps to CF&lt;/li&gt;&#xD;
+&lt;li&gt;fixed font rendering on main STS dashboard&lt;/li&gt;&#xD;
+&lt;li&gt;added support for Buildship 2.0&lt;/li&gt;&#xD;
+&lt;li&gt;improved reliability for boot dashboard when showing status of running boot apps&lt;/li&gt;&#xD;
+&lt;li&gt;issue tracking moved to GitHub Issues&lt;/li&gt;&#xD;
+&lt;/ul&gt;
+&lt;p&gt;To download the distributions, please go visit:&lt;/p&gt;
+&lt;ul&gt;&#xD;
+&lt;li&gt;Spring Tool Suite: &lt;a href="https://spring.io/tools/sts/all"&gt;https://spring.io/tools/sts/all&lt;/a&gt;&lt;/li&gt;&#xD;
+&lt;/ul&gt;
+&lt;p&gt;Detailed new and noteworthy notes can be found here: &lt;a href="http://docs.spring.io/sts/nan/v384/NewAndNoteworthy.html"&gt;STS 3.8.4 New &amp;amp; Noteworthy&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;STS 3.9.0 is scheduled to be released on top of Eclipse Oxygen 4.7 in early July 2017.&lt;/p&gt;
+&lt;p&gt;Enjoy!&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>Spring Tips: The Spring Framework *Utils Classes</title>
     <link rel="alternate" href="https://spring.io/blog/2017/03/29/spring-tips-the-spring-framework-utils-classes" />
@@ -872,54 +902,5 @@ Another challenge is before us - Amazon Kinesis Binder implementation for &lt;a 
     <content type="html">&lt;p&gt;Speaker: &lt;a href="https://www.twitter.com/starbuxman"&gt;Josh Long&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Hi Spring fans! in this installment, we&amp;rsquo;ll look at server sent events as implemented with Spring MVC and Spring WebFlux, the reactive web stack in the coming Spring Framework 5. &lt;/p&gt;
 &lt;iframe width="560" height="315" src="https://www.youtube.com/embed/2To3_mYT2hc" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</content>
-  </entry>
-  <entry>
-    <title>Spring Roo 2.0 RC1 released</title>
-    <link rel="alternate" href="https://spring.io/blog/2017/03/07/spring-roo-2-0-rc1-released" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Pieter Humphrey</name>
-    </author>
-    <id>tag:spring.io,2017-03-07:2864</id>
-    <updated>2017-03-07T20:44:00Z</updated>
-    <content type="html">&lt;p&gt;On behalf of &lt;a href="http://www.disid.com"&gt;Disid Corp&lt;/a&gt;, we&amp;rsquo;re pleased to announce the first release candidate of Spring Roo 2.0. This is the first release candidate, from now on we’re going to work in the improvements and bug fixes that the community detects until we&amp;rsquo;ll be able to publish the final release. We encourage you all to participate in this process testing the 2.0.0.RC1 version and reporting the possible bugs and improvements in &lt;a href="https://jira.spring.io/browse/ROO"&gt;our JIRA&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;RC1 version includes some improvements and bugs fixes detected in the Spring Roo 2.0.0.M3 version. Also, it includes some significant new features:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Included some improvements on existing commands:&lt;/li&gt;
-  &lt;li&gt;Improved data-on-demand generation to use it in test commands.&lt;/li&gt;
-  &lt;li&gt;Improved test unit command which now creates fully functional tests for JPA entities.&lt;/li&gt;
-  &lt;li&gt;Improved test integration command which now allows to create integration tests for JPA repositories and JSON/Thymeleaf controllers.&lt;/li&gt;
-  &lt;li&gt;Improved field commands readability, removing unnecessary options and make other dynamically visible.&lt;/li&gt;
-  &lt;li&gt;Improved push-in &amp;ndash;method command, allowing to distinguish between methods with same name but different arguments.&lt;/li&gt;
-  &lt;li&gt;Improved repository command to allows developers to use projections as default return type.&lt;/li&gt;
-  &lt;li&gt;
-  &lt;p&gt;Included some improvements into the generated code:&lt;/p&gt;&lt;/li&gt;
-  &lt;li&gt;Update Spring IO version to &lt;code&gt;Athens-RELEASE&lt;/code&gt;.&lt;/li&gt;
-  &lt;li&gt;Update the &lt;a href="https://github.com/DISID/springlets"&gt;Springlets library&lt;/a&gt; version to &lt;code&gt;1.2.0.RC1&lt;/code&gt;. It provides some awesome new features that makes more easy the Spring application development.&lt;/li&gt;
-  &lt;li&gt;Use projections as default return type of your repository methods.&lt;/li&gt;
-  &lt;li&gt;Improved read-only entities management.&lt;/li&gt;
-  &lt;li&gt;Including new JSONDeserializers and JSONMixin classes.&lt;/li&gt;
-  &lt;li&gt;Including new LinkFactories classes to obtain URLs from Thymeleaf easily.&lt;/li&gt;
-  &lt;li&gt;Generating default JavaDoc to all generated methods, constructors and fields.&lt;/li&gt;
-  &lt;li&gt;New DataTables extension has been created to apply advanced configuration on DataTables elements. This extension is fully extensible, so developers will be able to customize its DataTable component easily.&lt;/li&gt;
-  &lt;li&gt;Added &lt;code&gt;datatables.mark.js&lt;/code&gt; to mark the filtered text in DataTables component.&lt;/li&gt;
-  &lt;li&gt;Added concurrency control in view layer, answering to the user if he wants to discard his changes and reload the record or he wants to apply his changes.&lt;/li&gt;
-  &lt;li&gt;HTML5 improvements and migration to Thymeleaf 3.&lt;/li&gt;
-  &lt;li&gt;Generating reports using &lt;a href="http://dynamicjasper.com/"&gt;DynamicJasper&lt;/a&gt; on DataTables component, allowing to export data to CSV, PDF and XLS.&lt;/li&gt;
-  &lt;li&gt;Added new entity visualization support using &lt;code&gt;--entityFormatExpression&lt;/code&gt; and &lt;code&gt;--entityFormatMessage&lt;/code&gt; in entity commands.&lt;/li&gt;
-  &lt;li&gt;Added support for selecting those views of a particular entity which should show details.&lt;/li&gt;
-  &lt;li&gt;Added new visualization system for one-to-one composition related entities.&lt;/li&gt;
-  &lt;li&gt;Added multi-language support for Java enumerated constants.&lt;/li&gt;
-  &lt;li&gt;Added support for multi row selection and batch delete.&lt;/li&gt;
-  &lt;li&gt;
-  &lt;p&gt;As always, Spring Roo Reference guide has been updated with all the new features.&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;For full details on the changes made in the new Spring Roo version, please refer to the &lt;a href="https://jira.spring.io/jira/secure/ReleaseNote.jspa?projectId=10340&amp;version=15810"&gt;Spring Roo 2.0.0.RC1 Release Note&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Download the new Spring Roo 2.0.0.RC1 version from our &lt;a href="http://projects.spring.io/spring-roo/#running-from-shell"&gt;Project Page&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Additionally Spring Tool Suite (STS) team is working in releasing the STS 3.8.4 which will include the Spring IDE Roo Support for Roo 2.0.0.RC1.&lt;br/&gt;If you want to install the updated Roo components before, you would do it manually via the Spring IDE nightly update site, but remember that you will get an unstable version of STS that could contains erros. Check the &lt;a href="https://docs.spring.io/spring-roo/docs/2.0.0.RC1/reference/html/#getting-started-install-roo"&gt;Spring Roo reference guide&lt;/a&gt; to know how to install the nightly distribution. &lt;/p&gt;
-&lt;p&gt;As always, you’ll also find Roo on Twitter - either follow @SpringRoo or just include #SpringRoo in your tweets.&lt;/p&gt;
-&lt;p&gt;Thanks to all awesome users who came up with useful bug reports and suggestions. We encourage you all again to participate in the final release process testing the 2.0.0.RC1 version and reporting the possible bugs and improvements in &lt;a href="https://jira.spring.io/browse/ROO"&gt;our JIRA&lt;/a&gt;.&lt;/p&gt;
-&lt;p&gt;Stay tuned to Spring Roo news!&lt;/p&gt;
-&lt;p&gt;Spring Roo Team.&lt;/p&gt;</content>
   </entry>
 </feed>

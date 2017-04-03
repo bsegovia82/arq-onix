@@ -27,4 +27,5 @@
 <fullyQualifiedTypeName name="java.io.Serializable"/>
 <fullyQualifiedTypeName name="javax.faces.event.ActionEvent"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.onix.modulo.librerias.vista.beans.oyentes.PostCierreDialogo"/>
 </qualifiedTypeNameHistroy>

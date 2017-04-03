@@ -10,4 +10,6 @@ public interface IParseMenu <T extends Serializable, F extends Serializable>
 
 	public F parseMenuOpciones (List<T> opciones);
 	
+	public F parseMenuOpciones (List<T> opciones, Long lUsuario);
+	
 }
