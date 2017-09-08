@@ -2,6 +2,7 @@ package com.onix.modulo.librerias.vista;
 
 import java.io.IOException;
 import java.io.OutputStream;
+import java.io.Serializable;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.math.BigInteger;
@@ -42,14 +43,19 @@ import javax.faces.component.UISelectItem;
 import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.faces.event.ActionEvent;
+import javax.faces.validator.ValidatorException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.primefaces.context.RequestContext;
+
+import com.onix.modulo.librerias.dominio.entidades.base.EntidadBaseAuditable;
+
 public final class JsfUtil {
 
 	public static final String REFERENCIA_SESION = "REFERENCIA_SESION";
-	
+
 	public static final String MENSAJE_ERROR_OPERACION = "Ocurrió un error al completar la operación.";
 
 	public static final String CLAVE_INICIAL_DEFAULT = "123456789";
@@ -72,22 +78,29 @@ public final class JsfUtil {
 	private JsfUtil() {
 	}
 
+	public static String getBundleString(String str) {
+		try {
+			return getBundle().getString(str);
+		} catch (Exception a) {
+			return "";
+		}
+	}
+
 	private static Random random = new Random();
 
-	
 	public static boolean isDummySelectItem(UIComponent component, String value) {
-        for (UIComponent children : component.getChildren()) {
-            if (children instanceof UISelectItem) {
-                UISelectItem item = (UISelectItem) children;
-                if (item.getItemValue() == null && item.getItemLabel().equals(value)) {
-                    return true;
-                }
-                break;
-            }
-        }
-        return false;
-    }
-	
+		for (UIComponent children : component.getChildren()) {
+			if (children instanceof UISelectItem) {
+				UISelectItem item = (UISelectItem) children;
+				if (item.getItemValue() == null && item.getItemLabel().equals(value)) {
+					return true;
+				}
+				break;
+			}
+		}
+		return false;
+	}
+
 	public static HttpServletRequest getRequest() {
 		FacesContext context = FacesContext.getCurrentInstance();
 		HttpServletRequest request = (HttpServletRequest) context.getExternalContext().getRequest();
@@ -194,8 +207,8 @@ public final class JsfUtil {
 		String standardBeanName = (beanType.getSimpleName().charAt(0) + "").toLowerCase()
 				+ beanType.getSimpleName().substring(1);
 		ELContext elContext = FacesContext.getCurrentInstance().getELContext();
-		return (T) FacesContext.getCurrentInstance().getApplication().getELResolver()
-				.getValue(elContext, null, standardBeanName);
+		return (T) FacesContext.getCurrentInstance().getApplication().getELResolver().getValue(elContext, null,
+				standardBeanName);
 	}
 
 	public static String getStringAsHtmlUL(String value, boolean sort) {
@@ -271,7 +284,8 @@ public final class JsfUtil {
 	public static synchronized String generatePassword(boolean... onlyChars) {
 		String passwd = "";
 		boolean isChar = onlyChars == null ? false : onlyChars.length > 0 ? onlyChars[0] : false;
-		for (char c : complete("" + (int) (random.nextDouble() * 99999999), TAMANIO_PASSWORD, '0', true).toCharArray()) {
+		for (char c : complete("" + (int) (random.nextDouble() * 99999999), TAMANIO_PASSWORD, '0', true)
+				.toCharArray()) {
 			int value = (int) (Integer.parseInt("" + c) + Math.round(Math.random() * 120));
 			char cc = (char) value;
 			if (Character.isLetter(cc) & Character.isDefined(cc) & !Character.isWhitespace(cc)) {
@@ -284,7 +298,8 @@ public final class JsfUtil {
 		return passwd;
 	}
 
-	public static synchronized String complete(String data, final int length, final char complete, final boolean reverse) {
+	public static synchronized String complete(String data, final int length, final char complete,
+			final boolean reverse) {
 		final int size = data.length();
 		StringBuilder build = new StringBuilder();
 		if (reverse) {
@@ -597,8 +612,8 @@ public final class JsfUtil {
 
 	public static boolean validarMail(String email) {
 		boolean valido = false;
-		Pattern patronEmail = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
-				+ "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+		Pattern patronEmail = Pattern.compile(
+				"^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
 		Matcher mEmail = patronEmail.matcher(email);
 		if (mEmail.matches()) {
 			valido = true;
@@ -822,8 +837,8 @@ public final class JsfUtil {
 
 	public static MethodExpression createMethodExpression(String expression, Class<?> returnType) {
 		FacesContext context = FacesContext.getCurrentInstance();
-		return context.getApplication().getExpressionFactory()
-				.createMethodExpression(context.getELContext(), expression, returnType, new Class[0]);
+		return context.getApplication().getExpressionFactory().createMethodExpression(context.getELContext(),
+				expression, returnType, new Class[0]);
 	}
 
 	public static String getComponentMessages(String clientComponent, String defaultMessage) {
@@ -858,4 +873,144 @@ public final class JsfUtil {
 	public static boolean isValidationFailed() {
 		return FacesContext.getCurrentInstance().isValidationFailed();
 	}
+
+	public static boolean isNumeric(String str) {
+		int digits = 0;
+		if (str == null || str.isEmpty()) {
+			return false;
+		}
+		for (char c : str.toCharArray()) {
+			if (!Character.isDigit(c)) {
+				return false;
+			} else {
+				digits++;
+			}
+		}
+
+		return digits <= 9;
+	}
+
+	public static Double round(Double value) {
+
+		if (value != null) {
+			System.out.println("value: " + value);
+			System.out.println("value to String: " + value.toString());
+			String[] splitter = value.toString().split("\\.");
+			System.out.println("decimals: " + splitter[1].length());
+			if (splitter[1].length() <= 2) {
+				return value;
+			} else {
+				return (long) (value * 1e2) / 1e2;
+			}
+
+		} else {
+			return 1d;
+		}
+	}
+
+	public static Double round(Double value, Integer decimals) {
+		if (value != null) {
+
+			System.out.println("value: " + value);
+			System.out.println("value to String: " + value.toString());
+			String[] splitter = value.toString().split("\\.");
+			System.out.println("decimals: " + splitter[1].length());
+
+			if (splitter[1].length() <= decimals) {
+				return value;
+			}
+			if (decimals == 3) {
+				return (long) (value * 1e3) / 1e3;
+			}
+			if (decimals == 2) {
+				return (long) (value * 1e2) / 1e2;
+			}
+			if (decimals == 1) {
+				return (long) (value * 1e1) / 1e1;
+			} else {
+				return (long) (value * 1e0) / 1e0;
+			}
+
+		} else {
+			return null;
+		}
+	}
+
+	public static void completarDatosAutoria(EntidadBaseAuditable lEntidad) {
+		lEntidad.setIdReferencia(obtenerObjetoSesion(REFERENCIA_SESION));
+		lEntidad.setAuditoria(getUsuarioAutenticado().getName());
+	}
+
+	public static <T extends Serializable> T obtenerObjetoSesion(String pNombreParametro) {
+		return (T) getsession().getAttribute(pNombreParametro);
+	}
+
+	public static ResourceBundle getBundle() {
+		FacesContext context = FacesContext.getCurrentInstance();
+		ResourceBundle bundle = ResourceBundle.getBundle("Messages", context.getViewRoot().getLocale());
+		return bundle;
+	}
+
+	public static void throwWarningValidatorException(String msg) {
+		FacesMessage facesMsg = new FacesMessage(FacesMessage.SEVERITY_WARN, msg, msg);
+		throw new ValidatorException(facesMsg);
+	}
+
+	public static void addErrorMessage(Exception ex, String defaultMsg) {
+		String msg = ex.getLocalizedMessage();
+		if (msg != null && msg.length() > 0) {
+			addErrorMessage(msg);
+		} else {
+			addErrorMessage(defaultMsg);
+		}
+	}
+
+	public static void addErrorMessages(List<String> messages) {
+		for (String message : messages) {
+			addErrorMessage(message);
+		}
+	}
+
+	public static void addErrorMessage(String msg) {
+		ResourceBundle bundle = getBundle();
+		String m = bundle.getString(msg);
+		FacesMessage facesMsg = new FacesMessage(FacesMessage.SEVERITY_ERROR, m, m);
+		FacesContext.getCurrentInstance().addMessage("successInfo", facesMsg);
+	}
+
+	public static void addSuccessMessage(String msg) {
+		ResourceBundle bundle = getBundle();
+		String m = bundle.getString(msg);
+		FacesMessage facesMsg = new FacesMessage(FacesMessage.SEVERITY_INFO, m, m);
+		FacesContext.getCurrentInstance().addMessage("successInfo", facesMsg);
+	}
+
+	public static void addWarningMessage(String msg) {
+		ResourceBundle bundle = getBundle();
+		String m = bundle.getString(msg);
+		FacesMessage facesMsg = new FacesMessage(FacesMessage.SEVERITY_WARN, m, m);
+		FacesContext.getCurrentInstance().addMessage("successInfo", facesMsg);
+	}
+
+	public static void addWarningMessageDialog(String msgHeader, String msg) {
+		ResourceBundle bundle = getBundle();
+		String h = bundle.getString(msgHeader);
+		String m = bundle.getString(msg);
+		FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_WARN, h, m);
+		RequestContext.getCurrentInstance().showMessageInDialog(message);
+	}
+
+	public static void addSuccessMessageDialog(String msgHeader, String msg) {
+		ResourceBundle bundle = getBundle();
+		String h = bundle.getString(msgHeader);
+		String m = bundle.getString(msg);
+		FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, h, m);
+		RequestContext.getCurrentInstance().showMessageInDialog(message);
+	}
+
+	public static void addWarningCustomMessageDialog(String msgHeader, String msg) {
+		FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_WARN, msgHeader, msg);
+		RequestContext.getCurrentInstance().showMessageInDialog(message);
+	}
+
 }

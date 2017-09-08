@@ -7,7 +7,6 @@
 <fullyQualifiedTypeName name="com.onix.modulo.librerias.servicio.oyentes.AccionValidacionSimpleListener"/>
 <fullyQualifiedTypeName name="javax.annotation.PostConstruct"/>
 <fullyQualifiedTypeName name="java.lang.FunctionalInterface"/>
-<fullyQualifiedTypeName name="ENTIDAD"/>
 <fullyQualifiedTypeName name="javax.ejb.Timer"/>
 <fullyQualifiedTypeName name="java.util.Date"/>
 <fullyQualifiedTypeName name="javax.ejb.TimerConfig"/>
@@ -17,15 +16,19 @@
 <fullyQualifiedTypeName name="java.lang.Throwable"/>
 <fullyQualifiedTypeName name="javax.mail.Session"/>
 <fullyQualifiedTypeName name="javax.persistence.TypedQuery"/>
-<fullyQualifiedTypeName name="java.lang.Class"/>
 <fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="java.lang.Object"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.lang.Long"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="java.util.Map.Entry"/>
-<fullyQualifiedTypeName name="java.io.Serializable"/>
 <fullyQualifiedTypeName name="javax.faces.event.ActionEvent"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="com.onix.modulo.librerias.vista.beans.oyentes.PostCierreDialogo"/>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
+<fullyQualifiedTypeName name="com.onix.modulo.librerias.dominio.entidades.base.EntidadBaseAuditable"/>
+<fullyQualifiedTypeName name="org.primefaces.context.RequestContext"/>
+<fullyQualifiedTypeName name="com.onix.modulo.librerias.vista.beans.oyentes.ControlListaEntidadesPersonalizada"/>
+<fullyQualifiedTypeName name="java.lang.Class"/>
+<fullyQualifiedTypeName name="ENTIDAD"/>
 </qualifiedTypeNameHistroy>

@@ -14,7 +14,7 @@ public class GestorQuerysJDBC
 	{
 		PreparedStatement sentencia = null;
 		ResultSet resultado = null;
-		BufferedReader br = null;
+//		BufferedReader br = null;
 		StringBuffer queryFinal = new StringBuffer("");
 		try {
 			sentencia = conexion.prepareStatement(QUERY);
@@ -24,12 +24,14 @@ public class GestorQuerysJDBC
 			
 			if (resultado.next()) 
 			{
-				br  = new BufferedReader(resultado.getClob("query").
-					      getCharacterStream());
 				
-				while ((aux=br.readLine())!=null) {
-					queryFinal.append(aux);
-				    }
+				queryFinal.append(resultado.getString("query"));
+//				br  = new BufferedReader(resultado.getClob("query").
+//					      getCharacterStream());
+//				
+//				while ((aux=br.readLine())!=null) {
+//					queryFinal.append(aux);
+//				    }
 				
 			}
 			return queryFinal.toString();
@@ -40,10 +42,7 @@ public class GestorQuerysJDBC
 			if (sentencia != null) {
 				sentencia.close();
 			}	
-			if (br!=null)
-			{
-				br.close();
-			}
+			
 		}
 		
 		

@@ -28,7 +28,9 @@ import com.onix.modulo.librerias.exceptions.ErrorServicioNegocio;
 import com.onix.modulo.librerias.exceptions.ErrorValidacionGeneral;
 import com.onix.modulo.librerias.servicio.ServicioMantenimientoEntidad;
 import com.onix.modulo.librerias.vista.JsfUtil;
+import com.onix.modulo.librerias.vista.beans.oyentes.ControlListaEntidadesPersonalizada;
 import com.onix.modulo.librerias.vista.beans.oyentes.PostCierreDialogo;
+import com.onix.modulo.librerias.vista.beans.oyentes.PostInicializacionEntidad;  
 import com.onix.modulo.librerias.vista.beans.oyentes.PostConstructListener;
 import com.onix.modulo.librerias.vista.beans.oyentes.PostErrorTransaccionListener;
 import com.onix.modulo.librerias.vista.beans.oyentes.PostSeleccionEntidadListener;
@@ -58,7 +60,11 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 	private PostConstructListener lPostConstruct;
 	private PostTransaccionListener lPostTransaccion;
 	private PostCierreDialogo lPostCirreDialog;
+	
+	private PostInicializacionEntidad lPostInicializacion;
 
+	private ControlListaEntidadesPersonalizada lControlListaEntidades;
+	
 	private List<ENTIDAD> listaEntidades;
 
 	private Class<ENTIDAD> clase;
@@ -107,14 +113,29 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 			System.out.println("**********************************************");
 			System.out.println("TRANSACCION " + (isAutenticado() ? "CON AUTENTICACION " : "SIN AUTENTICACION"));
 			System.out.println("**********************************************");
-			listaEntidades = !isAutenticado() ? new ArrayList<>()
-					: getServicioMantenedor().listaObjetos(clase, true, usuarioAutenticado());
+			
+			cargarListaEntidades();
+			
+			
 			nombreAtributoCambioEstado = "ENTIDAD_CAMBIAR";
 			nombreAtributoDialogoAlterno = "DIALOGO_ALTERNO";
 			metodoPostConstruct();
 		} catch (Throwable e) {
 			listaEntidades = new ArrayList<ENTIDAD>();
 			e.printStackTrace();
+		}
+	}
+
+	protected void cargarListaEntidades() {
+		
+		
+		if (lControlListaEntidades==null)
+		{
+		listaEntidades = !isAutenticado() ? new ArrayList<>()
+				: getServicioMantenedor().listaObjetos(clase, true, usuarioAutenticado());
+		}else
+		{
+			lControlListaEntidades.cargarListaEntidades();
 		}
 	}
 
@@ -228,6 +249,7 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 
 	public void guardarOActualizar(boolean presentarMensaje, boolean pValidarAutenticado) {
 		try {
+			boolean lCerrarDialogo = entidadRegistrar.getId()!=null;
 			validacionesIngreso();
 			if (pValidarAutenticado)
 				cargarDatosRastreoRegistro();
@@ -237,6 +259,10 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 
 			getServicioMantenedor().guardarActualizar(entidadRegistrar);
 			metodoPostTransaccion();
+
+			if (lCerrarDialogo)
+				cierreDialogoDefecto();
+			
 			if (presentarMensaje) {
 				System.out.println("********************************************");
 				System.out.println("MENSAJE " + getMensajeTransaccion());
@@ -244,6 +270,8 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 				addMensaje(getMensajeTransaccion().length() >= 2 ? getMensajeTransaccion()
 						: JsfUtil.MENSAJE_INFO_OPERACION);
 			}
+			
+			
 
 		} catch (ErrorValidacionVisual e1) {
 			e1.printStackTrace();
@@ -280,6 +308,11 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 
 	}
 
+	private void cierreDialogoDefecto() {
+		RequestContext context = RequestContext.getCurrentInstance();
+		context.execute("PF('dialogoMantenimiento').hide();");  
+	}
+
 	private void cargarDatosRastreoRegistro() throws ErrorNoAutenticacion {
 		try {
 			this.entidadRegistrar.setAuditoria(JsfUtil.getUsuarioAutenticado().getName());
@@ -302,8 +335,7 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 		System.out.println("**********************************************");
 		System.out.println("TRANSACCION " + (isAutenticado() ? "CON AUTENTICACION " : "SIN AUTENTICACION"));
 		System.out.println("**********************************************");
-		listaEntidades = !isAutenticado() ? new ArrayList<>()
-				: getServicioMantenedor().listaObjetos(clase, true, usuarioAutenticado());
+		cargarListaEntidades();
 
 		if (lPostTransaccion != null)
 			lPostTransaccion.metodoPostTransaccion();
@@ -530,6 +562,11 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 	{
 		lPostCirreDialog = pPostCirreDialog;
 	}
+	
+	protected void addPostEventoInicializacion (PostInicializacionEntidad pPostInicializacion ) 
+	{
+		lPostInicializacion = pPostInicializacion;
+	}
 
 	public void agregarObjetoSesion(String pNombreAtributo, Serializable pObjetoGuardar) {
 		getsession().setAttribute(pNombreAtributo, pObjetoGuardar);
@@ -576,11 +613,24 @@ public abstract class BeanMantenedorGenerico<SERVICIO extends ServicioMantenimie
 	private void incializarEntidad() {
 		try {
 			entidadRegistrar = clase.newInstance();
+			if (lPostInicializacion != null)
+				lPostInicializacion.eventoPostInicializacion();
+			else
+				System.out.println("NO EXISTE LISTENER REGISTRADO PARA LA POST INICIALIZACION "
+					+ this.getClass().getCanonicalName());
+				
+			
+			
 		} catch (InstantiationException e) {
 			e.printStackTrace();
 		} catch (IllegalAccessException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public void addControlListaEntidadesPersonalizada(ControlListaEntidadesPersonalizada lControlLista)
+	{
+		lControlListaEntidades = lControlLista;
 	}
 
 }

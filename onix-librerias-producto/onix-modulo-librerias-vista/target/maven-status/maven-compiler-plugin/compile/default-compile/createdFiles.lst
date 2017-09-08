@@ -1,3 +1,4 @@
+com\onix\modulo\librerias\vista\beans\oyentes\ControlListaEntidadesPersonalizada.class
 com\onix\modulo\librerias\vista\interfaces\IGuardiaUsuarioSession.class
 com\onix\modulo\librerias\vista\interfaces\IServiciosAutenticacion.class
 com\onix\modulo\librerias\vista\beans\NombresEtiquetas.class
@@ -10,6 +11,7 @@ com\onix\modulo\librerias\vista\anotaciones\ITestCierreSession.class
 com\onix\modulo\librerias\vista\anotaciones\ITestParseMenu.class
 com\onix\modulo\librerias\vista\beans\BeanMantenedorGenerico.class
 com\onix\modulo\librerias\vista\beans\oyentes\PostConstructListener.class
+com\onix\modulo\librerias\vista\beans\oyentes\PostInicializacionEntidad.class
 com\onix\modulo\librerias\vista\beans\oyentes\PostTransaccionListener.class
 com\onix\modulo\librerias\vista\JsfUtil$2.class
 com\onix\modulo\librerias\vista\interfaces\IParseMenu.class
